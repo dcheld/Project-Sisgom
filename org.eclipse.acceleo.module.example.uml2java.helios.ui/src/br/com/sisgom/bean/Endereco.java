@@ -12,6 +12,10 @@ import java.util.*;
  */
 public class Endereco {
     /**
+     * the Rua attribute.
+     */
+    private String Rua;
+    /**
      * the Cidade attribute.
      */
     private String Cidade;
@@ -24,9 +28,20 @@ public class Endereco {
      */
     private Integer Id;
     /**
-     * the Rua attribute.
+     * the Rua getter.
+     * @return the Rua.
      */
-    private String Rua;
+    public String getRua() {
+        return this.Rua;
+    }
+
+    /**
+     * the Rua setter.
+     * @param p_Rua the Rua to set.
+     */
+    public void setRua(String p_Rua) {
+        this.Rua = p_Rua;
+    }
     /**
      * the Cidade getter.
      * @return the Cidade.
@@ -71,21 +86,6 @@ public class Endereco {
      */
     public void setId(Integer p_Id) {
         this.Id = p_Id;
-    }
-    /**
-     * the Rua getter.
-     * @return the Rua.
-     */
-    public String getRua() {
-        return this.Rua;
-    }
-
-    /**
-     * the Rua setter.
-     * @param p_Rua the Rua to set.
-     */
-    public void setRua(String p_Rua) {
-        this.Rua = p_Rua;
     }
     /**
      * the Endereco attribute.

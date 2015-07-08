@@ -20,13 +20,13 @@ public class Peca {
      */
     private Double ValorCompra;
     /**
-     * the ValorVenda attribute.
-     */
-    private Double ValorVenda;
-    /**
      * the Nome attribute.
      */
     private String Nome;
+    /**
+     * the ValorVenda attribute.
+     */
+    private Double ValorVenda;
     /**
      * the Codigo getter.
      * @return the Codigo.
@@ -58,6 +58,21 @@ public class Peca {
         this.ValorCompra = p_ValorCompra;
     }
     /**
+     * the Nome getter.
+     * @return the Nome.
+     */
+    public String getNome() {
+        return this.Nome;
+    }
+
+    /**
+     * the Nome setter.
+     * @param p_Nome the Nome to set.
+     */
+    public void setNome(String p_Nome) {
+        this.Nome = p_Nome;
+    }
+    /**
      * the ValorVenda getter.
      * @return the ValorVenda.
      */
@@ -73,18 +88,7 @@ public class Peca {
         this.ValorVenda = p_ValorVenda;
     }
     /**
-     * the Nome getter.
-     * @return the Nome.
+     * the Pecas attribute.
      */
-    public String getNome() {
-        return this.Nome;
-    }
-
-    /**
-     * the Nome setter.
-     * @param p_Nome the Nome to set.
-     */
-    public void setNome(String p_Nome) {
-        this.Nome = p_Nome;
-    }
+    private List<Peca> Pecas;
 }

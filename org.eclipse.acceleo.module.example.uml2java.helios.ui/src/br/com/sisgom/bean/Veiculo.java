@@ -20,13 +20,13 @@ public class Veiculo {
      */
     private String Modelo;
     /**
-     * the Cor attribute.
-     */
-    private String Cor;
-    /**
      * the Ano attribute.
      */
     private Integer Ano;
+    /**
+     * the Cor attribute.
+     */
+    private String Cor;
     /**
      * the Modelo attribute.
      */
@@ -62,21 +62,6 @@ public class Veiculo {
         this.Modelo = p_Modelo;
     }
     /**
-     * the Cor getter.
-     * @return the Cor.
-     */
-    public String getCor() {
-        return this.Cor;
-    }
-
-    /**
-     * the Cor setter.
-     * @param p_Cor the Cor to set.
-     */
-    public void setCor(String p_Cor) {
-        this.Cor = p_Cor;
-    }
-    /**
      * the Ano getter.
      * @return the Ano.
      */
@@ -90,6 +75,21 @@ public class Veiculo {
      */
     public void setAno(Integer p_Ano) {
         this.Ano = p_Ano;
+    }
+    /**
+     * the Cor getter.
+     * @return the Cor.
+     */
+    public String getCor() {
+        return this.Cor;
+    }
+
+    /**
+     * the Cor setter.
+     * @param p_Cor the Cor to set.
+     */
+    public void setCor(String p_Cor) {
+        this.Cor = p_Cor;
     }
     /**
      * the Modelo getter.
@@ -106,4 +106,8 @@ public class Veiculo {
     public void setModelo(String p_Modelo) {
         this.Modelo = p_Modelo;
     }
+    /**
+     * the Veiculo attribute.
+     */
+    private Veiculo Veiculo;
 }

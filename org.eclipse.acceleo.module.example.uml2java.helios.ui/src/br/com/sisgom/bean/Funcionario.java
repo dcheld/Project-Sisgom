@@ -12,97 +12,37 @@ import java.util.*;
  */
 public class Funcionario extends  PessoaBase {
     /**
-     * the servico attribute.
-     */
-    private Servico servico;
-    /**
-     * the Matricula attribute.
-     */
-    private Integer Matricula;
-    /**
-     * the TipoPessoa attribute.
-     */
-    private TipoPessao TipoPessoa;
-    /**
-     * the Nome attribute.
-     */
-    private String Nome;
-    /**
      * the Endereco attribute.
      */
     private List<Endereco> Endereco;
-    /**
-     * the CPFouCNPJ attribute.
-     */
-    private String CPFouCNPJ;
     /**
      * the Id attribute.
      */
     private Integer Id;
     /**
+     * the CPFouCNPJ attribute.
+     */
+    private String CPFouCNPJ;
+    /**
+     * the TipoPessoa attribute.
+     */
+    private TipoPessao TipoPessoa;
+    /**
      * the Contato attribute.
      */
     private List<Contato> Contato;
     /**
-     * the servico getter.
-     * @return the servico.
+     * the Matricula attribute.
      */
-    public Servico getServico() {
-        return this.servico;
-    }
-
+    private Integer Matricula;
     /**
-     * the servico setter.
-     * @param p_servico the servico to set.
+     * the Nome attribute.
      */
-    public void setServico(Servico p_servico) {
-        this.servico = p_servico;
-    }
+    private String Nome;
     /**
-     * the Matricula getter.
-     * @return the Matricula.
+     * the servico attribute.
      */
-    public Integer getMatricula() {
-        return this.Matricula;
-    }
-
-    /**
-     * the Matricula setter.
-     * @param p_Matricula the Matricula to set.
-     */
-    public void setMatricula(Integer p_Matricula) {
-        this.Matricula = p_Matricula;
-    }
-    /**
-     * the TipoPessoa getter.
-     * @return the TipoPessoa.
-     */
-    public TipoPessao getTipoPessoa() {
-        return this.TipoPessoa;
-    }
-
-    /**
-     * the TipoPessoa setter.
-     * @param p_TipoPessoa the TipoPessoa to set.
-     */
-    public void setTipoPessoa(TipoPessao p_TipoPessoa) {
-        this.TipoPessoa = p_TipoPessoa;
-    }
-    /**
-     * the Nome getter.
-     * @return the Nome.
-     */
-    public String getNome() {
-        return this.Nome;
-    }
-
-    /**
-     * the Nome setter.
-     * @param p_Nome the Nome to set.
-     */
-    public void setNome(String p_Nome) {
-        this.Nome = p_Nome;
-    }
+    private Servico servico;
     /**
      * the Endereco getter.
      * @return the Endereco.
@@ -117,21 +57,6 @@ public class Funcionario extends  PessoaBase {
      */
     public void setEndereco(List<Endereco> p_Endereco) {
         this.Endereco = p_Endereco;
-    }
-    /**
-     * the CPFouCNPJ getter.
-     * @return the CPFouCNPJ.
-     */
-    public String getCPFouCNPJ() {
-        return this.CPFouCNPJ;
-    }
-
-    /**
-     * the CPFouCNPJ setter.
-     * @param p_CPFouCNPJ the CPFouCNPJ to set.
-     */
-    public void setCPFouCNPJ(String p_CPFouCNPJ) {
-        this.CPFouCNPJ = p_CPFouCNPJ;
     }
     /**
      * the Id getter.
@@ -149,6 +74,36 @@ public class Funcionario extends  PessoaBase {
         this.Id = p_Id;
     }
     /**
+     * the CPFouCNPJ getter.
+     * @return the CPFouCNPJ.
+     */
+    public String getCPFouCNPJ() {
+        return this.CPFouCNPJ;
+    }
+
+    /**
+     * the CPFouCNPJ setter.
+     * @param p_CPFouCNPJ the CPFouCNPJ to set.
+     */
+    public void setCPFouCNPJ(String p_CPFouCNPJ) {
+        this.CPFouCNPJ = p_CPFouCNPJ;
+    }
+    /**
+     * the TipoPessoa getter.
+     * @return the TipoPessoa.
+     */
+    public TipoPessao getTipoPessoa() {
+        return this.TipoPessoa;
+    }
+
+    /**
+     * the TipoPessoa setter.
+     * @param p_TipoPessoa the TipoPessoa to set.
+     */
+    public void setTipoPessoa(TipoPessao p_TipoPessoa) {
+        this.TipoPessoa = p_TipoPessoa;
+    }
+    /**
      * the Contato getter.
      * @return the Contato.
      */
@@ -162,6 +117,51 @@ public class Funcionario extends  PessoaBase {
      */
     public void setContato(List<Contato> p_Contato) {
         this.Contato = p_Contato;
+    }
+    /**
+     * the Matricula getter.
+     * @return the Matricula.
+     */
+    public Integer getMatricula() {
+        return this.Matricula;
+    }
+
+    /**
+     * the Matricula setter.
+     * @param p_Matricula the Matricula to set.
+     */
+    public void setMatricula(Integer p_Matricula) {
+        this.Matricula = p_Matricula;
+    }
+    /**
+     * the Nome getter.
+     * @return the Nome.
+     */
+    public String getNome() {
+        return this.Nome;
+    }
+
+    /**
+     * the Nome setter.
+     * @param p_Nome the Nome to set.
+     */
+    public void setNome(String p_Nome) {
+        this.Nome = p_Nome;
+    }
+    /**
+     * the servico getter.
+     * @return the servico.
+     */
+    public Servico getServico() {
+        return this.servico;
+    }
+
+    /**
+     * the servico setter.
+     * @param p_servico the servico to set.
+     */
+    public void setServico(Servico p_servico) {
+        this.servico = p_servico;
     }
     /**
      * the Funcionario attribute.

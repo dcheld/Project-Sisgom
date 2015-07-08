@@ -7,38 +7,63 @@ package br.com.sisgom.bean;
 import java.util.*;
 // End of user code
 
-import org.eclipse.swt.widgets.DateTime;
-
 /**
  * @author MTL
  */
 public class OrdemDeServico {
     /**
-     * the DataEntradaVeiculo attribute.
+     * the Funcionario attribute.
      */
-    private DateTime DataEntradaVeiculo;
+    private List<Funcionario> Funcionario;
+    /**
+     * the Servicos attribute.
+     */
+    private List<Servico> Servicos;
     /**
      * the Codigo attribute.
      */
     private Integer Codigo;
     /**
-     * the Funcionario attribute.
+     * the Veiculo attribute.
      */
-    private List<Funcionario> Funcionario;
+    private Veiculo Veiculo;
     /**
-     * the DataEntradaVeiculo getter.
-     * @return the DataEntradaVeiculo.
+     * the Pecas attribute.
      */
-    public DateTime getDataEntradaVeiculo() {
-        return this.DataEntradaVeiculo;
+    private List<Peca> Pecas;
+    /**
+     * the DataEntradaVeiculo attribute.
+     */
+    private DateTime DataEntradaVeiculo;
+    /**
+     * the Funcionario getter.
+     * @return the Funcionario.
+     */
+    public List<Funcionario> getFuncionario() {
+        return this.Funcionario;
     }
 
     /**
-     * the DataEntradaVeiculo setter.
-     * @param p_DataEntradaVeiculo the DataEntradaVeiculo to set.
+     * the Funcionario setter.
+     * @param p_Funcionario the Funcionario to set.
      */
-    public void setDataEntradaVeiculo(DateTime p_DataEntradaVeiculo) {
-        this.DataEntradaVeiculo = p_DataEntradaVeiculo;
+    public void setFuncionario(List<Funcionario> p_Funcionario) {
+        this.Funcionario = p_Funcionario;
+    }
+    /**
+     * the Servicos getter.
+     * @return the Servicos.
+     */
+    public List<Servico> getServicos() {
+        return this.Servicos;
+    }
+
+    /**
+     * the Servicos setter.
+     * @param p_Servicos the Servicos to set.
+     */
+    public void setServicos(List<Servico> p_Servicos) {
+        this.Servicos = p_Servicos;
     }
     /**
      * the Codigo getter.
@@ -56,18 +81,48 @@ public class OrdemDeServico {
         this.Codigo = p_Codigo;
     }
     /**
-     * the Funcionario getter.
-     * @return the Funcionario.
+     * the Veiculo getter.
+     * @return the Veiculo.
      */
-    public List<Funcionario> getFuncionario() {
-        return this.Funcionario;
+    public Veiculo getVeiculo() {
+        return this.Veiculo;
     }
 
     /**
-     * the Funcionario setter.
-     * @param p_Funcionario the Funcionario to set.
+     * the Veiculo setter.
+     * @param p_Veiculo the Veiculo to set.
      */
-    public void setFuncionario(List<Funcionario> p_Funcionario) {
-        this.Funcionario = p_Funcionario;
+    public void setVeiculo(Veiculo p_Veiculo) {
+        this.Veiculo = p_Veiculo;
+    }
+    /**
+     * the Pecas getter.
+     * @return the Pecas.
+     */
+    public List<Peca> getPecas() {
+        return this.Pecas;
+    }
+
+    /**
+     * the Pecas setter.
+     * @param p_Pecas the Pecas to set.
+     */
+    public void setPecas(List<Peca> p_Pecas) {
+        this.Pecas = p_Pecas;
+    }
+    /**
+     * the DataEntradaVeiculo getter.
+     * @return the DataEntradaVeiculo.
+     */
+    public DateTime getDataEntradaVeiculo() {
+        return this.DataEntradaVeiculo;
+    }
+
+    /**
+     * the DataEntradaVeiculo setter.
+     * @param p_DataEntradaVeiculo the DataEntradaVeiculo to set.
+     */
+    public void setDataEntradaVeiculo(DateTime p_DataEntradaVeiculo) {
+        this.DataEntradaVeiculo = p_DataEntradaVeiculo;
     }
 }

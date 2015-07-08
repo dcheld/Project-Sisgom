@@ -12,17 +12,13 @@ import java.util.*;
  */
 public class Servico {
     /**
-     * the TipoCobranca attribute.
+     * the Nome attribute.
      */
-    private TipoCobrancao TipoCobranca;
+    private String Nome;
     /**
      * the Funcionario attribute.
      */
     private Funcionario Funcionario;
-    /**
-     * the Nome attribute.
-     */
-    private String Nome;
     /**
      * the Codigo attribute.
      */
@@ -32,19 +28,23 @@ public class Servico {
      */
     private Double Valor;
     /**
-     * the TipoCobranca getter.
-     * @return the TipoCobranca.
+     * the TipoCobranca attribute.
      */
-    public TipoCobrancao getTipoCobranca() {
-        return this.TipoCobranca;
+    private TipoCobrancao TipoCobranca;
+    /**
+     * the Nome getter.
+     * @return the Nome.
+     */
+    public String getNome() {
+        return this.Nome;
     }
 
     /**
-     * the TipoCobranca setter.
-     * @param p_TipoCobranca the TipoCobranca to set.
+     * the Nome setter.
+     * @param p_Nome the Nome to set.
      */
-    public void setTipoCobranca(TipoCobrancao p_TipoCobranca) {
-        this.TipoCobranca = p_TipoCobranca;
+    public void setNome(String p_Nome) {
+        this.Nome = p_Nome;
     }
     /**
      * the Funcionario getter.
@@ -60,21 +60,6 @@ public class Servico {
      */
     public void setFuncionario(Funcionario p_Funcionario) {
         this.Funcionario = p_Funcionario;
-    }
-    /**
-     * the Nome getter.
-     * @return the Nome.
-     */
-    public String getNome() {
-        return this.Nome;
-    }
-
-    /**
-     * the Nome setter.
-     * @param p_Nome the Nome to set.
-     */
-    public void setNome(String p_Nome) {
-        this.Nome = p_Nome;
     }
     /**
      * the Codigo getter.
@@ -106,4 +91,23 @@ public class Servico {
     public void setValor(Double p_Valor) {
         this.Valor = p_Valor;
     }
+    /**
+     * the TipoCobranca getter.
+     * @return the TipoCobranca.
+     */
+    public TipoCobrancao getTipoCobranca() {
+        return this.TipoCobranca;
+    }
+
+    /**
+     * the TipoCobranca setter.
+     * @param p_TipoCobranca the TipoCobranca to set.
+     */
+    public void setTipoCobranca(TipoCobrancao p_TipoCobranca) {
+        this.TipoCobranca = p_TipoCobranca;
+    }
+    /**
+     * the Servicos attribute.
+     */
+    private List<Servico> Servicos;
 }
