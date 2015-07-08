@@ -12,117 +12,117 @@ import java.util.*;
  */
 public class Cliente extends  PessoaBase {
     /**
-     * the Contato attribute.
-     */
-    private List<Contato> Contato;
-    /**
      * the Id attribute.
      */
     private int Id;
-    /**
-     * the Endereco attribute.
-     */
-    private List<Endereco> Endereco;
-    /**
-     * the CPFouCNPJ attribute.
-     */
-    private String CPFouCNPJ;
     /**
      * the TipoPessoa attribute.
      */
     private TipoPessao TipoPessoa;
     /**
+     * the CPFouCNPJ attribute.
+     */
+    private String CPFouCNPJ;
+    /**
      * the Nome attribute.
      */
     private String Nome;
     /**
-     * the Contato getter.
-     * @return the Contato.
+     * the Contato attribute.
      */
-    public List<Contato> getContato() {
-        return this.Contato;
-    }
-
+    private List<Contato> contato;
     /**
-     * the Contato setter.
-     * @param p_Contato the Contato to set.
+     * the Endereco attribute.
      */
-    public void setContato(List<Contato> p_Contato) {
-        this.Contato = p_Contato;
-    }
+    private List<Endereco> endereco;
     /**
      * the Id getter.
      * @return the Id.
      */
     public int getId() {
-        return this.Id;
+        return this.id;
     }
 
     /**
      * the Id setter.
      * @param p_Id the Id to set.
      */
-    public void setId(int p_Id) {
-        this.Id = p_Id;
-    }
-    /**
-     * the Endereco getter.
-     * @return the Endereco.
-     */
-    public List<Endereco> getEndereco() {
-        return this.Endereco;
-    }
-
-    /**
-     * the Endereco setter.
-     * @param p_Endereco the Endereco to set.
-     */
-    public void setEndereco(List<Endereco> p_Endereco) {
-        this.Endereco = p_Endereco;
-    }
-    /**
-     * the CPFouCNPJ getter.
-     * @return the CPFouCNPJ.
-     */
-    public String getCPFouCNPJ() {
-        return this.CPFouCNPJ;
-    }
-
-    /**
-     * the CPFouCNPJ setter.
-     * @param p_CPFouCNPJ the CPFouCNPJ to set.
-     */
-    public void setCPFouCNPJ(String p_CPFouCNPJ) {
-        this.CPFouCNPJ = p_CPFouCNPJ;
+    public void setId(int id) {
+        this.id = p_id;
     }
     /**
      * the TipoPessoa getter.
      * @return the TipoPessoa.
      */
     public TipoPessao getTipoPessoa() {
-        return this.TipoPessoa;
+        return this.tipoPessoa;
     }
 
     /**
      * the TipoPessoa setter.
      * @param p_TipoPessoa the TipoPessoa to set.
      */
-    public void setTipoPessoa(TipoPessao p_TipoPessoa) {
-        this.TipoPessoa = p_TipoPessoa;
+    public void setTipoPessoa(TipoPessao tipoPessoa) {
+        this.tipoPessoa = p_tipoPessoa;
+    }
+    /**
+     * the CPFouCNPJ getter.
+     * @return the CPFouCNPJ.
+     */
+    public String getCPFouCNPJ() {
+        return this.cPFouCNPJ;
+    }
+
+    /**
+     * the CPFouCNPJ setter.
+     * @param p_CPFouCNPJ the CPFouCNPJ to set.
+     */
+    public void setCPFouCNPJ(String cPFouCNPJ) {
+        this.cPFouCNPJ = p_cPFouCNPJ;
     }
     /**
      * the Nome getter.
      * @return the Nome.
      */
     public String getNome() {
-        return this.Nome;
+        return this.nome;
     }
 
     /**
      * the Nome setter.
      * @param p_Nome the Nome to set.
      */
-    public void setNome(String p_Nome) {
-        this.Nome = p_Nome;
+    public void setNome(String nome) {
+        this.nome = p_nome;
+    }
+    /**
+     * the Contato getter.
+     * @return the Contato.
+     */
+    public List<Contato> getContato() {
+        return this.contato;
+    }
+
+    /**
+     * the Contato setter.
+     * @param p_Contato the Contato to set.
+     */
+    public void setContato(List<Contato> contato) {
+        this.contato = p_contato;
+    }
+    /**
+     * the Endereco getter.
+     * @return the Endereco.
+     */
+    public List<Endereco> getEndereco() {
+        return this.endereco;
+    }
+
+    /**
+     * the Endereco setter.
+     * @param p_Endereco the Endereco to set.
+     */
+    public void setEndereco(List<Endereco> endereco) {
+        this.endereco = p_endereco;
     }
 }

@@ -32,60 +32,60 @@ public class Endereco {
      * @return the Rua.
      */
     public String getRua() {
-        return this.Rua;
+        return this.rua;
     }
 
     /**
      * the Rua setter.
      * @param p_Rua the Rua to set.
      */
-    public void setRua(String p_Rua) {
-        this.Rua = p_Rua;
+    public void setRua(String rua) {
+        this.rua = p_rua;
     }
     /**
      * the Estado getter.
      * @return the Estado.
      */
     public String getEstado() {
-        return this.Estado;
+        return this.estado;
     }
 
     /**
      * the Estado setter.
      * @param p_Estado the Estado to set.
      */
-    public void setEstado(String p_Estado) {
-        this.Estado = p_Estado;
+    public void setEstado(String estado) {
+        this.estado = p_estado;
     }
     /**
      * the Id getter.
      * @return the Id.
      */
     public int getId() {
-        return this.Id;
+        return this.id;
     }
 
     /**
      * the Id setter.
      * @param p_Id the Id to set.
      */
-    public void setId(int p_Id) {
-        this.Id = p_Id;
+    public void setId(int id) {
+        this.id = p_id;
     }
     /**
      * the Cidade getter.
      * @return the Cidade.
      */
     public String getCidade() {
-        return this.Cidade;
+        return this.cidade;
     }
 
     /**
      * the Cidade setter.
      * @param p_Cidade the Cidade to set.
      */
-    public void setCidade(String p_Cidade) {
-        this.Cidade = p_Cidade;
+    public void setCidade(String cidade) {
+        this.cidade = p_cidade;
     }
     /**
      * the Endereco attribute.

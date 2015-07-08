@@ -15,14 +15,14 @@ public[if (c.isAbstract)] abstract[/if] class [c.name.toUpperFirst()/][for (supe
 [for (p : Property | c.getAllAttributes())]
 [if (p.upper = -1 or p.upper > 1)]
     /**
-     * the [p.name/] attribute.
+     * the [p.name.toLowerFirst()/] attribute.
      */
     private List<[p.type.name/]> [p.name.toLowerFirst()/];
 [else]
     /**
-     * the [p.name/] attribute.
+     * the [p.name.toLowerFirst()/] attribute.
      */
-    private [p.type.name/] [p.name/];
+    private [p.type.name/] [p.name.toLowerFirst()/];
 [/if]
 [/for]
 [for (p : Property | c.getAllAttributes())]

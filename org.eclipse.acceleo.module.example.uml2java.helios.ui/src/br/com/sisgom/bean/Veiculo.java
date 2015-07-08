@@ -20,72 +20,72 @@ public class Veiculo {
      */
     private String Chassis;
     /**
-     * the Ano attribute.
-     */
-    private int Ano;
-    /**
      * the Modelo attribute.
      */
     private String Modelo;
+    /**
+     * the Ano attribute.
+     */
+    private int Ano;
     /**
      * the Cor getter.
      * @return the Cor.
      */
     public String getCor() {
-        return this.Cor;
+        return this.cor;
     }
 
     /**
      * the Cor setter.
      * @param p_Cor the Cor to set.
      */
-    public void setCor(String p_Cor) {
-        this.Cor = p_Cor;
+    public void setCor(String cor) {
+        this.cor = p_cor;
     }
     /**
      * the Chassis getter.
      * @return the Chassis.
      */
     public String getChassis() {
-        return this.Chassis;
+        return this.chassis;
     }
 
     /**
      * the Chassis setter.
      * @param p_Chassis the Chassis to set.
      */
-    public void setChassis(String p_Chassis) {
-        this.Chassis = p_Chassis;
-    }
-    /**
-     * the Ano getter.
-     * @return the Ano.
-     */
-    public int getAno() {
-        return this.Ano;
-    }
-
-    /**
-     * the Ano setter.
-     * @param p_Ano the Ano to set.
-     */
-    public void setAno(int p_Ano) {
-        this.Ano = p_Ano;
+    public void setChassis(String chassis) {
+        this.chassis = p_chassis;
     }
     /**
      * the Modelo getter.
      * @return the Modelo.
      */
     public String getModelo() {
-        return this.Modelo;
+        return this.modelo;
     }
 
     /**
      * the Modelo setter.
      * @param p_Modelo the Modelo to set.
      */
-    public void setModelo(String p_Modelo) {
-        this.Modelo = p_Modelo;
+    public void setModelo(String modelo) {
+        this.modelo = p_modelo;
+    }
+    /**
+     * the Ano getter.
+     * @return the Ano.
+     */
+    public int getAno() {
+        return this.ano;
+    }
+
+    /**
+     * the Ano setter.
+     * @param p_Ano the Ano to set.
+     */
+    public void setAno(int ano) {
+        this.ano = p_ano;
     }
     /**
      * the Veiculo attribute.
