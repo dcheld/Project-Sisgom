@@ -48,7 +48,7 @@
 
     <!-- The default task with the jars used by this project -->
     <target name="generateJava">
-        <java classname="org.eclipse.acceleo.module.example.uml2java.helios.GenerateJava" classpathref="org.eclipse.acceleo.sisgom.classpath">
+        <java classname="org.eclipse.acceleo.sisgom.main.GenerateJava" classpathref="org.eclipse.acceleo.sisgom.classpath">
             <arg value="${model}"/>
             <arg value="${target}"/>
         </java>
@@ -59,7 +59,7 @@
         Keep in mind that having two versions of the same jar can create problems
     -->
     <target name="generateJava.alljars">
-        <java classname="org.eclipse.acceleo.module.example.uml2java.helios.GenerateJava" classpathref="org.eclipse.acceleo.sisgom.classpath">
+        <java classname="org.eclipse.acceleo.sisgom.main.GenerateJava" classpathref="org.eclipse.acceleo.sisgom.classpath">
             <arg value="${model}"/>
             <arg value="${target}"/>
         </java>

@@ -8,7 +8,7 @@
  * Contributors:
  *     Obeo - initial API and implementation
  *******************************************************************************/
-package org.eclipse.acceleo.module.example.uml2java.helios;
+package org.eclipse.acceleo.sisgom.main;
 
 import org.eclipse.core.runtime.Plugin;
 import org.osgi.framework.BundleContext;

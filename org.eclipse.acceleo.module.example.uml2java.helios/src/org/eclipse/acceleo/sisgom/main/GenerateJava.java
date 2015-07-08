@@ -8,7 +8,7 @@
  * Contributors:
  *     Obeo - initial API and implementation
  *******************************************************************************/
-package org.eclipse.acceleo.module.example.uml2java.helios;
+package org.eclipse.acceleo.sisgom.main;
 
 import java.io.File;
 import java.io.IOException;
@@ -35,7 +35,7 @@ public class GenerateJava extends AbstractAcceleoGenerator {
      *
      * @generated
      */
-    public static final String MODULE_FILE_NAME = "/org/eclipse/acceleo/module/example/uml2java/helios/generateJava";
+    public static final String MODULE_FILE_NAME = "/org/eclipse/acceleo/sisgom/main/generateJava";
     
     /**
      * The name of the templates that are to be generated.
