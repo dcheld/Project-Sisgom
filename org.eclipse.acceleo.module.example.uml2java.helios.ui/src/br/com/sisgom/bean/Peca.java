@@ -12,21 +12,36 @@ import java.util.*;
  */
 public class Peca {
     /**
+     * the ValorVenda attribute.
+     */
+    private double ValorVenda;
+    /**
      * the Codigo attribute.
      */
     private String Codigo;
     /**
      * the ValorCompra attribute.
      */
-    private Double ValorCompra;
+    private double ValorCompra;
     /**
      * the Nome attribute.
      */
     private String Nome;
     /**
-     * the ValorVenda attribute.
+     * the ValorVenda getter.
+     * @return the ValorVenda.
      */
-    private Double ValorVenda;
+    public double getValorVenda() {
+        return this.ValorVenda;
+    }
+
+    /**
+     * the ValorVenda setter.
+     * @param p_ValorVenda the ValorVenda to set.
+     */
+    public void setValorVenda(double p_ValorVenda) {
+        this.ValorVenda = p_ValorVenda;
+    }
     /**
      * the Codigo getter.
      * @return the Codigo.
@@ -46,7 +61,7 @@ public class Peca {
      * the ValorCompra getter.
      * @return the ValorCompra.
      */
-    public Double getValorCompra() {
+    public double getValorCompra() {
         return this.ValorCompra;
     }
 
@@ -54,7 +69,7 @@ public class Peca {
      * the ValorCompra setter.
      * @param p_ValorCompra the ValorCompra to set.
      */
-    public void setValorCompra(Double p_ValorCompra) {
+    public void setValorCompra(double p_ValorCompra) {
         this.ValorCompra = p_ValorCompra;
     }
     /**
@@ -71,21 +86,6 @@ public class Peca {
      */
     public void setNome(String p_Nome) {
         this.Nome = p_Nome;
-    }
-    /**
-     * the ValorVenda getter.
-     * @return the ValorVenda.
-     */
-    public Double getValorVenda() {
-        return this.ValorVenda;
-    }
-
-    /**
-     * the ValorVenda setter.
-     * @param p_ValorVenda the ValorVenda to set.
-     */
-    public void setValorVenda(Double p_ValorVenda) {
-        this.ValorVenda = p_ValorVenda;
     }
     /**
      * the Pecas attribute.

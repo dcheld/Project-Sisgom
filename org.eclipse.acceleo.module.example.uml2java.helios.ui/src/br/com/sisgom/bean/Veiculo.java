@@ -12,25 +12,36 @@ import java.util.*;
  */
 public class Veiculo {
     /**
-     * the Chassis attribute.
-     */
-    private String Chassis;
-    /**
-     * the Modelo attribute.
-     */
-    private String Modelo;
-    /**
-     * the Ano attribute.
-     */
-    private Integer Ano;
-    /**
      * the Cor attribute.
      */
     private String Cor;
     /**
+     * the Chassis attribute.
+     */
+    private String Chassis;
+    /**
+     * the Ano attribute.
+     */
+    private int Ano;
+    /**
      * the Modelo attribute.
      */
     private String Modelo;
+    /**
+     * the Cor getter.
+     * @return the Cor.
+     */
+    public String getCor() {
+        return this.Cor;
+    }
+
+    /**
+     * the Cor setter.
+     * @param p_Cor the Cor to set.
+     */
+    public void setCor(String p_Cor) {
+        this.Cor = p_Cor;
+    }
     /**
      * the Chassis getter.
      * @return the Chassis.
@@ -47,25 +58,10 @@ public class Veiculo {
         this.Chassis = p_Chassis;
     }
     /**
-     * the Modelo getter.
-     * @return the Modelo.
-     */
-    public String getModelo() {
-        return this.Modelo;
-    }
-
-    /**
-     * the Modelo setter.
-     * @param p_Modelo the Modelo to set.
-     */
-    public void setModelo(String p_Modelo) {
-        this.Modelo = p_Modelo;
-    }
-    /**
      * the Ano getter.
      * @return the Ano.
      */
-    public Integer getAno() {
+    public int getAno() {
         return this.Ano;
     }
 
@@ -73,23 +69,8 @@ public class Veiculo {
      * the Ano setter.
      * @param p_Ano the Ano to set.
      */
-    public void setAno(Integer p_Ano) {
+    public void setAno(int p_Ano) {
         this.Ano = p_Ano;
-    }
-    /**
-     * the Cor getter.
-     * @return the Cor.
-     */
-    public String getCor() {
-        return this.Cor;
-    }
-
-    /**
-     * the Cor setter.
-     * @param p_Cor the Cor to set.
-     */
-    public void setCor(String p_Cor) {
-        this.Cor = p_Cor;
     }
     /**
      * the Modelo getter.

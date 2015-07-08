@@ -16,17 +16,17 @@ public class Endereco {
      */
     private String Rua;
     /**
-     * the Cidade attribute.
-     */
-    private String Cidade;
-    /**
      * the Estado attribute.
      */
     private String Estado;
     /**
      * the Id attribute.
      */
-    private Integer Id;
+    private int Id;
+    /**
+     * the Cidade attribute.
+     */
+    private String Cidade;
     /**
      * the Rua getter.
      * @return the Rua.
@@ -41,21 +41,6 @@ public class Endereco {
      */
     public void setRua(String p_Rua) {
         this.Rua = p_Rua;
-    }
-    /**
-     * the Cidade getter.
-     * @return the Cidade.
-     */
-    public String getCidade() {
-        return this.Cidade;
-    }
-
-    /**
-     * the Cidade setter.
-     * @param p_Cidade the Cidade to set.
-     */
-    public void setCidade(String p_Cidade) {
-        this.Cidade = p_Cidade;
     }
     /**
      * the Estado getter.
@@ -76,7 +61,7 @@ public class Endereco {
      * the Id getter.
      * @return the Id.
      */
-    public Integer getId() {
+    public int getId() {
         return this.Id;
     }
 
@@ -84,8 +69,23 @@ public class Endereco {
      * the Id setter.
      * @param p_Id the Id to set.
      */
-    public void setId(Integer p_Id) {
+    public void setId(int p_Id) {
         this.Id = p_Id;
+    }
+    /**
+     * the Cidade getter.
+     * @return the Cidade.
+     */
+    public String getCidade() {
+        return this.Cidade;
+    }
+
+    /**
+     * the Cidade setter.
+     * @param p_Cidade the Cidade to set.
+     */
+    public void setCidade(String p_Cidade) {
+        this.Cidade = p_Cidade;
     }
     /**
      * the Endereco attribute.

@@ -12,17 +12,17 @@ import java.util.*;
  */
 public class Fornecedor extends  PessoaBase {
     /**
-     * the Endereco attribute.
+     * the Contato attribute.
      */
-    private List<Endereco> Endereco;
+    private List<Contato> Contato;
     /**
      * the Id attribute.
      */
-    private Integer Id;
+    private int Id;
     /**
-     * the InscricaoEstadual attribute.
+     * the Endereco attribute.
      */
-    private String InscricaoEstadual;
+    private List<Endereco> Endereco;
     /**
      * the CPFouCNPJ attribute.
      */
@@ -32,13 +32,43 @@ public class Fornecedor extends  PessoaBase {
      */
     private TipoPessao TipoPessoa;
     /**
-     * the Contato attribute.
+     * the InscricaoEstadual attribute.
      */
-    private List<Contato> Contato;
+    private String InscricaoEstadual;
     /**
      * the Nome attribute.
      */
     private String Nome;
+    /**
+     * the Contato getter.
+     * @return the Contato.
+     */
+    public List<Contato> getContato() {
+        return this.Contato;
+    }
+
+    /**
+     * the Contato setter.
+     * @param p_Contato the Contato to set.
+     */
+    public void setContato(List<Contato> p_Contato) {
+        this.Contato = p_Contato;
+    }
+    /**
+     * the Id getter.
+     * @return the Id.
+     */
+    public int getId() {
+        return this.Id;
+    }
+
+    /**
+     * the Id setter.
+     * @param p_Id the Id to set.
+     */
+    public void setId(int p_Id) {
+        this.Id = p_Id;
+    }
     /**
      * the Endereco getter.
      * @return the Endereco.
@@ -53,36 +83,6 @@ public class Fornecedor extends  PessoaBase {
      */
     public void setEndereco(List<Endereco> p_Endereco) {
         this.Endereco = p_Endereco;
-    }
-    /**
-     * the Id getter.
-     * @return the Id.
-     */
-    public Integer getId() {
-        return this.Id;
-    }
-
-    /**
-     * the Id setter.
-     * @param p_Id the Id to set.
-     */
-    public void setId(Integer p_Id) {
-        this.Id = p_Id;
-    }
-    /**
-     * the InscricaoEstadual getter.
-     * @return the InscricaoEstadual.
-     */
-    public String getInscricaoEstadual() {
-        return this.InscricaoEstadual;
-    }
-
-    /**
-     * the InscricaoEstadual setter.
-     * @param p_InscricaoEstadual the InscricaoEstadual to set.
-     */
-    public void setInscricaoEstadual(String p_InscricaoEstadual) {
-        this.InscricaoEstadual = p_InscricaoEstadual;
     }
     /**
      * the CPFouCNPJ getter.
@@ -115,19 +115,19 @@ public class Fornecedor extends  PessoaBase {
         this.TipoPessoa = p_TipoPessoa;
     }
     /**
-     * the Contato getter.
-     * @return the Contato.
+     * the InscricaoEstadual getter.
+     * @return the InscricaoEstadual.
      */
-    public List<Contato> getContato() {
-        return this.Contato;
+    public String getInscricaoEstadual() {
+        return this.InscricaoEstadual;
     }
 
     /**
-     * the Contato setter.
-     * @param p_Contato the Contato to set.
+     * the InscricaoEstadual setter.
+     * @param p_InscricaoEstadual the InscricaoEstadual to set.
      */
-    public void setContato(List<Contato> p_Contato) {
-        this.Contato = p_Contato;
+    public void setInscricaoEstadual(String p_InscricaoEstadual) {
+        this.InscricaoEstadual = p_InscricaoEstadual;
     }
     /**
      * the Nome getter.

@@ -12,13 +12,17 @@ import java.util.*;
  */
 public abstract class PessoaBase {
     /**
-     * the Endereco attribute.
+     * the Contato attribute.
      */
-    private List<Endereco> Endereco;
+    private List<Contato> Contato;
     /**
      * the Id attribute.
      */
-    private Integer Id;
+    private int Id;
+    /**
+     * the Endereco attribute.
+     */
+    private List<Endereco> Endereco;
     /**
      * the CPFouCNPJ attribute.
      */
@@ -28,13 +32,39 @@ public abstract class PessoaBase {
      */
     private TipoPessao TipoPessoa;
     /**
-     * the Contato attribute.
-     */
-    private List<Contato> Contato;
-    /**
      * the Nome attribute.
      */
     private String Nome;
+    /**
+     * the Contato getter.
+     * @return the Contato.
+     */
+    public List<Contato> getContato() {
+        return this.Contato;
+    }
+
+    /**
+     * the Contato setter.
+     * @param p_Contato the Contato to set.
+     */
+    public void setContato(List<Contato> p_Contato) {
+        this.Contato = p_Contato;
+    }
+    /**
+     * the Id getter.
+     * @return the Id.
+     */
+    public int getId() {
+        return this.Id;
+    }
+
+    /**
+     * the Id setter.
+     * @param p_Id the Id to set.
+     */
+    public void setId(int p_Id) {
+        this.Id = p_Id;
+    }
     /**
      * the Endereco getter.
      * @return the Endereco.
@@ -49,21 +79,6 @@ public abstract class PessoaBase {
      */
     public void setEndereco(List<Endereco> p_Endereco) {
         this.Endereco = p_Endereco;
-    }
-    /**
-     * the Id getter.
-     * @return the Id.
-     */
-    public Integer getId() {
-        return this.Id;
-    }
-
-    /**
-     * the Id setter.
-     * @param p_Id the Id to set.
-     */
-    public void setId(Integer p_Id) {
-        this.Id = p_Id;
     }
     /**
      * the CPFouCNPJ getter.
@@ -94,21 +109,6 @@ public abstract class PessoaBase {
      */
     public void setTipoPessoa(TipoPessao p_TipoPessoa) {
         this.TipoPessoa = p_TipoPessoa;
-    }
-    /**
-     * the Contato getter.
-     * @return the Contato.
-     */
-    public List<Contato> getContato() {
-        return this.Contato;
-    }
-
-    /**
-     * the Contato setter.
-     * @param p_Contato the Contato to set.
-     */
-    public void setContato(List<Contato> p_Contato) {
-        this.Contato = p_Contato;
     }
     /**
      * the Nome getter.

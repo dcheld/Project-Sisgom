@@ -12,32 +12,17 @@ import java.util.*;
  */
 public class Contato {
     /**
-     * the Telefone attribute.
-     */
-    private String Telefone;
-    /**
      * the EMail attribute.
      */
     private String EMail;
     /**
      * the Id attribute.
      */
-    private Integer Id;
+    private int Id;
     /**
-     * the Telefone getter.
-     * @return the Telefone.
+     * the Telefone attribute.
      */
-    public String getTelefone() {
-        return this.Telefone;
-    }
-
-    /**
-     * the Telefone setter.
-     * @param p_Telefone the Telefone to set.
-     */
-    public void setTelefone(String p_Telefone) {
-        this.Telefone = p_Telefone;
-    }
+    private String Telefone;
     /**
      * the EMail getter.
      * @return the EMail.
@@ -57,7 +42,7 @@ public class Contato {
      * the Id getter.
      * @return the Id.
      */
-    public Integer getId() {
+    public int getId() {
         return this.Id;
     }
 
@@ -65,8 +50,23 @@ public class Contato {
      * the Id setter.
      * @param p_Id the Id to set.
      */
-    public void setId(Integer p_Id) {
+    public void setId(int p_Id) {
         this.Id = p_Id;
+    }
+    /**
+     * the Telefone getter.
+     * @return the Telefone.
+     */
+    public String getTelefone() {
+        return this.Telefone;
+    }
+
+    /**
+     * the Telefone setter.
+     * @param p_Telefone the Telefone to set.
+     */
+    public void setTelefone(String p_Telefone) {
+        this.Telefone = p_Telefone;
     }
     /**
      * the Contato attribute.

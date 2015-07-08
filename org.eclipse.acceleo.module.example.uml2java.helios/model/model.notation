@@ -417,10 +417,6 @@
             <element xmi:type="uml:Property" href="model.uml#_f1xgcB7BEeW8MqVhUsE2Uw"/>
             <layoutConstraint xmi:type="notation:Location" xmi:id="_f16qYR7BEeW8MqVhUsE2Uw"/>
           </children>
-          <children xmi:type="notation:Shape" xmi:id="_z3KLIB7BEeW8MqVhUsE2Uw" type="3012" fontName="Segoe UI" lineColor="0">
-            <element xmi:type="uml:Property" href="model.uml#_z3AaIB7BEeW8MqVhUsE2Uw"/>
-            <layoutConstraint xmi:type="notation:Location" xmi:id="_z3KLIR7BEeW8MqVhUsE2Uw"/>
-          </children>
           <children xmi:type="notation:Shape" xmi:id="_-_ACQB7BEeW8MqVhUsE2Uw" type="3012" fontName="Segoe UI" lineColor="0">
             <element xmi:type="uml:Property" href="model.uml#_--2RQB7BEeW8MqVhUsE2Uw"/>
             <layoutConstraint xmi:type="notation:Location" xmi:id="_-_ACQR7BEeW8MqVhUsE2Uw"/>
@@ -610,7 +606,7 @@
       <layoutConstraint xmi:type="notation:Location" xmi:id="_rUXSJCQ8EeWmf4ktFsVfrw" y="-20"/>
     </children>
     <children xmi:type="notation:DecorationNode" xmi:id="_rUXSJSQ8EeWmf4ktFsVfrw" type="6005">
-      <layoutConstraint xmi:type="notation:Location" xmi:id="_rUXSJiQ8EeWmf4ktFsVfrw" y="20"/>
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_rUXSJiQ8EeWmf4ktFsVfrw" x="-14" y="-18"/>
     </children>
     <children xmi:type="notation:DecorationNode" xmi:id="_rUXSJyQ8EeWmf4ktFsVfrw" type="6033">
       <layoutConstraint xmi:type="notation:Location" xmi:id="_rUXSKCQ8EeWmf4ktFsVfrw" y="20"/>

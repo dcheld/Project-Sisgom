@@ -12,39 +12,54 @@ import java.util.*;
  */
 public class Servico {
     /**
-     * the Nome attribute.
+     * the Valor attribute.
      */
-    private String Nome;
+    private double Valor;
+    /**
+     * the Codigo attribute.
+     */
+    private int Codigo;
     /**
      * the Funcionario attribute.
      */
     private Funcionario Funcionario;
     /**
-     * the Codigo attribute.
+     * the Nome attribute.
      */
-    private Integer Codigo;
-    /**
-     * the Valor attribute.
-     */
-    private Double Valor;
+    private String Nome;
     /**
      * the TipoCobranca attribute.
      */
     private TipoCobrancao TipoCobranca;
     /**
-     * the Nome getter.
-     * @return the Nome.
+     * the Valor getter.
+     * @return the Valor.
      */
-    public String getNome() {
-        return this.Nome;
+    public double getValor() {
+        return this.Valor;
     }
 
     /**
-     * the Nome setter.
-     * @param p_Nome the Nome to set.
+     * the Valor setter.
+     * @param p_Valor the Valor to set.
      */
-    public void setNome(String p_Nome) {
-        this.Nome = p_Nome;
+    public void setValor(double p_Valor) {
+        this.Valor = p_Valor;
+    }
+    /**
+     * the Codigo getter.
+     * @return the Codigo.
+     */
+    public int getCodigo() {
+        return this.Codigo;
+    }
+
+    /**
+     * the Codigo setter.
+     * @param p_Codigo the Codigo to set.
+     */
+    public void setCodigo(int p_Codigo) {
+        this.Codigo = p_Codigo;
     }
     /**
      * the Funcionario getter.
@@ -62,34 +77,19 @@ public class Servico {
         this.Funcionario = p_Funcionario;
     }
     /**
-     * the Codigo getter.
-     * @return the Codigo.
+     * the Nome getter.
+     * @return the Nome.
      */
-    public Integer getCodigo() {
-        return this.Codigo;
+    public String getNome() {
+        return this.Nome;
     }
 
     /**
-     * the Codigo setter.
-     * @param p_Codigo the Codigo to set.
+     * the Nome setter.
+     * @param p_Nome the Nome to set.
      */
-    public void setCodigo(Integer p_Codigo) {
-        this.Codigo = p_Codigo;
-    }
-    /**
-     * the Valor getter.
-     * @return the Valor.
-     */
-    public Double getValor() {
-        return this.Valor;
-    }
-
-    /**
-     * the Valor setter.
-     * @param p_Valor the Valor to set.
-     */
-    public void setValor(Double p_Valor) {
-        this.Valor = p_Valor;
+    public void setNome(String p_Nome) {
+        this.Nome = p_Nome;
     }
     /**
      * the TipoCobranca getter.

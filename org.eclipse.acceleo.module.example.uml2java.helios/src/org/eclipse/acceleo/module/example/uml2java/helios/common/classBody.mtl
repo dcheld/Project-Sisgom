@@ -17,7 +17,7 @@ public[if (c.isAbstract)] abstract[/if] class [c.name.toUpperFirst()/][for (supe
     /**
      * the [p.name/] attribute.
      */
-    private List<[p.type.name/]> [p.name/];
+    private List<[p.type.name/]> [p.name.toLowerFirst()/];
 [else]
     /**
      * the [p.name/] attribute.
@@ -31,15 +31,15 @@ public[if (c.isAbstract)] abstract[/if] class [c.name.toUpperFirst()/][for (supe
      * @return the [p.name/].
      */
     public [if (p.upper = -1 or p.upper > 1)]List<[p.type.name/]>[else][p.type.name/][/if] get[p.name.toUpperFirst()/]() {
-        return this.[p.name/];
+        return this.[p.name.toLowerFirst()/];
     }
 
     /**
      * the [p.name/] setter.
      * @param p_[p.name/] the [p.name/] to set.
      */
-    public void set[p.name.toUpperFirst()/]([if (p.upper = -1 or p.upper > 1)]List<[p.type.name/]>[else][p.type.name/][/if] p_[p.name/]) {
-        this.[p.name/] = p_[p.name/];
+    public void set[p.name.toUpperFirst()/]([if (p.upper = -1 or p.upper > 1)]List<[p.type.name/]>[else][p.type.name/][/if] [p.name.toLowerFirst()/]) {
+        this.[p.name.toLowerFirst()/] = p_[p.name.toLowerFirst()/];
     }
 [/for]
 [for (p : Property | c.getAssociations().memberEnd)]

@@ -20,21 +20,21 @@ public class OrdemDeServico {
      */
     private List<Servico> Servicos;
     /**
-     * the Codigo attribute.
+     * the DataEntradaVeiculo attribute.
      */
-    private Integer Codigo;
-    /**
-     * the Veiculo attribute.
-     */
-    private Veiculo Veiculo;
+    private DateTime DataEntradaVeiculo;
     /**
      * the Pecas attribute.
      */
     private List<Peca> Pecas;
     /**
-     * the DataEntradaVeiculo attribute.
+     * the Codigo attribute.
      */
-    private DateTime DataEntradaVeiculo;
+    private int Codigo;
+    /**
+     * the Veiculo attribute.
+     */
+    private Veiculo Veiculo;
     /**
      * the Funcionario getter.
      * @return the Funcionario.
@@ -66,34 +66,19 @@ public class OrdemDeServico {
         this.Servicos = p_Servicos;
     }
     /**
-     * the Codigo getter.
-     * @return the Codigo.
+     * the DataEntradaVeiculo getter.
+     * @return the DataEntradaVeiculo.
      */
-    public Integer getCodigo() {
-        return this.Codigo;
+    public DateTime getDataEntradaVeiculo() {
+        return this.DataEntradaVeiculo;
     }
 
     /**
-     * the Codigo setter.
-     * @param p_Codigo the Codigo to set.
+     * the DataEntradaVeiculo setter.
+     * @param p_DataEntradaVeiculo the DataEntradaVeiculo to set.
      */
-    public void setCodigo(Integer p_Codigo) {
-        this.Codigo = p_Codigo;
-    }
-    /**
-     * the Veiculo getter.
-     * @return the Veiculo.
-     */
-    public Veiculo getVeiculo() {
-        return this.Veiculo;
-    }
-
-    /**
-     * the Veiculo setter.
-     * @param p_Veiculo the Veiculo to set.
-     */
-    public void setVeiculo(Veiculo p_Veiculo) {
-        this.Veiculo = p_Veiculo;
+    public void setDataEntradaVeiculo(DateTime p_DataEntradaVeiculo) {
+        this.DataEntradaVeiculo = p_DataEntradaVeiculo;
     }
     /**
      * the Pecas getter.
@@ -111,18 +96,33 @@ public class OrdemDeServico {
         this.Pecas = p_Pecas;
     }
     /**
-     * the DataEntradaVeiculo getter.
-     * @return the DataEntradaVeiculo.
+     * the Codigo getter.
+     * @return the Codigo.
      */
-    public DateTime getDataEntradaVeiculo() {
-        return this.DataEntradaVeiculo;
+    public int getCodigo() {
+        return this.Codigo;
     }
 
     /**
-     * the DataEntradaVeiculo setter.
-     * @param p_DataEntradaVeiculo the DataEntradaVeiculo to set.
+     * the Codigo setter.
+     * @param p_Codigo the Codigo to set.
      */
-    public void setDataEntradaVeiculo(DateTime p_DataEntradaVeiculo) {
-        this.DataEntradaVeiculo = p_DataEntradaVeiculo;
+    public void setCodigo(int p_Codigo) {
+        this.Codigo = p_Codigo;
+    }
+    /**
+     * the Veiculo getter.
+     * @return the Veiculo.
+     */
+    public Veiculo getVeiculo() {
+        return this.Veiculo;
+    }
+
+    /**
+     * the Veiculo setter.
+     * @param p_Veiculo the Veiculo to set.
+     */
+    public void setVeiculo(Veiculo p_Veiculo) {
+        this.Veiculo = p_Veiculo;
     }
 }
