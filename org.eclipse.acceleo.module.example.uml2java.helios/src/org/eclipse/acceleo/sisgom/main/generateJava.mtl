@@ -8,10 +8,10 @@
   author <a href="mailto:stephane.bouchet@obeo.fr">Stephane Bouchet</a>
 [/comment]
 [module generateJava('http://www.eclipse.org/uml2/3.0.0/UML')/]
-[import org::eclipse::acceleo::module::example::uml2java::helios::common::common/]
-[import org::eclipse::acceleo::module::example::uml2java::helios::common::interfaceBody/]
-[import org::eclipse::acceleo::module::example::uml2java::helios::common::classBody/]
-[import org::eclipse::acceleo::module::example::uml2java::helios::common::enumerationBody /]
+[import org::eclipse::acceleo::sisgom::common::common/]
+[import org::eclipse::acceleo::sisgom::common::interfaceBody/]
+[import org::eclipse::acceleo::sisgom::common::classBody/]
+[import org::eclipse::acceleo::sisgom::common::enumerationBody /]
 
 [template public generateClass(c : Class)]
 [comment @main /]
