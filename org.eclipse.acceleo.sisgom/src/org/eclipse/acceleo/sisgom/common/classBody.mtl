@@ -38,7 +38,7 @@ public[if (c.isAbstract)] abstract[/if] class [c.name.toUpperFirst()/][for (supe
      * the [p.name/] setter.
      * @param p_[p.name/] the [p.name/] to set.
      */
-    public void set[p.name.toUpperFirst()/]([if (p.upper = -1 or p.upper > 1)]List<[p.type.name/]>[else][p.type.name/][/if] [p.name.toLowerFirst()/]) {
+    public void set[p.name.toUpperFirst()/]([if (p.upper = -1 or p.upper > 1)]List<[p.type.name/]>[else][p.type.name/][/if] p_[p.name.toLowerFirst()/]) {
         this.[p.name.toLowerFirst()/] = p_[p.name.toLowerFirst()/];
     }
 [/for]

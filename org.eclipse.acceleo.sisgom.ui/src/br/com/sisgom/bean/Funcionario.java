@@ -12,37 +12,82 @@ import java.util.*;
  */
 public class Funcionario extends  PessoaBase {
     /**
+     * the contato attribute.
+     */
+    private List<Contato> contato;
+    /**
+     * the nome attribute.
+     */
+    private String nome;
+    /**
+     * the endereco attribute.
+     */
+    private List<Endereco> endereco;
+    /**
      * the servico attribute.
      */
     private Servico servico;
     /**
-     * the Id attribute.
+     * the matricula attribute.
      */
-    private int Id;
+    private int matricula;
     /**
-     * the TipoPessoa attribute.
+     * the cPFouCNPJ attribute.
      */
-    private TipoPessao TipoPessoa;
+    private String cPFouCNPJ;
     /**
-     * the CPFouCNPJ attribute.
+     * the id attribute.
      */
-    private String CPFouCNPJ;
+    private int id;
     /**
-     * the Nome attribute.
+     * the tipoPessoa attribute.
      */
-    private String Nome;
+    private TipoPessao tipoPessoa;
     /**
-     * the Matricula attribute.
+     * the Contato getter.
+     * @return the Contato.
      */
-    private int Matricula;
+    public List<Contato> getContato() {
+        return this.contato;
+    }
+
     /**
-     * the Contato attribute.
+     * the Contato setter.
+     * @param p_Contato the Contato to set.
      */
-    private List<Contato> contato;
+    public void setContato(List<Contato> p_contato) {
+        this.contato = p_contato;
+    }
     /**
-     * the Endereco attribute.
+     * the Nome getter.
+     * @return the Nome.
      */
-    private List<Endereco> endereco;
+    public String getNome() {
+        return this.nome;
+    }
+
+    /**
+     * the Nome setter.
+     * @param p_Nome the Nome to set.
+     */
+    public void setNome(String p_nome) {
+        this.nome = p_nome;
+    }
+    /**
+     * the Endereco getter.
+     * @return the Endereco.
+     */
+    public List<Endereco> getEndereco() {
+        return this.endereco;
+    }
+
+    /**
+     * the Endereco setter.
+     * @param p_Endereco the Endereco to set.
+     */
+    public void setEndereco(List<Endereco> p_endereco) {
+        this.endereco = p_endereco;
+    }
     /**
      * the servico getter.
      * @return the servico.
@@ -55,8 +100,38 @@ public class Funcionario extends  PessoaBase {
      * the servico setter.
      * @param p_servico the servico to set.
      */
-    public void setServico(Servico servico) {
+    public void setServico(Servico p_servico) {
         this.servico = p_servico;
+    }
+    /**
+     * the Matricula getter.
+     * @return the Matricula.
+     */
+    public int getMatricula() {
+        return this.matricula;
+    }
+
+    /**
+     * the Matricula setter.
+     * @param p_Matricula the Matricula to set.
+     */
+    public void setMatricula(int p_matricula) {
+        this.matricula = p_matricula;
+    }
+    /**
+     * the CPFouCNPJ getter.
+     * @return the CPFouCNPJ.
+     */
+    public String getCPFouCNPJ() {
+        return this.cPFouCNPJ;
+    }
+
+    /**
+     * the CPFouCNPJ setter.
+     * @param p_CPFouCNPJ the CPFouCNPJ to set.
+     */
+    public void setCPFouCNPJ(String p_cPFouCNPJ) {
+        this.cPFouCNPJ = p_cPFouCNPJ;
     }
     /**
      * the Id getter.
@@ -70,7 +145,7 @@ public class Funcionario extends  PessoaBase {
      * the Id setter.
      * @param p_Id the Id to set.
      */
-    public void setId(int id) {
+    public void setId(int p_id) {
         this.id = p_id;
     }
     /**
@@ -85,83 +160,8 @@ public class Funcionario extends  PessoaBase {
      * the TipoPessoa setter.
      * @param p_TipoPessoa the TipoPessoa to set.
      */
-    public void setTipoPessoa(TipoPessao tipoPessoa) {
+    public void setTipoPessoa(TipoPessao p_tipoPessoa) {
         this.tipoPessoa = p_tipoPessoa;
-    }
-    /**
-     * the CPFouCNPJ getter.
-     * @return the CPFouCNPJ.
-     */
-    public String getCPFouCNPJ() {
-        return this.cPFouCNPJ;
-    }
-
-    /**
-     * the CPFouCNPJ setter.
-     * @param p_CPFouCNPJ the CPFouCNPJ to set.
-     */
-    public void setCPFouCNPJ(String cPFouCNPJ) {
-        this.cPFouCNPJ = p_cPFouCNPJ;
-    }
-    /**
-     * the Nome getter.
-     * @return the Nome.
-     */
-    public String getNome() {
-        return this.nome;
-    }
-
-    /**
-     * the Nome setter.
-     * @param p_Nome the Nome to set.
-     */
-    public void setNome(String nome) {
-        this.nome = p_nome;
-    }
-    /**
-     * the Matricula getter.
-     * @return the Matricula.
-     */
-    public int getMatricula() {
-        return this.matricula;
-    }
-
-    /**
-     * the Matricula setter.
-     * @param p_Matricula the Matricula to set.
-     */
-    public void setMatricula(int matricula) {
-        this.matricula = p_matricula;
-    }
-    /**
-     * the Contato getter.
-     * @return the Contato.
-     */
-    public List<Contato> getContato() {
-        return this.contato;
-    }
-
-    /**
-     * the Contato setter.
-     * @param p_Contato the Contato to set.
-     */
-    public void setContato(List<Contato> contato) {
-        this.contato = p_contato;
-    }
-    /**
-     * the Endereco getter.
-     * @return the Endereco.
-     */
-    public List<Endereco> getEndereco() {
-        return this.endereco;
-    }
-
-    /**
-     * the Endereco setter.
-     * @param p_Endereco the Endereco to set.
-     */
-    public void setEndereco(List<Endereco> endereco) {
-        this.endereco = p_endereco;
     }
     /**
      * the Funcionario attribute.

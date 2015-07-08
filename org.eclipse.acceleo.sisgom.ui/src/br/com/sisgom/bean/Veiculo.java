@@ -12,21 +12,21 @@ import java.util.*;
  */
 public class Veiculo {
     /**
-     * the Cor attribute.
+     * the cor attribute.
      */
-    private String Cor;
+    private String cor;
     /**
-     * the Chassis attribute.
+     * the chassis attribute.
      */
-    private String Chassis;
+    private String chassis;
     /**
-     * the Modelo attribute.
+     * the modelo attribute.
      */
-    private String Modelo;
+    private String modelo;
     /**
-     * the Ano attribute.
+     * the ano attribute.
      */
-    private int Ano;
+    private int ano;
     /**
      * the Cor getter.
      * @return the Cor.
@@ -39,7 +39,7 @@ public class Veiculo {
      * the Cor setter.
      * @param p_Cor the Cor to set.
      */
-    public void setCor(String cor) {
+    public void setCor(String p_cor) {
         this.cor = p_cor;
     }
     /**
@@ -54,7 +54,7 @@ public class Veiculo {
      * the Chassis setter.
      * @param p_Chassis the Chassis to set.
      */
-    public void setChassis(String chassis) {
+    public void setChassis(String p_chassis) {
         this.chassis = p_chassis;
     }
     /**
@@ -69,7 +69,7 @@ public class Veiculo {
      * the Modelo setter.
      * @param p_Modelo the Modelo to set.
      */
-    public void setModelo(String modelo) {
+    public void setModelo(String p_modelo) {
         this.modelo = p_modelo;
     }
     /**
@@ -84,7 +84,7 @@ public class Veiculo {
      * the Ano setter.
      * @param p_Ano the Ano to set.
      */
-    public void setAno(int ano) {
+    public void setAno(int p_ano) {
         this.ano = p_ano;
     }
     /**

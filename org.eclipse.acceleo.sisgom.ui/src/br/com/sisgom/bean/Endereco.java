@@ -12,21 +12,21 @@ import java.util.*;
  */
 public class Endereco {
     /**
-     * the Rua attribute.
+     * the rua attribute.
      */
-    private String Rua;
+    private String rua;
     /**
-     * the Estado attribute.
+     * the estado attribute.
      */
-    private String Estado;
+    private String estado;
     /**
-     * the Id attribute.
+     * the id attribute.
      */
-    private int Id;
+    private int id;
     /**
-     * the Cidade attribute.
+     * the cidade attribute.
      */
-    private String Cidade;
+    private String cidade;
     /**
      * the Rua getter.
      * @return the Rua.
@@ -39,7 +39,7 @@ public class Endereco {
      * the Rua setter.
      * @param p_Rua the Rua to set.
      */
-    public void setRua(String rua) {
+    public void setRua(String p_rua) {
         this.rua = p_rua;
     }
     /**
@@ -54,7 +54,7 @@ public class Endereco {
      * the Estado setter.
      * @param p_Estado the Estado to set.
      */
-    public void setEstado(String estado) {
+    public void setEstado(String p_estado) {
         this.estado = p_estado;
     }
     /**
@@ -69,7 +69,7 @@ public class Endereco {
      * the Id setter.
      * @param p_Id the Id to set.
      */
-    public void setId(int id) {
+    public void setId(int p_id) {
         this.id = p_id;
     }
     /**
@@ -84,7 +84,7 @@ public class Endereco {
      * the Cidade setter.
      * @param p_Cidade the Cidade to set.
      */
-    public void setCidade(String cidade) {
+    public void setCidade(String p_cidade) {
         this.cidade = p_cidade;
     }
     /**

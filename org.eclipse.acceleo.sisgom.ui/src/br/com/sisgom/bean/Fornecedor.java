@@ -12,47 +12,47 @@ import java.util.*;
  */
 public class Fornecedor extends  PessoaBase {
     /**
-     * the Id attribute.
-     */
-    private int Id;
-    /**
-     * the InscricaoEstadual attribute.
-     */
-    private String InscricaoEstadual;
-    /**
-     * the TipoPessoa attribute.
-     */
-    private TipoPessao TipoPessoa;
-    /**
-     * the CPFouCNPJ attribute.
-     */
-    private String CPFouCNPJ;
-    /**
-     * the Nome attribute.
-     */
-    private String Nome;
-    /**
-     * the Contato attribute.
+     * the contato attribute.
      */
     private List<Contato> contato;
     /**
-     * the Endereco attribute.
+     * the inscricaoEstadual attribute.
+     */
+    private String inscricaoEstadual;
+    /**
+     * the nome attribute.
+     */
+    private String nome;
+    /**
+     * the endereco attribute.
      */
     private List<Endereco> endereco;
     /**
-     * the Id getter.
-     * @return the Id.
+     * the cPFouCNPJ attribute.
      */
-    public int getId() {
-        return this.id;
+    private String cPFouCNPJ;
+    /**
+     * the id attribute.
+     */
+    private int id;
+    /**
+     * the tipoPessoa attribute.
+     */
+    private TipoPessao tipoPessoa;
+    /**
+     * the Contato getter.
+     * @return the Contato.
+     */
+    public List<Contato> getContato() {
+        return this.contato;
     }
 
     /**
-     * the Id setter.
-     * @param p_Id the Id to set.
+     * the Contato setter.
+     * @param p_Contato the Contato to set.
      */
-    public void setId(int id) {
-        this.id = p_id;
+    public void setContato(List<Contato> p_contato) {
+        this.contato = p_contato;
     }
     /**
      * the InscricaoEstadual getter.
@@ -66,38 +66,8 @@ public class Fornecedor extends  PessoaBase {
      * the InscricaoEstadual setter.
      * @param p_InscricaoEstadual the InscricaoEstadual to set.
      */
-    public void setInscricaoEstadual(String inscricaoEstadual) {
+    public void setInscricaoEstadual(String p_inscricaoEstadual) {
         this.inscricaoEstadual = p_inscricaoEstadual;
-    }
-    /**
-     * the TipoPessoa getter.
-     * @return the TipoPessoa.
-     */
-    public TipoPessao getTipoPessoa() {
-        return this.tipoPessoa;
-    }
-
-    /**
-     * the TipoPessoa setter.
-     * @param p_TipoPessoa the TipoPessoa to set.
-     */
-    public void setTipoPessoa(TipoPessao tipoPessoa) {
-        this.tipoPessoa = p_tipoPessoa;
-    }
-    /**
-     * the CPFouCNPJ getter.
-     * @return the CPFouCNPJ.
-     */
-    public String getCPFouCNPJ() {
-        return this.cPFouCNPJ;
-    }
-
-    /**
-     * the CPFouCNPJ setter.
-     * @param p_CPFouCNPJ the CPFouCNPJ to set.
-     */
-    public void setCPFouCNPJ(String cPFouCNPJ) {
-        this.cPFouCNPJ = p_cPFouCNPJ;
     }
     /**
      * the Nome getter.
@@ -111,23 +81,8 @@ public class Fornecedor extends  PessoaBase {
      * the Nome setter.
      * @param p_Nome the Nome to set.
      */
-    public void setNome(String nome) {
+    public void setNome(String p_nome) {
         this.nome = p_nome;
-    }
-    /**
-     * the Contato getter.
-     * @return the Contato.
-     */
-    public List<Contato> getContato() {
-        return this.contato;
-    }
-
-    /**
-     * the Contato setter.
-     * @param p_Contato the Contato to set.
-     */
-    public void setContato(List<Contato> contato) {
-        this.contato = p_contato;
     }
     /**
      * the Endereco getter.
@@ -141,7 +96,52 @@ public class Fornecedor extends  PessoaBase {
      * the Endereco setter.
      * @param p_Endereco the Endereco to set.
      */
-    public void setEndereco(List<Endereco> endereco) {
+    public void setEndereco(List<Endereco> p_endereco) {
         this.endereco = p_endereco;
+    }
+    /**
+     * the CPFouCNPJ getter.
+     * @return the CPFouCNPJ.
+     */
+    public String getCPFouCNPJ() {
+        return this.cPFouCNPJ;
+    }
+
+    /**
+     * the CPFouCNPJ setter.
+     * @param p_CPFouCNPJ the CPFouCNPJ to set.
+     */
+    public void setCPFouCNPJ(String p_cPFouCNPJ) {
+        this.cPFouCNPJ = p_cPFouCNPJ;
+    }
+    /**
+     * the Id getter.
+     * @return the Id.
+     */
+    public int getId() {
+        return this.id;
+    }
+
+    /**
+     * the Id setter.
+     * @param p_Id the Id to set.
+     */
+    public void setId(int p_id) {
+        this.id = p_id;
+    }
+    /**
+     * the TipoPessoa getter.
+     * @return the TipoPessoa.
+     */
+    public TipoPessao getTipoPessoa() {
+        return this.tipoPessoa;
+    }
+
+    /**
+     * the TipoPessoa setter.
+     * @param p_TipoPessoa the TipoPessoa to set.
+     */
+    public void setTipoPessoa(TipoPessao p_tipoPessoa) {
+        this.tipoPessoa = p_tipoPessoa;
     }
 }

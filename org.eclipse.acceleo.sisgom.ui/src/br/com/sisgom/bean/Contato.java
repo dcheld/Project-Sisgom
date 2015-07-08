@@ -12,31 +12,31 @@ import java.util.*;
  */
 public class Contato {
     /**
-     * the Telefone attribute.
+     * the id attribute.
      */
-    private String Telefone;
+    private int id;
     /**
-     * the EMail attribute.
+     * the eMail attribute.
      */
-    private String EMail;
+    private String eMail;
     /**
-     * the Id attribute.
+     * the telefone attribute.
      */
-    private int Id;
+    private String telefone;
     /**
-     * the Telefone getter.
-     * @return the Telefone.
+     * the Id getter.
+     * @return the Id.
      */
-    public String getTelefone() {
-        return this.telefone;
+    public int getId() {
+        return this.id;
     }
 
     /**
-     * the Telefone setter.
-     * @param p_Telefone the Telefone to set.
+     * the Id setter.
+     * @param p_Id the Id to set.
      */
-    public void setTelefone(String telefone) {
-        this.telefone = p_telefone;
+    public void setId(int p_id) {
+        this.id = p_id;
     }
     /**
      * the EMail getter.
@@ -50,23 +50,23 @@ public class Contato {
      * the EMail setter.
      * @param p_EMail the EMail to set.
      */
-    public void setEMail(String eMail) {
+    public void setEMail(String p_eMail) {
         this.eMail = p_eMail;
     }
     /**
-     * the Id getter.
-     * @return the Id.
+     * the Telefone getter.
+     * @return the Telefone.
      */
-    public int getId() {
-        return this.id;
+    public String getTelefone() {
+        return this.telefone;
     }
 
     /**
-     * the Id setter.
-     * @param p_Id the Id to set.
+     * the Telefone setter.
+     * @param p_Telefone the Telefone to set.
      */
-    public void setId(int id) {
-        this.id = p_id;
+    public void setTelefone(String p_telefone) {
+        this.telefone = p_telefone;
     }
     /**
      * the Contato attribute.

@@ -12,21 +12,21 @@ import java.util.*;
  */
 public class Peca {
     /**
-     * the Nome attribute.
+     * the nome attribute.
      */
-    private String Nome;
+    private String nome;
     /**
-     * the ValorCompra attribute.
+     * the valorVenda attribute.
      */
-    private double ValorCompra;
+    private double valorVenda;
     /**
-     * the ValorVenda attribute.
+     * the codigo attribute.
      */
-    private double ValorVenda;
+    private String codigo;
     /**
-     * the Codigo attribute.
+     * the valorCompra attribute.
      */
-    private String Codigo;
+    private double valorCompra;
     /**
      * the Nome getter.
      * @return the Nome.
@@ -39,23 +39,8 @@ public class Peca {
      * the Nome setter.
      * @param p_Nome the Nome to set.
      */
-    public void setNome(String nome) {
+    public void setNome(String p_nome) {
         this.nome = p_nome;
-    }
-    /**
-     * the ValorCompra getter.
-     * @return the ValorCompra.
-     */
-    public double getValorCompra() {
-        return this.valorCompra;
-    }
-
-    /**
-     * the ValorCompra setter.
-     * @param p_ValorCompra the ValorCompra to set.
-     */
-    public void setValorCompra(double valorCompra) {
-        this.valorCompra = p_valorCompra;
     }
     /**
      * the ValorVenda getter.
@@ -69,7 +54,7 @@ public class Peca {
      * the ValorVenda setter.
      * @param p_ValorVenda the ValorVenda to set.
      */
-    public void setValorVenda(double valorVenda) {
+    public void setValorVenda(double p_valorVenda) {
         this.valorVenda = p_valorVenda;
     }
     /**
@@ -84,8 +69,23 @@ public class Peca {
      * the Codigo setter.
      * @param p_Codigo the Codigo to set.
      */
-    public void setCodigo(String codigo) {
+    public void setCodigo(String p_codigo) {
         this.codigo = p_codigo;
+    }
+    /**
+     * the ValorCompra getter.
+     * @return the ValorCompra.
+     */
+    public double getValorCompra() {
+        return this.valorCompra;
+    }
+
+    /**
+     * the ValorCompra setter.
+     * @param p_ValorCompra the ValorCompra to set.
+     */
+    public void setValorCompra(double p_valorCompra) {
+        this.valorCompra = p_valorCompra;
     }
     /**
      * the Pecas attribute.
