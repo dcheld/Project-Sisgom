@@ -12,50 +12,35 @@ import java.util.*;
  */
 public class Endereco {
     /**
-     * the Rua attribute.
+     * the cidade attribute.
      */
-    private String Rua;
+    private String cidade;
     /**
-     * the Estado attribute.
+     * the id attribute.
      */
-    private String Estado;
+    private int id;
     /**
-     * the Id attribute.
+     * the estado attribute.
      */
-    private int Id;
+    private String estado;
     /**
-     * the Cidade attribute.
+     * the rua attribute.
      */
-    private String Cidade;
+    private String rua;
     /**
-     * the Rua getter.
-     * @return the Rua.
+     * the Cidade getter.
+     * @return the Cidade.
      */
-    public String getRua() {
-        return this.rua;
+    public String getCidade() {
+        return this.cidade;
     }
 
     /**
-     * the Rua setter.
-     * @param p_Rua the Rua to set.
+     * the Cidade setter.
+     * @param p_Cidade the Cidade to set.
      */
-    public void setRua(String rua) {
-        this.rua = p_rua;
-    }
-    /**
-     * the Estado getter.
-     * @return the Estado.
-     */
-    public String getEstado() {
-        return this.estado;
-    }
-
-    /**
-     * the Estado setter.
-     * @param p_Estado the Estado to set.
-     */
-    public void setEstado(String estado) {
-        this.estado = p_estado;
+    public void setCidade(String p_cidade) {
+        this.cidade = p_cidade;
     }
     /**
      * the Id getter.
@@ -69,26 +54,41 @@ public class Endereco {
      * the Id setter.
      * @param p_Id the Id to set.
      */
-    public void setId(int id) {
+    public void setId(int p_id) {
         this.id = p_id;
     }
     /**
-     * the Cidade getter.
-     * @return the Cidade.
+     * the Estado getter.
+     * @return the Estado.
      */
-    public String getCidade() {
-        return this.cidade;
+    public String getEstado() {
+        return this.estado;
     }
 
     /**
-     * the Cidade setter.
-     * @param p_Cidade the Cidade to set.
+     * the Estado setter.
+     * @param p_Estado the Estado to set.
      */
-    public void setCidade(String cidade) {
-        this.cidade = p_cidade;
+    public void setEstado(String p_estado) {
+        this.estado = p_estado;
+    }
+    /**
+     * the Rua getter.
+     * @return the Rua.
+     */
+    public String getRua() {
+        return this.rua;
+    }
+
+    /**
+     * the Rua setter.
+     * @param p_Rua the Rua to set.
+     */
+    public void setRua(String p_rua) {
+        this.rua = p_rua;
     }
     /**
      * the Endereco attribute.
      */
-    private List<Endereco> Endereco;
+    private List<Endereco> endereco;
 }

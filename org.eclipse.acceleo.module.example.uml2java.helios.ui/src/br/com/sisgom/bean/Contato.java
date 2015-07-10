@@ -12,17 +12,17 @@ import java.util.*;
  */
 public class Contato {
     /**
-     * the Telefone attribute.
+     * the telefone attribute.
      */
     private String telefone;
     /**
-     * the EMail attribute.
+     * the id attribute.
      */
-    private String EMail;
+    private int id;
     /**
-     * the Id attribute.
+     * the eMail attribute.
      */
-    private int Id;
+    private String eMail;
     /**
      * the Telefone getter.
      * @return the Telefone.
@@ -35,23 +35,8 @@ public class Contato {
      * the Telefone setter.
      * @param p_Telefone the Telefone to set.
      */
-    public void setTelefone(String telefone) {
+    public void setTelefone(String p_telefone) {
         this.telefone = p_telefone;
-    }
-    /**
-     * the EMail getter.
-     * @return the EMail.
-     */
-    public String getEMail() {
-        return this.eMail;
-    }
-
-    /**
-     * the EMail setter.
-     * @param p_EMail the EMail to set.
-     */
-    public void setEMail(String eMail) {
-        this.eMail = p_eMail;
     }
     /**
      * the Id getter.
@@ -65,11 +50,26 @@ public class Contato {
      * the Id setter.
      * @param p_Id the Id to set.
      */
-    public void setId(int id) {
+    public void setId(int p_id) {
         this.id = p_id;
+    }
+    /**
+     * the EMail getter.
+     * @return the EMail.
+     */
+    public String getEMail() {
+        return this.eMail;
+    }
+
+    /**
+     * the EMail setter.
+     * @param p_EMail the EMail to set.
+     */
+    public void setEMail(String p_eMail) {
+        this.eMail = p_eMail;
     }
     /**
      * the Contato attribute.
      */
-    private List<Contato> Contato;
+    private List<Contato> contato;
 }

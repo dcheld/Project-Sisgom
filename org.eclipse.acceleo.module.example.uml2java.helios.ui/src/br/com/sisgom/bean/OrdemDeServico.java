@@ -12,43 +12,43 @@ import java.util.*;
  */
 public class OrdemDeServico {
     /**
-     * the Funcionario attribute.
-     */
-    private List<Funcionario> funcionario;
-    /**
-     * the Servicos attribute.
-     */
-    private List<Servico> servicos;
-    /**
-     * the DataEntradaVeiculo attribute.
-     */
-    private DateTime DataEntradaVeiculo;
-    /**
-     * the Codigo attribute.
-     */
-    private int Codigo;
-    /**
-     * the Pecas attribute.
+     * the pecas attribute.
      */
     private List<Peca> pecas;
     /**
-     * the Veiculo attribute.
+     * the servicos attribute.
      */
-    private Veiculo Veiculo;
+    private List<Servico> servicos;
     /**
-     * the Funcionario getter.
-     * @return the Funcionario.
+     * the dataEntradaVeiculo attribute.
      */
-    public List<Funcionario> getFuncionario() {
-        return this.funcionario;
+    private DateTime dataEntradaVeiculo;
+    /**
+     * the codigo attribute.
+     */
+    private int codigo;
+    /**
+     * the veiculo attribute.
+     */
+    private Veiculo veiculo;
+    /**
+     * the funcionario attribute.
+     */
+    private List<Funcionario> funcionario;
+    /**
+     * the Pecas getter.
+     * @return the Pecas.
+     */
+    public List<Peca> getPecas() {
+        return this.pecas;
     }
 
     /**
-     * the Funcionario setter.
-     * @param p_Funcionario the Funcionario to set.
+     * the Pecas setter.
+     * @param p_Pecas the Pecas to set.
      */
-    public void setFuncionario(List<Funcionario> funcionario) {
-        this.funcionario = p_funcionario;
+    public void setPecas(List<Peca> p_pecas) {
+        this.pecas = p_pecas;
     }
     /**
      * the Servicos getter.
@@ -62,7 +62,7 @@ public class OrdemDeServico {
      * the Servicos setter.
      * @param p_Servicos the Servicos to set.
      */
-    public void setServicos(List<Servico> servicos) {
+    public void setServicos(List<Servico> p_servicos) {
         this.servicos = p_servicos;
     }
     /**
@@ -77,7 +77,7 @@ public class OrdemDeServico {
      * the DataEntradaVeiculo setter.
      * @param p_DataEntradaVeiculo the DataEntradaVeiculo to set.
      */
-    public void setDataEntradaVeiculo(DateTime dataEntradaVeiculo) {
+    public void setDataEntradaVeiculo(DateTime p_dataEntradaVeiculo) {
         this.dataEntradaVeiculo = p_dataEntradaVeiculo;
     }
     /**
@@ -92,23 +92,8 @@ public class OrdemDeServico {
      * the Codigo setter.
      * @param p_Codigo the Codigo to set.
      */
-    public void setCodigo(int codigo) {
+    public void setCodigo(int p_codigo) {
         this.codigo = p_codigo;
-    }
-    /**
-     * the Pecas getter.
-     * @return the Pecas.
-     */
-    public List<Peca> getPecas() {
-        return this.pecas;
-    }
-
-    /**
-     * the Pecas setter.
-     * @param p_Pecas the Pecas to set.
-     */
-    public void setPecas(List<Peca> pecas) {
-        this.pecas = p_pecas;
     }
     /**
      * the Veiculo getter.
@@ -122,7 +107,22 @@ public class OrdemDeServico {
      * the Veiculo setter.
      * @param p_Veiculo the Veiculo to set.
      */
-    public void setVeiculo(Veiculo veiculo) {
+    public void setVeiculo(Veiculo p_veiculo) {
         this.veiculo = p_veiculo;
+    }
+    /**
+     * the Funcionario getter.
+     * @return the Funcionario.
+     */
+    public List<Funcionario> getFuncionario() {
+        return this.funcionario;
+    }
+
+    /**
+     * the Funcionario setter.
+     * @param p_Funcionario the Funcionario to set.
+     */
+    public void setFuncionario(List<Funcionario> p_funcionario) {
+        this.funcionario = p_funcionario;
     }
 }

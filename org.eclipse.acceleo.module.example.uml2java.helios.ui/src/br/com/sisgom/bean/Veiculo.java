@@ -12,36 +12,21 @@ import java.util.*;
  */
 public class Veiculo {
     /**
-     * the Cor attribute.
+     * the chassis attribute.
      */
-    private String Cor;
+    private String chassis;
     /**
-     * the Chassis attribute.
+     * the cor attribute.
      */
-    private String Chassis;
+    private String cor;
     /**
-     * the Modelo attribute.
+     * the modelo attribute.
      */
-    private String Modelo;
+    private String modelo;
     /**
-     * the Ano attribute.
+     * the ano attribute.
      */
-    private int Ano;
-    /**
-     * the Cor getter.
-     * @return the Cor.
-     */
-    public String getCor() {
-        return this.cor;
-    }
-
-    /**
-     * the Cor setter.
-     * @param p_Cor the Cor to set.
-     */
-    public void setCor(String cor) {
-        this.cor = p_cor;
-    }
+    private int ano;
     /**
      * the Chassis getter.
      * @return the Chassis.
@@ -54,8 +39,23 @@ public class Veiculo {
      * the Chassis setter.
      * @param p_Chassis the Chassis to set.
      */
-    public void setChassis(String chassis) {
+    public void setChassis(String p_chassis) {
         this.chassis = p_chassis;
+    }
+    /**
+     * the Cor getter.
+     * @return the Cor.
+     */
+    public String getCor() {
+        return this.cor;
+    }
+
+    /**
+     * the Cor setter.
+     * @param p_Cor the Cor to set.
+     */
+    public void setCor(String p_cor) {
+        this.cor = p_cor;
     }
     /**
      * the Modelo getter.
@@ -69,7 +69,7 @@ public class Veiculo {
      * the Modelo setter.
      * @param p_Modelo the Modelo to set.
      */
-    public void setModelo(String modelo) {
+    public void setModelo(String p_modelo) {
         this.modelo = p_modelo;
     }
     /**
@@ -84,11 +84,11 @@ public class Veiculo {
      * the Ano setter.
      * @param p_Ano the Ano to set.
      */
-    public void setAno(int ano) {
+    public void setAno(int p_ano) {
         this.ano = p_ano;
     }
     /**
      * the Veiculo attribute.
      */
-    private Veiculo Veiculo;
+    private Veiculo veiculo;
 }

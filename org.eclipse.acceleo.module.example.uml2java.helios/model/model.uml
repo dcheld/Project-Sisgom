@@ -9,6 +9,9 @@
   <packageImport xmi:id="_jxau8CUJEeWuBbyONNObeA">
     <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#_0"/>
   </packageImport>
+  <packageImport xmi:id="_KOCvUCaeEeWfrouWjVriFg">
+    <importedPackage xmi:type="uml:Profile" href="perfilUml.profile.uml#_sYDcYCQ_EeWmf4ktFsVfrw"/>
+  </packageImport>
   <packagedElement xmi:type="uml:Package" xmi:id="_P9degBgfEeW7vfzmVg3A1Q" name="br.com.sisgom.bean">
     <packagedElement xmi:type="uml:Class" xmi:id="_DfFSQBgfEeW7vfzmVg3A1Q" name="PessoaBase" isLeaf="true" isAbstract="true">
       <ownedAttribute xmi:id="_nEnAQBgfEeW7vfzmVg3A1Q" name="Id">

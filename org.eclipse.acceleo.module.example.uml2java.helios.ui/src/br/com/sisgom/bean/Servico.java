@@ -12,40 +12,25 @@ import java.util.*;
  */
 public class Servico {
     /**
-     * the TipoCobranca attribute.
+     * the nome attribute.
      */
-    private TipoCobrancao TipoCobranca;
+    private String nome;
     /**
-     * the Nome attribute.
+     * the tipoCobranca attribute.
      */
-    private String Nome;
+    private TipoCobrancao tipoCobranca;
     /**
-     * the Valor attribute.
+     * the funcionario attribute.
      */
-    private double Valor;
+    private Funcionario funcionario;
     /**
-     * the Funcionario attribute.
+     * the codigo attribute.
      */
-    private Funcionario Funcionario;
+    private int codigo;
     /**
-     * the Codigo attribute.
+     * the valor attribute.
      */
-    private int Codigo;
-    /**
-     * the TipoCobranca getter.
-     * @return the TipoCobranca.
-     */
-    public TipoCobrancao getTipoCobranca() {
-        return this.tipoCobranca;
-    }
-
-    /**
-     * the TipoCobranca setter.
-     * @param p_TipoCobranca the TipoCobranca to set.
-     */
-    public void setTipoCobranca(TipoCobrancao tipoCobranca) {
-        this.tipoCobranca = p_tipoCobranca;
-    }
+    private double valor;
     /**
      * the Nome getter.
      * @return the Nome.
@@ -58,23 +43,23 @@ public class Servico {
      * the Nome setter.
      * @param p_Nome the Nome to set.
      */
-    public void setNome(String nome) {
+    public void setNome(String p_nome) {
         this.nome = p_nome;
     }
     /**
-     * the Valor getter.
-     * @return the Valor.
+     * the TipoCobranca getter.
+     * @return the TipoCobranca.
      */
-    public double getValor() {
-        return this.valor;
+    public TipoCobrancao getTipoCobranca() {
+        return this.tipoCobranca;
     }
 
     /**
-     * the Valor setter.
-     * @param p_Valor the Valor to set.
+     * the TipoCobranca setter.
+     * @param p_TipoCobranca the TipoCobranca to set.
      */
-    public void setValor(double valor) {
-        this.valor = p_valor;
+    public void setTipoCobranca(TipoCobrancao p_tipoCobranca) {
+        this.tipoCobranca = p_tipoCobranca;
     }
     /**
      * the Funcionario getter.
@@ -88,7 +73,7 @@ public class Servico {
      * the Funcionario setter.
      * @param p_Funcionario the Funcionario to set.
      */
-    public void setFuncionario(Funcionario funcionario) {
+    public void setFuncionario(Funcionario p_funcionario) {
         this.funcionario = p_funcionario;
     }
     /**
@@ -103,11 +88,26 @@ public class Servico {
      * the Codigo setter.
      * @param p_Codigo the Codigo to set.
      */
-    public void setCodigo(int codigo) {
+    public void setCodigo(int p_codigo) {
         this.codigo = p_codigo;
+    }
+    /**
+     * the Valor getter.
+     * @return the Valor.
+     */
+    public double getValor() {
+        return this.valor;
+    }
+
+    /**
+     * the Valor setter.
+     * @param p_Valor the Valor to set.
+     */
+    public void setValor(double p_valor) {
+        this.valor = p_valor;
     }
     /**
      * the Servicos attribute.
      */
-    private List<Servico> Servicos;
+    private List<Servico> servicos;
 }
