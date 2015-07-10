@@ -14,7 +14,7 @@ public class Contato {
     /**
      * the Telefone attribute.
      */
-    private String Telefone;
+    private String telefone;
     /**
      * the EMail attribute.
      */
