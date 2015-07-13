@@ -11,50 +11,48 @@ import java.util.*;
  * @author MTL
  */
 public class Cliente extends  PessoaBase {
-	
-	
-    /**
-     * the contatos attribute.
-     */
-    private List<Contato> contatos;
-    /**
-     * the tipoPessoa attribute.
-     */
-    private TipoPessao tipoPessoa;
-    /**
-     * the cPFouCNPJ attribute.
-     */
-    private String cPFouCNPJ;
-    /**
-     * the enderecos attribute.
-     */
-    private List<Endereco> enderecos;
     /**
      * the veiculos attribute.
      */
     private List<Veiculo> veiculos;
     /**
+     * the tipoPessoa attribute.
+     */
+    private TipoPessao tipoPessoa;
+    /**
      * the id attribute.
      */
     private int id;
+    /**
+     * the cPFouCNPJ attribute.
+     */
+    private String cPFouCNPJ;
     /**
      * the nome attribute.
      */
     private String nome;
     /**
-     * the Contatos getter.
-     * @return the Contatos.
+     * the contatos attribute.
      */
-    public List<Contato> getContatos() {
-        return this.contatos;
+    private List<Contato> contatos;
+    /**
+     * the enderecos attribute.
+     */
+    private List<Endereco> enderecos;
+    /**
+     * the Veiculos getter.
+     * @return the Veiculos.
+     */
+    public List<Veiculo> getVeiculos() {
+        return this.veiculos;
     }
 
     /**
-     * the Contatos setter.
-     * @param p_Contatos the Contatos to set.
+     * the Veiculos setter.
+     * @param p_Veiculos the Veiculos to set.
      */
-    public void setContatos(List<Contato> p_contatos) {
-        this.contatos = p_contatos;
+    public void setVeiculos(List<Veiculo> p_veiculos) {
+        this.veiculos = p_veiculos;
     }
     /**
      * the TipoPessoa getter.
@@ -72,51 +70,6 @@ public class Cliente extends  PessoaBase {
         this.tipoPessoa = p_tipoPessoa;
     }
     /**
-     * the CPFouCNPJ getter.
-     * @return the CPFouCNPJ.
-     */
-    public String getCPFouCNPJ() {
-        return this.cPFouCNPJ;
-    }
-
-    /**
-     * the CPFouCNPJ setter.
-     * @param p_CPFouCNPJ the CPFouCNPJ to set.
-     */
-    public void setCPFouCNPJ(String p_cPFouCNPJ) {
-        this.cPFouCNPJ = p_cPFouCNPJ;
-    }
-    /**
-     * the Enderecos getter.
-     * @return the Enderecos.
-     */
-    public List<Endereco> getEnderecos() {
-        return this.enderecos;
-    }
-
-    /**
-     * the Enderecos setter.
-     * @param p_Enderecos the Enderecos to set.
-     */
-    public void setEnderecos(List<Endereco> p_enderecos) {
-        this.enderecos = p_enderecos;
-    }
-    /**
-     * the Veiculos getter.
-     * @return the Veiculos.
-     */
-    public List<Veiculo> getVeiculos() {
-        return this.veiculos;
-    }
-
-    /**
-     * the Veiculos setter.
-     * @param p_Veiculos the Veiculos to set.
-     */
-    public void setVeiculos(List<Veiculo> p_veiculos) {
-        this.veiculos = p_veiculos;
-    }
-    /**
      * the Id getter.
      * @return the Id.
      */
@@ -130,6 +83,21 @@ public class Cliente extends  PessoaBase {
      */
     public void setId(int p_id) {
         this.id = p_id;
+    }
+    /**
+     * the CPFouCNPJ getter.
+     * @return the CPFouCNPJ.
+     */
+    public String getCPFouCNPJ() {
+        return this.cPFouCNPJ;
+    }
+
+    /**
+     * the CPFouCNPJ setter.
+     * @param p_CPFouCNPJ the CPFouCNPJ to set.
+     */
+    public void setCPFouCNPJ(String p_cPFouCNPJ) {
+        this.cPFouCNPJ = p_cPFouCNPJ;
     }
     /**
      * the Nome getter.
@@ -147,19 +115,49 @@ public class Cliente extends  PessoaBase {
         this.nome = p_nome;
     }
     /**
-     * the Cliente attribute.
+     * the Contatos getter.
+     * @return the Contatos.
      */
-    private Cliente Cliente;
+    public List<Contato> getContatos() {
+        return this.contatos;
+    }
+
+    /**
+     * the Contatos setter.
+     * @param p_Contatos the Contatos to set.
+     */
+    public void setContatos(List<Contato> p_contatos) {
+        this.contatos = p_contatos;
+    }
+    /**
+     * the Enderecos getter.
+     * @return the Enderecos.
+     */
+    public List<Endereco> getEnderecos() {
+        return this.enderecos;
+    }
+
+    /**
+     * the Enderecos setter.
+     * @param p_Enderecos the Enderecos to set.
+     */
+    public void setEnderecos(List<Endereco> p_enderecos) {
+        this.enderecos = p_enderecos;
+    }
     /**
      * the Veiculos attribute.
      */
     private List<Veiculo> Veiculos;
     /**
+     * the OrdemDeServico attribute.
+     */
+    private OrdemDeServico OrdemDeServico;
+    /**
      * the Cliente attribute.
      */
     private Cliente Cliente;
     /**
-     * the OrdemDeServico attribute.
+     * the Cliente attribute.
      */
-    private OrdemDeServico OrdemDeServico;
+    private Cliente Cliente;
 }

@@ -16,6 +16,10 @@ public class Endereco {
      */
     private String cidade;
     /**
+     * the rua attribute.
+     */
+    private String rua;
+    /**
      * the id attribute.
      */
     private int id;
@@ -23,10 +27,6 @@ public class Endereco {
      * the estado attribute.
      */
     private String estado;
-    /**
-     * the rua attribute.
-     */
-    private String rua;
     /**
      * the Cidade getter.
      * @return the Cidade.
@@ -41,6 +41,21 @@ public class Endereco {
      */
     public void setCidade(String p_cidade) {
         this.cidade = p_cidade;
+    }
+    /**
+     * the Rua getter.
+     * @return the Rua.
+     */
+    public String getRua() {
+        return this.rua;
+    }
+
+    /**
+     * the Rua setter.
+     * @param p_Rua the Rua to set.
+     */
+    public void setRua(String p_rua) {
+        this.rua = p_rua;
     }
     /**
      * the Id getter.
@@ -73,26 +88,11 @@ public class Endereco {
         this.estado = p_estado;
     }
     /**
-     * the Rua getter.
-     * @return the Rua.
+     * the PessoaBase attribute.
      */
-    public String getRua() {
-        return this.rua;
-    }
-
-    /**
-     * the Rua setter.
-     * @param p_Rua the Rua to set.
-     */
-    public void setRua(String p_rua) {
-        this.rua = p_rua;
-    }
+    private PessoaBase PessoaBase;
     /**
      * the Enderecos attribute.
      */
     private List<Endereco> Enderecos;
-    /**
-     * the PessoaBase attribute.
-     */
-    private PessoaBase PessoaBase;
 }

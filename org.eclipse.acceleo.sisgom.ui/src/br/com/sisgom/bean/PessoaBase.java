@@ -12,44 +12,29 @@ import java.util.*;
  */
 public abstract class PessoaBase {
     /**
-     * the contatos attribute.
-     */
-    private List<Contato> contatos;
-    /**
      * the tipoPessoa attribute.
      */
     private TipoPessao tipoPessoa;
-    /**
-     * the cPFouCNPJ attribute.
-     */
-    private String cPFouCNPJ;
-    /**
-     * the enderecos attribute.
-     */
-    private List<Endereco> enderecos;
     /**
      * the id attribute.
      */
     private int id;
     /**
+     * the cPFouCNPJ attribute.
+     */
+    private String cPFouCNPJ;
+    /**
      * the nome attribute.
      */
     private String nome;
     /**
-     * the Contatos getter.
-     * @return the Contatos.
+     * the contatos attribute.
      */
-    public List<Contato> getContatos() {
-        return this.contatos;
-    }
-
+    private List<Contato> contatos;
     /**
-     * the Contatos setter.
-     * @param p_Contatos the Contatos to set.
+     * the enderecos attribute.
      */
-    public void setContatos(List<Contato> p_contatos) {
-        this.contatos = p_contatos;
-    }
+    private List<Endereco> enderecos;
     /**
      * the TipoPessoa getter.
      * @return the TipoPessoa.
@@ -64,36 +49,6 @@ public abstract class PessoaBase {
      */
     public void setTipoPessoa(TipoPessao p_tipoPessoa) {
         this.tipoPessoa = p_tipoPessoa;
-    }
-    /**
-     * the CPFouCNPJ getter.
-     * @return the CPFouCNPJ.
-     */
-    public String getCPFouCNPJ() {
-        return this.cPFouCNPJ;
-    }
-
-    /**
-     * the CPFouCNPJ setter.
-     * @param p_CPFouCNPJ the CPFouCNPJ to set.
-     */
-    public void setCPFouCNPJ(String p_cPFouCNPJ) {
-        this.cPFouCNPJ = p_cPFouCNPJ;
-    }
-    /**
-     * the Enderecos getter.
-     * @return the Enderecos.
-     */
-    public List<Endereco> getEnderecos() {
-        return this.enderecos;
-    }
-
-    /**
-     * the Enderecos setter.
-     * @param p_Enderecos the Enderecos to set.
-     */
-    public void setEnderecos(List<Endereco> p_enderecos) {
-        this.enderecos = p_enderecos;
     }
     /**
      * the Id getter.
@@ -111,6 +66,21 @@ public abstract class PessoaBase {
         this.id = p_id;
     }
     /**
+     * the CPFouCNPJ getter.
+     * @return the CPFouCNPJ.
+     */
+    public String getCPFouCNPJ() {
+        return this.cPFouCNPJ;
+    }
+
+    /**
+     * the CPFouCNPJ setter.
+     * @param p_CPFouCNPJ the CPFouCNPJ to set.
+     */
+    public void setCPFouCNPJ(String p_cPFouCNPJ) {
+        this.cPFouCNPJ = p_cPFouCNPJ;
+    }
+    /**
      * the Nome getter.
      * @return the Nome.
      */
@@ -126,6 +96,40 @@ public abstract class PessoaBase {
         this.nome = p_nome;
     }
     /**
+     * the Contatos getter.
+     * @return the Contatos.
+     */
+    public List<Contato> getContatos() {
+        return this.contatos;
+    }
+
+    /**
+     * the Contatos setter.
+     * @param p_Contatos the Contatos to set.
+     */
+    public void setContatos(List<Contato> p_contatos) {
+        this.contatos = p_contatos;
+    }
+    /**
+     * the Enderecos getter.
+     * @return the Enderecos.
+     */
+    public List<Endereco> getEnderecos() {
+        return this.enderecos;
+    }
+
+    /**
+     * the Enderecos setter.
+     * @param p_Enderecos the Enderecos to set.
+     */
+    public void setEnderecos(List<Endereco> p_enderecos) {
+        this.enderecos = p_enderecos;
+    }
+    /**
+     * the PessoaBase attribute.
+     */
+    private PessoaBase PessoaBase;
+    /**
      * the PessoaBase attribute.
      */
     private PessoaBase PessoaBase;
@@ -137,8 +141,4 @@ public abstract class PessoaBase {
      * the Enderecos attribute.
      */
     private List<Endereco> Enderecos;
-    /**
-     * the PessoaBase attribute.
-     */
-    private PessoaBase PessoaBase;
 }
