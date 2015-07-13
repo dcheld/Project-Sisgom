@@ -11,6 +11,8 @@ import java.util.*;
  * @author MTL
  */
 public class Cliente extends  PessoaBase {
+	
+	
     /**
      * the contatos attribute.
      */
