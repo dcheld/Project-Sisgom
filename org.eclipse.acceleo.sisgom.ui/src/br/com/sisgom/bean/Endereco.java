@@ -10,39 +10,23 @@ import java.util.*;
 /**
  * @author MTL
  */
-
 public class Endereco {
-    /**
-     * the rua attribute.
-     */
-    private String rua;
     /**
      * the cidade attribute.
      */
     private String cidade;
     /**
-     * the estado attribute.
-     */
-    private String estado;
-    /**
      * the id attribute.
      */
     private int id;
     /**
-     * the Rua getter.
-     * @return the Rua.
+     * the estado attribute.
      */
-    public String getRua() {
-        return this.rua;
-    }
-
+    private String estado;
     /**
-     * the Rua setter.
-     * @param p_Rua the Rua to set.
+     * the rua attribute.
      */
-    public void setRua(String p_rua) {
-        this.rua = p_rua;
-    }
+    private String rua;
     /**
      * the Cidade getter.
      * @return the Cidade.
@@ -57,21 +41,6 @@ public class Endereco {
      */
     public void setCidade(String p_cidade) {
         this.cidade = p_cidade;
-    }
-    /**
-     * the Estado getter.
-     * @return the Estado.
-     */
-    public String getEstado() {
-        return this.estado;
-    }
-
-    /**
-     * the Estado setter.
-     * @param p_Estado the Estado to set.
-     */
-    public void setEstado(String p_estado) {
-        this.estado = p_estado;
     }
     /**
      * the Id getter.
@@ -89,6 +58,36 @@ public class Endereco {
         this.id = p_id;
     }
     /**
+     * the Estado getter.
+     * @return the Estado.
+     */
+    public String getEstado() {
+        return this.estado;
+    }
+
+    /**
+     * the Estado setter.
+     * @param p_Estado the Estado to set.
+     */
+    public void setEstado(String p_estado) {
+        this.estado = p_estado;
+    }
+    /**
+     * the Rua getter.
+     * @return the Rua.
+     */
+    public String getRua() {
+        return this.rua;
+    }
+
+    /**
+     * the Rua setter.
+     * @param p_Rua the Rua to set.
+     */
+    public void setRua(String p_rua) {
+        this.rua = p_rua;
+    }
+    /**
      * the Enderecos attribute.
      */
     private List<Endereco> Enderecos;
@@ -97,4 +96,3 @@ public class Endereco {
      */
     private PessoaBase PessoaBase;
 }
-

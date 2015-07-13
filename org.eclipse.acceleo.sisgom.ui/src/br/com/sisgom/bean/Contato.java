@@ -10,20 +10,19 @@ import java.util.*;
 /**
  * @author MTL
  */
-
 public class Contato {
     /**
      * the eMail attribute.
      */
     private String eMail;
     /**
-     * the id attribute.
-     */
-    private int id;
-    /**
      * the telefone attribute.
      */
     private String telefone;
+    /**
+     * the id attribute.
+     */
+    private int id;
     /**
      * the EMail getter.
      * @return the EMail.
@@ -38,21 +37,6 @@ public class Contato {
      */
     public void setEMail(String p_eMail) {
         this.eMail = p_eMail;
-    }
-    /**
-     * the Id getter.
-     * @return the Id.
-     */
-    public int getId() {
-        return this.id;
-    }
-
-    /**
-     * the Id setter.
-     * @param p_Id the Id to set.
-     */
-    public void setId(int p_id) {
-        this.id = p_id;
     }
     /**
      * the Telefone getter.
@@ -70,12 +54,26 @@ public class Contato {
         this.telefone = p_telefone;
     }
     /**
-     * the Contatos attribute.
+     * the Id getter.
+     * @return the Id.
      */
-    private List<Contato> Contatos;
+    public int getId() {
+        return this.id;
+    }
+
+    /**
+     * the Id setter.
+     * @param p_Id the Id to set.
+     */
+    public void setId(int p_id) {
+        this.id = p_id;
+    }
     /**
      * the PessoaBase attribute.
      */
     private PessoaBase PessoaBase;
+    /**
+     * the Contatos attribute.
+     */
+    private List<Contato> Contatos;
 }
-

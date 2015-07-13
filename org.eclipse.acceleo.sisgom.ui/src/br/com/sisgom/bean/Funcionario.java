@@ -10,28 +10,23 @@ import java.util.*;
 /**
  * @author MTL
  */
-
 public class Funcionario extends  PessoaBase {
     /**
-     * the servico attribute.
+     * the contatos attribute.
      */
-    private Servico servico;
-    /**
-     * the id attribute.
-     */
-    private int id;
+    private List<Contato> contatos;
     /**
      * the matricula attribute.
      */
     private int matricula;
     /**
-     * the nome attribute.
-     */
-    private String nome;
-    /**
      * the tipoPessoa attribute.
      */
     private TipoPessao tipoPessoa;
+    /**
+     * the servico attribute.
+     */
+    private Servico servico;
     /**
      * the cPFouCNPJ attribute.
      */
@@ -41,38 +36,27 @@ public class Funcionario extends  PessoaBase {
      */
     private List<Endereco> enderecos;
     /**
-     * the contatos attribute.
+     * the id attribute.
      */
-    private List<Contato> contatos;
+    private int id;
     /**
-     * the servico getter.
-     * @return the servico.
+     * the nome attribute.
      */
-    public Servico getServico() {
-        return this.servico;
+    private String nome;
+    /**
+     * the Contatos getter.
+     * @return the Contatos.
+     */
+    public List<Contato> getContatos() {
+        return this.contatos;
     }
 
     /**
-     * the servico setter.
-     * @param p_servico the servico to set.
+     * the Contatos setter.
+     * @param p_Contatos the Contatos to set.
      */
-    public void setServico(Servico p_servico) {
-        this.servico = p_servico;
-    }
-    /**
-     * the Id getter.
-     * @return the Id.
-     */
-    public int getId() {
-        return this.id;
-    }
-
-    /**
-     * the Id setter.
-     * @param p_Id the Id to set.
-     */
-    public void setId(int p_id) {
-        this.id = p_id;
+    public void setContatos(List<Contato> p_contatos) {
+        this.contatos = p_contatos;
     }
     /**
      * the Matricula getter.
@@ -90,21 +74,6 @@ public class Funcionario extends  PessoaBase {
         this.matricula = p_matricula;
     }
     /**
-     * the Nome getter.
-     * @return the Nome.
-     */
-    public String getNome() {
-        return this.nome;
-    }
-
-    /**
-     * the Nome setter.
-     * @param p_Nome the Nome to set.
-     */
-    public void setNome(String p_nome) {
-        this.nome = p_nome;
-    }
-    /**
      * the TipoPessoa getter.
      * @return the TipoPessoa.
      */
@@ -118,6 +87,21 @@ public class Funcionario extends  PessoaBase {
      */
     public void setTipoPessoa(TipoPessao p_tipoPessoa) {
         this.tipoPessoa = p_tipoPessoa;
+    }
+    /**
+     * the servico getter.
+     * @return the servico.
+     */
+    public Servico getServico() {
+        return this.servico;
+    }
+
+    /**
+     * the servico setter.
+     * @param p_servico the servico to set.
+     */
+    public void setServico(Servico p_servico) {
+        this.servico = p_servico;
     }
     /**
      * the CPFouCNPJ getter.
@@ -150,19 +134,34 @@ public class Funcionario extends  PessoaBase {
         this.enderecos = p_enderecos;
     }
     /**
-     * the Contatos getter.
-     * @return the Contatos.
+     * the Id getter.
+     * @return the Id.
      */
-    public List<Contato> getContatos() {
-        return this.contatos;
+    public int getId() {
+        return this.id;
     }
 
     /**
-     * the Contatos setter.
-     * @param p_Contatos the Contatos to set.
+     * the Id setter.
+     * @param p_Id the Id to set.
      */
-    public void setContatos(List<Contato> p_contatos) {
-        this.contatos = p_contatos;
+    public void setId(int p_id) {
+        this.id = p_id;
+    }
+    /**
+     * the Nome getter.
+     * @return the Nome.
+     */
+    public String getNome() {
+        return this.nome;
+    }
+
+    /**
+     * the Nome setter.
+     * @param p_Nome the Nome to set.
+     */
+    public void setNome(String p_nome) {
+        this.nome = p_nome;
     }
     /**
      * the Funcionarios attribute.
@@ -173,4 +172,3 @@ public class Funcionario extends  PessoaBase {
      */
     private List<OrdemDeServico> OrdemDeServico;
 }
-

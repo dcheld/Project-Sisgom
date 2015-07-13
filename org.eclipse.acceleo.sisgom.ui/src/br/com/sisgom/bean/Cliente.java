@@ -10,20 +10,11 @@ import java.util.*;
 /**
  * @author MTL
  */
-
 public class Cliente extends  PessoaBase {
     /**
-     * the veiculos attribute.
+     * the contatos attribute.
      */
-    private List<Veiculo> veiculos;
-    /**
-     * the id attribute.
-     */
-    private int id;
-    /**
-     * the nome attribute.
-     */
-    private String nome;
+    private List<Contato> contatos;
     /**
      * the tipoPessoa attribute.
      */
@@ -37,53 +28,31 @@ public class Cliente extends  PessoaBase {
      */
     private List<Endereco> enderecos;
     /**
-     * the contatos attribute.
+     * the veiculos attribute.
      */
-    private List<Contato> contatos;
+    private List<Veiculo> veiculos;
     /**
-     * the Veiculos getter.
-     * @return the Veiculos.
+     * the id attribute.
      */
-    public List<Veiculo> getVeiculos() {
-        return this.veiculos;
+    private int id;
+    /**
+     * the nome attribute.
+     */
+    private String nome;
+    /**
+     * the Contatos getter.
+     * @return the Contatos.
+     */
+    public List<Contato> getContatos() {
+        return this.contatos;
     }
 
     /**
-     * the Veiculos setter.
-     * @param p_Veiculos the Veiculos to set.
+     * the Contatos setter.
+     * @param p_Contatos the Contatos to set.
      */
-    public void setVeiculos(List<Veiculo> p_veiculos) {
-        this.veiculos = p_veiculos;
-    }
-    /**
-     * the Id getter.
-     * @return the Id.
-     */
-    public int getId() {
-        return this.id;
-    }
-
-    /**
-     * the Id setter.
-     * @param p_Id the Id to set.
-     */
-    public void setId(int p_id) {
-        this.id = p_id;
-    }
-    /**
-     * the Nome getter.
-     * @return the Nome.
-     */
-    public String getNome() {
-        return this.nome;
-    }
-
-    /**
-     * the Nome setter.
-     * @param p_Nome the Nome to set.
-     */
-    public void setNome(String p_nome) {
-        this.nome = p_nome;
+    public void setContatos(List<Contato> p_contatos) {
+        this.contatos = p_contatos;
     }
     /**
      * the TipoPessoa getter.
@@ -131,35 +100,64 @@ public class Cliente extends  PessoaBase {
         this.enderecos = p_enderecos;
     }
     /**
-     * the Contatos getter.
-     * @return the Contatos.
+     * the Veiculos getter.
+     * @return the Veiculos.
      */
-    public List<Contato> getContatos() {
-        return this.contatos;
+    public List<Veiculo> getVeiculos() {
+        return this.veiculos;
     }
 
     /**
-     * the Contatos setter.
-     * @param p_Contatos the Contatos to set.
+     * the Veiculos setter.
+     * @param p_Veiculos the Veiculos to set.
      */
-    public void setContatos(List<Contato> p_contatos) {
-        this.contatos = p_contatos;
+    public void setVeiculos(List<Veiculo> p_veiculos) {
+        this.veiculos = p_veiculos;
     }
+    /**
+     * the Id getter.
+     * @return the Id.
+     */
+    public int getId() {
+        return this.id;
+    }
+
+    /**
+     * the Id setter.
+     * @param p_Id the Id to set.
+     */
+    public void setId(int p_id) {
+        this.id = p_id;
+    }
+    /**
+     * the Nome getter.
+     * @return the Nome.
+     */
+    public String getNome() {
+        return this.nome;
+    }
+
+    /**
+     * the Nome setter.
+     * @param p_Nome the Nome to set.
+     */
+    public void setNome(String p_nome) {
+        this.nome = p_nome;
+    }
+    /**
+     * the Cliente attribute.
+     */
+    private Cliente Cliente;
     /**
      * the Veiculos attribute.
      */
     private List<Veiculo> Veiculos;
     /**
+     * the Cliente attribute.
+     */
+    private Cliente Cliente;
+    /**
      * the OrdemDeServico attribute.
      */
     private OrdemDeServico OrdemDeServico;
-    /**
-     * the Cliente attribute.
-     */
-    private Cliente Cliente;
-    /**
-     * the Cliente attribute.
-     */
-    private Cliente Cliente;
 }
-

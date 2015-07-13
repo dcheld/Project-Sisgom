@@ -10,16 +10,11 @@ import java.util.*;
 /**
  * @author MTL
  */
-
 public abstract class PessoaBase {
     /**
-     * the id attribute.
+     * the contatos attribute.
      */
-    private int id;
-    /**
-     * the nome attribute.
-     */
-    private String nome;
+    private List<Contato> contatos;
     /**
      * the tipoPessoa attribute.
      */
@@ -33,38 +28,27 @@ public abstract class PessoaBase {
      */
     private List<Endereco> enderecos;
     /**
-     * the contatos attribute.
+     * the id attribute.
      */
-    private List<Contato> contatos;
+    private int id;
     /**
-     * the Id getter.
-     * @return the Id.
+     * the nome attribute.
      */
-    public int getId() {
-        return this.id;
+    private String nome;
+    /**
+     * the Contatos getter.
+     * @return the Contatos.
+     */
+    public List<Contato> getContatos() {
+        return this.contatos;
     }
 
     /**
-     * the Id setter.
-     * @param p_Id the Id to set.
+     * the Contatos setter.
+     * @param p_Contatos the Contatos to set.
      */
-    public void setId(int p_id) {
-        this.id = p_id;
-    }
-    /**
-     * the Nome getter.
-     * @return the Nome.
-     */
-    public String getNome() {
-        return this.nome;
-    }
-
-    /**
-     * the Nome setter.
-     * @param p_Nome the Nome to set.
-     */
-    public void setNome(String p_nome) {
-        this.nome = p_nome;
+    public void setContatos(List<Contato> p_contatos) {
+        this.contatos = p_contatos;
     }
     /**
      * the TipoPessoa getter.
@@ -112,24 +96,35 @@ public abstract class PessoaBase {
         this.enderecos = p_enderecos;
     }
     /**
-     * the Contatos getter.
-     * @return the Contatos.
+     * the Id getter.
+     * @return the Id.
      */
-    public List<Contato> getContatos() {
-        return this.contatos;
+    public int getId() {
+        return this.id;
     }
 
     /**
-     * the Contatos setter.
-     * @param p_Contatos the Contatos to set.
+     * the Id setter.
+     * @param p_Id the Id to set.
      */
-    public void setContatos(List<Contato> p_contatos) {
-        this.contatos = p_contatos;
+    public void setId(int p_id) {
+        this.id = p_id;
     }
     /**
-     * the Enderecos attribute.
+     * the Nome getter.
+     * @return the Nome.
      */
-    private List<Endereco> Enderecos;
+    public String getNome() {
+        return this.nome;
+    }
+
+    /**
+     * the Nome setter.
+     * @param p_Nome the Nome to set.
+     */
+    public void setNome(String p_nome) {
+        this.nome = p_nome;
+    }
     /**
      * the PessoaBase attribute.
      */
@@ -139,8 +134,11 @@ public abstract class PessoaBase {
      */
     private List<Contato> Contatos;
     /**
+     * the Enderecos attribute.
+     */
+    private List<Endereco> Enderecos;
+    /**
      * the PessoaBase attribute.
      */
     private PessoaBase PessoaBase;
 }
-
