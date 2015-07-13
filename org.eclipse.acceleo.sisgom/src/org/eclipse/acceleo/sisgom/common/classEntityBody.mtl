@@ -7,10 +7,10 @@
   
   author <a href="mailto:stephane.bouchet@obeo.fr">Stephane Bouchet</a>
 [/comment]
-[module classBody('http://www.eclipse.org/uml2/3.0.0/UML')/]
+[module classEntityBody('http://www.eclipse.org/uml2/3.0.0/UML')/]
 [import org::eclipse::acceleo::sisgom::common::common/]
 
-[template public generateClassBody(c : Class)]
+[template public generateEntityClassBody(c : Class)]
 public[if (c.isAbstract)] abstract[/if] class [c.name.toUpperFirst()/][for (superC : Class | c.superClass) before(' extends ') separator(',')] [superC.name/][/for][for (interf : Interface | c.getImplementedInterfaces()) before(' implements ') separator(',')] [interf.name/][/for] {
 [for (p : Property | c.getAllAttributes())]
 [if (p.upper = -1 or p.upper > 1)]

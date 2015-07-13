@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project default="generateJava" name="org.eclipse.acceleo.sisgom">
-    <property name="ECLIPSE_HOME" value="../../../../../eclipse/eclipse"/>
-    <property name="ECLIPSE_WORKSPACE" value="../.."/>
+    <property name="ECLIPSE_HOME" value="../../../../../../eclipse/eclipse"/>
+    <property name="ECLIPSE_WORKSPACE" value="../../../../workspace_indigo"/>
 
     <!-- The classpath with only the dependencies used by the project -->
     <path id="org.eclipse.acceleo.sisgom.libraryclasspath">

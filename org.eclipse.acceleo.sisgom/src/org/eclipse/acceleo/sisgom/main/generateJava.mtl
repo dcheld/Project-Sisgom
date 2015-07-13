@@ -10,8 +10,9 @@
 [module generateJava('http://www.eclipse.org/uml2/3.0.0/UML')/]
 [import org::eclipse::acceleo::sisgom::common::common/]
 [import org::eclipse::acceleo::sisgom::common::interfaceBody/]
-[import org::eclipse::acceleo::sisgom::common::classBody/]
+[import org::eclipse::acceleo::sisgom::common::classEntityBody/]
 [import org::eclipse::acceleo::sisgom::common::enumerationBody /]
+[import org::eclipse::acceleo::sisgom::common::uml2services /]
 
 [template public generateClass(c : Class)]
 [comment @main /]
@@ -22,7 +23,9 @@
 [importBlock()/]
 
 [_commentBodyBlock()/]
-[c.generateClassBody()/]
+[if(c.hasStereotype('Entity'))]
+[c.generateEntityClassBody()/]
+[/if]
 [/file]
 [/template]
 
