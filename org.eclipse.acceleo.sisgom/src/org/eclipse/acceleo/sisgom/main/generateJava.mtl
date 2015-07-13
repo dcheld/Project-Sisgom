@@ -23,9 +23,9 @@
 [importBlock()/]
 
 [_commentBodyBlock()/]
-[if(c.hasStereotype('Entity'))]
+
 [c.generateEntityClassBody()/]
-[/if]
+
 [/file]
 [/template]
 
