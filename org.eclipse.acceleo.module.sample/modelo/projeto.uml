@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Ecore="http://www.eclipse.org/uml2/schemas/Ecore/5" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xsi:schemaLocation="http://www.eclipse.org/uml2/schemas/Ecore/5 pathmap://UML_PROFILES/Ecore.profile.uml#_z1OFcHjqEdy8S4Cr8Rc_NA">
+  <uml:Model xmi:id="_Lot_QC8-EeWfaviHp79XkQ" name="sisgom" URI="http://www.example.org/projeto_teste">
+    <packagedElement xmi:type="uml:Package" xmi:id="_Lot_QS8-EeWfaviHp79XkQ" name="bean" URI="bean">
+      <packagedElement xmi:type="uml:Class" xmi:id="_Lot_Qi8-EeWfaviHp79XkQ" name="PessoaBase" isAbstract="true">
+        <ownedAttribute xmi:id="_Lot_Qy8-EeWfaviHp79XkQ" name="Id" visibility="public" isOrdered="true" isID="true">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/XMLPrimitiveTypes.library.uml#Int"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Lot_RC8-EeWfaviHp79XkQ"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_Lot_RS8-EeWfaviHp79XkQ" name="Nome" visibility="public" isOrdered="true" isUnique="false">
+          <ownedComment xmi:id="_Lot_Ri8-EeWfaviHp79XkQ" annotatedElement="_Lot_RS8-EeWfaviHp79XkQ">
+            <body>Nome da pessoa</body>
+          </ownedComment>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Lot_Ry8-EeWfaviHp79XkQ"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_Lot_SC8-EeWfaviHp79XkQ" name="CPFouCNPJ" visibility="public" isOrdered="true">
+          <ownedComment xmi:id="_Lot_SS8-EeWfaviHp79XkQ" annotatedElement="_Lot_SC8-EeWfaviHp79XkQ">
+            <body>Numero do CPF ou do CNPJ</body>
+          </ownedComment>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Lot_Si8-EeWfaviHp79XkQ"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_Lot_Sy8-EeWfaviHp79XkQ" name="Contatos" type="_Lot_US8-EeWfaviHp79XkQ" isOrdered="true" aggregation="composite" association="_Lot_XC8-EeWfaviHp79XkQ">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Lot_TC8-EeWfaviHp79XkQ"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Lot_TS8-EeWfaviHp79XkQ" value="*"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_Lot_Ti8-EeWfaviHp79XkQ" name="Enderecos" type="_Lot_Xi8-EeWfaviHp79XkQ" isOrdered="true" aggregation="composite" association="_Lot_aS8-EeWfaviHp79XkQ">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Lot_Ty8-EeWfaviHp79XkQ"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Lot_UC8-EeWfaviHp79XkQ" value="*"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_Lot_US8-EeWfaviHp79XkQ" name="Contato">
+        <ownedComment xmi:id="_Lot_Ui8-EeWfaviHp79XkQ" annotatedElement="_Lot_US8-EeWfaviHp79XkQ">
+          <body>Informações de contato</body>
+        </ownedComment>
+        <ownedAttribute xmi:id="_Lot_Uy8-EeWfaviHp79XkQ" name="Id" visibility="public" isOrdered="true" isID="true">
+          <ownedComment xmi:id="_Lot_VC8-EeWfaviHp79XkQ" annotatedElement="_Lot_Uy8-EeWfaviHp79XkQ">
+            <body>Identificador Contato</body>
+          </ownedComment>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/XMLPrimitiveTypes.library.uml#Int"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Lot_VS8-EeWfaviHp79XkQ"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_Lot_Vi8-EeWfaviHp79XkQ" name="Telefone" visibility="public" isUnique="false">
+          <ownedComment xmi:id="_Lot_Vy8-EeWfaviHp79XkQ" annotatedElement="_Lot_Vi8-EeWfaviHp79XkQ">
+            <body>Telefone de contato</body>
+          </ownedComment>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/XMLPrimitiveTypes.library.uml#String"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Lot_WC8-EeWfaviHp79XkQ"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_Lot_WS8-EeWfaviHp79XkQ" name="Email" visibility="public" isUnique="false">
+          <ownedComment xmi:id="_Lot_Wi8-EeWfaviHp79XkQ" annotatedElement="_Lot_WS8-EeWfaviHp79XkQ">
+            <body>E-mail de contato</body>
+          </ownedComment>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/XMLPrimitiveTypes.library.uml#String"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Lot_Wy8-EeWfaviHp79XkQ"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="_Lot_XC8-EeWfaviHp79XkQ" memberEnd="_Lot_Sy8-EeWfaviHp79XkQ _Lot_XS8-EeWfaviHp79XkQ">
+        <ownedEnd xmi:id="_Lot_XS8-EeWfaviHp79XkQ" type="_Lot_Qi8-EeWfaviHp79XkQ" association="_Lot_XC8-EeWfaviHp79XkQ"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_Lot_Xi8-EeWfaviHp79XkQ" name="Endereco">
+        <ownedAttribute xmi:id="_Lot_Xy8-EeWfaviHp79XkQ" name="Id" visibility="public" isOrdered="true" isID="true">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/XMLPrimitiveTypes.library.uml#Int"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Lot_YC8-EeWfaviHp79XkQ"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_Lot_YS8-EeWfaviHp79XkQ" name="Rua" visibility="public" isUnique="false">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/XMLPrimitiveTypes.library.uml#String"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Lot_Yi8-EeWfaviHp79XkQ"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_Lot_Yy8-EeWfaviHp79XkQ" name="Estado" visibility="public" isUnique="false">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/XMLPrimitiveTypes.library.uml#String"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Lot_ZC8-EeWfaviHp79XkQ"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_Lot_ZS8-EeWfaviHp79XkQ" name="Cidade" visibility="public" isUnique="false">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/XMLPrimitiveTypes.library.uml#String"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Lot_Zi8-EeWfaviHp79XkQ"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_Lot_Zy8-EeWfaviHp79XkQ" name="CEP" visibility="public" isOrdered="true" isUnique="false">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/XMLPrimitiveTypes.library.uml#String"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Lot_aC8-EeWfaviHp79XkQ"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="_Lot_aS8-EeWfaviHp79XkQ" memberEnd="_Lot_Ti8-EeWfaviHp79XkQ _Lot_ai8-EeWfaviHp79XkQ">
+        <ownedEnd xmi:id="_Lot_ai8-EeWfaviHp79XkQ" type="_Lot_Qi8-EeWfaviHp79XkQ" association="_Lot_aS8-EeWfaviHp79XkQ"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_Lot_ay8-EeWfaviHp79XkQ" name="Fornecedor">
+        <generalization xmi:id="_Lot_bC8-EeWfaviHp79XkQ" general="_Lot_Qi8-EeWfaviHp79XkQ"/>
+        <ownedAttribute xmi:id="_Lot_bS8-EeWfaviHp79XkQ" name="InscricaoEstadual" visibility="public" isOrdered="true">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/XMLPrimitiveTypes.library.uml#String"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Lot_bi8-EeWfaviHp79XkQ"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_Lot_by8-EeWfaviHp79XkQ" name="Funcionario">
+        <generalization xmi:id="_Lot_cC8-EeWfaviHp79XkQ" general="_Lot_Qi8-EeWfaviHp79XkQ"/>
+        <ownedAttribute xmi:id="_Lot_cS8-EeWfaviHp79XkQ" name="Matricula" visibility="public" isOrdered="true">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/XMLPrimitiveTypes.library.uml#Int"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Lot_ci8-EeWfaviHp79XkQ"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_Lot_cy8-EeWfaviHp79XkQ" name="Cliente">
+        <generalization xmi:id="_Lot_dC8-EeWfaviHp79XkQ" general="_Lot_Qi8-EeWfaviHp79XkQ"/>
+        <ownedAttribute xmi:id="_Lot_dS8-EeWfaviHp79XkQ" name="veiculo" type="_Lot_eC8-EeWfaviHp79XkQ" isOrdered="true" aggregation="composite" association="_Lot_gS8-EeWfaviHp79XkQ">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Lot_di8-EeWfaviHp79XkQ"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Lot_dy8-EeWfaviHp79XkQ" value="*"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_Lot_eC8-EeWfaviHp79XkQ" name="Veiculo">
+        <ownedAttribute xmi:id="_Lot_eS8-EeWfaviHp79XkQ" name="Chassis" visibility="public" isOrdered="true" isID="true">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/XMLPrimitiveTypes.library.uml#String"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Lot_ei8-EeWfaviHp79XkQ"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_Lot_ey8-EeWfaviHp79XkQ" name="Modelo" visibility="public" isOrdered="true" isUnique="false">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/XMLPrimitiveTypes.library.uml#String"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Lot_fC8-EeWfaviHp79XkQ"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_Lot_fS8-EeWfaviHp79XkQ" name="Ano" visibility="public" isOrdered="true" isUnique="false">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/XMLPrimitiveTypes.library.uml#Int"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Lot_fi8-EeWfaviHp79XkQ"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_Lot_fy8-EeWfaviHp79XkQ" name="Cor" visibility="public" isOrdered="true" isUnique="false">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/XMLPrimitiveTypes.library.uml#String"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Lot_gC8-EeWfaviHp79XkQ"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="_Lot_gS8-EeWfaviHp79XkQ" memberEnd="_Lot_dS8-EeWfaviHp79XkQ _Lot_gi8-EeWfaviHp79XkQ">
+        <ownedEnd xmi:id="_Lot_gi8-EeWfaviHp79XkQ" type="_Lot_cy8-EeWfaviHp79XkQ" association="_Lot_gS8-EeWfaviHp79XkQ"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_Lot_gy8-EeWfaviHp79XkQ" name="Servico">
+        <ownedAttribute xmi:id="_Lot_hC8-EeWfaviHp79XkQ" name="Codigo" visibility="public" isOrdered="true" isID="true">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/XMLPrimitiveTypes.library.uml#Int"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Lot_hS8-EeWfaviHp79XkQ"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_Lot_hi8-EeWfaviHp79XkQ" name="Nome" visibility="public" isUnique="false">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/XMLPrimitiveTypes.library.uml#String"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Lot_hy8-EeWfaviHp79XkQ"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_Lot_iC8-EeWfaviHp79XkQ" name="Valor" visibility="public" isUnique="false">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/XMLPrimitiveTypes.library.uml#Float"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Lot_iS8-EeWfaviHp79XkQ"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Enumeration" xmi:id="_Lot_ii8-EeWfaviHp79XkQ" name="TipoCobranca">
+        <ownedLiteral xmi:id="_Lot_iy8-EeWfaviHp79XkQ" name="PorHora"/>
+        <ownedLiteral xmi:id="_Lot_jC8-EeWfaviHp79XkQ" name="PorUnidade"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_Lot_jS8-EeWfaviHp79XkQ" name="OrdemDeServico">
+        <ownedAttribute xmi:id="_Lot_ji8-EeWfaviHp79XkQ" name="Codigo" visibility="public" isOrdered="true">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/XMLPrimitiveTypes.library.uml#Int"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Lot_jy8-EeWfaviHp79XkQ"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_Lot_kC8-EeWfaviHp79XkQ" name="DataEntradaVeiculo" visibility="public" isOrdered="true">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/XMLPrimitiveTypes.library.uml#DateTime"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Lot_kS8-EeWfaviHp79XkQ"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_Lot_ki8-EeWfaviHp79XkQ" name="Veiculo" type="_Lot_eC8-EeWfaviHp79XkQ" isOrdered="true" aggregation="composite" association="_Lot_lS8-EeWfaviHp79XkQ"/>
+        <ownedAttribute xmi:id="_Lot_ky8-EeWfaviHp79XkQ" name="ItensDeServico" type="_Lot_ly8-EeWfaviHp79XkQ" isOrdered="true" association="_Lot_sS8-EeWfaviHp79XkQ">
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Lot_lC8-EeWfaviHp79XkQ" value="*"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="_Lot_lS8-EeWfaviHp79XkQ" memberEnd="_Lot_ki8-EeWfaviHp79XkQ _Lot_li8-EeWfaviHp79XkQ">
+        <ownedEnd xmi:id="_Lot_li8-EeWfaviHp79XkQ" type="_Lot_jS8-EeWfaviHp79XkQ" association="_Lot_lS8-EeWfaviHp79XkQ"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_Lot_ly8-EeWfaviHp79XkQ" name="ItensDeServico">
+        <ownedAttribute xmi:id="_Lot_mC8-EeWfaviHp79XkQ" name="Funcionario" type="_Lot_by8-EeWfaviHp79XkQ" isOrdered="true" association="_Lot_ny8-EeWfaviHp79XkQ"/>
+        <ownedAttribute xmi:id="_Lot_mS8-EeWfaviHp79XkQ" name="servico" type="_Lot_gy8-EeWfaviHp79XkQ" isOrdered="true" association="_Lot_oS8-EeWfaviHp79XkQ"/>
+        <ownedAttribute xmi:id="_Lot_mi8-EeWfaviHp79XkQ" name="peca" type="_Lot_oy8-EeWfaviHp79XkQ" isOrdered="true" association="_Lot_ry8-EeWfaviHp79XkQ"/>
+        <ownedAttribute xmi:id="_Lot_my8-EeWfaviHp79XkQ" name="ValorServico" visibility="public" isOrdered="true">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/XMLPrimitiveTypes.library.uml#Float"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Lot_nC8-EeWfaviHp79XkQ"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_Lot_nS8-EeWfaviHp79XkQ" name="ValorPeca" visibility="public" isOrdered="true">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/XMLPrimitiveTypes.library.uml#Float"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Lot_ni8-EeWfaviHp79XkQ"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="_Lot_ny8-EeWfaviHp79XkQ" memberEnd="_Lot_mC8-EeWfaviHp79XkQ _Lot_oC8-EeWfaviHp79XkQ">
+        <ownedEnd xmi:id="_Lot_oC8-EeWfaviHp79XkQ" type="_Lot_ly8-EeWfaviHp79XkQ" association="_Lot_ny8-EeWfaviHp79XkQ"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="_Lot_oS8-EeWfaviHp79XkQ" memberEnd="_Lot_mS8-EeWfaviHp79XkQ _Lot_oi8-EeWfaviHp79XkQ">
+        <ownedEnd xmi:id="_Lot_oi8-EeWfaviHp79XkQ" type="_Lot_ly8-EeWfaviHp79XkQ" association="_Lot_oS8-EeWfaviHp79XkQ"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_Lot_oy8-EeWfaviHp79XkQ" name="Peca">
+        <ownedAttribute xmi:id="_Lot_pC8-EeWfaviHp79XkQ" name="Codigo" visibility="public" isOrdered="true">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/XMLPrimitiveTypes.library.uml#Int"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Lot_pS8-EeWfaviHp79XkQ"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_Lot_pi8-EeWfaviHp79XkQ" name="Nome" visibility="public" isOrdered="true">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/XMLPrimitiveTypes.library.uml#String"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Lot_py8-EeWfaviHp79XkQ"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_Lot_qC8-EeWfaviHp79XkQ" name="ValorCompra" visibility="public" isOrdered="true">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/XMLPrimitiveTypes.library.uml#Float"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Lot_qS8-EeWfaviHp79XkQ"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_Lot_qi8-EeWfaviHp79XkQ" name="ValorVenda" visibility="public" isOrdered="true">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/XMLPrimitiveTypes.library.uml#Float"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Lot_qy8-EeWfaviHp79XkQ"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_Lot_rC8-EeWfaviHp79XkQ" name="Fornecedor" type="_Lot_ay8-EeWfaviHp79XkQ" isOrdered="true" association="_Lot_rS8-EeWfaviHp79XkQ"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="_Lot_rS8-EeWfaviHp79XkQ" memberEnd="_Lot_rC8-EeWfaviHp79XkQ _Lot_ri8-EeWfaviHp79XkQ">
+        <ownedEnd xmi:id="_Lot_ri8-EeWfaviHp79XkQ" type="_Lot_oy8-EeWfaviHp79XkQ" association="_Lot_rS8-EeWfaviHp79XkQ"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="_Lot_ry8-EeWfaviHp79XkQ" memberEnd="_Lot_mi8-EeWfaviHp79XkQ _Lot_sC8-EeWfaviHp79XkQ">
+        <ownedEnd xmi:id="_Lot_sC8-EeWfaviHp79XkQ" type="_Lot_ly8-EeWfaviHp79XkQ" association="_Lot_ry8-EeWfaviHp79XkQ"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="_Lot_sS8-EeWfaviHp79XkQ" memberEnd="_Lot_ky8-EeWfaviHp79XkQ _Lot_si8-EeWfaviHp79XkQ">
+        <ownedEnd xmi:id="_Lot_si8-EeWfaviHp79XkQ" type="_Lot_jS8-EeWfaviHp79XkQ" association="_Lot_sS8-EeWfaviHp79XkQ"/>
+      </packagedElement>
+    </packagedElement>
+    <profileApplication xmi:id="_Lot_sy8-EeWfaviHp79XkQ">
+      <eAnnotations xmi:id="_Lot_tC8-EeWfaviHp79XkQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="pathmap://UML_PROFILES/Ecore.profile.uml#_z1OFcHjqEdy8S4Cr8Rc_NA"/>
+      </eAnnotations>
+      <appliedProfile href="pathmap://UML_PROFILES/Ecore.profile.uml#_0"/>
+    </profileApplication>
+  </uml:Model>
+  <Ecore:EPackage xmi:id="_Lot_tS8-EeWfaviHp79XkQ" base_Package="_Lot_QC8-EeWfaviHp79XkQ" nsPrefix="sisgom"/>
+  <Ecore:EPackage xmi:id="_Lot_ti8-EeWfaviHp79XkQ" base_Package="_Lot_QS8-EeWfaviHp79XkQ" nsPrefix="bean"/>
+  <Ecore:EClass xmi:id="_Lot_ty8-EeWfaviHp79XkQ" base_Class="_Lot_Qi8-EeWfaviHp79XkQ"/>
+  <Ecore:EReference xmi:id="_LoumUC8-EeWfaviHp79XkQ" base_Property="_Lot_Sy8-EeWfaviHp79XkQ" keys="_Lot_Uy8-EeWfaviHp79XkQ"/>
+  <Ecore:EReference xmi:id="_LoumUS8-EeWfaviHp79XkQ" base_Property="_Lot_Ti8-EeWfaviHp79XkQ"/>
+  <Ecore:EClass xmi:id="_LoumUi8-EeWfaviHp79XkQ" base_Class="_Lot_US8-EeWfaviHp79XkQ"/>
+  <Ecore:EClass xmi:id="_LoumUy8-EeWfaviHp79XkQ" base_Class="_Lot_Xi8-EeWfaviHp79XkQ"/>
+  <Ecore:EClass xmi:id="_LoumVC8-EeWfaviHp79XkQ" base_Class="_Lot_ay8-EeWfaviHp79XkQ"/>
+  <Ecore:EClass xmi:id="_LoumVS8-EeWfaviHp79XkQ" base_Class="_Lot_by8-EeWfaviHp79XkQ"/>
+  <Ecore:EClass xmi:id="_LoumVi8-EeWfaviHp79XkQ" base_Class="_Lot_cy8-EeWfaviHp79XkQ"/>
+  <Ecore:EReference xmi:id="_LoumVy8-EeWfaviHp79XkQ" base_Property="_Lot_dS8-EeWfaviHp79XkQ"/>
+  <Ecore:EClass xmi:id="_LoumWC8-EeWfaviHp79XkQ" base_Class="_Lot_eC8-EeWfaviHp79XkQ"/>
+  <Ecore:EClass xmi:id="_LoumWS8-EeWfaviHp79XkQ" base_Class="_Lot_gy8-EeWfaviHp79XkQ"/>
+  <Ecore:EEnum xmi:id="_LoumWi8-EeWfaviHp79XkQ" base_Enumeration="_Lot_ii8-EeWfaviHp79XkQ"/>
+  <Ecore:EEnumLiteral xmi:id="_LoumWy8-EeWfaviHp79XkQ" base_EnumerationLiteral="_Lot_iy8-EeWfaviHp79XkQ" literal="PorHora"/>
+  <Ecore:EEnumLiteral xmi:id="_LoumXC8-EeWfaviHp79XkQ" base_EnumerationLiteral="_Lot_jC8-EeWfaviHp79XkQ" literal="PorUnidade"/>
+  <Ecore:EClass xmi:id="_LoumXS8-EeWfaviHp79XkQ" base_Class="_Lot_jS8-EeWfaviHp79XkQ"/>
+  <Ecore:EReference xmi:id="_LoumXi8-EeWfaviHp79XkQ" base_Property="_Lot_ki8-EeWfaviHp79XkQ"/>
+  <Ecore:EReference xmi:id="_LoumXy8-EeWfaviHp79XkQ" base_Property="_Lot_ky8-EeWfaviHp79XkQ"/>
+  <Ecore:EClass xmi:id="_LoumYC8-EeWfaviHp79XkQ" base_Class="_Lot_ly8-EeWfaviHp79XkQ"/>
+  <Ecore:EReference xmi:id="_LoumYS8-EeWfaviHp79XkQ" base_Property="_Lot_mC8-EeWfaviHp79XkQ"/>
+  <Ecore:EReference xmi:id="_LoumYi8-EeWfaviHp79XkQ" base_Property="_Lot_mS8-EeWfaviHp79XkQ"/>
+  <Ecore:EReference xmi:id="_LoumYy8-EeWfaviHp79XkQ" base_Property="_Lot_mi8-EeWfaviHp79XkQ"/>
+  <Ecore:EClass xmi:id="_LoumZC8-EeWfaviHp79XkQ" base_Class="_Lot_oy8-EeWfaviHp79XkQ"/>
+  <Ecore:EReference xmi:id="_LoumZS8-EeWfaviHp79XkQ" base_Property="_Lot_rC8-EeWfaviHp79XkQ"/>
+</xmi:XMI>
