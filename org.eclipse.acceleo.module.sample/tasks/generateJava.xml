@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project default="generateJava" name="org.eclipse.acceleo.module.sample">
-    <property name="ECLIPSE_HOME" value="../../../../../eclipse/eclipse-modeling-mars-R-win32-x86_64/eclipse"/>
-    <property name="ECLIPSE_WORKSPACE" value="../.."/>
+    <property name="ECLIPSE_HOME" value="../../../../../../eclipse/eclipse-modeling-mars-R-win32-x86_64/eclipse"/>
+    <property name="ECLIPSE_WORKSPACE" value="../../../../workspace_mars"/>
 
     <!-- The classpath with only the dependencies used by the project -->
     <path id="org.eclipse.acceleo.module.sample.libraryclasspath">

@@ -4,6 +4,7 @@
   <semanticResources>http://www.eclipse.org/emf/2003/XMLType</semanticResources>
   <semanticResources>http://www.eclipse.org/emf/2002/Ecore</semanticResources>
   <semanticResources>projeto.genmodel</semanticResources>
+  <semanticResources>My.ecore</semanticResources>
   <ownedViews xmi:type="viewpoint:DRepresentationContainer" xmi:id="_cozoYC4bEeWfaviHp79XkQ">
     <ownedRepresentations xmi:type="diagram:DSemanticDiagram" xmi:id="_rjCMAC4bEeWfaviHp79XkQ" name="bean class diagram">
       <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_rjCMAS4bEeWfaviHp79XkQ" source="DANNOTATION_CUSTOMIZATION_KEY">
