@@ -5,6 +5,20 @@
   <semanticResources>http://www.eclipse.org/emf/2002/Ecore</semanticResources>
   <semanticResources>projeto.genmodel</semanticResources>
   <semanticResources>My.ecore</semanticResources>
+  <semanticResources>sisgom.beanXMI.xsd</semanticResources>
+  <semanticResources>platform:/plugin/org.eclipse.emf.ecore/model/XMI.xsd</semanticResources>
+  <semanticResources>bundleentry://738.fwk1099925775/cache/www.w3.org/2001/XMLSchema-instance.xsd</semanticResources>
+  <semanticResources>bundleentry://738.fwk1099925775/cache/www.w3.org/2001/XMLSchema.xsd</semanticResources>
+  <semanticResources>teste/projeto.uml</semanticResources>
+  <semanticResources>pathmap://UML_LIBRARIES/XMLPrimitiveTypes.library.uml</semanticResources>
+  <semanticResources>pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml</semanticResources>
+  <semanticResources>pathmap://UML_PROFILES/Ecore.profile.uml</semanticResources>
+  <semanticResources>pathmap://UML_PROFILES/Standard.profile.uml</semanticResources>
+  <semanticResources>http://www.eclipse.org/uml2/5.0.0/UML/Profile/Standard</semanticResources>
+  <semanticResources>pathmap://UML_METAMODELS/UML.metamodel.uml</semanticResources>
+  <semanticResources>pathmap://UML_METAMODELS/Ecore.metamodel.uml</semanticResources>
+  <semanticResources>pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml</semanticResources>
+  <semanticResources>http://www.eclipse.org/uml2/5.0.0/UML</semanticResources>
   <ownedViews xmi:type="viewpoint:DRepresentationContainer" xmi:id="_cozoYC4bEeWfaviHp79XkQ">
     <ownedRepresentations xmi:type="diagram:DSemanticDiagram" xmi:id="_rjCMAC4bEeWfaviHp79XkQ" name="bean class diagram">
       <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_rjCMAS4bEeWfaviHp79XkQ" source="DANNOTATION_CUSTOMIZATION_KEY">
