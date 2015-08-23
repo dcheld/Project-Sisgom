@@ -1,0 +1,8 @@
+[comment encoding = Cp1252 /]
+[module uml2services('http://www.eclipse.org/uml2/5.0.0/UML', 'http://www.eclipse.org/emf/2002/Ecore', 'http://www.eclipse.org/acceleo/mtl/3.0')/]
+
+[query public hasStereotype(arg0 : Class, arg1 : String) : Boolean
+	= invoke('org.eclipse.acceleo.module.sample.main.UML2Services', 
+	'hasStereotype(org.eclipse.uml2.uml.Class, java.lang.String)', Sequence{arg0, arg1})
+/]
+

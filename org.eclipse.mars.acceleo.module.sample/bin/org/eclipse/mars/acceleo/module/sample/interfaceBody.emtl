@@ -1,0 +1,375 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:mtl="http://www.eclipse.org/acceleo/mtl/3.0" xmlns:ocl.ecore="http://www.eclipse.org/ocl/1.1.0/Ecore">
+  <mtl:Module name="interfaceBody" nsURI="org::eclipse::mars::acceleo::module::sample::interfaceBody" startHeaderPosition="338" endHeaderPosition="441">
+    <input/>
+    <input>
+      <takesTypesFrom href="http://www.eclipse.org/emf/2002/Ecore#/"/>
+    </input>
+    <imports href="common.emtl#/0"/>
+    <ownedModuleElement xsi:type="mtl:Template" name="generateInterfaceBody" visibility="Public">
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="public interface "/>
+      <body xsi:type="mtl:TemplateExpression"/>
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=" {&#xA;&#xA;"/>
+      <body xsi:type="mtl:ForBlock">
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="    /**&#xA;     *"/>
+        <body xsi:type="mtl:ForBlock">
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=" "/>
+          <body xsi:type="mtl:TemplateExpression"/>
+          <loopVariable name="cmt">
+            <eAnnotations source="MTL">
+              <details key="type" value="Comment"/>
+            </eAnnotations>
+          </loopVariable>
+        </body>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;"/>
+        <body xsi:type="mtl:ForBlock">
+          <body xsi:type="mtl:TemplateExpression"/>
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;"/>
+          <loopVariable name="p">
+            <eAnnotations source="MTL">
+              <details key="type" value="Parameter"/>
+            </eAnnotations>
+          </loopVariable>
+        </body>
+        <body xsi:type="mtl:IfBlock">
+          <body xsi:type="mtl:TemplateInvocation">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            <definition href="common.emtl#/0/returnOperationComment"/>
+            <argument xsi:type="ocl.ecore:VariableExp" name="self" referredVariable="/33">
+              <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+            </argument>
+          </body>
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;"/>
+        </body>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="     */&#xA;    public "/>
+        <body xsi:type="mtl:TemplateExpression"/>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="("/>
+        <body xsi:type="mtl:TemplateExpression"/>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=");&#xA;"/>
+        <loopVariable name="o">
+          <eAnnotations source="MTL">
+            <details key="type" value="Operation"/>
+          </eAnnotations>
+        </loopVariable>
+      </body>
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="}"/>
+      <parameter name="i">
+        <eAnnotations source="MTL">
+          <details key="type" value="Interface"/>
+        </eAnnotations>
+      </parameter>
+    </ownedModuleElement>
+  </mtl:Module>
+  <ecore:EPackage name="additions">
+    <eClassifiers xsi:type="ecore:EClass" name="String_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Integer_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Real_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Real"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="EObject_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+      </eAnnotations>
+      <eOperations name="generateInterfaceBody">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL" references="/0/generateInterfaceBody"/>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <eParameters name="i">
+          <eType xsi:type="ocl.ecore:VoidType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclVoid"/>
+        </eParameters>
+      </eOperations>
+      <eOperations name="returnOperationComment">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL">
+          <references href="common.emtl#/0/returnOperationComment"/>
+        </eAnnotations>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <eParameters name="traceabilityContext">
+          <eType xsi:type="ocl.ecore:AnyType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny"/>
+        </eParameters>
+      </eOperations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="OclAny_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Collection(T)_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Collection(T)"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Sequence(T)_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Sequence(T)"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="OrderedSet(T)_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OrderedSet(T)"/>
+      </eAnnotations>
+    </eClassifiers>
+  </ecore:EPackage>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="i">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="i">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="i">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
+  </ocl.ecore:Variable>
+  <ecore:EAnnotation source="positions">
+    <eAnnotations source="positions.0" references="/0/generateInterfaceBody">
+      <details key="start" value="507"/>
+      <details key="end" value="1010"/>
+      <details key="line" value="13"/>
+    </eAnnotations>
+    <eAnnotations source="positions.1" references="/0/generateInterfaceBody/@body.0">
+      <details key="start" value="562"/>
+      <details key="end" value="579"/>
+      <details key="line" value="14"/>
+    </eAnnotations>
+    <eAnnotations source="positions.2" references="/0/generateInterfaceBody/@body.1">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.3" references="/0/generateInterfaceBody/@body.2">
+      <details key="start" value="603"/>
+      <details key="end" value="607"/>
+      <details key="line" value="14"/>
+    </eAnnotations>
+    <eAnnotations source="positions.4" references="/0/generateInterfaceBody/@body.3">
+      <details key="start" value="607"/>
+      <details key="end" value="996"/>
+      <details key="line" value="16"/>
+    </eAnnotations>
+    <eAnnotations source="positions.5" references="/0/generateInterfaceBody/@body.3/@body.0">
+      <details key="start" value="648"/>
+      <details key="end" value="662"/>
+      <details key="line" value="17"/>
+    </eAnnotations>
+    <eAnnotations source="positions.6" references="/0/generateInterfaceBody/@body.3/@body.1">
+      <details key="start" value="662"/>
+      <details key="end" value="719"/>
+      <details key="line" value="18"/>
+    </eAnnotations>
+    <eAnnotations source="positions.7" references="/0/generateInterfaceBody/@body.3/@body.1/@body.0">
+      <details key="start" value="700"/>
+      <details key="end" value="701"/>
+      <details key="line" value="18"/>
+    </eAnnotations>
+    <eAnnotations source="positions.8" references="/0/generateInterfaceBody/@body.3/@body.1/@body.1">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.9" references="/0/generateInterfaceBody/@body.3/@body.1/cmt">
+      <details key="start" value="668"/>
+      <details key="end" value="681"/>
+      <details key="line" value="18"/>
+    </eAnnotations>
+    <eAnnotations source="positions.10" references="/0/generateInterfaceBody/@body.3/@body.2">
+      <details key="start" value="719"/>
+      <details key="end" value="720"/>
+      <details key="line" value="19"/>
+    </eAnnotations>
+    <eAnnotations source="positions.11" references="/0/generateInterfaceBody/@body.3/@body.3">
+      <details key="start" value="720"/>
+      <details key="end" value="845"/>
+      <details key="line" value="19"/>
+    </eAnnotations>
+    <eAnnotations source="positions.12" references="/0/generateInterfaceBody/@body.3/@body.3/@body.0">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.13" references="/0/generateInterfaceBody/@body.3/@body.3/@body.1">
+      <details key="start" value="838"/>
+      <details key="end" value="839"/>
+      <details key="line" value="21"/>
+    </eAnnotations>
+    <eAnnotations source="positions.14" references="/0/generateInterfaceBody/@body.3/@body.3/p">
+      <details key="start" value="726"/>
+      <details key="end" value="739"/>
+      <details key="line" value="19"/>
+    </eAnnotations>
+    <eAnnotations source="positions.15" references="/0/generateInterfaceBody/@body.3/@body.4">
+      <details key="start" value="846"/>
+      <details key="end" value="919"/>
+      <details key="line" value="22"/>
+    </eAnnotations>
+    <eAnnotations source="positions.16" references="/0/generateInterfaceBody/@body.3/@body.4/@body.0">
+      <details key="start" value="887"/>
+      <details key="end" value="911"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.17" references="/0/generateInterfaceBody/@body.3/@body.4/@body.0/self">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.18" references="/0/generateInterfaceBody/@body.3/@body.4/@body.1">
+      <details key="start" value="913"/>
+      <details key="end" value="914"/>
+      <details key="line" value="24"/>
+    </eAnnotations>
+    <eAnnotations source="positions.19" references="/0/generateInterfaceBody/@body.3/@body.5">
+      <details key="start" value="920"/>
+      <details key="end" value="939"/>
+      <details key="line" value="25"/>
+    </eAnnotations>
+    <eAnnotations source="positions.20" references="/0/generateInterfaceBody/@body.3/@body.6">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.21" references="/0/generateInterfaceBody/@body.3/@body.7">
+      <details key="start" value="965"/>
+      <details key="end" value="966"/>
+      <details key="line" value="26"/>
+    </eAnnotations>
+    <eAnnotations source="positions.22" references="/0/generateInterfaceBody/@body.3/@body.8">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.23" references="/0/generateInterfaceBody/@body.3/@body.9">
+      <details key="start" value="987"/>
+      <details key="end" value="990"/>
+      <details key="line" value="26"/>
+    </eAnnotations>
+    <eAnnotations source="positions.24" references="/0/generateInterfaceBody/@body.3/o">
+      <details key="start" value="613"/>
+      <details key="end" value="626"/>
+      <details key="line" value="16"/>
+    </eAnnotations>
+    <eAnnotations source="positions.25" references="/0/generateInterfaceBody/@body.4">
+      <details key="start" value="997"/>
+      <details key="end" value="998"/>
+      <details key="line" value="28"/>
+    </eAnnotations>
+    <eAnnotations source="positions.26" references="/0/generateInterfaceBody/i">
+      <details key="start" value="546"/>
+      <details key="end" value="559"/>
+      <details key="line" value="13"/>
+    </eAnnotations>
+  </ecore:EAnnotation>
+</xmi:XMI>

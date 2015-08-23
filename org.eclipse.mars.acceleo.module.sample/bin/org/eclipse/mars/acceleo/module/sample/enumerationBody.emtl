@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:mtl="http://www.eclipse.org/acceleo/mtl/3.0" xmlns:ocl.ecore="http://www.eclipse.org/ocl/1.1.0/Ecore">
+  <mtl:Module name="enumerationBody" nsURI="org::eclipse::mars::acceleo::module::sample::enumerationBody" startHeaderPosition="86" endHeaderPosition="252">
+    <documentation xsi:type="mtl:ModuleDocumentation">
+      <body startPosition="32" endPosition="83" value="&#xD;&#xA;The documentation of the module enumeration.&#xD;&#xA;&#xD;&#xA;"/>
+    </documentation>
+    <input/>
+    <input>
+      <takesTypesFrom href="http://www.eclipse.org/emf/2002/Ecore#/"/>
+    </input>
+    <imports href="common.emtl#/0"/>
+    <ownedModuleElement xsi:type="mtl:Template" name="generateEnumerationBody" visibility="Public">
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="public enum "/>
+      <body xsi:type="mtl:TemplateExpression"/>
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="{&#xA;"/>
+      <body xsi:type="mtl:ForBlock">
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#x9;&#x9;"/>
+        <body xsi:type="mtl:TemplateExpression"/>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=",&#xA;"/>
+        <loopVariable name="i">
+          <eAnnotations source="MTL">
+            <details key="type" value="EnumerationLiteral"/>
+          </eAnnotations>
+        </loopVariable>
+      </body>
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="}"/>
+      <documentation xsi:type="mtl:ModuleElementDocumentation">
+        <body startPosition="259" endPosition="344" value="&#xD;&#xA;The documentation of the template generateEnumeration.&#xD;&#xA;@param anEnumeration&#xD;&#xA;&#xD;&#xA;"/>
+        <parametersDocumentation name="anEnumeration">
+          <body value=""/>
+        </parametersDocumentation>
+      </documentation>
+      <parameter name="e">
+        <eAnnotations source="MTL">
+          <details key="type" value="Enumeration"/>
+        </eAnnotations>
+      </parameter>
+    </ownedModuleElement>
+  </mtl:Module>
+  <ecore:EPackage name="additions">
+    <eClassifiers xsi:type="ecore:EClass" name="String_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Integer_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Real_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Real"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="EObject_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+      </eAnnotations>
+      <eOperations name="generateEnumerationBody">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL" references="/0/generateEnumerationBody"/>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <eParameters name="e">
+          <eType xsi:type="ocl.ecore:VoidType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclVoid"/>
+        </eParameters>
+      </eOperations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="OclAny_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Collection(T)_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Collection(T)"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Sequence(T)_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Sequence(T)"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="OrderedSet(T)_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OrderedSet(T)"/>
+      </eAnnotations>
+    </eClassifiers>
+  </ecore:EPackage>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ecore:EAnnotation source="positions">
+    <eAnnotations source="positions.0" references="/0/@documentation">
+      <details key="start" value="29"/>
+      <details key="end" value="85"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.1" references="/0/generateEnumerationBody">
+      <details key="start" value="347"/>
+      <details key="end" value="544"/>
+      <details key="line" value="12"/>
+    </eAnnotations>
+    <eAnnotations source="positions.2" references="/0/generateEnumerationBody/@body.0">
+      <details key="start" value="406"/>
+      <details key="end" value="418"/>
+      <details key="line" value="13"/>
+    </eAnnotations>
+    <eAnnotations source="positions.3" references="/0/generateEnumerationBody/@body.1">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.4" references="/0/generateEnumerationBody/@body.2">
+      <details key="start" value="443"/>
+      <details key="end" value="445"/>
+      <details key="line" value="13"/>
+    </eAnnotations>
+    <eAnnotations source="positions.5" references="/0/generateEnumerationBody/@body.3">
+      <details key="start" value="446"/>
+      <details key="end" value="530"/>
+      <details key="line" value="14"/>
+    </eAnnotations>
+    <eAnnotations source="positions.6" references="/0/generateEnumerationBody/@body.3/@body.0">
+      <details key="start" value="494"/>
+      <details key="end" value="496"/>
+      <details key="line" value="15"/>
+    </eAnnotations>
+    <eAnnotations source="positions.7" references="/0/generateEnumerationBody/@body.3/@body.1">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.8" references="/0/generateEnumerationBody/@body.3/@body.2">
+      <details key="start" value="521"/>
+      <details key="end" value="523"/>
+      <details key="line" value="15"/>
+    </eAnnotations>
+    <eAnnotations source="positions.9" references="/0/generateEnumerationBody/@body.3/i">
+      <details key="start" value="452"/>
+      <details key="end" value="474"/>
+      <details key="line" value="14"/>
+    </eAnnotations>
+    <eAnnotations source="positions.10" references="/0/generateEnumerationBody/@body.4">
+      <details key="start" value="531"/>
+      <details key="end" value="532"/>
+      <details key="line" value="17"/>
+    </eAnnotations>
+    <eAnnotations source="positions.11" references="/0/generateEnumerationBody/@documentation">
+      <details key="start" value="256"/>
+      <details key="end" value="346"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.12" references="/0/generateEnumerationBody/@documentation/anEnumeration">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.13" references="/0/generateEnumerationBody/e">
+      <details key="start" value="388"/>
+      <details key="end" value="403"/>
+      <details key="line" value="12"/>
+    </eAnnotations>
+  </ecore:EAnnotation>
+</xmi:XMI>

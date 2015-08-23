@@ -1,42 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project default="generateJava" name="org.eclipse.mars.acceleo.module.sample">
-    <property name="ECLIPSE_HOME" value="../../../../../../eclipse/eclipse-modeling-mars-R-win32-x86_64/eclipse"/>
-    <property name="ECLIPSE_WORKSPACE" value="../../../../workspace_mars"/>
+    <property name="ECLIPSE_HOME" value="../../../../../../eclipse/eclipse-modeling-juno-SR2-win32-x86_64"/>
+    <property name="ECLIPSE_WORKSPACE" value="../../../../workspace_juno"/>
 
     <!-- The classpath with only the dependencies used by the project -->
     <path id="org.eclipse.mars.acceleo.module.sample.libraryclasspath">
         <pathelement location="${ECLIPSE_WORKSPACE}/org.eclipse.mars.acceleo.module.sample/bin"/>
-        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.core.runtime_3.11.0.v20150405-1723.jar"/>
-        <pathelement location="${ECLIPSE_HOME}/plugins/javax.annotation_1.2.0.v201401042248.jar"/>
-        <pathelement location="${ECLIPSE_HOME}/plugins/javax.inject_1.0.0.v20091030.jar"/>
-        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.osgi_3.10.100.v20150529-1857.jar"/>
-        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.osgi.compatibility.state_1.0.100.v20150402-1551.jar"/>
-        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.equinox.common_3.7.0.v20150402-1709.jar"/>
-        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.core.jobs_3.7.0.v20150330-2103.jar"/>
-        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.core.runtime.compatibility.registry_3.6.0.v20150318-1505/runtime_registry_compatibility.jar"/>
-        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.equinox.registry_3.6.0.v20150318-1503.jar"/>
-        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.equinox.preferences_3.5.300.v20150408-1437.jar"/>
-        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.core.contenttype_3.5.0.v20150421-2214.jar"/>
-        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.equinox.app_1.3.300.v20150423-1356.jar"/>
-        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.uml2.uml_5.1.0.v20150601-0733.jar"/>
-        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.emf.ecore_2.11.0.v20150512-0501.jar"/>
-        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.emf.common_2.11.0.v20150512-0501.jar"/>
-        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.emf.ecore.xmi_2.11.0.v20150512-0501.jar"/>
-        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.uml2.common_2.1.0.v20150601-0733.jar"/>
-        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.uml2.types_2.0.0.v20150601-0733.jar"/>
-        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.emf.mapping.ecore2xml_2.9.0.v20150601-0402.jar"/>
-        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.uml2.uml.profile.standard_1.0.100.v20150601-0733.jar"/>
-        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.ocl_3.5.0.v20150521-1211.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.core.runtime_3.8.0.v20120912-155025.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.osgi_3.8.2.v20130124-134944.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.equinox.common_3.6.100.v20120522-1841.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.core.jobs_3.5.300.v20120912-155018.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.core.runtime.compatibility.registry_3.5.101.v20130108-163257/runtime_registry_compatibility.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.equinox.registry_3.5.200.v20120522-1841.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.equinox.preferences_3.5.1.v20121031-182809.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.core.contenttype_3.4.200.v20120523-2004.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.equinox.app_1.3.100.v20120522-1841.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.uml2.uml_4.0.2.v20130114-0902.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.emf.ecore_2.8.3.v20130125-0546.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.emf.common_2.8.0.v20130125-0546.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.emf.ecore.xmi_2.8.1.v20130125-0546.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.uml2.common_1.7.0.v20130114-0902.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.uml2.types_1.0.0.v20130114-0902.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.emf.mapping.ecore2xml_2.7.0.v20130125-0826.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.emf.validation_1.4.0.v20100428-2315.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.core.resources_3.8.1.v20121114-124432.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.ocl_3.2.1.v20130128-1158.jar"/>
         <pathelement location="${ECLIPSE_HOME}/plugins/lpg.runtime.java_2.0.17.v201004271640.jar"/>
-        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.ocl.common_1.3.0.v20150519-0914.jar"/>
-        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.ocl.ecore_3.5.0.v20150525-1635.jar"/>
-        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.acceleo.common_3.6.0.201506080954.jar"/>
-        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.acceleo.model_3.6.0.201506080954.jar"/>
-        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.acceleo.profiler_3.6.0.201506080954.jar"/>
-        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.acceleo.engine_3.6.0.201506080954.jar"/>
-        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.emf.codegen.ecore_2.11.0.v20150601-0402.jar"/>
-        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.emf.codegen_2.11.0.v20150601-0402.jar"/>
-        <pathelement location="${ECLIPSE_HOME}/plugins/com.google.guava_15.0.0.v201403281430.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.ocl.common_1.0.2.v20130125-1817.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.ocl.ecore_3.2.0.v20130125-1817.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.acceleo.common_3.3.2.201302130808.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.acceleo.model_3.3.2.201302130808.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.acceleo.profiler_3.3.2.201302130808.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.acceleo.engine_3.3.2.201302130808.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.emf.codegen.ecore_2.8.2.v20130125-0826.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.emf.codegen_2.8.0.v20130125-0826.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/com.google.guava_10.0.1.v201203051515.jar"/>
     </path>
 
     <path id="org.eclipse.mars.acceleo.module.sample.classpath">

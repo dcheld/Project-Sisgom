@@ -2,7 +2,7 @@
 <xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:mtl="http://www.eclipse.org/acceleo/mtl/3.0" xmlns:ocl.ecore="http://www.eclipse.org/ocl/1.1.0/Ecore">
   <mtl:Module name="classBody" nsURI="org::eclipse::acceleo::sisgom::common::classBody" startHeaderPosition="338" endHeaderPosition="396">
     <input>
-      <takesTypesFrom href="http://www.eclipse.org/uml2/3.0.0/UML#/"/>
+      <takesTypesFrom href="http://www.eclipse.org/uml2/4.0.0/UML#/"/>
     </input>
     <imports href="common.emtl#/0"/>
     <ownedModuleElement xsi:type="mtl:Template" name="generateClassBody" visibility="Public">
@@ -12,9 +12,9 @@
         <ifExpr xsi:type="ocl.ecore:PropertyCallExp">
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
           <source xsi:type="ocl.ecore:VariableExp" name="c" referredVariable="/0/generateClassBody/c">
-            <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Class"/>
+            <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Class"/>
           </source>
-          <referredProperty xsi:type="ecore:EAttribute" href="http://www.eclipse.org/uml2/3.0.0/UML#//Classifier/isAbstract"/>
+          <referredProperty xsi:type="ecore:EAttribute" href="http://www.eclipse.org/uml2/4.0.0/UML#//Classifier/isAbstract"/>
         </ifExpr>
       </body>
       <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=" class "/>
@@ -23,9 +23,9 @@
         <source xsi:type="ocl.ecore:PropertyCallExp">
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
           <source xsi:type="ocl.ecore:VariableExp" name="c" referredVariable="/0/generateClassBody/c">
-            <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Class"/>
+            <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Class"/>
           </source>
-          <referredProperty xsi:type="ecore:EAttribute" href="http://www.eclipse.org/uml2/3.0.0/UML#//NamedElement/name"/>
+          <referredProperty xsi:type="ecore:EAttribute" href="http://www.eclipse.org/uml2/4.0.0/UML#//NamedElement/name"/>
         </source>
       </body>
       <body xsi:type="mtl:ForBlock">
@@ -33,18 +33,18 @@
         <body xsi:type="ocl.ecore:PropertyCallExp">
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
           <source xsi:type="ocl.ecore:VariableExp" name="superC" referredVariable="/0/generateClassBody/@body.4/superC">
-            <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Class"/>
+            <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Class"/>
           </source>
-          <referredProperty xsi:type="ecore:EAttribute" href="http://www.eclipse.org/uml2/3.0.0/UML#//NamedElement/name"/>
+          <referredProperty xsi:type="ecore:EAttribute" href="http://www.eclipse.org/uml2/4.0.0/UML#//NamedElement/name"/>
         </body>
         <loopVariable name="superC">
-          <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Class"/>
+          <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Class"/>
         </loopVariable>
         <iterSet xsi:type="ocl.ecore:PropertyCallExp" eType="/8/Set(Class)">
           <source xsi:type="ocl.ecore:VariableExp" name="c" referredVariable="/0/generateClassBody/c">
-            <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Class"/>
+            <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Class"/>
           </source>
-          <referredProperty xsi:type="ecore:EReference" href="http://www.eclipse.org/uml2/3.0.0/UML#//Class/superClass"/>
+          <referredProperty xsi:type="ecore:EReference" href="http://www.eclipse.org/uml2/4.0.0/UML#//Class/superClass"/>
         </iterSet>
         <before xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=" extends ">
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
@@ -58,18 +58,18 @@
         <body xsi:type="ocl.ecore:PropertyCallExp">
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
           <source xsi:type="ocl.ecore:VariableExp" name="interf" referredVariable="/0/generateClassBody/@body.5/interf">
-            <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Interface"/>
+            <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Interface"/>
           </source>
-          <referredProperty xsi:type="ecore:EAttribute" href="http://www.eclipse.org/uml2/3.0.0/UML#//NamedElement/name"/>
+          <referredProperty xsi:type="ecore:EAttribute" href="http://www.eclipse.org/uml2/4.0.0/UML#//NamedElement/name"/>
         </body>
         <loopVariable name="interf">
-          <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Interface"/>
+          <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Interface"/>
         </loopVariable>
         <iterSet xsi:type="ocl.ecore:OperationCallExp" eType="/8/Set(Interface)">
           <source xsi:type="ocl.ecore:VariableExp" name="c" referredVariable="/0/generateClassBody/c">
-            <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Class"/>
+            <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Class"/>
           </source>
-          <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/uml2/3.0.0/UML#//BehavioredClassifier/getImplementedInterfaces"/>
+          <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/uml2/4.0.0/UML#//BehavioredClassifier/getImplementedInterfaces"/>
         </iterSet>
         <before xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=" implements ">
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
@@ -87,22 +87,22 @@
             <source xsi:type="ocl.ecore:PropertyCallExp">
               <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
               <source xsi:type="ocl.ecore:VariableExp" name="p" referredVariable="/0/generateClassBody/@body.7/p">
-                <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Property"/>
+                <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Property"/>
               </source>
-              <referredProperty xsi:type="ecore:EAttribute" href="http://www.eclipse.org/uml2/3.0.0/UML#//NamedElement/name"/>
+              <referredProperty xsi:type="ecore:EAttribute" href="http://www.eclipse.org/uml2/4.0.0/UML#//NamedElement/name"/>
             </source>
           </body>
           <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=" attribute.&#xA;     */&#xA;    private List&lt;"/>
           <body xsi:type="ocl.ecore:PropertyCallExp">
             <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
             <source xsi:type="ocl.ecore:PropertyCallExp">
-              <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Type"/>
+              <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Type"/>
               <source xsi:type="ocl.ecore:VariableExp" name="p" referredVariable="/0/generateClassBody/@body.7/p">
-                <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Property"/>
+                <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Property"/>
               </source>
-              <referredProperty xsi:type="ecore:EReference" href="http://www.eclipse.org/uml2/3.0.0/UML#//TypedElement/type"/>
+              <referredProperty xsi:type="ecore:EReference" href="http://www.eclipse.org/uml2/4.0.0/UML#//TypedElement/type"/>
             </source>
-            <referredProperty xsi:type="ecore:EAttribute" href="http://www.eclipse.org/uml2/3.0.0/UML#//NamedElement/name"/>
+            <referredProperty xsi:type="ecore:EAttribute" href="http://www.eclipse.org/uml2/4.0.0/UML#//NamedElement/name"/>
           </body>
           <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="> "/>
           <body xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/String_Class/toLowerFirst">
@@ -110,9 +110,9 @@
             <source xsi:type="ocl.ecore:PropertyCallExp">
               <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
               <source xsi:type="ocl.ecore:VariableExp" name="p" referredVariable="/0/generateClassBody/@body.7/p">
-                <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Property"/>
+                <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Property"/>
               </source>
-              <referredProperty xsi:type="ecore:EAttribute" href="http://www.eclipse.org/uml2/3.0.0/UML#//NamedElement/name"/>
+              <referredProperty xsi:type="ecore:EAttribute" href="http://www.eclipse.org/uml2/4.0.0/UML#//NamedElement/name"/>
             </source>
           </body>
           <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=";&#xA;"/>
@@ -123,9 +123,9 @@
               <source xsi:type="ocl.ecore:PropertyCallExp">
                 <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
                 <source xsi:type="ocl.ecore:VariableExp" name="p" referredVariable="/0/generateClassBody/@body.7/p">
-                  <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Property"/>
+                  <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Property"/>
                 </source>
-                <referredProperty xsi:type="ecore:EAttribute" href="http://www.eclipse.org/uml2/3.0.0/UML#//MultiplicityElement/upper"/>
+                <referredProperty xsi:type="ecore:EAttribute" href="http://www.eclipse.org/uml2/4.0.0/UML#//MultiplicityElement/upper"/>
               </source>
               <argument xsi:type="ocl.ecore:OperationCallExp">
                 <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
@@ -141,9 +141,9 @@
               <source xsi:type="ocl.ecore:PropertyCallExp">
                 <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
                 <source xsi:type="ocl.ecore:VariableExp" name="p" referredVariable="/0/generateClassBody/@body.7/p">
-                  <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Property"/>
+                  <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Property"/>
                 </source>
-                <referredProperty xsi:type="ecore:EAttribute" href="http://www.eclipse.org/uml2/3.0.0/UML#//MultiplicityElement/upper"/>
+                <referredProperty xsi:type="ecore:EAttribute" href="http://www.eclipse.org/uml2/4.0.0/UML#//MultiplicityElement/upper"/>
               </source>
               <argument xsi:type="ocl.ecore:IntegerLiteralExp" integerSymbol="1">
                 <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
@@ -159,22 +159,22 @@
               <source xsi:type="ocl.ecore:PropertyCallExp">
                 <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
                 <source xsi:type="ocl.ecore:VariableExp" name="p" referredVariable="/0/generateClassBody/@body.7/p">
-                  <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Property"/>
+                  <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Property"/>
                 </source>
-                <referredProperty xsi:type="ecore:EAttribute" href="http://www.eclipse.org/uml2/3.0.0/UML#//NamedElement/name"/>
+                <referredProperty xsi:type="ecore:EAttribute" href="http://www.eclipse.org/uml2/4.0.0/UML#//NamedElement/name"/>
               </source>
             </body>
             <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=" attribute.&#xA;     */&#xA;    private "/>
             <body xsi:type="ocl.ecore:PropertyCallExp">
               <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
               <source xsi:type="ocl.ecore:PropertyCallExp">
-                <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Type"/>
+                <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Type"/>
                 <source xsi:type="ocl.ecore:VariableExp" name="p" referredVariable="/0/generateClassBody/@body.7/p">
-                  <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Property"/>
+                  <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Property"/>
                 </source>
-                <referredProperty xsi:type="ecore:EReference" href="http://www.eclipse.org/uml2/3.0.0/UML#//TypedElement/type"/>
+                <referredProperty xsi:type="ecore:EReference" href="http://www.eclipse.org/uml2/4.0.0/UML#//TypedElement/type"/>
               </source>
-              <referredProperty xsi:type="ecore:EAttribute" href="http://www.eclipse.org/uml2/3.0.0/UML#//NamedElement/name"/>
+              <referredProperty xsi:type="ecore:EAttribute" href="http://www.eclipse.org/uml2/4.0.0/UML#//NamedElement/name"/>
             </body>
             <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=" "/>
             <body xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/String_Class/toLowerFirst">
@@ -182,22 +182,22 @@
               <source xsi:type="ocl.ecore:PropertyCallExp">
                 <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
                 <source xsi:type="ocl.ecore:VariableExp" name="p" referredVariable="/0/generateClassBody/@body.7/p">
-                  <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Property"/>
+                  <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Property"/>
                 </source>
-                <referredProperty xsi:type="ecore:EAttribute" href="http://www.eclipse.org/uml2/3.0.0/UML#//NamedElement/name"/>
+                <referredProperty xsi:type="ecore:EAttribute" href="http://www.eclipse.org/uml2/4.0.0/UML#//NamedElement/name"/>
               </source>
             </body>
             <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=";&#xA;"/>
           </else>
         </body>
         <loopVariable name="p">
-          <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Property"/>
+          <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Property"/>
         </loopVariable>
         <iterSet xsi:type="ocl.ecore:OperationCallExp" eType="/8/Set(Property)">
           <source xsi:type="ocl.ecore:VariableExp" name="c" referredVariable="/0/generateClassBody/c">
-            <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Class"/>
+            <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Class"/>
           </source>
-          <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/uml2/3.0.0/UML#//Classifier/getAllAttributes"/>
+          <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/uml2/4.0.0/UML#//Classifier/getAllAttributes"/>
         </iterSet>
       </body>
       <body xsi:type="mtl:ForBlock">
@@ -205,17 +205,17 @@
         <body xsi:type="ocl.ecore:PropertyCallExp">
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
           <source xsi:type="ocl.ecore:VariableExp" name="p" referredVariable="/0/generateClassBody/@body.8/p">
-            <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Property"/>
+            <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Property"/>
           </source>
-          <referredProperty xsi:type="ecore:EAttribute" href="http://www.eclipse.org/uml2/3.0.0/UML#//NamedElement/name"/>
+          <referredProperty xsi:type="ecore:EAttribute" href="http://www.eclipse.org/uml2/4.0.0/UML#//NamedElement/name"/>
         </body>
         <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=" getter.&#xA;     * @return the "/>
         <body xsi:type="ocl.ecore:PropertyCallExp">
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
           <source xsi:type="ocl.ecore:VariableExp" name="p" referredVariable="/0/generateClassBody/@body.8/p">
-            <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Property"/>
+            <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Property"/>
           </source>
-          <referredProperty xsi:type="ecore:EAttribute" href="http://www.eclipse.org/uml2/3.0.0/UML#//NamedElement/name"/>
+          <referredProperty xsi:type="ecore:EAttribute" href="http://www.eclipse.org/uml2/4.0.0/UML#//NamedElement/name"/>
         </body>
         <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=".&#xA;     */&#xA;    public "/>
         <body xsi:type="mtl:IfBlock">
@@ -223,13 +223,13 @@
           <body xsi:type="ocl.ecore:PropertyCallExp">
             <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
             <source xsi:type="ocl.ecore:PropertyCallExp">
-              <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Type"/>
+              <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Type"/>
               <source xsi:type="ocl.ecore:VariableExp" name="p" referredVariable="/0/generateClassBody/@body.8/p">
-                <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Property"/>
+                <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Property"/>
               </source>
-              <referredProperty xsi:type="ecore:EReference" href="http://www.eclipse.org/uml2/3.0.0/UML#//TypedElement/type"/>
+              <referredProperty xsi:type="ecore:EReference" href="http://www.eclipse.org/uml2/4.0.0/UML#//TypedElement/type"/>
             </source>
-            <referredProperty xsi:type="ecore:EAttribute" href="http://www.eclipse.org/uml2/3.0.0/UML#//NamedElement/name"/>
+            <referredProperty xsi:type="ecore:EAttribute" href="http://www.eclipse.org/uml2/4.0.0/UML#//NamedElement/name"/>
           </body>
           <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=">"/>
           <ifExpr xsi:type="ocl.ecore:OperationCallExp">
@@ -239,9 +239,9 @@
               <source xsi:type="ocl.ecore:PropertyCallExp">
                 <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
                 <source xsi:type="ocl.ecore:VariableExp" name="p" referredVariable="/0/generateClassBody/@body.8/p">
-                  <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Property"/>
+                  <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Property"/>
                 </source>
-                <referredProperty xsi:type="ecore:EAttribute" href="http://www.eclipse.org/uml2/3.0.0/UML#//MultiplicityElement/upper"/>
+                <referredProperty xsi:type="ecore:EAttribute" href="http://www.eclipse.org/uml2/4.0.0/UML#//MultiplicityElement/upper"/>
               </source>
               <argument xsi:type="ocl.ecore:OperationCallExp">
                 <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
@@ -257,9 +257,9 @@
               <source xsi:type="ocl.ecore:PropertyCallExp">
                 <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
                 <source xsi:type="ocl.ecore:VariableExp" name="p" referredVariable="/0/generateClassBody/@body.8/p">
-                  <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Property"/>
+                  <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Property"/>
                 </source>
-                <referredProperty xsi:type="ecore:EAttribute" href="http://www.eclipse.org/uml2/3.0.0/UML#//MultiplicityElement/upper"/>
+                <referredProperty xsi:type="ecore:EAttribute" href="http://www.eclipse.org/uml2/4.0.0/UML#//MultiplicityElement/upper"/>
               </source>
               <argument xsi:type="ocl.ecore:IntegerLiteralExp" integerSymbol="1">
                 <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
@@ -272,13 +272,13 @@
             <body xsi:type="ocl.ecore:PropertyCallExp">
               <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
               <source xsi:type="ocl.ecore:PropertyCallExp">
-                <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Type"/>
+                <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Type"/>
                 <source xsi:type="ocl.ecore:VariableExp" name="p" referredVariable="/0/generateClassBody/@body.8/p">
-                  <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Property"/>
+                  <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Property"/>
                 </source>
-                <referredProperty xsi:type="ecore:EReference" href="http://www.eclipse.org/uml2/3.0.0/UML#//TypedElement/type"/>
+                <referredProperty xsi:type="ecore:EReference" href="http://www.eclipse.org/uml2/4.0.0/UML#//TypedElement/type"/>
               </source>
-              <referredProperty xsi:type="ecore:EAttribute" href="http://www.eclipse.org/uml2/3.0.0/UML#//NamedElement/name"/>
+              <referredProperty xsi:type="ecore:EAttribute" href="http://www.eclipse.org/uml2/4.0.0/UML#//NamedElement/name"/>
             </body>
           </else>
         </body>
@@ -288,9 +288,9 @@
           <source xsi:type="ocl.ecore:PropertyCallExp">
             <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
             <source xsi:type="ocl.ecore:VariableExp" name="p" referredVariable="/0/generateClassBody/@body.8/p">
-              <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Property"/>
+              <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Property"/>
             </source>
-            <referredProperty xsi:type="ecore:EAttribute" href="http://www.eclipse.org/uml2/3.0.0/UML#//NamedElement/name"/>
+            <referredProperty xsi:type="ecore:EAttribute" href="http://www.eclipse.org/uml2/4.0.0/UML#//NamedElement/name"/>
           </source>
         </body>
         <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="() {&#xA;        return this."/>
@@ -299,34 +299,34 @@
           <source xsi:type="ocl.ecore:PropertyCallExp">
             <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
             <source xsi:type="ocl.ecore:VariableExp" name="p" referredVariable="/0/generateClassBody/@body.8/p">
-              <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Property"/>
+              <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Property"/>
             </source>
-            <referredProperty xsi:type="ecore:EAttribute" href="http://www.eclipse.org/uml2/3.0.0/UML#//NamedElement/name"/>
+            <referredProperty xsi:type="ecore:EAttribute" href="http://www.eclipse.org/uml2/4.0.0/UML#//NamedElement/name"/>
           </source>
         </body>
         <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=";&#xA;    }&#xA;&#xA;    /**&#xA;     * the "/>
         <body xsi:type="ocl.ecore:PropertyCallExp">
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
           <source xsi:type="ocl.ecore:VariableExp" name="p" referredVariable="/0/generateClassBody/@body.8/p">
-            <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Property"/>
+            <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Property"/>
           </source>
-          <referredProperty xsi:type="ecore:EAttribute" href="http://www.eclipse.org/uml2/3.0.0/UML#//NamedElement/name"/>
+          <referredProperty xsi:type="ecore:EAttribute" href="http://www.eclipse.org/uml2/4.0.0/UML#//NamedElement/name"/>
         </body>
         <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=" setter.&#xA;     * @param p_"/>
         <body xsi:type="ocl.ecore:PropertyCallExp">
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
           <source xsi:type="ocl.ecore:VariableExp" name="p" referredVariable="/0/generateClassBody/@body.8/p">
-            <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Property"/>
+            <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Property"/>
           </source>
-          <referredProperty xsi:type="ecore:EAttribute" href="http://www.eclipse.org/uml2/3.0.0/UML#//NamedElement/name"/>
+          <referredProperty xsi:type="ecore:EAttribute" href="http://www.eclipse.org/uml2/4.0.0/UML#//NamedElement/name"/>
         </body>
         <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=" the "/>
         <body xsi:type="ocl.ecore:PropertyCallExp">
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
           <source xsi:type="ocl.ecore:VariableExp" name="p" referredVariable="/0/generateClassBody/@body.8/p">
-            <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Property"/>
+            <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Property"/>
           </source>
-          <referredProperty xsi:type="ecore:EAttribute" href="http://www.eclipse.org/uml2/3.0.0/UML#//NamedElement/name"/>
+          <referredProperty xsi:type="ecore:EAttribute" href="http://www.eclipse.org/uml2/4.0.0/UML#//NamedElement/name"/>
         </body>
         <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=" to set.&#xA;     */&#xA;    public void set"/>
         <body xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/String_Class/toUpperFirst">
@@ -334,9 +334,9 @@
           <source xsi:type="ocl.ecore:PropertyCallExp">
             <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
             <source xsi:type="ocl.ecore:VariableExp" name="p" referredVariable="/0/generateClassBody/@body.8/p">
-              <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Property"/>
+              <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Property"/>
             </source>
-            <referredProperty xsi:type="ecore:EAttribute" href="http://www.eclipse.org/uml2/3.0.0/UML#//NamedElement/name"/>
+            <referredProperty xsi:type="ecore:EAttribute" href="http://www.eclipse.org/uml2/4.0.0/UML#//NamedElement/name"/>
           </source>
         </body>
         <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="("/>
@@ -345,13 +345,13 @@
           <body xsi:type="ocl.ecore:PropertyCallExp">
             <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
             <source xsi:type="ocl.ecore:PropertyCallExp">
-              <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Type"/>
+              <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Type"/>
               <source xsi:type="ocl.ecore:VariableExp" name="p" referredVariable="/0/generateClassBody/@body.8/p">
-                <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Property"/>
+                <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Property"/>
               </source>
-              <referredProperty xsi:type="ecore:EReference" href="http://www.eclipse.org/uml2/3.0.0/UML#//TypedElement/type"/>
+              <referredProperty xsi:type="ecore:EReference" href="http://www.eclipse.org/uml2/4.0.0/UML#//TypedElement/type"/>
             </source>
-            <referredProperty xsi:type="ecore:EAttribute" href="http://www.eclipse.org/uml2/3.0.0/UML#//NamedElement/name"/>
+            <referredProperty xsi:type="ecore:EAttribute" href="http://www.eclipse.org/uml2/4.0.0/UML#//NamedElement/name"/>
           </body>
           <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=">"/>
           <ifExpr xsi:type="ocl.ecore:OperationCallExp">
@@ -361,9 +361,9 @@
               <source xsi:type="ocl.ecore:PropertyCallExp">
                 <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
                 <source xsi:type="ocl.ecore:VariableExp" name="p" referredVariable="/0/generateClassBody/@body.8/p">
-                  <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Property"/>
+                  <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Property"/>
                 </source>
-                <referredProperty xsi:type="ecore:EAttribute" href="http://www.eclipse.org/uml2/3.0.0/UML#//MultiplicityElement/upper"/>
+                <referredProperty xsi:type="ecore:EAttribute" href="http://www.eclipse.org/uml2/4.0.0/UML#//MultiplicityElement/upper"/>
               </source>
               <argument xsi:type="ocl.ecore:OperationCallExp">
                 <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
@@ -379,9 +379,9 @@
               <source xsi:type="ocl.ecore:PropertyCallExp">
                 <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
                 <source xsi:type="ocl.ecore:VariableExp" name="p" referredVariable="/0/generateClassBody/@body.8/p">
-                  <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Property"/>
+                  <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Property"/>
                 </source>
-                <referredProperty xsi:type="ecore:EAttribute" href="http://www.eclipse.org/uml2/3.0.0/UML#//MultiplicityElement/upper"/>
+                <referredProperty xsi:type="ecore:EAttribute" href="http://www.eclipse.org/uml2/4.0.0/UML#//MultiplicityElement/upper"/>
               </source>
               <argument xsi:type="ocl.ecore:IntegerLiteralExp" integerSymbol="1">
                 <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
@@ -394,13 +394,13 @@
             <body xsi:type="ocl.ecore:PropertyCallExp">
               <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
               <source xsi:type="ocl.ecore:PropertyCallExp">
-                <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Type"/>
+                <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Type"/>
                 <source xsi:type="ocl.ecore:VariableExp" name="p" referredVariable="/0/generateClassBody/@body.8/p">
-                  <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Property"/>
+                  <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Property"/>
                 </source>
-                <referredProperty xsi:type="ecore:EReference" href="http://www.eclipse.org/uml2/3.0.0/UML#//TypedElement/type"/>
+                <referredProperty xsi:type="ecore:EReference" href="http://www.eclipse.org/uml2/4.0.0/UML#//TypedElement/type"/>
               </source>
-              <referredProperty xsi:type="ecore:EAttribute" href="http://www.eclipse.org/uml2/3.0.0/UML#//NamedElement/name"/>
+              <referredProperty xsi:type="ecore:EAttribute" href="http://www.eclipse.org/uml2/4.0.0/UML#//NamedElement/name"/>
             </body>
           </else>
         </body>
@@ -410,9 +410,9 @@
           <source xsi:type="ocl.ecore:PropertyCallExp">
             <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
             <source xsi:type="ocl.ecore:VariableExp" name="p" referredVariable="/0/generateClassBody/@body.8/p">
-              <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Property"/>
+              <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Property"/>
             </source>
-            <referredProperty xsi:type="ecore:EAttribute" href="http://www.eclipse.org/uml2/3.0.0/UML#//NamedElement/name"/>
+            <referredProperty xsi:type="ecore:EAttribute" href="http://www.eclipse.org/uml2/4.0.0/UML#//NamedElement/name"/>
           </source>
         </body>
         <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=") {&#xA;        this."/>
@@ -421,9 +421,9 @@
           <source xsi:type="ocl.ecore:PropertyCallExp">
             <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
             <source xsi:type="ocl.ecore:VariableExp" name="p" referredVariable="/0/generateClassBody/@body.8/p">
-              <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Property"/>
+              <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Property"/>
             </source>
-            <referredProperty xsi:type="ecore:EAttribute" href="http://www.eclipse.org/uml2/3.0.0/UML#//NamedElement/name"/>
+            <referredProperty xsi:type="ecore:EAttribute" href="http://www.eclipse.org/uml2/4.0.0/UML#//NamedElement/name"/>
           </source>
         </body>
         <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=" = p_"/>
@@ -432,20 +432,20 @@
           <source xsi:type="ocl.ecore:PropertyCallExp">
             <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
             <source xsi:type="ocl.ecore:VariableExp" name="p" referredVariable="/0/generateClassBody/@body.8/p">
-              <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Property"/>
+              <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Property"/>
             </source>
-            <referredProperty xsi:type="ecore:EAttribute" href="http://www.eclipse.org/uml2/3.0.0/UML#//NamedElement/name"/>
+            <referredProperty xsi:type="ecore:EAttribute" href="http://www.eclipse.org/uml2/4.0.0/UML#//NamedElement/name"/>
           </source>
         </body>
         <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=";&#xA;    }&#xA;"/>
         <loopVariable name="p">
-          <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Property"/>
+          <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Property"/>
         </loopVariable>
         <iterSet xsi:type="ocl.ecore:OperationCallExp" eType="/8/Set(Property)">
           <source xsi:type="ocl.ecore:VariableExp" name="c" referredVariable="/0/generateClassBody/c">
-            <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Class"/>
+            <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Class"/>
           </source>
-          <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/uml2/3.0.0/UML#//Classifier/getAllAttributes"/>
+          <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/uml2/4.0.0/UML#//Classifier/getAllAttributes"/>
         </iterSet>
       </body>
       <body xsi:type="mtl:ForBlock">
@@ -454,21 +454,21 @@
           <body xsi:type="ocl.ecore:PropertyCallExp">
             <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
             <source xsi:type="ocl.ecore:VariableExp" name="p" referredVariable="/0/generateClassBody/@body.9/p">
-              <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Property"/>
+              <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Property"/>
             </source>
-            <referredProperty xsi:type="ecore:EAttribute" href="http://www.eclipse.org/uml2/3.0.0/UML#//NamedElement/name"/>
+            <referredProperty xsi:type="ecore:EAttribute" href="http://www.eclipse.org/uml2/4.0.0/UML#//NamedElement/name"/>
           </body>
           <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=" attribute.&#xA;     */&#xA;    private List&lt;"/>
           <body xsi:type="ocl.ecore:PropertyCallExp">
             <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
             <source xsi:type="ocl.ecore:PropertyCallExp">
-              <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Type"/>
+              <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Type"/>
               <source xsi:type="ocl.ecore:VariableExp" name="p" referredVariable="/0/generateClassBody/@body.9/p">
-                <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Property"/>
+                <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Property"/>
               </source>
-              <referredProperty xsi:type="ecore:EReference" href="http://www.eclipse.org/uml2/3.0.0/UML#//TypedElement/type"/>
+              <referredProperty xsi:type="ecore:EReference" href="http://www.eclipse.org/uml2/4.0.0/UML#//TypedElement/type"/>
             </source>
-            <referredProperty xsi:type="ecore:EAttribute" href="http://www.eclipse.org/uml2/3.0.0/UML#//NamedElement/name"/>
+            <referredProperty xsi:type="ecore:EAttribute" href="http://www.eclipse.org/uml2/4.0.0/UML#//NamedElement/name"/>
           </body>
           <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="> "/>
           <body xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/String_Class/toLowerFirst">
@@ -476,9 +476,9 @@
             <source xsi:type="ocl.ecore:PropertyCallExp">
               <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
               <source xsi:type="ocl.ecore:VariableExp" name="p" referredVariable="/0/generateClassBody/@body.9/p">
-                <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Property"/>
+                <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Property"/>
               </source>
-              <referredProperty xsi:type="ecore:EAttribute" href="http://www.eclipse.org/uml2/3.0.0/UML#//NamedElement/name"/>
+              <referredProperty xsi:type="ecore:EAttribute" href="http://www.eclipse.org/uml2/4.0.0/UML#//NamedElement/name"/>
             </source>
           </body>
           <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=";&#xA;"/>
@@ -489,9 +489,9 @@
               <source xsi:type="ocl.ecore:PropertyCallExp">
                 <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
                 <source xsi:type="ocl.ecore:VariableExp" name="p" referredVariable="/0/generateClassBody/@body.9/p">
-                  <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Property"/>
+                  <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Property"/>
                 </source>
-                <referredProperty xsi:type="ecore:EAttribute" href="http://www.eclipse.org/uml2/3.0.0/UML#//MultiplicityElement/upper"/>
+                <referredProperty xsi:type="ecore:EAttribute" href="http://www.eclipse.org/uml2/4.0.0/UML#//MultiplicityElement/upper"/>
               </source>
               <argument xsi:type="ocl.ecore:OperationCallExp">
                 <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
@@ -507,9 +507,9 @@
               <source xsi:type="ocl.ecore:PropertyCallExp">
                 <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
                 <source xsi:type="ocl.ecore:VariableExp" name="p" referredVariable="/0/generateClassBody/@body.9/p">
-                  <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Property"/>
+                  <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Property"/>
                 </source>
-                <referredProperty xsi:type="ecore:EAttribute" href="http://www.eclipse.org/uml2/3.0.0/UML#//MultiplicityElement/upper"/>
+                <referredProperty xsi:type="ecore:EAttribute" href="http://www.eclipse.org/uml2/4.0.0/UML#//MultiplicityElement/upper"/>
               </source>
               <argument xsi:type="ocl.ecore:IntegerLiteralExp" integerSymbol="1">
                 <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
@@ -523,21 +523,21 @@
             <body xsi:type="ocl.ecore:PropertyCallExp">
               <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
               <source xsi:type="ocl.ecore:VariableExp" name="p" referredVariable="/0/generateClassBody/@body.9/p">
-                <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Property"/>
+                <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Property"/>
               </source>
-              <referredProperty xsi:type="ecore:EAttribute" href="http://www.eclipse.org/uml2/3.0.0/UML#//NamedElement/name"/>
+              <referredProperty xsi:type="ecore:EAttribute" href="http://www.eclipse.org/uml2/4.0.0/UML#//NamedElement/name"/>
             </body>
             <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=" attribute.&#xA;     */&#xA;    private "/>
             <body xsi:type="ocl.ecore:PropertyCallExp">
               <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
               <source xsi:type="ocl.ecore:PropertyCallExp">
-                <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Type"/>
+                <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Type"/>
                 <source xsi:type="ocl.ecore:VariableExp" name="p" referredVariable="/0/generateClassBody/@body.9/p">
-                  <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Property"/>
+                  <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Property"/>
                 </source>
-                <referredProperty xsi:type="ecore:EReference" href="http://www.eclipse.org/uml2/3.0.0/UML#//TypedElement/type"/>
+                <referredProperty xsi:type="ecore:EReference" href="http://www.eclipse.org/uml2/4.0.0/UML#//TypedElement/type"/>
               </source>
-              <referredProperty xsi:type="ecore:EAttribute" href="http://www.eclipse.org/uml2/3.0.0/UML#//NamedElement/name"/>
+              <referredProperty xsi:type="ecore:EAttribute" href="http://www.eclipse.org/uml2/4.0.0/UML#//NamedElement/name"/>
             </body>
             <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=" "/>
             <body xsi:type="ocl.ecore:OperationCallExp">
@@ -545,9 +545,9 @@
               <source xsi:type="ocl.ecore:PropertyCallExp">
                 <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
                 <source xsi:type="ocl.ecore:VariableExp" name="p" referredVariable="/0/generateClassBody/@body.9/p">
-                  <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Property"/>
+                  <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Property"/>
                 </source>
-                <referredProperty xsi:type="ecore:EAttribute" href="http://www.eclipse.org/uml2/3.0.0/UML#//NamedElement/name"/>
+                <referredProperty xsi:type="ecore:EAttribute" href="http://www.eclipse.org/uml2/4.0.0/UML#//NamedElement/name"/>
               </source>
               <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String_Class/toLower"/>
             </body>
@@ -555,23 +555,23 @@
           </else>
         </body>
         <loopVariable name="p">
-          <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Property"/>
+          <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Property"/>
         </loopVariable>
         <iterSet xsi:type="ocl.ecore:IteratorExp" name="collect" eType="/8/Bag(Property)">
           <source xsi:type="ocl.ecore:OperationCallExp" eType="/8/Set(Association)">
             <source xsi:type="ocl.ecore:VariableExp" name="c" referredVariable="/0/generateClassBody/c">
-              <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Class"/>
+              <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Class"/>
             </source>
-            <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/uml2/3.0.0/UML#//Type/getAssociations"/>
+            <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/uml2/4.0.0/UML#//Type/getAssociations"/>
           </source>
           <body xsi:type="ocl.ecore:PropertyCallExp" eType="/8/OrderedSet(Property)">
             <source xsi:type="ocl.ecore:VariableExp" name="temp1" referredVariable="/0/generateClassBody/@body.9/collect/temp1">
-              <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Association"/>
+              <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Association"/>
             </source>
-            <referredProperty xsi:type="ecore:EReference" href="http://www.eclipse.org/uml2/3.0.0/UML#//Association/memberEnd"/>
+            <referredProperty xsi:type="ecore:EReference" href="http://www.eclipse.org/uml2/4.0.0/UML#//Association/memberEnd"/>
           </body>
           <iterator xsi:type="ocl.ecore:Variable" name="temp1">
-            <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Association"/>
+            <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Association"/>
           </iterator>
         </iterSet>
       </body>
@@ -579,18 +579,18 @@
         <body xsi:type="mtl:TemplateInvocation" definition="/0/operationBody">
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
           <argument xsi:type="ocl.ecore:VariableExp" name="o" referredVariable="/0/generateClassBody/@body.10/o">
-            <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Operation"/>
+            <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Operation"/>
           </argument>
         </body>
         <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;"/>
         <loopVariable name="o">
-          <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Operation"/>
+          <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Operation"/>
         </loopVariable>
         <iterSet xsi:type="ocl.ecore:OperationCallExp" eType="/8/Set(Operation)">
           <source xsi:type="ocl.ecore:VariableExp" name="c" referredVariable="/0/generateClassBody/c">
-            <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Class"/>
+            <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Class"/>
           </source>
-          <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/uml2/3.0.0/UML#//Classifier/getOperations"/>
+          <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/uml2/4.0.0/UML#//Classifier/getOperations"/>
         </iterSet>
       </body>
       <body xsi:type="mtl:ForBlock">
@@ -598,33 +598,33 @@
           <body xsi:type="mtl:TemplateInvocation" definition="/0/operationBody">
             <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
             <argument xsi:type="ocl.ecore:VariableExp" name="o" referredVariable="/0/generateClassBody/@body.11/@body.0/o">
-              <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Operation"/>
+              <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Operation"/>
             </argument>
           </body>
           <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;"/>
           <loopVariable name="o">
-            <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Operation"/>
+            <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Operation"/>
           </loopVariable>
           <iterSet xsi:type="ocl.ecore:PropertyCallExp" eType="/8/OrderedSet(Operation)">
             <source xsi:type="ocl.ecore:VariableExp" name="interf" referredVariable="/0/generateClassBody/@body.11/interf">
-              <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Interface"/>
+              <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Interface"/>
             </source>
-            <referredProperty xsi:type="ecore:EReference" href="http://www.eclipse.org/uml2/3.0.0/UML#//Interface/ownedOperation"/>
+            <referredProperty xsi:type="ecore:EReference" href="http://www.eclipse.org/uml2/4.0.0/UML#//Interface/ownedOperation"/>
           </iterSet>
         </body>
         <loopVariable name="interf">
-          <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Interface"/>
+          <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Interface"/>
         </loopVariable>
         <iterSet xsi:type="ocl.ecore:OperationCallExp" eType="/8/Set(Interface)">
           <source xsi:type="ocl.ecore:VariableExp" name="c" referredVariable="/0/generateClassBody/c">
-            <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Class"/>
+            <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Class"/>
           </source>
-          <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/uml2/3.0.0/UML#//BehavioredClassifier/getImplementedInterfaces"/>
+          <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/uml2/4.0.0/UML#//BehavioredClassifier/getImplementedInterfaces"/>
         </iterSet>
       </body>
       <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="}"/>
       <parameter name="c">
-        <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Class"/>
+        <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Class"/>
       </parameter>
     </ownedModuleElement>
     <ownedModuleElement xsi:type="mtl:Template" name="operationBody">
@@ -634,18 +634,18 @@
         <body xsi:type="ocl.ecore:PropertyCallExp">
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
           <source xsi:type="ocl.ecore:VariableExp" name="cmt" referredVariable="/0/operationBody/@body.1/cmt">
-            <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Comment"/>
+            <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Comment"/>
           </source>
-          <referredProperty xsi:type="ecore:EAttribute" href="http://www.eclipse.org/uml2/3.0.0/UML#//Comment/body"/>
+          <referredProperty xsi:type="ecore:EAttribute" href="http://www.eclipse.org/uml2/4.0.0/UML#//Comment/body"/>
         </body>
         <loopVariable name="cmt">
-          <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Comment"/>
+          <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Comment"/>
         </loopVariable>
         <iterSet xsi:type="ocl.ecore:PropertyCallExp" eType="/8/Set(Comment)">
           <source xsi:type="ocl.ecore:VariableExp" name="o" referredVariable="/0/operationBody/o">
-            <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Operation"/>
+            <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Operation"/>
           </source>
-          <referredProperty xsi:type="ecore:EReference" href="http://www.eclipse.org/uml2/3.0.0/UML#//Element/ownedComment"/>
+          <referredProperty xsi:type="ecore:EReference" href="http://www.eclipse.org/uml2/4.0.0/UML#//Element/ownedComment"/>
         </iterSet>
       </body>
       <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;"/>
@@ -654,31 +654,31 @@
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
           <definition href="common.emtl#/0/paramOperationComment"/>
           <argument xsi:type="ocl.ecore:VariableExp" name="p" referredVariable="/0/operationBody/@body.3/p">
-            <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Parameter"/>
+            <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Parameter"/>
           </argument>
         </body>
         <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;"/>
         <loopVariable name="p">
-          <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Parameter"/>
+          <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Parameter"/>
         </loopVariable>
         <iterSet xsi:type="ocl.ecore:PropertyCallExp" eType="/8/OrderedSet(Parameter)">
           <source xsi:type="ocl.ecore:VariableExp" name="o" referredVariable="/0/operationBody/o">
-            <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Operation"/>
+            <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Operation"/>
           </source>
-          <referredProperty xsi:type="ecore:EReference" href="http://www.eclipse.org/uml2/3.0.0/UML#//BehavioralFeature/ownedParameter"/>
+          <referredProperty xsi:type="ecore:EReference" href="http://www.eclipse.org/uml2/4.0.0/UML#//BehavioralFeature/ownedParameter"/>
         </iterSet>
         <guard xsi:type="ocl.ecore:OperationCallExp">
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
           <source xsi:type="ocl.ecore:PropertyCallExp">
-            <eType xsi:type="ecore:EEnum" href="http://www.eclipse.org/uml2/3.0.0/UML#//ParameterDirectionKind"/>
+            <eType xsi:type="ecore:EEnum" href="http://www.eclipse.org/uml2/4.0.0/UML#//ParameterDirectionKind"/>
             <source xsi:type="ocl.ecore:VariableExp" name="p" referredVariable="/0/operationBody/@body.3/p">
-              <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Parameter"/>
+              <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Parameter"/>
             </source>
-            <referredProperty xsi:type="ecore:EAttribute" href="http://www.eclipse.org/uml2/3.0.0/UML#//Parameter/direction"/>
+            <referredProperty xsi:type="ecore:EAttribute" href="http://www.eclipse.org/uml2/4.0.0/UML#//Parameter/direction"/>
           </source>
           <argument xsi:type="ocl.ecore:EnumLiteralExp">
-            <eType xsi:type="ecore:EEnum" href="http://www.eclipse.org/uml2/3.0.0/UML#//ParameterDirectionKind"/>
-            <referredEnumLiteral xsi:type="ecore:EEnumLiteral" href="http://www.eclipse.org/uml2/3.0.0/UML#//ParameterDirectionKind/return"/>
+            <eType xsi:type="ecore:EEnum" href="http://www.eclipse.org/uml2/4.0.0/UML#//ParameterDirectionKind"/>
+            <referredEnumLiteral xsi:type="ecore:EEnumLiteral" href="http://www.eclipse.org/uml2/4.0.0/UML#//ParameterDirectionKind/return"/>
           </argument>
           <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny_Class/%3C%3E"/>
         </guard>
@@ -688,7 +688,7 @@
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
           <definition href="common.emtl#/0/returnOperationComment"/>
           <argument xsi:type="ocl.ecore:VariableExp" name="self" referredVariable="/96">
-            <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Operation"/>
+            <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Operation"/>
           </argument>
         </body>
         <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;"/>
@@ -697,11 +697,11 @@
           <source xsi:type="ocl.ecore:OperationCallExp">
             <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
             <source xsi:type="ocl.ecore:PropertyCallExp">
-              <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Type"/>
+              <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Type"/>
               <source xsi:type="ocl.ecore:VariableExp" name="o" referredVariable="/0/operationBody/o">
-                <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Operation"/>
+                <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Operation"/>
               </source>
-              <referredProperty xsi:type="ecore:EReference" href="http://www.eclipse.org/uml2/3.0.0/UML#//Operation/type"/>
+              <referredProperty xsi:type="ecore:EReference" href="http://www.eclipse.org/uml2/4.0.0/UML#//Operation/type"/>
             </source>
             <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny_Class/oclIsUndefined"/>
           </source>
@@ -713,7 +713,7 @@
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <definition href="common.emtl#/0/returnTypeOperation"/>
         <argument xsi:type="ocl.ecore:VariableExp" name="o" referredVariable="/0/operationBody/o">
-          <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Operation"/>
+          <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Operation"/>
         </argument>
       </body>
       <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="("/>
@@ -721,7 +721,7 @@
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <definition href="common.emtl#/0/getInParameter"/>
         <argument xsi:type="ocl.ecore:VariableExp" name="o" referredVariable="/0/operationBody/o">
-          <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Operation"/>
+          <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Operation"/>
         </argument>
       </body>
       <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=") {&#xA;        // "/>
@@ -734,11 +734,11 @@
             <source xsi:type="ocl.ecore:OperationCallExp">
               <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
               <source xsi:type="ocl.ecore:PropertyCallExp">
-                <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Type"/>
+                <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Type"/>
                 <source xsi:type="ocl.ecore:VariableExp" name="o" referredVariable="/0/operationBody/o">
-                  <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Operation"/>
+                  <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Operation"/>
                 </source>
-                <referredProperty xsi:type="ecore:EReference" href="http://www.eclipse.org/uml2/3.0.0/UML#//Operation/type"/>
+                <referredProperty xsi:type="ecore:EReference" href="http://www.eclipse.org/uml2/4.0.0/UML#//Operation/type"/>
               </source>
               <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny_Class/oclIsUndefined"/>
             </source>
@@ -757,16 +757,16 @@
           <argument xsi:type="ocl.ecore:PropertyCallExp">
             <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
             <source xsi:type="ocl.ecore:VariableExp" name="o" referredVariable="/0/operationBody/o">
-              <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Operation"/>
+              <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Operation"/>
             </source>
-            <referredProperty xsi:type="ecore:EAttribute" href="http://www.eclipse.org/uml2/3.0.0/UML#//NamedElement/name"/>
+            <referredProperty xsi:type="ecore:EAttribute" href="http://www.eclipse.org/uml2/4.0.0/UML#//NamedElement/name"/>
           </argument>
           <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String_Class/concat"/>
         </marker>
       </body>
       <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;    }"/>
       <parameter name="o">
-        <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Operation"/>
+        <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Operation"/>
       </parameter>
     </ownedModuleElement>
   </mtl:Module>
@@ -805,7 +805,7 @@
         <eAnnotations source="MTL" references="/0/generateClassBody"/>
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <eParameters name="c">
-          <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Class"/>
+          <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Class"/>
         </eParameters>
       </eOperations>
       <eOperations name="operationBody">
@@ -815,7 +815,7 @@
         <eAnnotations source="MTL" references="/0/operationBody"/>
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <eParameters name="o">
-          <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Operation"/>
+          <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Operation"/>
         </eParameters>
       </eOperations>
       <eOperations name="getInParameter">
@@ -827,7 +827,7 @@
         </eAnnotations>
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <eParameters name="o">
-          <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Operation"/>
+          <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Operation"/>
         </eParameters>
       </eOperations>
       <eOperations name="returnTypeOperation">
@@ -839,7 +839,7 @@
         </eAnnotations>
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <eParameters name="o">
-          <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Operation"/>
+          <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Operation"/>
         </eParameters>
       </eOperations>
       <eOperations name="returnOperationComment">
@@ -863,7 +863,7 @@
         </eAnnotations>
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <eParameters name="p">
-          <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Parameter"/>
+          <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Parameter"/>
         </eParameters>
       </eOperations>
     </eClassifiers>
@@ -889,22 +889,22 @@
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Class_Class">
       <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
-        <references href="http://www.eclipse.org/uml2/3.0.0/UML#//Class"/>
+        <references href="http://www.eclipse.org/uml2/4.0.0/UML#//Class"/>
       </eAnnotations>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Operation_Class">
       <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
-        <references href="http://www.eclipse.org/uml2/3.0.0/UML#//Operation"/>
+        <references href="http://www.eclipse.org/uml2/4.0.0/UML#//Operation"/>
       </eAnnotations>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Classifier_Class">
       <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
-        <references href="http://www.eclipse.org/uml2/3.0.0/UML#//Classifier"/>
+        <references href="http://www.eclipse.org/uml2/4.0.0/UML#//Classifier"/>
       </eAnnotations>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Parameter_Class">
       <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
-        <references href="http://www.eclipse.org/uml2/3.0.0/UML#//Parameter"/>
+        <references href="http://www.eclipse.org/uml2/4.0.0/UML#//Parameter"/>
       </eAnnotations>
     </eClassifiers>
   </ecore:EPackage>
@@ -912,261 +912,261 @@
     <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Class"/>
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Class"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
     <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Class"/>
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Class"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Class"/>
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Class"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Class"/>
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Class"/>
   </ocl.ecore:Variable>
   <ecore:EPackage name="collections">
     <eClassifiers xsi:type="ocl.ecore:SetType" name="Set(Class)" instanceClassName="java.util.Set">
-      <elementType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Class"/>
+      <elementType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Class"/>
     </eClassifiers>
     <eClassifiers xsi:type="ocl.ecore:SetType" name="Set(Interface)" instanceClassName="java.util.Set">
-      <elementType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Interface"/>
+      <elementType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Interface"/>
     </eClassifiers>
     <eClassifiers xsi:type="ocl.ecore:SetType" name="Set(Property)" instanceClassName="java.util.Set">
-      <elementType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Property"/>
+      <elementType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Property"/>
     </eClassifiers>
     <eClassifiers xsi:type="ocl.ecore:SetType" name="Set(Association)" instanceClassName="java.util.Set">
-      <elementType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Association"/>
+      <elementType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Association"/>
     </eClassifiers>
     <eClassifiers xsi:type="ocl.ecore:OrderedSetType" name="OrderedSet(Property)" instanceClassName="java.util.LinkedHashSet">
-      <elementType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Property"/>
+      <elementType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Property"/>
     </eClassifiers>
     <eClassifiers xsi:type="ocl.ecore:BagType" name="Bag(Property)" instanceClassName="org.eclipse.ocl.util.Bag">
-      <elementType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Property"/>
+      <elementType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Property"/>
     </eClassifiers>
     <eClassifiers xsi:type="ocl.ecore:SetType" name="Set(Operation)" instanceClassName="java.util.Set">
-      <elementType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Operation"/>
+      <elementType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Operation"/>
     </eClassifiers>
     <eClassifiers xsi:type="ocl.ecore:OrderedSetType" name="OrderedSet(Operation)" instanceClassName="java.util.LinkedHashSet">
-      <elementType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Operation"/>
+      <elementType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Operation"/>
     </eClassifiers>
     <eClassifiers xsi:type="ocl.ecore:SetType" name="Set(Comment)" instanceClassName="java.util.Set">
-      <elementType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Comment"/>
+      <elementType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Comment"/>
     </eClassifiers>
     <eClassifiers xsi:type="ocl.ecore:OrderedSetType" name="OrderedSet(Parameter)" instanceClassName="java.util.LinkedHashSet">
-      <elementType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Parameter"/>
+      <elementType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Parameter"/>
     </eClassifiers>
   </ecore:EPackage>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Class"/>
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Class"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Class"/>
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Class"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Class"/>
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Class"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Class"/>
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Class"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Class"/>
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Class"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Class"/>
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Class"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="i">
     <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Class"/>
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Class"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Class"/>
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Class"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Class"/>
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Class"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Interface"/>
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Interface"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Interface"/>
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Interface"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Class"/>
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Class"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="i">
     <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Class"/>
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Class"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Property"/>
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Property"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Property"/>
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Property"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Property"/>
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Property"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Property"/>
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Property"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Property"/>
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Property"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Property"/>
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Property"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Property"/>
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Property"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Property"/>
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Property"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Class"/>
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Class"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="i">
     <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Class"/>
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Class"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Property"/>
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Property"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Property"/>
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Property"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Property"/>
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Property"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Property"/>
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Property"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Property"/>
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Property"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Property"/>
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Property"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Property"/>
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Property"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Property"/>
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Property"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Property"/>
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Property"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Property"/>
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Property"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Property"/>
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Property"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Property"/>
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Property"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Property"/>
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Property"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Property"/>
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Property"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Property"/>
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Property"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Property"/>
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Property"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Property"/>
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Property"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Property"/>
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Property"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Class"/>
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Class"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="i">
     <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Class"/>
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Class"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Property"/>
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Property"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Property"/>
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Property"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Property"/>
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Property"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Property"/>
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Property"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Property"/>
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Property"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Property"/>
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Property"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Property"/>
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Property"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Property"/>
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Property"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Class"/>
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Class"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="i">
     <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Class"/>
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Class"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Operation"/>
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Operation"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Operation"/>
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Operation"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Class"/>
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Class"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="i">
     <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Class"/>
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Class"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Interface"/>
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Interface"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Interface"/>
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Interface"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Operation"/>
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Operation"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Operation"/>
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Operation"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Interface"/>
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Interface"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="i">
     <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Class"/>
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Class"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="i">
     <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
@@ -1175,64 +1175,64 @@
     <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Operation"/>
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Operation"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
     <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Operation"/>
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Operation"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Operation"/>
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Operation"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Comment"/>
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Comment"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Comment"/>
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Comment"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Operation"/>
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Operation"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="i">
     <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Operation"/>
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Operation"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Parameter"/>
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Parameter"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Parameter"/>
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Parameter"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Parameter"/>
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Parameter"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Operation"/>
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Operation"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="i">
     <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Operation"/>
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Operation"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Operation"/>
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Operation"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Operation"/>
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Operation"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Operation"/>
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Operation"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Operation"/>
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Operation"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/3.0.0/UML#//Operation"/>
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Operation"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
     <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
