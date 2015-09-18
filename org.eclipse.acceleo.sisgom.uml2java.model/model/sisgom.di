@@ -7,15 +7,16 @@
     <availablePage>
       <emfPageIdentifier href="sisgom.notation#_IdZp8FV2EeWRBLfA3UX2Gg"/>
     </availablePage>
+    <availablePage/>
   </pageList>
   <sashModel currentSelection="//@sashModel/@windows.0/@children.0">
     <windows>
       <children xsi:type="di:TabFolder">
         <children>
-          <emfPageIdentifier href="sisgom.notation#_IdZp8FV2EeWRBLfA3UX2Gg"/>
+          <emfPageIdentifier href="sisgom.notation#_sLVkUEQjEeWT7PHpy37frQ"/>
         </children>
         <children>
-          <emfPageIdentifier href="sisgom.notation#_sLVkUEQjEeWT7PHpy37frQ"/>
+          <emfPageIdentifier href="sisgom.notation#_IdZp8FV2EeWRBLfA3UX2Gg"/>
         </children>
       </children>
     </windows>

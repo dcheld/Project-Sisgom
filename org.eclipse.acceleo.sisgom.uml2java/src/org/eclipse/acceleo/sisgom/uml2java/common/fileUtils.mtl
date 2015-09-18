@@ -44,16 +44,14 @@
  */]
 [template public genDefaultImport(aType : Classifier)]
 [if (aType.attribute->exists(property : Property | property.upper = -1 or property.upper > 1))]
-    import java.util.*;
+import java.util.List;
 [/if]
 [if (aType.oclIsTypeOf(Class))]
 	[genElemetsImport(aType.oclAsType(Class)) /]
 [elseif (aType.oclIsTypeOf(Interface))]
 	[genElemetsImport(aType.oclAsType(Interface)) /]
 [/if]
-
 // [protected ('for imports')]
-
 // [/protected]
 [/template]
 

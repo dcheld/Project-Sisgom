@@ -57,7 +57,7 @@ public [if (aClass.isAbstract)]abstract[/if] class [aClass.name.toUpperFirst()/]
  * 
  * @generated
  */
-private [if (aProperty.upper = -1 or aProperty.upper > 1)]List<[aProperty.type.name.toUpperFirst()/]>[else][aProperty.type.name.toUpperFirst()/][/if] [aProperty.name.toLowerFirst()/];
+private [if (aProperty.upper = -1 or aProperty.upper > 1)]List<[aProperty.type.name/]>[else][aProperty.type.name/][/if] [aProperty.name.toLowerFirst()/];
 
 [/for]
 [/template]
@@ -76,7 +76,7 @@ private [if (aProperty.upper = -1 or aProperty.upper > 1)]List<[aProperty.type.n
  * 
  * @generated
  */
-public [if (anOperation.type.oclIsUndefined())]void[else][anOperation.type.name/][/if] [anOperation.name.toLowerFirst()/]([anOperation.parameters()/]) {
+public [if (anOperation.type.oclIsUndefined())]void[else][anOperation.type.name/][/if] [anOperation.name/]([anOperation.parameters()/]) {
 	// [protected ('for the body of ' + anOperation.name.toLowerFirst())]
 	// TODO should be implemented
 	[if (not anOperation.type.oclIsUndefined())]
@@ -103,7 +103,7 @@ public [if (anOperation.type.oclIsUndefined())]void[else][anOperation.type.name/
  * 
  * @generated
  */
-public [if (aProperty.upper = -1 or aProperty.upper > 1)]List<[aProperty.type.name.toUpperFirst()/]>[else][aProperty.type.name.toUpperFirst()/][/if] get[aProperty.name.toUpperFirst()/]() {
+public [if (aProperty.upper = -1 or aProperty.upper > 1)]List<[aProperty.type.name/]>[else][aProperty.type.name/][/if] get[aProperty.name.toUpperFirst()/]() {
 	return this.[aProperty.name.toLowerFirst()/];
 }
 
@@ -112,7 +112,7 @@ public [if (aProperty.upper = -1 or aProperty.upper > 1)]List<[aProperty.type.na
  * 
  * @generated
  */
-public void set[aProperty.name.toUpperFirst()/]([if (aProperty.upper = -1 or aProperty.upper > 1)]List<[aProperty.type.name.toUpperFirst()/]>[else][aProperty.type.name.toUpperFirst()/][/if] [aProperty.name.toLowerFirst()/]) {
+public void set[aProperty.name.toUpperFirst()/]([if (aProperty.upper = -1 or aProperty.upper > 1)]List<[aProperty.type.name/]>[else][aProperty.type.name/][/if] [aProperty.name.toLowerFirst()/]) {
 	this.[aProperty.name.toLowerFirst()/] = [aProperty.name.toLowerFirst()/];
 }
 [/for]

@@ -33,7 +33,7 @@ public interface [anInterface.name.toUpperFirst()/] {
 	 * 
 	 * @generated
 	 */
-	public [if (anOperation.type.oclIsUndefined())]void[else][anOperation.type.name/][/if] [anOperation.name.toLowerFirst()/]([anOperation.parameters()/]);
+	public [if (anOperation.type.oclIsUndefined())]void[else][anOperation.type.name/][/if] [anOperation.name.toUpperFirst()/]([anOperation.parameters()/]);
 	
 	[/for]
 }
