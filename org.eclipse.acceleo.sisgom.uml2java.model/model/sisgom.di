@@ -8,6 +8,9 @@
       <emfPageIdentifier href="sisgom.notation#_IdZp8FV2EeWRBLfA3UX2Gg"/>
     </availablePage>
     <availablePage/>
+    <availablePage>
+      <emfPageIdentifier href="sisgom.notation#_kGzaQGF8EeWeRZrLhu5qxw"/>
+    </availablePage>
   </pageList>
   <sashModel currentSelection="//@sashModel/@windows.0/@children.0">
     <windows>
@@ -17,6 +20,9 @@
         </children>
         <children>
           <emfPageIdentifier href="sisgom.notation#_IdZp8FV2EeWRBLfA3UX2Gg"/>
+        </children>
+        <children>
+          <emfPageIdentifier href="sisgom.notation#_kGzaQGF8EeWeRZrLhu5qxw"/>
         </children>
       </children>
     </windows>
