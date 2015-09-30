@@ -314,7 +314,7 @@
         </defaultValue>
       </ownedAttribute>
       <ownedAttribute xmi:id="_v0tdAEYLEeWVjtLlBmlrKQ" name="Ano" visibility="public" isUnique="false">
-        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_wERjAEYLEeWVjtLlBmlrKQ" value="1"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_wESKEEYLEeWVjtLlBmlrKQ" value="1"/>
         <defaultValue xmi:type="uml:LiteralString" xmi:id="_wESKEUYLEeWVjtLlBmlrKQ">
