@@ -7,17 +7,40 @@
     <imports href="../files/classJavaFile.emtl#/0"/>
     <imports href="../files/enumJavaFile.emtl#/0"/>
     <imports href="../files/interfaceJavaFile.emtl#/0"/>
+    <imports href="../common/fileUtils.emtl#/0"/>
     <ownedModuleElement xsi:type="mtl:Template" name="mainClass" visibility="Public" main="true">
-      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#x9;"/>
-      <body xsi:type="mtl:TemplateInvocation">
-        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-        <definition href="../files/classJavaFile.emtl#/0/genClassJavaFile"/>
-        <argument xsi:type="ocl.ecore:VariableExp" name="aClass" referredVariable="/0/mainClass/aClass">
-          <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Class"/>
-        </argument>
+      <body xsi:type="mtl:IfBlock">
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#x9;"/>
+        <body xsi:type="mtl:TemplateInvocation">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          <definition href="../files/classJavaFile.emtl#/0/genClassJavaFile"/>
+          <argument xsi:type="ocl.ecore:VariableExp" name="aClass" referredVariable="/0/mainClass/aClass">
+            <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Class"/>
+          </argument>
+        </body>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;"/>
+        <ifExpr xsi:type="ocl.ecore:OperationCallExp">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+          <source xsi:type="ocl.ecore:OperationCallExp">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+            <source xsi:type="ocl.ecore:VariableExp" name="aClass" referredVariable="/0/mainClass/aClass">
+              <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Class"/>
+            </source>
+            <argument xsi:type="ocl.ecore:TypeExp" eType="/6/Interaction">
+              <referredType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Interaction"/>
+            </argument>
+            <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny_Class/oclIsKindOf"/>
+          </source>
+          <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean_Class/not"/>
+        </ifExpr>
       </body>
       <parameter name="aClass">
         <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Class"/>
+      </parameter>
+    </ownedModuleElement>
+    <ownedModuleElement xsi:type="mtl:Template" name="mainInteraction" visibility="Public" main="true">
+      <parameter name="aInteraction">
+        <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Interaction"/>
       </parameter>
     </ownedModuleElement>
     <ownedModuleElement xsi:type="mtl:Template" name="mainEnumeration" visibility="Public" main="true">
@@ -75,6 +98,16 @@
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <eParameters name="aClass">
           <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Class"/>
+        </eParameters>
+      </eOperations>
+      <eOperations name="mainInteraction">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL" references="/0/mainInteraction"/>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <eParameters name="aInteraction">
+          <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Interaction"/>
         </eParameters>
       </eOperations>
       <eOperations name="mainEnumeration">
@@ -159,6 +192,11 @@
         <references href="http://www.eclipse.org/uml2/4.0.0/UML#//Class"/>
       </eAnnotations>
     </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Interaction_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/uml2/4.0.0/UML#//Interaction"/>
+      </eAnnotations>
+    </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Enumeration_Class">
       <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
         <references href="http://www.eclipse.org/uml2/4.0.0/UML#//Enumeration"/>
@@ -167,6 +205,16 @@
     <eClassifiers xsi:type="ecore:EClass" name="Interface_Class">
       <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
         <references href="http://www.eclipse.org/uml2/4.0.0/UML#//Interface"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Type_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/uml2/4.0.0/UML#//Type"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Classifier_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/uml2/4.0.0/UML#//Classifier"/>
       </eAnnotations>
     </eClassifiers>
   </ecore:EPackage>
@@ -182,8 +230,28 @@
   <ocl.ecore:Variable name="self">
     <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Class"/>
   </ocl.ecore:Variable>
+  <ecore:EPackage name="types">
+    <eClassifiers xsi:type="ocl.ecore:TypeType" name="Interaction">
+      <referredType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Interaction"/>
+    </eClassifiers>
+  </ecore:EPackage>
   <ocl.ecore:Variable name="self">
     <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Class"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Class"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Interaction"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Interaction"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
     <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
@@ -220,79 +288,119 @@
   </ocl.ecore:Variable>
   <ecore:EAnnotation source="positions">
     <eAnnotations source="positions.0" references="/0/mainClass">
-      <details key="start" value="309"/>
-      <details key="end" value="413"/>
-      <details key="line" value="7"/>
+      <details key="start" value="379"/>
+      <details key="end" value="534"/>
+      <details key="line" value="8"/>
     </eAnnotations>
     <eAnnotations source="positions.1" references="/0/mainClass/@body.0">
-      <details key="start" value="372"/>
-      <details key="end" value="373"/>
-      <details key="line" value="9"/>
+      <details key="start" value="443"/>
+      <details key="end" value="522"/>
+      <details key="line" value="10"/>
     </eAnnotations>
-    <eAnnotations source="positions.2" references="/0/mainClass/@body.1">
-      <details key="start" value="374"/>
-      <details key="end" value="399"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.3" references="/0/mainClass/@body.1/aClass">
-      <details key="start" value="374"/>
-      <details key="end" value="380"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.4" references="/0/mainClass/aClass">
-      <details key="start" value="336"/>
-      <details key="end" value="350"/>
-      <details key="line" value="7"/>
-    </eAnnotations>
-    <eAnnotations source="positions.5" references="/0/mainEnumeration">
-      <details key="start" value="414"/>
-      <details key="end" value="541"/>
+    <eAnnotations source="positions.2" references="/0/mainClass/@body.0/@body.0">
+      <details key="start" value="486"/>
+      <details key="end" value="487"/>
       <details key="line" value="11"/>
     </eAnnotations>
-    <eAnnotations source="positions.6" references="/0/mainEnumeration/@body.0">
-      <details key="start" value="495"/>
-      <details key="end" value="496"/>
-      <details key="line" value="13"/>
-    </eAnnotations>
-    <eAnnotations source="positions.7" references="/0/mainEnumeration/@body.1">
-      <details key="start" value="497"/>
-      <details key="end" value="527"/>
+    <eAnnotations source="positions.3" references="/0/mainClass/@body.0/@body.1">
+      <details key="start" value="488"/>
+      <details key="end" value="513"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.8" references="/0/mainEnumeration/@body.1/aEnumeration">
-      <details key="start" value="497"/>
-      <details key="end" value="509"/>
+    <eAnnotations source="positions.4" references="/0/mainClass/@body.0/@body.1/aClass">
+      <details key="start" value="488"/>
+      <details key="end" value="494"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.9" references="/0/mainEnumeration/aEnumeration">
+    <eAnnotations source="positions.5" references="/0/mainClass/@body.0/@body.2">
+      <details key="start" value="515"/>
+      <details key="end" value="516"/>
+      <details key="line" value="12"/>
+    </eAnnotations>
+    <eAnnotations source="positions.6" references="/0/mainClass/@body.0/@ifExpr">
       <details key="start" value="447"/>
-      <details key="end" value="473"/>
-      <details key="line" value="11"/>
-    </eAnnotations>
-    <eAnnotations source="positions.10" references="/0/mainInterface">
-      <details key="start" value="542"/>
-      <details key="end" value="666"/>
-      <details key="line" value="15"/>
-    </eAnnotations>
-    <eAnnotations source="positions.11" references="/0/mainInterface/@body.0">
-      <details key="start" value="617"/>
-      <details key="end" value="618"/>
-      <details key="line" value="17"/>
-    </eAnnotations>
-    <eAnnotations source="positions.12" references="/0/mainInterface/@body.1">
-      <details key="start" value="619"/>
-      <details key="end" value="652"/>
+      <details key="end" value="484"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.13" references="/0/mainInterface/@body.1/aInterface">
-      <details key="start" value="619"/>
+    <eAnnotations source="positions.7" references="/0/mainClass/@body.0/@ifExpr/@source">
+      <details key="start" value="452"/>
+      <details key="end" value="483"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.8" references="/0/mainClass/@body.0/@ifExpr/@source/aClass">
+      <details key="start" value="452"/>
+      <details key="end" value="458"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.9" references="/0/mainClass/@body.0/@ifExpr/@source/@argument.0">
+      <details key="start" value="471"/>
+      <details key="end" value="482"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.10" references="/0/mainClass/aClass">
+      <details key="start" value="406"/>
+      <details key="end" value="420"/>
+      <details key="line" value="8"/>
+    </eAnnotations>
+    <eAnnotations source="positions.11" references="/0/mainInteraction">
+      <details key="start" value="537"/>
       <details key="end" value="629"/>
+      <details key="line" value="16"/>
+    </eAnnotations>
+    <eAnnotations source="positions.12" references="/0/mainInteraction/aInteraction">
+      <details key="start" value="570"/>
+      <details key="end" value="596"/>
+      <details key="line" value="16"/>
+    </eAnnotations>
+    <eAnnotations source="positions.13" references="/0/mainEnumeration">
+      <details key="start" value="631"/>
+      <details key="end" value="758"/>
+      <details key="line" value="20"/>
+    </eAnnotations>
+    <eAnnotations source="positions.14" references="/0/mainEnumeration/@body.0">
+      <details key="start" value="712"/>
+      <details key="end" value="713"/>
+      <details key="line" value="22"/>
+    </eAnnotations>
+    <eAnnotations source="positions.15" references="/0/mainEnumeration/@body.1">
+      <details key="start" value="714"/>
+      <details key="end" value="744"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.14" references="/0/mainInterface/aInterface">
-      <details key="start" value="573"/>
-      <details key="end" value="595"/>
-      <details key="line" value="15"/>
+    <eAnnotations source="positions.16" references="/0/mainEnumeration/@body.1/aEnumeration">
+      <details key="start" value="714"/>
+      <details key="end" value="726"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.17" references="/0/mainEnumeration/aEnumeration">
+      <details key="start" value="664"/>
+      <details key="end" value="690"/>
+      <details key="line" value="20"/>
+    </eAnnotations>
+    <eAnnotations source="positions.18" references="/0/mainInterface">
+      <details key="start" value="759"/>
+      <details key="end" value="883"/>
+      <details key="line" value="24"/>
+    </eAnnotations>
+    <eAnnotations source="positions.19" references="/0/mainInterface/@body.0">
+      <details key="start" value="834"/>
+      <details key="end" value="835"/>
+      <details key="line" value="26"/>
+    </eAnnotations>
+    <eAnnotations source="positions.20" references="/0/mainInterface/@body.1">
+      <details key="start" value="836"/>
+      <details key="end" value="869"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.21" references="/0/mainInterface/@body.1/aInterface">
+      <details key="start" value="836"/>
+      <details key="end" value="846"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.22" references="/0/mainInterface/aInterface">
+      <details key="start" value="790"/>
+      <details key="end" value="812"/>
+      <details key="line" value="24"/>
     </eAnnotations>
   </ecore:EAnnotation>
 </xmi:XMI>

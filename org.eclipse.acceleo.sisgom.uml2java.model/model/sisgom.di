@@ -11,6 +11,9 @@
     <availablePage>
       <emfPageIdentifier href="sisgom.notation#_kGzaQGF8EeWeRZrLhu5qxw"/>
     </availablePage>
+    <availablePage>
+      <emfPageIdentifier href="sisgom.notation#_jwOPsGMQEeW7goaqpxbzYw"/>
+    </availablePage>
   </pageList>
   <sashModel currentSelection="//@sashModel/@windows.0/@children.0">
     <windows>
@@ -23,6 +26,9 @@
         </children>
         <children>
           <emfPageIdentifier href="sisgom.notation#_kGzaQGF8EeWeRZrLhu5qxw"/>
+        </children>
+        <children>
+          <emfPageIdentifier href="sisgom.notation#_jwOPsGMQEeW7goaqpxbzYw"/>
         </children>
       </children>
     </windows>

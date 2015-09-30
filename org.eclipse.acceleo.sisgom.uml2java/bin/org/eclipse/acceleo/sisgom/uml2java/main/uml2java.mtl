@@ -3,11 +3,20 @@
 [import org::eclipse::acceleo::sisgom::uml2java::files::classJavaFile/]
 [import org::eclipse::acceleo::sisgom::uml2java::files::enumJavaFile/]
 [import org::eclipse::acceleo::sisgom::uml2java::files::interfaceJavaFile/]
+[import org::eclipse::acceleo::sisgom::uml2java::common::fileUtils /]
 
 [template public mainClass(aClass : Class)]
 	[comment @main /]
+	[if (not aClass.oclIsKindOf(Interaction))]
 	[aClass.genClassJavaFile()/]
+	[/if]
 [/template]
+
+
+[template public mainInteraction(aInteraction : Interaction)]
+	[comment @main /]
+[/template]
+
 [template public mainEnumeration(aEnumeration : Enumeration)]
 	[comment @main /]
 	[aEnumeration.genEnumJavaFile()/]
