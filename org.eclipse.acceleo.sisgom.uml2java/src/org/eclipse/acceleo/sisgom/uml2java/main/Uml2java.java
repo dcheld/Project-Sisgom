@@ -18,8 +18,6 @@ import java.util.List;
 import org.eclipse.acceleo.engine.event.IAcceleoTextGenerationListener;
 import org.eclipse.acceleo.engine.generation.strategy.IAcceleoGenerationStrategy;
 import org.eclipse.acceleo.engine.service.AbstractAcceleoGenerator;
-import org.eclipse.acceleo.engine.utils.AcceleoEngineUtils;
-import org.eclipse.emf.common.EMFPlugin;
 import org.eclipse.emf.common.util.BasicMonitor;
 import org.eclipse.emf.common.util.Monitor;
 import org.eclipse.emf.common.util.URI;
@@ -284,12 +282,13 @@ public class Uml2java extends AbstractAcceleoGenerator {
          * Properties files can be located in an Eclipse plug-in or in the file system (all Acceleo projects are Eclipse
          * plug-in). In order to use properties files located in an Eclipse plugin, you need to add the path of the properties
          * files to the "propertiesFiles" list:
-         */ 
- 
-         final String fileName = "default.properties";
-         propertiesFiles.add(fileName);
-         
-         /* 
+         * 
+         * final String prefix = "platform:/plugin/";
+         * final String pluginName = "org.eclipse.acceleo.module.sample";
+         * final String packagePath = "/org/eclipse/acceleo/module/sample/properties/";
+         * final String fileName = "default.properties";
+         * propertiesFiles.add(prefix + pluginName + packagePath + fileName);
+         * 
          * With this mechanism, you can load properties files from your plugin or from another plugin.
          * 
          * You may want to load properties files from the file system, for that you need to add the absolute path of the file:
@@ -297,11 +296,11 @@ public class Uml2java extends AbstractAcceleoGenerator {
          * propertiesFiles.add("C:\Users\MyName\MyFile.properties");
          * 
          * If you want to let your users add properties files located in the same folder as the model:
-         */
-	     //if (EMFPlugin.IS_ECLIPSE_RUNNING && model != null && model.eResource() != null) { 
-	     //    propertiesFiles.addAll(AcceleoEngineUtils.getPropertiesFilesNearModel(model.eResource()));
-	     //}
-         /* 
+         *
+         * if (EMFPlugin.IS_ECLIPSE_RUNNING && model != null && model.eResource() != null) { 
+         *     propertiesFiles.addAll(AcceleoEngineUtils.getPropertiesFilesNearModel(model.eResource()));
+         * }
+         * 
          * To learn more about Properties Files, have a look at the Acceleo documentation (Help -> Help Contents).
          */
         return propertiesFiles;

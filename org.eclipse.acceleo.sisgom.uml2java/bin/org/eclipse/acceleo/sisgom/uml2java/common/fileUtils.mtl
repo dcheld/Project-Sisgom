@@ -47,41 +47,20 @@
 import java.util.List;
 [/if]
 [if (aType.oclIsTypeOf(Class))]
-	[aType.oclAsType(Class).obterTodosOsTipo().genElementsImportGeneric() /]
+	[aType.oclAsType(Class).obterTodosOsTipo().genElementsImportGeneric(aType) /]
 [elseif (aType.oclIsTypeOf(Interface))]
-	[aType.oclAsType(Interface).obterTodosOsTipo().genElementsImportGeneric() /]
+	[aType.oclAsType(Interface).obterTodosOsTipo().genElementsImportGeneric(aType) /]
 [/if]
 // [protected ('for imports')]
 // [/protected]
 [/template]
 
-
-[template private genElemetsImport (aClass : Class) ]
-[for (eClass : Type | aClass.obterTodosOsTipo())]
-[if (eClass.oclIsTypeOf(PrimitiveType) and getProperty(eClass.name) <> '')]
-import [getProperty(eClass.name)/];
-[elseif (aClass.genPackageValue() <>  eClass.genPackageValue() and eClass.genPackageValue() <> '')]
-import [eClass.genPackageValue()+ '.' + eClass.name  /];
-[/if]
-[/for ]
-[/template]
-
-[template private genElemetsImport (aInterface : Interface) ]
-[for (eInterface : Type | aInterface.obterTodosOsTipo())]
-[if (eInterface.oclIsTypeOf(PrimitiveType) and getProperty(eInterface.name) <> '')]
-import [getProperty(eInterface.name)/];
-[elseif (aInterface.genPackageValue() <>  eInterface.genPackageValue() and eInterface.genPackageValue() <> '')]
-import [eInterface.genPackageValue()+ '.' + eInterface.name  /];
-[/if]
-[/for ]
-[/template]
-
-[template public genElementsImportGeneric(aType : Type)]
+[template public genElementsImportGeneric(aType : Type, aPai: Classifier)]
 [if (aType.oclIsTypeOf(DataType))]
 [if (getProperty(aType.name) <> '')]
 import [getProperty(aType.name)/];
 [/if]
-[elseif (aType.genPackageValue() <>  aType.genPackageValue() and aType.genPackageValue() <> '')]
+[elseif (aType.genPackageValue() <>  aPai.genPackageValue() and aType.genPackageValue() <> '')]
 import [aType.genPackageValue()+ '.' + aType.name  /];
 [/if]
 [/template]
