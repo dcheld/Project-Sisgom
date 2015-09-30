@@ -8,7 +8,7 @@
  * @param aType The type (class, interface or enumeration most of the time).
  */]
 [template public genFilePath(aType : Type)]
-[aType.getSourceFolder() + aType.packagePath() + aType.name/].java
+[aType.packagePath() + aType.name/].java
 [/template]
 
 [**
@@ -47,9 +47,9 @@
 import java.util.List;
 [/if]
 [if (aType.oclIsTypeOf(Class))]
-	[genElemetsImport(aType.oclAsType(Class)) /]
+	[aType.oclAsType(Class).obterTodosOsTipo().genElementsImportGeneric() /]
 [elseif (aType.oclIsTypeOf(Interface))]
-	[genElemetsImport(aType.oclAsType(Interface)) /]
+	[aType.oclAsType(Interface).obterTodosOsTipo().genElementsImportGeneric() /]
 [/if]
 // [protected ('for imports')]
 // [/protected]
@@ -76,11 +76,22 @@ import [eInterface.genPackageValue()+ '.' + eInterface.name  /];
 [/for ]
 [/template]
 
+[template public genElementsImportGeneric(aType : Type)]
+[if (aType.oclIsTypeOf(DataType))]
+[if (getProperty(aType.name) <> '')]
+import [getProperty(aType.name)/];
+[/if]
+[elseif (aType.genPackageValue() <>  aType.genPackageValue() and aType.genPackageValue() <> '')]
+import [aType.genPackageValue()+ '.' + aType.name  /];
+[/if]
+[/template]
+
+
 [query private obterTodosOsTipo(aClass : Class) : OrderedSet(Type) = 
 aClass.getAllAttributes()->collect(s : Property | s.type)->union(aClass.getOperations()->union(aClass.getImplementedInterfaces().ownedOperation).ownedParameter
-	->collect(c  : Parameter | c.type))->asOrderedSet() /]
+	->collect(c  : Parameter | c.type))->reject(tipo : Type | tipo.oclIsTypeOf(PrimitiveType)) ->asOrderedSet() /]
 
 
 [query private obterTodosOsTipo(aInterface : Interface) : OrderedSet(Type) = 
 aInterface.getAllAttributes()->collect(s : Property | s.type)->union(aInterface.getOperations().ownedParameter
-	->collect(c  : Parameter | c.type))->asOrderedSet() /]
+	->collect(c  : Parameter | c.type))->reject(tipo : Type | tipo.oclIsTypeOf(PrimitiveType))->asOrderedSet() /]

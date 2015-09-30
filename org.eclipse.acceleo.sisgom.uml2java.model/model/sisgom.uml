@@ -351,7 +351,7 @@
           <value xsi:nil="true"/>
         </defaultValue>
       </ownedAttribute>
-      <ownedAttribute xmi:id="_qGUQ8EmnEeWv-ekCoJELNw" name="DataEntradaVeiculo" visibility="public" type="_ZswLYFlnEeWlGvAAh9K5jQ">
+      <ownedAttribute xmi:id="_qGUQ8EmnEeWv-ekCoJELNw" name="DataEntradaVeiculo" visibility="public" type="_FaPRIGcgEeWDPYMyKRno4Q">
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_qYdw4EmnEeWv-ekCoJELNw" value="1"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_qYeX8EmnEeWv-ekCoJELNw" value="1"/>
         <defaultValue xmi:type="uml:LiteralString" xmi:id="_qYe_AEmnEeWv-ekCoJELNw">
@@ -486,7 +486,7 @@
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_9-hIdkm9EeWv-ekCoJELNw" value="*"/>
       </ownedEnd>
     </packagedElement>
-    <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_ZswLYFlnEeWlGvAAh9K5jQ" name="Date" isLeaf="true"/>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_FaPRIGcgEeWDPYMyKRno4Q" name="Date"/>
   </packagedElement>
   <packagedElement xmi:type="uml:Package" xmi:id="_QXP7EFV2EeWRBLfA3UX2Gg" name="org.br.sisgom.dao">
     <packagedElement xmi:type="uml:Interface" xmi:id="_GfVI0FV4EeWRBLfA3UX2Gg" name="FornecedoDAO">
