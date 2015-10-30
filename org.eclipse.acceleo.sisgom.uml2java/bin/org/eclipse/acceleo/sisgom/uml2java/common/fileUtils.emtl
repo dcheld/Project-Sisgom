@@ -614,6 +614,64 @@
         <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Bag(T)_Class/asOrderedSet"/>
       </expression>
     </ownedModuleElement>
+    <ownedModuleElement xsi:type="mtl:Query" name="getTaggedValue" visibility="Public">
+      <parameter name="stereotypedElement">
+        <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Element"/>
+      </parameter>
+      <parameter name="stereotypeName">
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+      </parameter>
+      <parameter name="propertyName">
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+      </parameter>
+      <expression xsi:type="ocl.ecore:LetExp">
+        <eType xsi:type="ocl.ecore:AnyType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny"/>
+        <in xsi:type="ocl.ecore:IfExp">
+          <eType xsi:type="ocl.ecore:AnyType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny"/>
+          <condition xsi:type="ocl.ecore:OperationCallExp">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+            <source xsi:type="ocl.ecore:OperationCallExp">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+              <source xsi:type="ocl.ecore:VariableExp" name="stereotype" referredVariable="/0/getTaggedValue/@expression/stereotype">
+                <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Stereotype"/>
+              </source>
+              <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny_Class/oclIsUndefined"/>
+            </source>
+            <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean_Class/not"/>
+          </condition>
+          <thenExpression xsi:type="ocl.ecore:OperationCallExp">
+            <eType xsi:type="ocl.ecore:AnyType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny"/>
+            <source xsi:type="ocl.ecore:VariableExp" name="stereotypedElement" referredVariable="/0/getTaggedValue/stereotypedElement">
+              <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Element"/>
+            </source>
+            <argument xsi:type="ocl.ecore:VariableExp" name="stereotype" referredVariable="/0/getTaggedValue/@expression/stereotype">
+              <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Stereotype"/>
+            </argument>
+            <argument xsi:type="ocl.ecore:VariableExp" name="propertyName" referredVariable="/0/getTaggedValue/propertyName">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            </argument>
+            <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/uml2/4.0.0/UML#//Element/getValue"/>
+          </thenExpression>
+          <elseExpression xsi:type="ocl.ecore:NullLiteralExp">
+            <eType xsi:type="ocl.ecore:VoidType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclVoid"/>
+          </elseExpression>
+        </in>
+        <variable xsi:type="ocl.ecore:Variable" name="stereotype">
+          <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Stereotype"/>
+          <initExpression xsi:type="ocl.ecore:OperationCallExp">
+            <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Stereotype"/>
+            <source xsi:type="ocl.ecore:VariableExp" name="stereotypedElement" referredVariable="/0/getTaggedValue/stereotypedElement">
+              <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Element"/>
+            </source>
+            <argument xsi:type="ocl.ecore:VariableExp" name="stereotypeName" referredVariable="/0/getTaggedValue/stereotypeName">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            </argument>
+            <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/uml2/4.0.0/UML#//Element/getAppliedStereotype"/>
+          </initExpression>
+        </variable>
+      </expression>
+      <type xsi:type="ocl.ecore:AnyType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny"/>
+    </ownedModuleElement>
   </mtl:Module>
   <ecore:EPackage name="additions">
     <eClassifiers xsi:type="ecore:EClass" name="String_Class">
@@ -740,6 +798,22 @@
           <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Interface"/>
         </eParameters>
       </eOperations>
+      <eOperations name="getTaggedValue">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL" references="/0/getTaggedValue"/>
+        <eType xsi:type="ocl.ecore:AnyType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny"/>
+        <eParameters name="stereotypedElement">
+          <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Element"/>
+        </eParameters>
+        <eParameters name="stereotypeName">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        </eParameters>
+        <eParameters name="propertyName">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        </eParameters>
+      </eOperations>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="OclAny_Class">
       <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
@@ -797,6 +871,11 @@
     <eClassifiers xsi:type="ecore:EClass" name="Interface_Class">
       <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
         <references href="http://www.eclipse.org/uml2/4.0.0/UML#//Interface"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Element_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/uml2/4.0.0/UML#//Element"/>
       </eAnnotations>
     </eClassifiers>
   </ecore:EPackage>
@@ -992,6 +1071,15 @@
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
     <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Interface"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Element"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Element"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
     <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
@@ -2070,6 +2158,96 @@
     <eAnnotations source="positions.214" references="/0/obterTodosOsTipo.1/@expression/reject/tipo">
       <details key="start" value="2899"/>
       <details key="end" value="2910"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.215" references="/0/getTaggedValue">
+      <details key="start" value="2966"/>
+      <details key="end" value="3318"/>
+      <details key="line" value="78"/>
+    </eAnnotations>
+    <eAnnotations source="positions.216" references="/0/getTaggedValue/stereotypedElement">
+      <details key="start" value="2995"/>
+      <details key="end" value="3023"/>
+      <details key="line" value="78"/>
+    </eAnnotations>
+    <eAnnotations source="positions.217" references="/0/getTaggedValue/stereotypeName">
+      <details key="start" value="3025"/>
+      <details key="end" value="3048"/>
+      <details key="line" value="78"/>
+    </eAnnotations>
+    <eAnnotations source="positions.218" references="/0/getTaggedValue/propertyName">
+      <details key="start" value="3050"/>
+      <details key="end" value="3071"/>
+      <details key="line" value="78"/>
+    </eAnnotations>
+    <eAnnotations source="positions.219" references="/0/getTaggedValue/@expression">
+      <details key="start" value="3088"/>
+      <details key="end" value="3316"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.220" references="/0/getTaggedValue/@expression/@in">
+      <details key="start" value="3182"/>
+      <details key="end" value="3316"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.221" references="/0/getTaggedValue/@expression/@in/@condition">
+      <details key="start" value="3185"/>
+      <details key="end" value="3216"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.222" references="/0/getTaggedValue/@expression/@in/@condition/@source">
+      <details key="start" value="3189"/>
+      <details key="end" value="3216"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.223" references="/0/getTaggedValue/@expression/@in/@condition/@source/stereotype">
+      <details key="start" value="3189"/>
+      <details key="end" value="3199"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.224" references="/0/getTaggedValue/@expression/@in/@thenExpression">
+      <details key="start" value="3229"/>
+      <details key="end" value="3282"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.225" references="/0/getTaggedValue/@expression/@in/@thenExpression/stereotypedElement">
+      <details key="start" value="3229"/>
+      <details key="end" value="3247"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.226" references="/0/getTaggedValue/@expression/@in/@thenExpression/stereotype">
+      <details key="start" value="3257"/>
+      <details key="end" value="3267"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.227" references="/0/getTaggedValue/@expression/@in/@thenExpression/propertyName">
+      <details key="start" value="3269"/>
+      <details key="end" value="3281"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.228" references="/0/getTaggedValue/@expression/@in/@elseExpression">
+      <details key="start" value="3301"/>
+      <details key="end" value="3305"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.229" references="/0/getTaggedValue/@expression/stereotype">
+      <details key="start" value="3092"/>
+      <details key="end" value="3173"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.230" references="/0/getTaggedValue/@expression/stereotype/@initExpression">
+      <details key="start" value="3118"/>
+      <details key="end" value="3173"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.231" references="/0/getTaggedValue/@expression/stereotype/@initExpression/stereotypedElement">
+      <details key="start" value="3118"/>
+      <details key="end" value="3136"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.232" references="/0/getTaggedValue/@expression/stereotype/@initExpression/stereotypeName">
+      <details key="start" value="3158"/>
+      <details key="end" value="3172"/>
       <details key="line" value="0"/>
     </eAnnotations>
   </ecore:EAnnotation>

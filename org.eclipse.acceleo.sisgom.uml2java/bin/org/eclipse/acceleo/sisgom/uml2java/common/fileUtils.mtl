@@ -74,3 +74,11 @@ aClass.getAllAttributes()->collect(s : Property | s.type)->union(aClass.getOpera
 [query private obterTodosOsTipo(aInterface : Interface) : OrderedSet(Type) = 
 aInterface.getAllAttributes()->collect(s : Property | s.type)->union(aInterface.getOperations().ownedParameter
 	->collect(c  : Parameter | c.type))->reject(tipo : Type | tipo.oclIsTypeOf(PrimitiveType))->asOrderedSet() /]
+
+[query public getTaggedValue(stereotypedElement : Element, stereotypeName : String, propertyName : String) : OclAny = 
+   let stereotype : Stereotype = stereotypedElement.getAppliedStereotype(stereotypeName) in
+     if not stereotype.oclIsUndefined() then
+       stereotypedElement.getValue(stereotype, propertyName)
+     else 
+       null
+     endif/]
