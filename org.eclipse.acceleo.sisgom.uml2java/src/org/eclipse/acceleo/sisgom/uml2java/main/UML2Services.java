@@ -8,7 +8,7 @@ import org.eclipse.uml2.uml.Stereotype;
 public class UML2Services {
 
 	@SuppressWarnings("rawtypes")
-	public static Stereotype getStereotype(org.eclipse.uml2.uml.Class clazz,
+	public static Stereotype getStereotype(org.eclipse.uml2.uml.ConnectableElement clazz,
 			String stereotypeName) {
 		EList stereotypes = clazz.getAppliedStereotypes();
 		for (Iterator i = stereotypes.iterator(); i.hasNext();) {
@@ -21,8 +21,17 @@ public class UML2Services {
 	}
 
 	public static boolean hasStereotype(org.eclipse.uml2.uml.Class clazz, String stereotypeName) {
-		Stereotype stereotype = getStereotype(clazz, stereotypeName);
+		Stereotype stereotype = getStereotype((org.eclipse.uml2.uml.ConnectableElement)clazz, stereotypeName);
 		return (stereotype != null);
 	}
 
+	public static Object getValue(org.eclipse.uml2.uml.Class clazz, String stereotypeName, String propertyName) { 
+		Stereotype stereotype = getStereotype((org.eclipse.uml2.uml.ConnectableElement)clazz, stereotypeName); 
+		return clazz.getValue(stereotype, propertyName); 
+	} 
+	
+	public static String getValueProp(org.eclipse.uml2.uml.Property prop, String propertyName) { 
+		Stereotype stereotype = getStereotype((org.eclipse.uml2.uml.ConnectableElement)prop, prop.getName()); 
+		return prop.getValue(stereotype, propertyName).toString(); 
+	} 
 }

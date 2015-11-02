@@ -1,10 +1,22 @@
 [comment encoding = UTF-8 /]
 [module hybernateFile('http://www.eclipse.org/uml2/4.0.0/UML')]
+
 [import org::eclipse::acceleo::sisgom::uml2java::common::fileUtils /]
 [import org::eclipse::acceleo::sisgom::uml2java::main::uml2services /]
+
 [template public hybernatEntity(aClass : Class) post (trim())]
 [if (aClass.hasStereotype('Entity'))]
 @Entity
 [/if]
+[if (aClass.hasStereotype('Table'))]
+@Table([aClass.atributosStereotype('Table')/])
+[/if]
 [/template]
+[template public atributosStereotype(aClass : Class, stereotypeName : String) post (trim())]
+[let stereotype : Stereotype = aClass.getStereotype(stereotypeName)]
+	[for (prop : Property | stereotype.attribute)separator(', ')? (prop.type.oclIsKindOf(PrimitiveType))]
+		[if (prop.name <> '')][prop.name/]=[/if]"[aClass.getValue(stereotype, prop.name)/]"
+	[/for]	
+[/let]
 
+[/template]

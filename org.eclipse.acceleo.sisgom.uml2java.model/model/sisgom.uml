@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xmi:XMI xmi:version="20110701" xmlns:xmi="http://www.omg.org/spec/XMI/20110701" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Profile="http:///schemas/Profile/_R3fsoH6FEeWwzNwHTIv2iA/14" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/4.0.0/UML" xsi:schemaLocation="http:///schemas/Profile/_R3fsoH6FEeWwzNwHTIv2iA/14 file:/C:/Users/DouglasdeCampos/git/projetotcc/org.eclipse.acceleo.sisgom.uml2java.model/model/perfilUMLEntidade.profile.uml#_R3hh0H6FEeWwzNwHTIv2iA">
+<xmi:XMI xmi:version="20110701" xmlns:xmi="http://www.omg.org/spec/XMI/20110701" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Profile="http:///schemas/Profile/_bQ-2AIFuEeWpJfjnhrR3hg/21" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/4.0.0/UML" xsi:schemaLocation="http:///schemas/Profile/_bQ-2AIFuEeWpJfjnhrR3hg/21 perfilUMLEntidade.profile.uml#_bQ_dEIFuEeWpJfjnhrR3hg">
   <uml:Model xmi:id="_sKvHYEQjEeWT7PHpy37frQ" name="Model">
     <packageImport xmi:id="_sKvHYUQjEeWT7PHpy37frQ">
       <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
@@ -637,25 +637,13 @@
         <interfaceRealization xmi:id="_DAfx4FwEEeW5eL1ioNHr8g" name="InterfaceRealization1" client="_vlZEEFwDEeW5eL1ioNHr8g" supplier="_-LsEQFvxEeW5eL1ioNHr8g" contract="_-LsEQFvxEeW5eL1ioNHr8g"/>
       </packagedElement>
     </packagedElement>
-    <profileApplication xmi:id="_Yj8r4H3oEeWBZacFdRi6IQ">
-      <eAnnotations xmi:id="_YkCygH3oEeWBZacFdRi6IQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
-        <references xmi:type="ecore:EPackage" href="perfilUMLEntidade.profile.uml#_R3hh0H6FEeWwzNwHTIv2iA"/>
+    <profileApplication xmi:id="_n-bOcIFtEeWpJfjnhrR3hg">
+      <eAnnotations xmi:id="_n-ff4IFtEeWpJfjnhrR3hg" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="perfilUMLEntidade.profile.uml#_bQ_dEIFuEeWpJfjnhrR3hg"/>
       </eAnnotations>
       <appliedProfile href="perfilUMLEntidade.profile.uml#_xmcH_nz5EeWpDqOQqcCvGQ"/>
     </profileApplication>
   </uml:Model>
-  <Profile:JoinColumn xmi:id="_-k2QIH3oEeWoFrv6IVjuPA" nome="Endereco" insertable="true" updatable="true" base_Association="_GuNc4ERiEeWv2qK-l1aMZQ"/>
-  <Profile:OneToMany xmi:id="_CcvuwH3pEeWoFrv6IVjuPA" base_Association="_GuNc4ERiEeWv2qK-l1aMZQ"/>
-  <Profile:Entity xmi:id="_mwIk4H6EEeWwzNwHTIv2iA" base_Class="_WS4_cEQlEeWHYo_Ly7kndQ"/>
-  <Profile:Entity xmi:id="_p687EH6EEeWwzNwHTIv2iA" base_Class="_MqQRQEQlEeWHYo_Ly7kndQ"/>
-  <Profile:Entity xmi:id="_rz7O4H6EEeWwzNwHTIv2iA" base_Class="_YQhJwEQlEeWHYo_Ly7kndQ"/>
-  <Profile:Entity xmi:id="_swjPMH6EEeWwzNwHTIv2iA" base_Class="_lCb4IEYJEeWVjtLlBmlrKQ"/>
-  <Profile:Entity xmi:id="_v1tCQH6EEeWwzNwHTIv2iA" base_Class="_igzo4EYJEeWVjtLlBmlrKQ"/>
-  <Profile:Entity xmi:id="_0X-6oH6EEeWwzNwHTIv2iA" base_Class="_uffL8EYKEeWVjtLlBmlrKQ"/>
-  <Profile:Entity xmi:id="_CnS5AH6FEeWwzNwHTIv2iA" base_Class="_ghG-UEm0EeWv-ekCoJELNw"/>
-  <Profile:Entity xmi:id="_Di9QAH6FEeWwzNwHTIv2iA" base_Class="_wEs48Em9EeWv-ekCoJELNw"/>
-  <Profile:Entity xmi:id="_JYgHEH6FEeWwzNwHTIv2iA" base_Class="_DVTHwEYMEeWVjtLlBmlrKQ"/>
-  <Profile:Entity xmi:id="_kAaZ0H6FEeWwzNwHTIv2iA" base_Class="_hdejAH6FEeWwzNwHTIv2iA"/>
-  <Profile:Entity xmi:id="_C6zOYH6GEeWwzNwHTIv2iA" base_Class="_B_LToH6GEeWwzNwHTIv2iA"/>
-  <Profile:Entity xmi:id="_OzIuUH6GEeWwzNwHTIv2iA" base_Class="_N3Q78H6GEeWwzNwHTIv2iA"/>
+  <Profile:Entity xmi:id="_vydLcIFtEeWpJfjnhrR3hg" base_Class="_WS4_cEQlEeWHYo_Ly7kndQ"/>
+  <Profile:Table xmi:id="_vym8cIFtEeWpJfjnhrR3hg" base_Class="_WS4_cEQlEeWHYo_Ly7kndQ" name="End"/>
 </xmi:XMI>
