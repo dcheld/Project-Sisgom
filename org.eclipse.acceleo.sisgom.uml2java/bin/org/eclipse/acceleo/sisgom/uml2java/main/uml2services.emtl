@@ -118,41 +118,6 @@
       </expression>
       <type xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//ObjectNode"/>
     </ownedModuleElement>
-    <ownedModuleElement xsi:type="mtl:Query" name="getValueProp" visibility="Public">
-      <parameter name="arg0">
-        <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Property"/>
-      </parameter>
-      <parameter name="arg2">
-        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-      </parameter>
-      <expression xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/OclAny_Class/invoke">
-        <eType xsi:type="ocl.ecore:AnyType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny"/>
-        <source xsi:type="ocl.ecore:VariableExp" name="self" referredVariable="/14">
-          <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Property"/>
-        </source>
-        <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="org.eclipse.acceleo.sisgom.uml2java.main.UML2Services">
-          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-        </argument>
-        <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="getValueProp(org.eclipse.uml2.uml.Property, java.lang.String)">
-          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-        </argument>
-        <argument xsi:type="ocl.ecore:CollectionLiteralExp" eType="/4/Sequence(OclAny)" kind="Sequence">
-          <part xsi:type="ocl.ecore:CollectionItem">
-            <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Property"/>
-            <item xsi:type="ocl.ecore:VariableExp" name="arg0" referredVariable="/0/getValueProp/arg0">
-              <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Property"/>
-            </item>
-          </part>
-          <part xsi:type="ocl.ecore:CollectionItem">
-            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-            <item xsi:type="ocl.ecore:VariableExp" name="arg2" referredVariable="/0/getValueProp/arg2">
-              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-            </item>
-          </part>
-        </argument>
-      </expression>
-      <type xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-    </ownedModuleElement>
   </mtl:Module>
   <ecore:EPackage name="additions">
     <eClassifiers xsi:type="ecore:EClass" name="String_Class">
@@ -216,19 +181,6 @@
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         </eParameters>
       </eOperations>
-      <eOperations name="getValueProp">
-        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
-          <contents xsi:type="ocl.ecore:Constraint"/>
-        </eAnnotations>
-        <eAnnotations source="MTL" references="/0/getValueProp"/>
-        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-        <eParameters name="arg0">
-          <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Property"/>
-        </eParameters>
-        <eParameters name="arg2">
-          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-        </eParameters>
-      </eOperations>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="OclAny_Class">
       <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
@@ -268,11 +220,6 @@
         <references href="http://www.eclipse.org/uml2/4.0.0/UML#//Class"/>
       </eAnnotations>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="Property_Class">
-      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
-        <references href="http://www.eclipse.org/uml2/4.0.0/UML#//Property"/>
-      </eAnnotations>
-    </eClassifiers>
   </ecore:EPackage>
   <ocl.ecore:Variable name="self">
     <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
@@ -305,15 +252,6 @@
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
     <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Class"/>
-  </ocl.ecore:Variable>
-  <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
-  </ocl.ecore:Variable>
-  <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Property"/>
-  </ocl.ecore:Variable>
-  <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Property"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
     <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
@@ -477,56 +415,6 @@
     <eAnnotations source="positions.31" references="/0/getValue/@expression/@argument.2/@part.2/arg2">
       <details key="start" value="788"/>
       <details key="end" value="792"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.32" references="/0/getValueProp">
-      <details key="start" value="799"/>
-      <details key="end" value="1023"/>
-      <details key="line" value="13"/>
-    </eAnnotations>
-    <eAnnotations source="positions.33" references="/0/getValueProp/arg0">
-      <details key="start" value="826"/>
-      <details key="end" value="841"/>
-      <details key="line" value="13"/>
-    </eAnnotations>
-    <eAnnotations source="positions.34" references="/0/getValueProp/arg2">
-      <details key="start" value="843"/>
-      <details key="end" value="856"/>
-      <details key="line" value="13"/>
-    </eAnnotations>
-    <eAnnotations source="positions.35" references="/0/getValueProp/@expression">
-      <details key="start" value="870"/>
-      <details key="end" value="1020"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.36" references="/0/getValueProp/@expression/self">
-      <details key="start" value="-1"/>
-      <details key="end" value="-1"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.37" references="/0/getValueProp/@expression/@argument.0">
-      <details key="start" value="877"/>
-      <details key="end" value="932"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.38" references="/0/getValueProp/@expression/@argument.1">
-      <details key="start" value="934"/>
-      <details key="end" value="997"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.39" references="/0/getValueProp/@expression/@argument.2">
-      <details key="start" value="999"/>
-      <details key="end" value="1019"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.40" references="/0/getValueProp/@expression/@argument.2/@part.0/arg0">
-      <details key="start" value="1008"/>
-      <details key="end" value="1012"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.41" references="/0/getValueProp/@expression/@argument.2/@part.1/arg2">
-      <details key="start" value="1014"/>
-      <details key="end" value="1018"/>
       <details key="line" value="0"/>
     </eAnnotations>
   </ecore:EAnnotation>

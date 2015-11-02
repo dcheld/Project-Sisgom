@@ -9,6 +9,3 @@
 
 [query public getValue(arg0 : Class, arg1 : String, arg2 : String) : ObjectNode
 	= invoke('org.eclipse.acceleo.sisgom.uml2java.main.UML2Services', 'getValue(org.eclipse.uml2.uml.Class, java.lang.String, java.lang.String)', Sequence{arg0, arg1, arg2}) /]
-
-[query public getValueProp(arg0 : Property, arg2 : String) : String
-	= invoke('org.eclipse.acceleo.sisgom.uml2java.main.UML2Services', 'getValueProp(org.eclipse.uml2.uml.Property, java.lang.String)', Sequence{arg0, arg2}) /]

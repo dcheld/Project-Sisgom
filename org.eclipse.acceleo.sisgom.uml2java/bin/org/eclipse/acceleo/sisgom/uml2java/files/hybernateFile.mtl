@@ -12,7 +12,9 @@
 @Table([aClass.atributosStereotype('Table')/])
 [/if]
 [/template]
+
 [template public atributosStereotype(aClass : Class, stereotypeName : String) post (trim())]
+
 [let stereotype : Stereotype = aClass.getStereotype(stereotypeName)]
 	[for (prop : Property | stereotype.attribute)separator(', ')? (prop.type.oclIsKindOf(PrimitiveType))]
 		[if (prop.name <> '')][prop.name/]=[/if]"[aClass.getValue(stereotype, prop.name)/]"

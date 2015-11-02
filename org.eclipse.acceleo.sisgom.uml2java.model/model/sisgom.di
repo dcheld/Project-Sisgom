@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="ASCII"?>
-<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:di="http://www.eclipse.org/papyrus/0.7.0/sashdi" xmlns:org.eclipse.papyrus.infra.table.instance.papyrustableinstance="http://www.eclipse.org/Papyrus/Table/0.8.0/papyrustableinstance" xmlns:tableinstance="http://www.eclipse.org/EMF_Facet/ModelCellEditor/0.1.0/tableinstance" xmlns:tableinstance2="http://www.eclipse.org/EMF_Facet/Table/0.1.0/tableinstance2">
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:di="http://www.eclipse.org/papyrus/0.7.0/sashdi" xmlns:org.eclipse.papyrus.infra.table.instance.papyrustableinstance="http://www.eclipse.org/Papyrus/Table/0.8.0/papyrustableinstance" xmlns:tableinstance2="http://www.eclipse.org/EMF_Facet/Table/0.1.0/tableinstance2">
   <di:SashWindowsMngr>
     <pageList>
       <availablePage>
@@ -26,6 +26,7 @@
           <children>
             <emfPageIdentifier href="sisgom.notation#_sLVkUEQjEeWT7PHpy37frQ"/>
           </children>
+          <children emfPageIdentifier="/1"/>
         </children>
       </windows>
     </sashModel>
@@ -34,9 +35,10 @@
   <tableinstance2:TableInstance2 description="Table Description">
     <tableConfiguration href="platform:/plugin/org.eclipse.papyrus.uml.table.default/resources/default.tableconfiguration2#/"/>
     <customizations href="emffacet:/customization/UMLPapyrusDefaultBrowserCustomization#/"/>
+    <customizations href="#/2/@localCustomizations.1"/>
+    <customizations href="#/2/@localCustomizations.0"/>
     <context href="sisgom.uml#_sKvHYEQjEeWT7PHpy37frQ"/>
-    <columns xsi:type="tableinstance:DefaultLabelColumn"/>
-    <columns xsi:type="tableinstance:MetaClassColumn"/>
-    <columns xsi:type="tableinstance:EContainerColumn"/>
+    <localCustomizations metamodelURI="http://www.eclipse.org/emf/2002/Ecore"/>
+    <localCustomizations metamodelURI="http://www.eclipse.org/uml2/4.0.0/UML"/>
   </tableinstance2:TableInstance2>
 </xmi:XMI>

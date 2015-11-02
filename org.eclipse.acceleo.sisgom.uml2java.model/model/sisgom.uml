@@ -637,13 +637,13 @@
         <interfaceRealization xmi:id="_DAfx4FwEEeW5eL1ioNHr8g" name="InterfaceRealization1" client="_vlZEEFwDEeW5eL1ioNHr8g" supplier="_-LsEQFvxEeW5eL1ioNHr8g" contract="_-LsEQFvxEeW5eL1ioNHr8g"/>
       </packagedElement>
     </packagedElement>
-    <profileApplication xmi:id="_n-bOcIFtEeWpJfjnhrR3hg">
-      <eAnnotations xmi:id="_n-ff4IFtEeWpJfjnhrR3hg" source="http://www.eclipse.org/uml2/2.0.0/UML">
+    <profileApplication xmi:id="_LACLgIF4EeW827dCzYHMcg">
+      <eAnnotations xmi:id="_LAMjkIF4EeW827dCzYHMcg" source="http://www.eclipse.org/uml2/2.0.0/UML">
         <references xmi:type="ecore:EPackage" href="perfilUMLEntidade.profile.uml#_bQ_dEIFuEeWpJfjnhrR3hg"/>
       </eAnnotations>
       <appliedProfile href="perfilUMLEntidade.profile.uml#_xmcH_nz5EeWpDqOQqcCvGQ"/>
     </profileApplication>
   </uml:Model>
-  <Profile:Entity xmi:id="_vydLcIFtEeWpJfjnhrR3hg" base_Class="_WS4_cEQlEeWHYo_Ly7kndQ"/>
-  <Profile:Table xmi:id="_vym8cIFtEeWpJfjnhrR3hg" base_Class="_WS4_cEQlEeWHYo_Ly7kndQ" name="End"/>
+  <Profile:Table xmi:id="_MNHpsIF4EeW827dCzYHMcg" base_Class="_WS4_cEQlEeWHYo_Ly7kndQ" name="Teste"/>
+  <Profile:Entity xmi:id="_kUD0gIF4EeW827dCzYHMcg" base_Class="_WS4_cEQlEeWHYo_Ly7kndQ"/>
 </xmi:XMI>
