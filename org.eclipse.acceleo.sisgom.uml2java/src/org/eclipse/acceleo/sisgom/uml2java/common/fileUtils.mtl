@@ -8,7 +8,11 @@
  * @param aType The type (class, interface or enumeration most of the time).
  */]
 [template public genFilePath(aType : Type)]
-[aType.packagePath() + aType.name/].java
+[aType.getSourceFolder() + '/' + aType.packagePath() + aType.name/].java
+[/template]
+
+[template public generateSpecificProjectFolder(aModel : Model, postFix:String) post (trim())]
+[aModel.getSourceFolder().concat(postFix)/]
 [/template]
 
 [**

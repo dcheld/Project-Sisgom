@@ -5,13 +5,11 @@
       <takesTypesFrom href="http://www.eclipse.org/uml2/4.0.0/UML#/"/>
     </input>
     <imports href="../common/fileUtils.emtl#/0"/>
-    <imports href="../main/uml2services.emtl#/0"/>
     <ownedModuleElement xsi:type="mtl:Template" name="hybernatEntity" visibility="Public">
       <body xsi:type="mtl:IfBlock">
         <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="@Entity&#xA;"/>
-        <ifExpr xsi:type="mtl:QueryInvocation">
+        <ifExpr xsi:type="mtl:QueryInvocation" definition="/0/hasStereotypeQuery">
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
-          <definition href="../main/uml2services.emtl#/0/hasStereotype"/>
           <argument xsi:type="ocl.ecore:VariableExp" name="aClass" referredVariable="/0/hybernatEntity/aClass">
             <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Class"/>
           </argument>
@@ -22,7 +20,7 @@
       </body>
       <body xsi:type="mtl:IfBlock">
         <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="@Table("/>
-        <body xsi:type="mtl:TemplateInvocation" definition="/0/atributosStereotype">
+        <body xsi:type="mtl:TemplateInvocation" definition="/0/attributeStereotype">
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
           <argument xsi:type="ocl.ecore:VariableExp" name="aClass" referredVariable="/0/hybernatEntity/aClass">
             <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Class"/>
@@ -32,9 +30,8 @@
           </argument>
         </body>
         <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=")&#xA;"/>
-        <ifExpr xsi:type="mtl:QueryInvocation">
+        <ifExpr xsi:type="mtl:QueryInvocation" definition="/0/hasStereotypeQuery">
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
-          <definition href="../main/uml2services.emtl#/0/hasStereotype"/>
           <argument xsi:type="ocl.ecore:VariableExp" name="aClass" referredVariable="/0/hybernatEntity/aClass">
             <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Class"/>
           </argument>
@@ -53,101 +50,87 @@
         </source>
       </post>
     </ownedModuleElement>
-    <ownedModuleElement xsi:type="mtl:Template" name="atributosStereotype" visibility="Public">
-      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;"/>
-      <body xsi:type="mtl:LetBlock">
-        <body xsi:type="mtl:ForBlock">
-          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#x9;&#x9;"/>
-          <body xsi:type="mtl:IfBlock">
-            <body xsi:type="ocl.ecore:PropertyCallExp">
-              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-              <source xsi:type="ocl.ecore:VariableExp" name="prop" referredVariable="/0/atributosStereotype/@body.1/@body.0/prop">
-                <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Property"/>
-              </source>
-              <referredProperty xsi:type="ecore:EAttribute" href="http://www.eclipse.org/uml2/4.0.0/UML#//NamedElement/name"/>
-            </body>
-            <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="="/>
-            <ifExpr xsi:type="ocl.ecore:OperationCallExp">
-              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
-              <source xsi:type="ocl.ecore:PropertyCallExp">
-                <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-                <source xsi:type="ocl.ecore:VariableExp" name="prop" referredVariable="/0/atributosStereotype/@body.1/@body.0/prop">
-                  <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Property"/>
-                </source>
-                <referredProperty xsi:type="ecore:EAttribute" href="http://www.eclipse.org/uml2/4.0.0/UML#//NamedElement/name"/>
-              </source>
-              <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="">
-                <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-              </argument>
-              <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String_Class/%3C%3E"/>
-            </ifExpr>
-          </body>
-          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&quot;"/>
-          <body xsi:type="ocl.ecore:OperationCallExp">
-            <eType xsi:type="ocl.ecore:AnyType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny"/>
-            <source xsi:type="ocl.ecore:VariableExp" name="aClass" referredVariable="/0/atributosStereotype/aClass">
-              <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Class"/>
-            </source>
-            <argument xsi:type="ocl.ecore:VariableExp" name="stereotype" referredVariable="/0/atributosStereotype/@body.1/stereotype">
-              <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Stereotype"/>
-            </argument>
-            <argument xsi:type="ocl.ecore:PropertyCallExp">
-              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-              <source xsi:type="ocl.ecore:VariableExp" name="prop" referredVariable="/0/atributosStereotype/@body.1/@body.0/prop">
-                <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Property"/>
-              </source>
-              <referredProperty xsi:type="ecore:EAttribute" href="http://www.eclipse.org/uml2/4.0.0/UML#//NamedElement/name"/>
-            </argument>
-            <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/uml2/4.0.0/UML#//Element/getValue"/>
-          </body>
-          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&quot;&#xA;"/>
-          <loopVariable name="prop">
+    <ownedModuleElement xsi:type="mtl:Template" name="hybernatProperty" visibility="Public">
+      <body xsi:type="mtl:IfBlock">
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="@Id&#xA;"/>
+        <ifExpr xsi:type="mtl:QueryInvocation" definition="/0/hasStereotypeQuery">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+          <argument xsi:type="ocl.ecore:VariableExp" name="prop" referredVariable="/0/hybernatProperty/prop">
             <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Property"/>
-          </loopVariable>
-          <iterSet xsi:type="ocl.ecore:PropertyCallExp" eType="/16/Set(Property)">
-            <source xsi:type="ocl.ecore:VariableExp" name="stereotype" referredVariable="/0/atributosStereotype/@body.1/stereotype">
-              <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Stereotype"/>
-            </source>
-            <referredProperty xsi:type="ecore:EReference" href="http://www.eclipse.org/uml2/4.0.0/UML#//Classifier/attribute"/>
-          </iterSet>
-          <each xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=", ">
+          </argument>
+          <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="Id">
             <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-          </each>
-          <guard xsi:type="ocl.ecore:OperationCallExp">
-            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
-            <source xsi:type="ocl.ecore:PropertyCallExp">
-              <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Type"/>
-              <source xsi:type="ocl.ecore:VariableExp" name="prop" referredVariable="/0/atributosStereotype/@body.1/@body.0/prop">
-                <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Property"/>
-              </source>
-              <referredProperty xsi:type="ecore:EReference" href="http://www.eclipse.org/uml2/4.0.0/UML#//TypedElement/type"/>
-            </source>
-            <argument xsi:type="ocl.ecore:TypeExp" eType="/20/PrimitiveType">
-              <referredType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//PrimitiveType"/>
-            </argument>
-            <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny_Class/oclIsKindOf"/>
-          </guard>
-        </body>
-        <letVariable name="stereotype">
-          <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Stereotype"/>
-          <initExpression xsi:type="mtl:QueryInvocation">
-            <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Stereotype"/>
-            <definition href="../main/uml2services.emtl#/0/getStereotype"/>
-            <argument xsi:type="ocl.ecore:VariableExp" name="aClass" referredVariable="/0/atributosStereotype/aClass">
-              <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Class"/>
-            </argument>
-            <argument xsi:type="ocl.ecore:VariableExp" name="stereotypeName" referredVariable="/0/atributosStereotype/stereotypeName">
-              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-            </argument>
-          </initExpression>
-        </letVariable>
+          </argument>
+        </ifExpr>
       </body>
-      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;"/>
-      <parameter name="aClass">
-        <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Class"/>
-      </parameter>
-      <parameter name="stereotypeName">
-        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+      <body xsi:type="mtl:IfBlock">
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="@Column("/>
+        <body xsi:type="mtl:TemplateInvocation" definition="/0/attributeStereotype">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          <argument xsi:type="ocl.ecore:VariableExp" name="prop" referredVariable="/0/hybernatProperty/prop">
+            <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Property"/>
+          </argument>
+          <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="Column">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          </argument>
+        </body>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=")&#xA;"/>
+        <ifExpr xsi:type="mtl:QueryInvocation" definition="/0/hasStereotypeQuery">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+          <argument xsi:type="ocl.ecore:VariableExp" name="prop" referredVariable="/0/hybernatProperty/prop">
+            <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Property"/>
+          </argument>
+          <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="Column">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          </argument>
+        </ifExpr>
+      </body>
+      <body xsi:type="mtl:IfBlock">
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="@GeneratedValue("/>
+        <body xsi:type="mtl:TemplateInvocation" definition="/0/attributeStereotype">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          <argument xsi:type="ocl.ecore:VariableExp" name="prop" referredVariable="/0/hybernatProperty/prop">
+            <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Property"/>
+          </argument>
+          <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="GeneratedValue">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          </argument>
+        </body>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=")&#xA;"/>
+        <ifExpr xsi:type="mtl:QueryInvocation" definition="/0/hasStereotypeQuery">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+          <argument xsi:type="ocl.ecore:VariableExp" name="prop" referredVariable="/0/hybernatProperty/prop">
+            <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Property"/>
+          </argument>
+          <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="GeneratedValue">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          </argument>
+        </ifExpr>
+      </body>
+      <body xsi:type="mtl:IfBlock">
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="@GeneratedValue("/>
+        <body xsi:type="mtl:TemplateInvocation" definition="/0/attributeStereotype">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          <argument xsi:type="ocl.ecore:VariableExp" name="prop" referredVariable="/0/hybernatProperty/prop">
+            <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Property"/>
+          </argument>
+          <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="GeneratedValue">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          </argument>
+        </body>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=")&#xA;"/>
+        <ifExpr xsi:type="mtl:QueryInvocation" definition="/0/hasStereotypeQuery">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+          <argument xsi:type="ocl.ecore:VariableExp" name="prop" referredVariable="/0/hybernatProperty/prop">
+            <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Property"/>
+          </argument>
+          <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="GeneratedValue">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          </argument>
+        </ifExpr>
+      </body>
+      <parameter name="prop">
+        <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Property"/>
       </parameter>
       <post xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/String_Class/trim">
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
@@ -155,6 +138,413 @@
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         </source>
       </post>
+    </ownedModuleElement>
+    <ownedModuleElement xsi:type="mtl:Template" name="generateStereotype" visibility="Public">
+      <body xsi:type="mtl:ForBlock">
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#x9;"/>
+        <body xsi:type="mtl:TemplateInvocation" definition="/0/attributeStereotype.1">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          <argument xsi:type="ocl.ecore:VariableExp" name="e" referredVariable="/0/generateStereotype/e">
+            <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Element"/>
+          </argument>
+          <argument xsi:type="ocl.ecore:VariableExp" name="s" referredVariable="/0/generateStereotype/@body.0/s">
+            <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Stereotype"/>
+          </argument>
+        </body>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;"/>
+        <loopVariable name="s">
+          <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Stereotype"/>
+        </loopVariable>
+        <iterSet xsi:type="ocl.ecore:OperationCallExp" eType="/27/Set(Stereotype)">
+          <source xsi:type="ocl.ecore:VariableExp" name="e" referredVariable="/0/generateStereotype/e">
+            <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Element"/>
+          </source>
+          <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/uml2/4.0.0/UML#//Element/getAppliedStereotypes"/>
+        </iterSet>
+      </body>
+      <parameter name="e">
+        <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Element"/>
+      </parameter>
+      <post xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/String_Class/trim">
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <source xsi:type="ocl.ecore:VariableExp" name="self" referredVariable="/25">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        </source>
+      </post>
+    </ownedModuleElement>
+    <ownedModuleElement xsi:type="mtl:Template" name="attributeStereotype" visibility="Public">
+      <body xsi:type="mtl:LetBlock">
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#x9;"/>
+        <body xsi:type="mtl:TemplateInvocation" definition="/0/attributeStereotype.1">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          <argument xsi:type="ocl.ecore:VariableExp" name="e" referredVariable="/0/attributeStereotype/e">
+            <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Element"/>
+          </argument>
+          <argument xsi:type="ocl.ecore:VariableExp" name="s" referredVariable="/0/attributeStereotype/@body.0/s">
+            <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Stereotype"/>
+          </argument>
+        </body>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;"/>
+        <letVariable name="s">
+          <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Stereotype"/>
+          <initExpression xsi:type="mtl:QueryInvocation" definition="/0/getStereotypeQuery">
+            <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Stereotype"/>
+            <argument xsi:type="ocl.ecore:VariableExp" name="e" referredVariable="/0/attributeStereotype/e">
+              <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Element"/>
+            </argument>
+            <argument xsi:type="ocl.ecore:VariableExp" name="name" referredVariable="/0/attributeStereotype/name">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            </argument>
+          </initExpression>
+        </letVariable>
+      </body>
+      <parameter name="e">
+        <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Element"/>
+      </parameter>
+      <parameter name="name">
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+      </parameter>
+      <post xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/String_Class/trim">
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <source xsi:type="ocl.ecore:VariableExp" name="self" referredVariable="/36">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        </source>
+      </post>
+    </ownedModuleElement>
+    <ownedModuleElement xsi:type="mtl:Template" name="attributeStereotype" visibility="Public">
+      <body xsi:type="mtl:ForBlock">
+        <body xsi:type="mtl:IfBlock">
+          <body xsi:type="ocl.ecore:PropertyCallExp">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            <source xsi:type="ocl.ecore:VariableExp" name="prop" referredVariable="/0/attributeStereotype.1/@body.0/prop">
+              <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Property"/>
+            </source>
+            <referredProperty xsi:type="ecore:EAttribute" href="http://www.eclipse.org/uml2/4.0.0/UML#//NamedElement/name"/>
+          </body>
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="="/>
+          <ifExpr xsi:type="ocl.ecore:OperationCallExp">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+            <source xsi:type="ocl.ecore:PropertyCallExp">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+              <source xsi:type="ocl.ecore:VariableExp" name="prop" referredVariable="/0/attributeStereotype.1/@body.0/prop">
+                <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Property"/>
+              </source>
+              <referredProperty xsi:type="ecore:EAttribute" href="http://www.eclipse.org/uml2/4.0.0/UML#//NamedElement/name"/>
+            </source>
+            <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            </argument>
+            <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String_Class/%3C%3E"/>
+          </ifExpr>
+        </body>
+        <body xsi:type="mtl:TemplateInvocation" definition="/0/attributeStereotypeGetValue">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          <argument xsi:type="ocl.ecore:VariableExp" name="prop" referredVariable="/0/attributeStereotype.1/@body.0/prop">
+            <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Property"/>
+          </argument>
+          <argument xsi:type="ocl.ecore:VariableExp" name="e" referredVariable="/0/attributeStereotype.1/e">
+            <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Element"/>
+          </argument>
+          <argument xsi:type="ocl.ecore:VariableExp" name="s" referredVariable="/0/attributeStereotype.1/s">
+            <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Stereotype"/>
+          </argument>
+        </body>
+        <loopVariable name="prop">
+          <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Property"/>
+        </loopVariable>
+        <iterSet xsi:type="ocl.ecore:PropertyCallExp" eType="/27/Set(Property)">
+          <source xsi:type="ocl.ecore:VariableExp" name="s" referredVariable="/0/attributeStereotype.1/s">
+            <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Stereotype"/>
+          </source>
+          <referredProperty xsi:type="ecore:EReference" href="http://www.eclipse.org/uml2/4.0.0/UML#//Classifier/attribute"/>
+        </iterSet>
+        <each xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=", ">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        </each>
+        <guard xsi:type="ocl.ecore:OperationCallExp">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+          <source xsi:type="ocl.ecore:OperationCallExp">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+            <source xsi:type="ocl.ecore:PropertyCallExp">
+              <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Type"/>
+              <source xsi:type="ocl.ecore:VariableExp" name="prop" referredVariable="/0/attributeStereotype.1/@body.0/prop">
+                <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Property"/>
+              </source>
+              <referredProperty xsi:type="ecore:EReference" href="http://www.eclipse.org/uml2/4.0.0/UML#//TypedElement/type"/>
+            </source>
+            <argument xsi:type="ocl.ecore:TypeExp" eType="/48/Class">
+              <referredType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Class"/>
+            </argument>
+            <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny_Class/oclIsTypeOf"/>
+          </source>
+          <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean_Class/not"/>
+        </guard>
+      </body>
+      <parameter name="e">
+        <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Element"/>
+      </parameter>
+      <parameter name="s">
+        <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Stereotype"/>
+      </parameter>
+      <post xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/String_Class/trim">
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <source xsi:type="ocl.ecore:VariableExp" name="self" referredVariable="/43">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        </source>
+      </post>
+    </ownedModuleElement>
+    <ownedModuleElement xsi:type="mtl:Template" name="attributeStereotypeGetValue" visibility="Public">
+      <body xsi:type="mtl:IfBlock">
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&quot;"/>
+        <body xsi:type="ocl.ecore:OperationCallExp">
+          <eType xsi:type="ocl.ecore:AnyType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny"/>
+          <source xsi:type="ocl.ecore:VariableExp" name="e" referredVariable="/0/attributeStereotypeGetValue/e">
+            <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Element"/>
+          </source>
+          <argument xsi:type="ocl.ecore:VariableExp" name="s" referredVariable="/0/attributeStereotypeGetValue/s">
+            <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Stereotype"/>
+          </argument>
+          <argument xsi:type="ocl.ecore:PropertyCallExp">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            <source xsi:type="ocl.ecore:VariableExp" name="prop" referredVariable="/0/attributeStereotypeGetValue/prop">
+              <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Property"/>
+            </source>
+            <referredProperty xsi:type="ecore:EAttribute" href="http://www.eclipse.org/uml2/4.0.0/UML#//NamedElement/name"/>
+          </argument>
+          <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/uml2/4.0.0/UML#//Element/getValue"/>
+        </body>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&quot;&#xA;"/>
+        <ifExpr xsi:type="ocl.ecore:OperationCallExp">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+          <source xsi:type="ocl.ecore:PropertyCallExp">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            <source xsi:type="ocl.ecore:PropertyCallExp">
+              <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Type"/>
+              <source xsi:type="ocl.ecore:VariableExp" name="prop" referredVariable="/0/attributeStereotypeGetValue/prop">
+                <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Property"/>
+              </source>
+              <referredProperty xsi:type="ecore:EReference" href="http://www.eclipse.org/uml2/4.0.0/UML#//TypedElement/type"/>
+            </source>
+            <referredProperty xsi:type="ecore:EAttribute" href="http://www.eclipse.org/uml2/4.0.0/UML#//NamedElement/name"/>
+          </source>
+          <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="String">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          </argument>
+          <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String_Class/="/>
+        </ifExpr>
+        <else>
+          <body xsi:type="ocl.ecore:PropertyCallExp">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            <source xsi:type="ocl.ecore:PropertyCallExp">
+              <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Type"/>
+              <source xsi:type="ocl.ecore:VariableExp" name="prop" referredVariable="/0/attributeStereotypeGetValue/prop">
+                <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Property"/>
+              </source>
+              <referredProperty xsi:type="ecore:EReference" href="http://www.eclipse.org/uml2/4.0.0/UML#//TypedElement/type"/>
+            </source>
+            <referredProperty xsi:type="ecore:EAttribute" href="http://www.eclipse.org/uml2/4.0.0/UML#//NamedElement/name"/>
+          </body>
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="."/>
+          <body xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/EObject_Class/eGet">
+            <eType xsi:type="ocl.ecore:AnyType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny"/>
+            <source xsi:type="ocl.ecore:OperationCallExp">
+              <eType xsi:type="ocl.ecore:AnyType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny"/>
+              <source xsi:type="ocl.ecore:VariableExp" name="e" referredVariable="/0/attributeStereotypeGetValue/e">
+                <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Element"/>
+              </source>
+              <argument xsi:type="ocl.ecore:VariableExp" name="s" referredVariable="/0/attributeStereotypeGetValue/s">
+                <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Stereotype"/>
+              </argument>
+              <argument xsi:type="ocl.ecore:PropertyCallExp">
+                <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                <source xsi:type="ocl.ecore:VariableExp" name="prop" referredVariable="/0/attributeStereotypeGetValue/prop">
+                  <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Property"/>
+                </source>
+                <referredProperty xsi:type="ecore:EAttribute" href="http://www.eclipse.org/uml2/4.0.0/UML#//NamedElement/name"/>
+              </argument>
+              <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/uml2/4.0.0/UML#//Element/getValue"/>
+            </source>
+            <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="name">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            </argument>
+          </body>
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;"/>
+        </else>
+        <elseIf>
+          <body xsi:type="ocl.ecore:OperationCallExp">
+            <eType xsi:type="ocl.ecore:AnyType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny"/>
+            <source xsi:type="ocl.ecore:VariableExp" name="e" referredVariable="/0/attributeStereotypeGetValue/e">
+              <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Element"/>
+            </source>
+            <argument xsi:type="ocl.ecore:VariableExp" name="s" referredVariable="/0/attributeStereotypeGetValue/s">
+              <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Stereotype"/>
+            </argument>
+            <argument xsi:type="ocl.ecore:PropertyCallExp">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+              <source xsi:type="ocl.ecore:VariableExp" name="prop" referredVariable="/0/attributeStereotypeGetValue/prop">
+                <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Property"/>
+              </source>
+              <referredProperty xsi:type="ecore:EAttribute" href="http://www.eclipse.org/uml2/4.0.0/UML#//NamedElement/name"/>
+            </argument>
+            <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/uml2/4.0.0/UML#//Element/getValue"/>
+          </body>
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;"/>
+          <ifExpr xsi:type="ocl.ecore:OperationCallExp">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+            <source xsi:type="ocl.ecore:PropertyCallExp">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+              <source xsi:type="ocl.ecore:PropertyCallExp">
+                <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Type"/>
+                <source xsi:type="ocl.ecore:VariableExp" name="prop" referredVariable="/0/attributeStereotypeGetValue/prop">
+                  <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Property"/>
+                </source>
+                <referredProperty xsi:type="ecore:EReference" href="http://www.eclipse.org/uml2/4.0.0/UML#//TypedElement/type"/>
+              </source>
+              <referredProperty xsi:type="ecore:EAttribute" href="http://www.eclipse.org/uml2/4.0.0/UML#//NamedElement/name"/>
+            </source>
+            <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="Integer">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            </argument>
+            <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String_Class/="/>
+          </ifExpr>
+        </elseIf>
+        <elseIf>
+          <body xsi:type="ocl.ecore:OperationCallExp">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            <source xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/OclAny_Class/toString">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+              <source xsi:type="ocl.ecore:OperationCallExp">
+                <eType xsi:type="ocl.ecore:AnyType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny"/>
+                <source xsi:type="ocl.ecore:VariableExp" name="e" referredVariable="/0/attributeStereotypeGetValue/e">
+                  <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Element"/>
+                </source>
+                <argument xsi:type="ocl.ecore:VariableExp" name="s" referredVariable="/0/attributeStereotypeGetValue/s">
+                  <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Stereotype"/>
+                </argument>
+                <argument xsi:type="ocl.ecore:PropertyCallExp">
+                  <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                  <source xsi:type="ocl.ecore:VariableExp" name="prop" referredVariable="/0/attributeStereotypeGetValue/prop">
+                    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Property"/>
+                  </source>
+                  <referredProperty xsi:type="ecore:EAttribute" href="http://www.eclipse.org/uml2/4.0.0/UML#//NamedElement/name"/>
+                </argument>
+                <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/uml2/4.0.0/UML#//Element/getValue"/>
+              </source>
+            </source>
+            <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String_Class/toLowerCase"/>
+          </body>
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;"/>
+          <ifExpr xsi:type="ocl.ecore:OperationCallExp">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+            <source xsi:type="ocl.ecore:PropertyCallExp">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+              <source xsi:type="ocl.ecore:PropertyCallExp">
+                <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Type"/>
+                <source xsi:type="ocl.ecore:VariableExp" name="prop" referredVariable="/0/attributeStereotypeGetValue/prop">
+                  <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Property"/>
+                </source>
+                <referredProperty xsi:type="ecore:EReference" href="http://www.eclipse.org/uml2/4.0.0/UML#//TypedElement/type"/>
+              </source>
+              <referredProperty xsi:type="ecore:EAttribute" href="http://www.eclipse.org/uml2/4.0.0/UML#//NamedElement/name"/>
+            </source>
+            <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="Boolean">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            </argument>
+            <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String_Class/="/>
+          </ifExpr>
+        </elseIf>
+      </body>
+      <parameter name="prop">
+        <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Property"/>
+      </parameter>
+      <parameter name="e">
+        <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Element"/>
+      </parameter>
+      <parameter name="s">
+        <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Stereotype"/>
+      </parameter>
+      <post xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/String_Class/trim">
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <source xsi:type="ocl.ecore:VariableExp" name="self" referredVariable="/58">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        </source>
+      </post>
+    </ownedModuleElement>
+    <ownedModuleElement xsi:type="mtl:Query" name="hasStereotypeQuery" visibility="Public">
+      <parameter name="elem">
+        <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Element"/>
+      </parameter>
+      <parameter name="name">
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+      </parameter>
+      <expression xsi:type="ocl.ecore:IteratorExp" name="exists">
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+        <source xsi:type="ocl.ecore:OperationCallExp" eType="/27/Set(Stereotype)">
+          <source xsi:type="ocl.ecore:VariableExp" name="self" referredVariable="/70">
+            <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Element"/>
+          </source>
+          <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/uml2/4.0.0/UML#//Element/getAppliedStereotypes"/>
+        </source>
+        <body xsi:type="ocl.ecore:OperationCallExp">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+          <source xsi:type="ocl.ecore:PropertyCallExp">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            <source xsi:type="ocl.ecore:VariableExp" name="e" referredVariable="/0/hasStereotypeQuery/exists/e">
+              <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Stereotype"/>
+            </source>
+            <referredProperty xsi:type="ecore:EAttribute" href="http://www.eclipse.org/uml2/4.0.0/UML#//NamedElement/name"/>
+          </source>
+          <argument xsi:type="ocl.ecore:VariableExp" name="name" referredVariable="/0/hasStereotypeQuery/name">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          </argument>
+          <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String_Class/="/>
+        </body>
+        <iterator xsi:type="ocl.ecore:Variable" name="e">
+          <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Stereotype"/>
+        </iterator>
+      </expression>
+      <type xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+    </ownedModuleElement>
+    <ownedModuleElement xsi:type="mtl:Query" name="getStereotypeQuery" visibility="Public">
+      <parameter name="elem">
+        <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Element"/>
+      </parameter>
+      <parameter name="name">
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+      </parameter>
+      <expression xsi:type="ocl.ecore:OperationCallExp">
+        <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Stereotype"/>
+        <source xsi:type="ocl.ecore:OperationCallExp" eType="/27/OrderedSet(Stereotype)">
+          <source xsi:type="ocl.ecore:IteratorExp" name="select" eType="/27/Set(Stereotype)">
+            <source xsi:type="ocl.ecore:OperationCallExp" eType="/27/Set(Stereotype)">
+              <source xsi:type="ocl.ecore:VariableExp" name="self" referredVariable="/73">
+                <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Element"/>
+              </source>
+              <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/uml2/4.0.0/UML#//Element/getAppliedStereotypes"/>
+            </source>
+            <body xsi:type="ocl.ecore:OperationCallExp">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+              <source xsi:type="ocl.ecore:PropertyCallExp">
+                <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                <source xsi:type="ocl.ecore:VariableExp" name="e" referredVariable="/0/getStereotypeQuery/@expression/@source/select/e">
+                  <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Stereotype"/>
+                </source>
+                <referredProperty xsi:type="ecore:EAttribute" href="http://www.eclipse.org/uml2/4.0.0/UML#//NamedElement/name"/>
+              </source>
+              <argument xsi:type="ocl.ecore:VariableExp" name="name" referredVariable="/0/getStereotypeQuery/name">
+                <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+              </argument>
+              <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String_Class/="/>
+            </body>
+            <iterator xsi:type="ocl.ecore:Variable" name="e">
+              <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Stereotype"/>
+            </iterator>
+          </source>
+          <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Set(T)_Class/asOrderedSet"/>
+        </source>
+        <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OrderedSet(T)_Class/first"/>
+      </expression>
+      <type xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Stereotype"/>
     </ownedModuleElement>
   </mtl:Module>
   <ecore:EPackage name="additions">
@@ -181,6 +571,13 @@
       <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
         <references href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
       </eAnnotations>
+      <eOperations name="eGet">
+        <eAnnotations source="MTL non-standard"/>
+        <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+        <eParameters name="featureName">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        </eParameters>
+      </eOperations>
       <eOperations name="hybernatEntity">
         <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
           <contents xsi:type="ocl.ecore:Constraint"/>
@@ -191,46 +588,91 @@
           <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Class"/>
         </eParameters>
       </eOperations>
-      <eOperations name="atributosStereotype">
+      <eOperations name="hybernatProperty">
         <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
           <contents xsi:type="ocl.ecore:Constraint"/>
         </eAnnotations>
-        <eAnnotations source="MTL" references="/0/atributosStereotype"/>
+        <eAnnotations source="MTL" references="/0/hybernatProperty"/>
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-        <eParameters name="aClass">
-          <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Class"/>
-        </eParameters>
-        <eParameters name="stereotypeName">
-          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <eParameters name="prop">
+          <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Property"/>
         </eParameters>
       </eOperations>
-      <eOperations name="hasStereotype">
+      <eOperations name="generateStereotype">
         <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
           <contents xsi:type="ocl.ecore:Constraint"/>
         </eAnnotations>
-        <eAnnotations source="MTL">
-          <references href="../main/uml2services.emtl#/0/hasStereotype"/>
+        <eAnnotations source="MTL" references="/0/generateStereotype"/>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <eParameters name="e">
+          <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Element"/>
+        </eParameters>
+      </eOperations>
+      <eOperations name="attributeStereotype">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
         </eAnnotations>
+        <eAnnotations source="MTL" references="/0/attributeStereotype"/>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <eParameters name="e">
+          <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Element"/>
+        </eParameters>
+        <eParameters name="name">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        </eParameters>
+      </eOperations>
+      <eOperations name="attributeStereotype">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL" references="/0/attributeStereotype.1"/>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <eParameters name="e">
+          <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Element"/>
+        </eParameters>
+        <eParameters name="s">
+          <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Stereotype"/>
+        </eParameters>
+      </eOperations>
+      <eOperations name="attributeStereotypeGetValue">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL" references="/0/attributeStereotypeGetValue"/>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <eParameters name="prop">
+          <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Property"/>
+        </eParameters>
+        <eParameters name="e">
+          <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Element"/>
+        </eParameters>
+        <eParameters name="s">
+          <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Stereotype"/>
+        </eParameters>
+      </eOperations>
+      <eOperations name="hasStereotypeQuery">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL" references="/0/hasStereotypeQuery"/>
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
-        <eParameters name="arg0">
-          <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Class"/>
+        <eParameters name="elem">
+          <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Element"/>
         </eParameters>
-        <eParameters name="arg1">
+        <eParameters name="name">
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         </eParameters>
       </eOperations>
-      <eOperations name="getStereotype">
+      <eOperations name="getStereotypeQuery">
         <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
           <contents xsi:type="ocl.ecore:Constraint"/>
         </eAnnotations>
-        <eAnnotations source="MTL">
-          <references href="../main/uml2services.emtl#/0/getStereotype"/>
-        </eAnnotations>
+        <eAnnotations source="MTL" references="/0/getStereotypeQuery"/>
         <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Stereotype"/>
-        <eParameters name="arg0">
-          <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Class"/>
+        <eParameters name="elem">
+          <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Element"/>
         </eParameters>
-        <eParameters name="arg1">
+        <eParameters name="name">
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         </eParameters>
       </eOperations>
@@ -239,6 +681,10 @@
       <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
         <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny"/>
       </eAnnotations>
+      <eOperations name="toString">
+        <eAnnotations source="MTL non-standard"/>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+      </eOperations>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Collection(T)_Class">
       <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
@@ -260,14 +706,9 @@
         <references href="http://www.eclipse.org/uml2/4.0.0/UML#//Class"/>
       </eAnnotations>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="Type_Class">
+    <eClassifiers xsi:type="ecore:EClass" name="Property_Class">
       <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
-        <references href="http://www.eclipse.org/uml2/4.0.0/UML#//Type"/>
-      </eAnnotations>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="Classifier_Class">
-      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
-        <references href="http://www.eclipse.org/uml2/4.0.0/UML#//Classifier"/>
+        <references href="http://www.eclipse.org/uml2/4.0.0/UML#//Property"/>
       </eAnnotations>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Element_Class">
@@ -275,6 +716,21 @@
         <references href="http://www.eclipse.org/uml2/4.0.0/UML#//Element"/>
       </eAnnotations>
     </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Type_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/uml2/4.0.0/UML#//Type"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Model_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/uml2/4.0.0/UML#//Model"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Classifier_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/uml2/4.0.0/UML#//Classifier"/>
+      </eAnnotations>
+    </eClassifiers>
   </ecore:EPackage>
   <ocl.ecore:Variable name="self">
     <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
@@ -304,7 +760,7 @@
     <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Class"/>
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Property"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
     <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
@@ -313,44 +769,66 @@
     <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Class"/>
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Property"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Class"/>
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Property"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Property"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Property"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Property"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Property"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Property"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Property"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Element"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Element"/>
   </ocl.ecore:Variable>
   <ecore:EPackage name="collections">
+    <eClassifiers xsi:type="ocl.ecore:SetType" name="Set(Stereotype)" instanceClassName="java.util.Set">
+      <elementType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Stereotype"/>
+    </eClassifiers>
     <eClassifiers xsi:type="ocl.ecore:SetType" name="Set(Property)" instanceClassName="java.util.Set">
       <elementType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Property"/>
     </eClassifiers>
-  </ecore:EPackage>
-  <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Class"/>
-  </ocl.ecore:Variable>
-  <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Class"/>
-  </ocl.ecore:Variable>
-  <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Property"/>
-  </ocl.ecore:Variable>
-  <ecore:EPackage name="types">
-    <eClassifiers xsi:type="ocl.ecore:TypeType" name="PrimitiveType">
-      <referredType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//PrimitiveType"/>
+    <eClassifiers xsi:type="ocl.ecore:OrderedSetType" name="OrderedSet(Stereotype)" instanceClassName="java.util.LinkedHashSet">
+      <elementType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Stereotype"/>
     </eClassifiers>
   </ecore:EPackage>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Property"/>
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Element"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Property"/>
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Stereotype"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Property"/>
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Stereotype"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Property"/>
-  </ocl.ecore:Variable>
-  <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Class"/>
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Element"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="i">
     <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
@@ -358,90 +836,215 @@
   <ocl.ecore:Variable name="self">
     <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
   </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Element"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Element"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Element"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Element"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Element"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Element"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Element"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Element"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Property"/>
+  </ocl.ecore:Variable>
+  <ecore:EPackage name="types">
+    <eClassifiers xsi:type="ocl.ecore:TypeType" name="Class">
+      <referredType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Class"/>
+    </eClassifiers>
+  </ecore:EPackage>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Property"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Property"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Property"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Property"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Element"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="i">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Property"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Property"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Property"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Property"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Property"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Property"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Property"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Property"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Property"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Property"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Element"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Element"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Element"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Element"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
   <ecore:EAnnotation source="positions">
     <eAnnotations source="positions.0" references="/0/hybernatEntity">
-      <details key="start" value="236"/>
-      <details key="end" value="452"/>
-      <details key="line" value="7"/>
+      <details key="start" value="165"/>
+      <details key="end" value="391"/>
+      <details key="line" value="6"/>
     </eAnnotations>
     <eAnnotations source="positions.1" references="/0/hybernatEntity/@body.0">
-      <details key="start" value="299"/>
-      <details key="end" value="350"/>
-      <details key="line" value="8"/>
+      <details key="start" value="228"/>
+      <details key="end" value="284"/>
+      <details key="line" value="7"/>
     </eAnnotations>
     <eAnnotations source="positions.2" references="/0/hybernatEntity/@body.0/@body.0">
-      <details key="start" value="337"/>
-      <details key="end" value="345"/>
-      <details key="line" value="9"/>
+      <details key="start" value="271"/>
+      <details key="end" value="279"/>
+      <details key="line" value="8"/>
     </eAnnotations>
     <eAnnotations source="positions.3" references="/0/hybernatEntity/@body.0/@ifExpr">
-      <details key="start" value="303"/>
-      <details key="end" value="335"/>
+      <details key="start" value="232"/>
+      <details key="end" value="269"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.4" references="/0/hybernatEntity/@body.0/@ifExpr/aClass">
-      <details key="start" value="304"/>
-      <details key="end" value="310"/>
+      <details key="start" value="233"/>
+      <details key="end" value="239"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.5" references="/0/hybernatEntity/@body.0/@ifExpr/@argument.1">
-      <details key="start" value="325"/>
-      <details key="end" value="333"/>
+      <details key="start" value="259"/>
+      <details key="end" value="267"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.6" references="/0/hybernatEntity/@body.1">
-      <details key="start" value="351"/>
-      <details key="end" value="440"/>
-      <details key="line" value="11"/>
+      <details key="start" value="285"/>
+      <details key="end" value="379"/>
+      <details key="line" value="10"/>
     </eAnnotations>
     <eAnnotations source="positions.7" references="/0/hybernatEntity/@body.1/@body.0">
-      <details key="start" value="388"/>
-      <details key="end" value="395"/>
-      <details key="line" value="12"/>
+      <details key="start" value="327"/>
+      <details key="end" value="334"/>
+      <details key="line" value="11"/>
     </eAnnotations>
     <eAnnotations source="positions.8" references="/0/hybernatEntity/@body.1/@body.1">
-      <details key="start" value="396"/>
-      <details key="end" value="431"/>
+      <details key="start" value="335"/>
+      <details key="end" value="370"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.9" references="/0/hybernatEntity/@body.1/@body.1/aClass">
-      <details key="start" value="396"/>
-      <details key="end" value="402"/>
+      <details key="start" value="335"/>
+      <details key="end" value="341"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.10" references="/0/hybernatEntity/@body.1/@body.1/@argument.1">
-      <details key="start" value="423"/>
-      <details key="end" value="430"/>
+      <details key="start" value="362"/>
+      <details key="end" value="369"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.11" references="/0/hybernatEntity/@body.1/@body.2">
-      <details key="start" value="433"/>
-      <details key="end" value="435"/>
-      <details key="line" value="12"/>
+      <details key="start" value="372"/>
+      <details key="end" value="374"/>
+      <details key="line" value="11"/>
     </eAnnotations>
     <eAnnotations source="positions.12" references="/0/hybernatEntity/@body.1/@ifExpr">
-      <details key="start" value="355"/>
-      <details key="end" value="386"/>
+      <details key="start" value="289"/>
+      <details key="end" value="325"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.13" references="/0/hybernatEntity/@body.1/@ifExpr/aClass">
-      <details key="start" value="356"/>
-      <details key="end" value="362"/>
+      <details key="start" value="290"/>
+      <details key="end" value="296"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.14" references="/0/hybernatEntity/@body.1/@ifExpr/@argument.1">
-      <details key="start" value="377"/>
-      <details key="end" value="384"/>
+      <details key="start" value="316"/>
+      <details key="end" value="323"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.15" references="/0/hybernatEntity/aClass">
-      <details key="start" value="268"/>
-      <details key="end" value="282"/>
-      <details key="line" value="7"/>
+      <details key="start" value="197"/>
+      <details key="end" value="211"/>
+      <details key="line" value="6"/>
     </eAnnotations>
     <eAnnotations source="positions.16" references="/0/hybernatEntity/@post">
-      <details key="start" value="290"/>
-      <details key="end" value="296"/>
+      <details key="start" value="219"/>
+      <details key="end" value="225"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.17" references="/0/hybernatEntity/@post/self">
@@ -449,189 +1052,869 @@
       <details key="end" value="-1"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.18" references="/0/atributosStereotype">
-      <details key="start" value="454"/>
-      <details key="end" value="834"/>
+    <eAnnotations source="positions.18" references="/0/hybernatProperty">
+      <details key="start" value="393"/>
+      <details key="end" value="851"/>
+      <details key="line" value="15"/>
+    </eAnnotations>
+    <eAnnotations source="positions.19" references="/0/hybernatProperty/@body.0">
+      <details key="start" value="459"/>
+      <details key="end" value="506"/>
       <details key="line" value="16"/>
     </eAnnotations>
-    <eAnnotations source="positions.19" references="/0/atributosStereotype/@body.0">
-      <details key="start" value="547"/>
-      <details key="end" value="548"/>
+    <eAnnotations source="positions.20" references="/0/hybernatProperty/@body.0/@body.0">
+      <details key="start" value="497"/>
+      <details key="end" value="501"/>
       <details key="line" value="17"/>
     </eAnnotations>
-    <eAnnotations source="positions.20" references="/0/atributosStereotype/@body.1">
-      <details key="start" value="548"/>
-      <details key="end" value="821"/>
-      <details key="line" value="18"/>
-    </eAnnotations>
-    <eAnnotations source="positions.21" references="/0/atributosStereotype/@body.1/@body.0">
-      <details key="start" value="618"/>
-      <details key="end" value="813"/>
-      <details key="line" value="19"/>
-    </eAnnotations>
-    <eAnnotations source="positions.22" references="/0/atributosStereotype/@body.1/@body.0/@body.0">
-      <details key="start" value="720"/>
-      <details key="end" value="722"/>
-      <details key="line" value="20"/>
-    </eAnnotations>
-    <eAnnotations source="positions.23" references="/0/atributosStereotype/@body.1/@body.0/@body.1">
-      <details key="start" value="722"/>
-      <details key="end" value="762"/>
-      <details key="line" value="20"/>
-    </eAnnotations>
-    <eAnnotations source="positions.24" references="/0/atributosStereotype/@body.1/@body.0/@body.1/@body.0">
-      <details key="start" value="745"/>
-      <details key="end" value="754"/>
+    <eAnnotations source="positions.21" references="/0/hybernatProperty/@body.0/@ifExpr">
+      <details key="start" value="463"/>
+      <details key="end" value="495"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.25" references="/0/atributosStereotype/@body.1/@body.0/@body.1/@body.0/prop">
+    <eAnnotations source="positions.22" references="/0/hybernatProperty/@body.0/@ifExpr/prop">
+      <details key="start" value="483"/>
+      <details key="end" value="487"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.23" references="/0/hybernatProperty/@body.0/@ifExpr/@argument.1">
+      <details key="start" value="489"/>
+      <details key="end" value="493"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.24" references="/0/hybernatProperty/@body.1">
+      <details key="start" value="507"/>
+      <details key="end" value="601"/>
+      <details key="line" value="19"/>
+    </eAnnotations>
+    <eAnnotations source="positions.25" references="/0/hybernatProperty/@body.1/@body.0">
+      <details key="start" value="549"/>
+      <details key="end" value="557"/>
+      <details key="line" value="20"/>
+    </eAnnotations>
+    <eAnnotations source="positions.26" references="/0/hybernatProperty/@body.1/@body.1">
+      <details key="start" value="558"/>
+      <details key="end" value="592"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.27" references="/0/hybernatProperty/@body.1/@body.1/prop">
+      <details key="start" value="558"/>
+      <details key="end" value="562"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.28" references="/0/hybernatProperty/@body.1/@body.1/@argument.1">
+      <details key="start" value="583"/>
+      <details key="end" value="591"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.29" references="/0/hybernatProperty/@body.1/@body.2">
+      <details key="start" value="594"/>
+      <details key="end" value="596"/>
+      <details key="line" value="20"/>
+    </eAnnotations>
+    <eAnnotations source="positions.30" references="/0/hybernatProperty/@body.1/@ifExpr">
+      <details key="start" value="511"/>
+      <details key="end" value="547"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.31" references="/0/hybernatProperty/@body.1/@ifExpr/prop">
+      <details key="start" value="531"/>
+      <details key="end" value="535"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.32" references="/0/hybernatProperty/@body.1/@ifExpr/@argument.1">
+      <details key="start" value="537"/>
+      <details key="end" value="545"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.33" references="/0/hybernatProperty/@body.2">
+      <details key="start" value="602"/>
+      <details key="end" value="720"/>
+      <details key="line" value="22"/>
+    </eAnnotations>
+    <eAnnotations source="positions.34" references="/0/hybernatProperty/@body.2/@body.0">
+      <details key="start" value="652"/>
+      <details key="end" value="668"/>
+      <details key="line" value="23"/>
+    </eAnnotations>
+    <eAnnotations source="positions.35" references="/0/hybernatProperty/@body.2/@body.1">
+      <details key="start" value="669"/>
+      <details key="end" value="711"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.36" references="/0/hybernatProperty/@body.2/@body.1/prop">
+      <details key="start" value="669"/>
+      <details key="end" value="673"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.37" references="/0/hybernatProperty/@body.2/@body.1/@argument.1">
+      <details key="start" value="694"/>
+      <details key="end" value="710"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.38" references="/0/hybernatProperty/@body.2/@body.2">
+      <details key="start" value="713"/>
+      <details key="end" value="715"/>
+      <details key="line" value="23"/>
+    </eAnnotations>
+    <eAnnotations source="positions.39" references="/0/hybernatProperty/@body.2/@ifExpr">
+      <details key="start" value="606"/>
+      <details key="end" value="650"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.40" references="/0/hybernatProperty/@body.2/@ifExpr/prop">
+      <details key="start" value="626"/>
+      <details key="end" value="630"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.41" references="/0/hybernatProperty/@body.2/@ifExpr/@argument.1">
+      <details key="start" value="632"/>
+      <details key="end" value="648"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.42" references="/0/hybernatProperty/@body.3">
+      <details key="start" value="721"/>
+      <details key="end" value="839"/>
+      <details key="line" value="25"/>
+    </eAnnotations>
+    <eAnnotations source="positions.43" references="/0/hybernatProperty/@body.3/@body.0">
+      <details key="start" value="771"/>
+      <details key="end" value="787"/>
+      <details key="line" value="26"/>
+    </eAnnotations>
+    <eAnnotations source="positions.44" references="/0/hybernatProperty/@body.3/@body.1">
+      <details key="start" value="788"/>
+      <details key="end" value="830"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.45" references="/0/hybernatProperty/@body.3/@body.1/prop">
+      <details key="start" value="788"/>
+      <details key="end" value="792"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.46" references="/0/hybernatProperty/@body.3/@body.1/@argument.1">
+      <details key="start" value="813"/>
+      <details key="end" value="829"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.47" references="/0/hybernatProperty/@body.3/@body.2">
+      <details key="start" value="832"/>
+      <details key="end" value="834"/>
+      <details key="line" value="26"/>
+    </eAnnotations>
+    <eAnnotations source="positions.48" references="/0/hybernatProperty/@body.3/@ifExpr">
+      <details key="start" value="725"/>
+      <details key="end" value="769"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.49" references="/0/hybernatProperty/@body.3/@ifExpr/prop">
       <details key="start" value="745"/>
       <details key="end" value="749"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.26" references="/0/atributosStereotype/@body.1/@body.0/@body.1/@body.1">
-      <details key="start" value="756"/>
-      <details key="end" value="757"/>
-      <details key="line" value="20"/>
-    </eAnnotations>
-    <eAnnotations source="positions.27" references="/0/atributosStereotype/@body.1/@body.0/@body.1/@ifExpr">
-      <details key="start" value="726"/>
-      <details key="end" value="743"/>
+    <eAnnotations source="positions.50" references="/0/hybernatProperty/@body.3/@ifExpr/@argument.1">
+      <details key="start" value="751"/>
+      <details key="end" value="767"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.28" references="/0/atributosStereotype/@body.1/@body.0/@body.1/@ifExpr/@source">
-      <details key="start" value="727"/>
-      <details key="end" value="736"/>
+    <eAnnotations source="positions.51" references="/0/hybernatProperty/prop">
+      <details key="start" value="427"/>
+      <details key="end" value="442"/>
+      <details key="line" value="15"/>
+    </eAnnotations>
+    <eAnnotations source="positions.52" references="/0/hybernatProperty/@post">
+      <details key="start" value="450"/>
+      <details key="end" value="456"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.29" references="/0/atributosStereotype/@body.1/@body.0/@body.1/@ifExpr/@source/prop">
-      <details key="start" value="727"/>
-      <details key="end" value="731"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.30" references="/0/atributosStereotype/@body.1/@body.0/@body.1/@ifExpr/@argument.0">
-      <details key="start" value="740"/>
-      <details key="end" value="742"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.31" references="/0/atributosStereotype/@body.1/@body.0/@body.2">
-      <details key="start" value="762"/>
-      <details key="end" value="763"/>
-      <details key="line" value="20"/>
-    </eAnnotations>
-    <eAnnotations source="positions.32" references="/0/atributosStereotype/@body.1/@body.0/@body.3">
-      <details key="start" value="764"/>
-      <details key="end" value="802"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.33" references="/0/atributosStereotype/@body.1/@body.0/@body.3/aClass">
-      <details key="start" value="764"/>
-      <details key="end" value="770"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.34" references="/0/atributosStereotype/@body.1/@body.0/@body.3/stereotype">
-      <details key="start" value="780"/>
-      <details key="end" value="790"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.35" references="/0/atributosStereotype/@body.1/@body.0/@body.3/@argument.1">
-      <details key="start" value="792"/>
-      <details key="end" value="801"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.36" references="/0/atributosStereotype/@body.1/@body.0/@body.3/@argument.1/prop">
-      <details key="start" value="792"/>
-      <details key="end" value="796"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.37" references="/0/atributosStereotype/@body.1/@body.0/@body.4">
-      <details key="start" value="804"/>
-      <details key="end" value="806"/>
-      <details key="line" value="20"/>
-    </eAnnotations>
-    <eAnnotations source="positions.38" references="/0/atributosStereotype/@body.1/@body.0/prop">
-      <details key="start" value="624"/>
-      <details key="end" value="639"/>
-      <details key="line" value="19"/>
-    </eAnnotations>
-    <eAnnotations source="positions.39" references="/0/atributosStereotype/@body.1/@body.0/@iterSet">
-      <details key="start" value="642"/>
-      <details key="end" value="662"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.40" references="/0/atributosStereotype/@body.1/@body.0/@iterSet/stereotype">
-      <details key="start" value="642"/>
-      <details key="end" value="652"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.41" references="/0/atributosStereotype/@body.1/@body.0/@each">
-      <details key="start" value="673"/>
-      <details key="end" value="677"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.42" references="/0/atributosStereotype/@body.1/@body.0/@guard">
-      <details key="start" value="681"/>
-      <details key="end" value="717"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.43" references="/0/atributosStereotype/@body.1/@body.0/@guard/@source">
-      <details key="start" value="681"/>
-      <details key="end" value="690"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.44" references="/0/atributosStereotype/@body.1/@body.0/@guard/@source/prop">
-      <details key="start" value="681"/>
-      <details key="end" value="685"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.45" references="/0/atributosStereotype/@body.1/@body.0/@guard/@argument.0">
-      <details key="start" value="703"/>
-      <details key="end" value="716"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.46" references="/0/atributosStereotype/@body.1/stereotype">
-      <details key="start" value="553"/>
-      <details key="end" value="615"/>
-      <details key="line" value="18"/>
-    </eAnnotations>
-    <eAnnotations source="positions.47" references="/0/atributosStereotype/@body.1/stereotype/@initExpression">
-      <details key="start" value="580"/>
-      <details key="end" value="616"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.48" references="/0/atributosStereotype/@body.1/stereotype/@initExpression/aClass">
-      <details key="start" value="580"/>
-      <details key="end" value="586"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.49" references="/0/atributosStereotype/@body.1/stereotype/@initExpression/stereotypeName">
-      <details key="start" value="601"/>
-      <details key="end" value="615"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.50" references="/0/atributosStereotype/@body.2">
-      <details key="start" value="822"/>
-      <details key="end" value="823"/>
-      <details key="line" value="23"/>
-    </eAnnotations>
-    <eAnnotations source="positions.51" references="/0/atributosStereotype/aClass">
-      <details key="start" value="491"/>
-      <details key="end" value="505"/>
-      <details key="line" value="16"/>
-    </eAnnotations>
-    <eAnnotations source="positions.52" references="/0/atributosStereotype/stereotypeName">
-      <details key="start" value="507"/>
-      <details key="end" value="530"/>
-      <details key="line" value="16"/>
-    </eAnnotations>
-    <eAnnotations source="positions.53" references="/0/atributosStereotype/@post">
-      <details key="start" value="538"/>
-      <details key="end" value="544"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.54" references="/0/atributosStereotype/@post/self">
+    <eAnnotations source="positions.53" references="/0/hybernatProperty/@post/self">
       <details key="start" value="-1"/>
       <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.54" references="/0/generateStereotype">
+      <details key="start" value="853"/>
+      <details key="end" value="1016"/>
+      <details key="line" value="30"/>
+    </eAnnotations>
+    <eAnnotations source="positions.55" references="/0/generateStereotype/@body.0">
+      <details key="start" value="917"/>
+      <details key="end" value="1004"/>
+      <details key="line" value="31"/>
+    </eAnnotations>
+    <eAnnotations source="positions.56" references="/0/generateStereotype/@body.0/@body.0">
+      <details key="start" value="968"/>
+      <details key="end" value="969"/>
+      <details key="line" value="32"/>
+    </eAnnotations>
+    <eAnnotations source="positions.57" references="/0/generateStereotype/@body.0/@body.1">
+      <details key="start" value="970"/>
+      <details key="end" value="994"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.58" references="/0/generateStereotype/@body.0/@body.1/e">
+      <details key="start" value="970"/>
+      <details key="end" value="971"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.59" references="/0/generateStereotype/@body.0/@body.1/s">
+      <details key="start" value="992"/>
+      <details key="end" value="993"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.60" references="/0/generateStereotype/@body.0/@body.2">
+      <details key="start" value="997"/>
+      <details key="end" value="998"/>
+      <details key="line" value="33"/>
+    </eAnnotations>
+    <eAnnotations source="positions.61" references="/0/generateStereotype/@body.0/s">
+      <details key="start" value="923"/>
+      <details key="end" value="937"/>
+      <details key="line" value="31"/>
+    </eAnnotations>
+    <eAnnotations source="positions.62" references="/0/generateStereotype/@body.0/@iterSet">
+      <details key="start" value="940"/>
+      <details key="end" value="965"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.63" references="/0/generateStereotype/@body.0/@iterSet/e">
+      <details key="start" value="940"/>
+      <details key="end" value="941"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.64" references="/0/generateStereotype/e">
+      <details key="start" value="889"/>
+      <details key="end" value="900"/>
+      <details key="line" value="30"/>
+    </eAnnotations>
+    <eAnnotations source="positions.65" references="/0/generateStereotype/@post">
+      <details key="start" value="908"/>
+      <details key="end" value="914"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.66" references="/0/generateStereotype/@post/self">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.67" references="/0/attributeStereotype">
+      <details key="start" value="1018"/>
+      <details key="end" value="1196"/>
+      <details key="line" value="36"/>
+    </eAnnotations>
+    <eAnnotations source="positions.68" references="/0/attributeStereotype/@body.0">
+      <details key="start" value="1098"/>
+      <details key="end" value="1184"/>
+      <details key="line" value="37"/>
+    </eAnnotations>
+    <eAnnotations source="positions.69" references="/0/attributeStereotype/@body.0/@body.0">
+      <details key="start" value="1148"/>
+      <details key="end" value="1149"/>
+      <details key="line" value="38"/>
+    </eAnnotations>
+    <eAnnotations source="positions.70" references="/0/attributeStereotype/@body.0/@body.1">
+      <details key="start" value="1150"/>
+      <details key="end" value="1174"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.71" references="/0/attributeStereotype/@body.0/@body.1/e">
+      <details key="start" value="1150"/>
+      <details key="end" value="1151"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.72" references="/0/attributeStereotype/@body.0/@body.1/s">
+      <details key="start" value="1172"/>
+      <details key="end" value="1173"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.73" references="/0/attributeStereotype/@body.0/@body.2">
+      <details key="start" value="1177"/>
+      <details key="end" value="1178"/>
+      <details key="line" value="39"/>
+    </eAnnotations>
+    <eAnnotations source="positions.74" references="/0/attributeStereotype/@body.0/s">
+      <details key="start" value="1103"/>
+      <details key="end" value="1146"/>
+      <details key="line" value="37"/>
+    </eAnnotations>
+    <eAnnotations source="positions.75" references="/0/attributeStereotype/@body.0/s/@initExpression">
+      <details key="start" value="1121"/>
+      <details key="end" value="1147"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.76" references="/0/attributeStereotype/@body.0/s/@initExpression/e">
+      <details key="start" value="1121"/>
+      <details key="end" value="1122"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.77" references="/0/attributeStereotype/@body.0/s/@initExpression/name">
+      <details key="start" value="1142"/>
+      <details key="end" value="1146"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.78" references="/0/attributeStereotype/e">
+      <details key="start" value="1055"/>
+      <details key="end" value="1066"/>
+      <details key="line" value="36"/>
+    </eAnnotations>
+    <eAnnotations source="positions.79" references="/0/attributeStereotype/name">
+      <details key="start" value="1068"/>
+      <details key="end" value="1081"/>
+      <details key="line" value="36"/>
+    </eAnnotations>
+    <eAnnotations source="positions.80" references="/0/attributeStereotype/@post">
+      <details key="start" value="1089"/>
+      <details key="end" value="1095"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.81" references="/0/attributeStereotype/@post/self">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.82" references="/0/attributeStereotype.1">
+      <details key="start" value="1198"/>
+      <details key="end" value="1469"/>
+      <details key="line" value="42"/>
+    </eAnnotations>
+    <eAnnotations source="positions.83" references="/0/attributeStereotype.1/@body.0">
+      <details key="start" value="1279"/>
+      <details key="end" value="1456"/>
+      <details key="line" value="43"/>
+    </eAnnotations>
+    <eAnnotations source="positions.84" references="/0/attributeStereotype.1/@body.0/@body.0">
+      <details key="start" value="1368"/>
+      <details key="end" value="1408"/>
+      <details key="line" value="44"/>
+    </eAnnotations>
+    <eAnnotations source="positions.85" references="/0/attributeStereotype.1/@body.0/@body.0/@body.0">
+      <details key="start" value="1391"/>
+      <details key="end" value="1400"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.86" references="/0/attributeStereotype.1/@body.0/@body.0/@body.0/prop">
+      <details key="start" value="1391"/>
+      <details key="end" value="1395"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.87" references="/0/attributeStereotype.1/@body.0/@body.0/@body.1">
+      <details key="start" value="1402"/>
+      <details key="end" value="1403"/>
+      <details key="line" value="44"/>
+    </eAnnotations>
+    <eAnnotations source="positions.88" references="/0/attributeStereotype.1/@body.0/@body.0/@ifExpr">
+      <details key="start" value="1372"/>
+      <details key="end" value="1389"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.89" references="/0/attributeStereotype.1/@body.0/@body.0/@ifExpr/@source">
+      <details key="start" value="1373"/>
+      <details key="end" value="1382"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.90" references="/0/attributeStereotype.1/@body.0/@body.0/@ifExpr/@source/prop">
+      <details key="start" value="1373"/>
+      <details key="end" value="1377"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.91" references="/0/attributeStereotype.1/@body.0/@body.0/@ifExpr/@argument.0">
+      <details key="start" value="1386"/>
+      <details key="end" value="1388"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.92" references="/0/attributeStereotype.1/@body.0/@body.1">
+      <details key="start" value="1409"/>
+      <details key="end" value="1448"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.93" references="/0/attributeStereotype.1/@body.0/@body.1/prop">
+      <details key="start" value="1437"/>
+      <details key="end" value="1441"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.94" references="/0/attributeStereotype.1/@body.0/@body.1/e">
+      <details key="start" value="1443"/>
+      <details key="end" value="1444"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.95" references="/0/attributeStereotype.1/@body.0/@body.1/s">
+      <details key="start" value="1446"/>
+      <details key="end" value="1447"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.96" references="/0/attributeStereotype.1/@body.0/prop">
+      <details key="start" value="1285"/>
+      <details key="end" value="1300"/>
+      <details key="line" value="43"/>
+    </eAnnotations>
+    <eAnnotations source="positions.97" references="/0/attributeStereotype.1/@body.0/@iterSet">
+      <details key="start" value="1303"/>
+      <details key="end" value="1314"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.98" references="/0/attributeStereotype.1/@body.0/@iterSet/s">
+      <details key="start" value="1303"/>
+      <details key="end" value="1304"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.99" references="/0/attributeStereotype.1/@body.0/@each">
+      <details key="start" value="1325"/>
+      <details key="end" value="1329"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.100" references="/0/attributeStereotype.1/@body.0/@guard">
+      <details key="start" value="1333"/>
+      <details key="end" value="1365"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.101" references="/0/attributeStereotype.1/@body.0/@guard/@source">
+      <details key="start" value="1337"/>
+      <details key="end" value="1365"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.102" references="/0/attributeStereotype.1/@body.0/@guard/@source/@source">
+      <details key="start" value="1337"/>
+      <details key="end" value="1346"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.103" references="/0/attributeStereotype.1/@body.0/@guard/@source/@source/prop">
+      <details key="start" value="1337"/>
+      <details key="end" value="1341"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.104" references="/0/attributeStereotype.1/@body.0/@guard/@source/@argument.0">
+      <details key="start" value="1359"/>
+      <details key="end" value="1364"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.105" references="/0/attributeStereotype.1/e">
+      <details key="start" value="1235"/>
+      <details key="end" value="1246"/>
+      <details key="line" value="42"/>
+    </eAnnotations>
+    <eAnnotations source="positions.106" references="/0/attributeStereotype.1/s">
+      <details key="start" value="1248"/>
+      <details key="end" value="1262"/>
+      <details key="line" value="42"/>
+    </eAnnotations>
+    <eAnnotations source="positions.107" references="/0/attributeStereotype.1/@post">
+      <details key="start" value="1270"/>
+      <details key="end" value="1276"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.108" references="/0/attributeStereotype.1/@post/self">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.109" references="/0/attributeStereotypeGetValue">
+      <details key="start" value="1471"/>
+      <details key="end" value="1876"/>
+      <details key="line" value="47"/>
+    </eAnnotations>
+    <eAnnotations source="positions.110" references="/0/attributeStereotypeGetValue/@body.0">
+      <details key="start" value="1575"/>
+      <details key="end" value="1864"/>
+      <details key="line" value="48"/>
+    </eAnnotations>
+    <eAnnotations source="positions.111" references="/0/attributeStereotypeGetValue/@body.0/@body.0">
+      <details key="start" value="1607"/>
+      <details key="end" value="1608"/>
+      <details key="line" value="48"/>
+    </eAnnotations>
+    <eAnnotations source="positions.112" references="/0/attributeStereotypeGetValue/@body.0/@body.1">
+      <details key="start" value="1609"/>
+      <details key="end" value="1633"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.113" references="/0/attributeStereotypeGetValue/@body.0/@body.1/e">
+      <details key="start" value="1609"/>
+      <details key="end" value="1610"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.114" references="/0/attributeStereotypeGetValue/@body.0/@body.1/s">
+      <details key="start" value="1620"/>
+      <details key="end" value="1621"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.115" references="/0/attributeStereotypeGetValue/@body.0/@body.1/@argument.1">
+      <details key="start" value="1623"/>
+      <details key="end" value="1632"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.116" references="/0/attributeStereotypeGetValue/@body.0/@body.1/@argument.1/prop">
+      <details key="start" value="1623"/>
+      <details key="end" value="1627"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.117" references="/0/attributeStereotypeGetValue/@body.0/@body.2">
+      <details key="start" value="1635"/>
+      <details key="end" value="1637"/>
+      <details key="line" value="48"/>
+    </eAnnotations>
+    <eAnnotations source="positions.118" references="/0/attributeStereotypeGetValue/@body.0/@ifExpr">
+      <details key="start" value="1579"/>
+      <details key="end" value="1606"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.119" references="/0/attributeStereotypeGetValue/@body.0/@ifExpr/@source">
+      <details key="start" value="1580"/>
+      <details key="end" value="1594"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.120" references="/0/attributeStereotypeGetValue/@body.0/@ifExpr/@source/@source">
+      <details key="start" value="1580"/>
+      <details key="end" value="1589"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.121" references="/0/attributeStereotypeGetValue/@body.0/@ifExpr/@source/@source/prop">
+      <details key="start" value="1580"/>
+      <details key="end" value="1584"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.122" references="/0/attributeStereotypeGetValue/@body.0/@ifExpr/@argument.0">
+      <details key="start" value="1597"/>
+      <details key="end" value="1605"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.123" references="/0/attributeStereotypeGetValue/@body.0/@else">
+      <details key="start" value="1794"/>
+      <details key="end" value="1859"/>
+      <details key="line" value="51"/>
+    </eAnnotations>
+    <eAnnotations source="positions.124" references="/0/attributeStereotypeGetValue/@body.0/@else/@body.0">
+      <details key="start" value="1801"/>
+      <details key="end" value="1815"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.125" references="/0/attributeStereotypeGetValue/@body.0/@else/@body.0/@source">
+      <details key="start" value="1801"/>
+      <details key="end" value="1810"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.126" references="/0/attributeStereotypeGetValue/@body.0/@else/@body.0/@source/prop">
+      <details key="start" value="1801"/>
+      <details key="end" value="1805"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.127" references="/0/attributeStereotypeGetValue/@body.0/@else/@body.1">
+      <details key="start" value="1817"/>
+      <details key="end" value="1818"/>
+      <details key="line" value="51"/>
+    </eAnnotations>
+    <eAnnotations source="positions.128" references="/0/attributeStereotypeGetValue/@body.0/@else/@body.2">
+      <details key="start" value="1819"/>
+      <details key="end" value="1856"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.129" references="/0/attributeStereotypeGetValue/@body.0/@else/@body.2/@source">
+      <details key="start" value="1819"/>
+      <details key="end" value="1843"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.130" references="/0/attributeStereotypeGetValue/@body.0/@else/@body.2/@source/e">
+      <details key="start" value="1819"/>
+      <details key="end" value="1820"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.131" references="/0/attributeStereotypeGetValue/@body.0/@else/@body.2/@source/s">
+      <details key="start" value="1830"/>
+      <details key="end" value="1831"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.132" references="/0/attributeStereotypeGetValue/@body.0/@else/@body.2/@source/@argument.1">
+      <details key="start" value="1833"/>
+      <details key="end" value="1842"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.133" references="/0/attributeStereotypeGetValue/@body.0/@else/@body.2/@source/@argument.1/prop">
+      <details key="start" value="1833"/>
+      <details key="end" value="1837"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.134" references="/0/attributeStereotypeGetValue/@body.0/@else/@body.2/@argument.0">
+      <details key="start" value="1849"/>
+      <details key="end" value="1855"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.135" references="/0/attributeStereotypeGetValue/@body.0/@else/@body.3">
+      <details key="start" value="1858"/>
+      <details key="end" value="1859"/>
+      <details key="line" value="52"/>
+    </eAnnotations>
+    <eAnnotations source="positions.136" references="/0/attributeStereotypeGetValue/@body.0/@elseIf.0">
+      <details key="start" value="1637"/>
+      <details key="end" value="1703"/>
+      <details key="line" value="49"/>
+    </eAnnotations>
+    <eAnnotations source="positions.137" references="/0/attributeStereotypeGetValue/@body.0/@elseIf.0/@body.0">
+      <details key="start" value="1676"/>
+      <details key="end" value="1700"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.138" references="/0/attributeStereotypeGetValue/@body.0/@elseIf.0/@body.0/e">
+      <details key="start" value="1676"/>
+      <details key="end" value="1677"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.139" references="/0/attributeStereotypeGetValue/@body.0/@elseIf.0/@body.0/s">
+      <details key="start" value="1687"/>
+      <details key="end" value="1688"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.140" references="/0/attributeStereotypeGetValue/@body.0/@elseIf.0/@body.0/@argument.1">
+      <details key="start" value="1690"/>
+      <details key="end" value="1699"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.141" references="/0/attributeStereotypeGetValue/@body.0/@elseIf.0/@body.0/@argument.1/prop">
+      <details key="start" value="1690"/>
+      <details key="end" value="1694"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.142" references="/0/attributeStereotypeGetValue/@body.0/@elseIf.0/@body.1">
+      <details key="start" value="1702"/>
+      <details key="end" value="1703"/>
+      <details key="line" value="50"/>
+    </eAnnotations>
+    <eAnnotations source="positions.143" references="/0/attributeStereotypeGetValue/@body.0/@elseIf.0/@ifExpr">
+      <details key="start" value="1645"/>
+      <details key="end" value="1673"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.144" references="/0/attributeStereotypeGetValue/@body.0/@elseIf.0/@ifExpr/@source">
+      <details key="start" value="1646"/>
+      <details key="end" value="1660"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.145" references="/0/attributeStereotypeGetValue/@body.0/@elseIf.0/@ifExpr/@source/@source">
+      <details key="start" value="1646"/>
+      <details key="end" value="1655"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.146" references="/0/attributeStereotypeGetValue/@body.0/@elseIf.0/@ifExpr/@source/@source/prop">
+      <details key="start" value="1646"/>
+      <details key="end" value="1650"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.147" references="/0/attributeStereotypeGetValue/@body.0/@elseIf.0/@ifExpr/@argument.0">
+      <details key="start" value="1663"/>
+      <details key="end" value="1672"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.148" references="/0/attributeStereotypeGetValue/@body.0/@elseIf.1">
+      <details key="start" value="1703"/>
+      <details key="end" value="1794"/>
+      <details key="line" value="50"/>
+    </eAnnotations>
+    <eAnnotations source="positions.149" references="/0/attributeStereotypeGetValue/@body.0/@elseIf.1/@body.0">
+      <details key="start" value="1742"/>
+      <details key="end" value="1791"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.150" references="/0/attributeStereotypeGetValue/@body.0/@elseIf.1/@body.0/@source">
+      <details key="start" value="1742"/>
+      <details key="end" value="1777"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.151" references="/0/attributeStereotypeGetValue/@body.0/@elseIf.1/@body.0/@source/@source">
+      <details key="start" value="1742"/>
+      <details key="end" value="1766"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.152" references="/0/attributeStereotypeGetValue/@body.0/@elseIf.1/@body.0/@source/@source/e">
+      <details key="start" value="1742"/>
+      <details key="end" value="1743"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.153" references="/0/attributeStereotypeGetValue/@body.0/@elseIf.1/@body.0/@source/@source/s">
+      <details key="start" value="1753"/>
+      <details key="end" value="1754"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.154" references="/0/attributeStereotypeGetValue/@body.0/@elseIf.1/@body.0/@source/@source/@argument.1">
+      <details key="start" value="1756"/>
+      <details key="end" value="1765"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.155" references="/0/attributeStereotypeGetValue/@body.0/@elseIf.1/@body.0/@source/@source/@argument.1/prop">
+      <details key="start" value="1756"/>
+      <details key="end" value="1760"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.156" references="/0/attributeStereotypeGetValue/@body.0/@elseIf.1/@body.1">
+      <details key="start" value="1793"/>
+      <details key="end" value="1794"/>
+      <details key="line" value="51"/>
+    </eAnnotations>
+    <eAnnotations source="positions.157" references="/0/attributeStereotypeGetValue/@body.0/@elseIf.1/@ifExpr">
+      <details key="start" value="1711"/>
+      <details key="end" value="1739"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.158" references="/0/attributeStereotypeGetValue/@body.0/@elseIf.1/@ifExpr/@source">
+      <details key="start" value="1712"/>
+      <details key="end" value="1726"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.159" references="/0/attributeStereotypeGetValue/@body.0/@elseIf.1/@ifExpr/@source/@source">
+      <details key="start" value="1712"/>
+      <details key="end" value="1721"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.160" references="/0/attributeStereotypeGetValue/@body.0/@elseIf.1/@ifExpr/@source/@source/prop">
+      <details key="start" value="1712"/>
+      <details key="end" value="1716"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.161" references="/0/attributeStereotypeGetValue/@body.0/@elseIf.1/@ifExpr/@argument.0">
+      <details key="start" value="1729"/>
+      <details key="end" value="1738"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.162" references="/0/attributeStereotypeGetValue/prop">
+      <details key="start" value="1516"/>
+      <details key="end" value="1529"/>
+      <details key="line" value="47"/>
+    </eAnnotations>
+    <eAnnotations source="positions.163" references="/0/attributeStereotypeGetValue/e">
+      <details key="start" value="1531"/>
+      <details key="end" value="1542"/>
+      <details key="line" value="47"/>
+    </eAnnotations>
+    <eAnnotations source="positions.164" references="/0/attributeStereotypeGetValue/s">
+      <details key="start" value="1544"/>
+      <details key="end" value="1558"/>
+      <details key="line" value="47"/>
+    </eAnnotations>
+    <eAnnotations source="positions.165" references="/0/attributeStereotypeGetValue/@post">
+      <details key="start" value="1566"/>
+      <details key="end" value="1572"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.166" references="/0/attributeStereotypeGetValue/@post/self">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.167" references="/0/hasStereotypeQuery">
+      <details key="start" value="1878"/>
+      <details key="end" value="2028"/>
+      <details key="line" value="55"/>
+    </eAnnotations>
+    <eAnnotations source="positions.168" references="/0/hasStereotypeQuery/elem">
+      <details key="start" value="1911"/>
+      <details key="end" value="1925"/>
+      <details key="line" value="55"/>
+    </eAnnotations>
+    <eAnnotations source="positions.169" references="/0/hasStereotypeQuery/name">
+      <details key="start" value="1927"/>
+      <details key="end" value="1940"/>
+      <details key="line" value="55"/>
+    </eAnnotations>
+    <eAnnotations source="positions.170" references="/0/hasStereotypeQuery/exists">
+      <details key="start" value="1956"/>
+      <details key="end" value="2024"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.171" references="/0/hasStereotypeQuery/exists/@source">
+      <details key="start" value="1956"/>
+      <details key="end" value="1984"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.172" references="/0/hasStereotypeQuery/exists/@source/self">
+      <details key="start" value="1956"/>
+      <details key="end" value="1960"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.173" references="/0/hasStereotypeQuery/exists/@body">
+      <details key="start" value="2010"/>
+      <details key="end" value="2023"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.174" references="/0/hasStereotypeQuery/exists/@body/@source">
+      <details key="start" value="2010"/>
+      <details key="end" value="2016"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.175" references="/0/hasStereotypeQuery/exists/@body/@source/e">
+      <details key="start" value="2010"/>
+      <details key="end" value="2011"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.176" references="/0/hasStereotypeQuery/exists/@body/name">
+      <details key="start" value="2019"/>
+      <details key="end" value="2023"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.177" references="/0/hasStereotypeQuery/exists/e">
+      <details key="start" value="1993"/>
+      <details key="end" value="2007"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.178" references="/0/getStereotypeQuery">
+      <details key="start" value="2030"/>
+      <details key="end" value="2208"/>
+      <details key="line" value="59"/>
+    </eAnnotations>
+    <eAnnotations source="positions.179" references="/0/getStereotypeQuery/elem">
+      <details key="start" value="2063"/>
+      <details key="end" value="2077"/>
+      <details key="line" value="59"/>
+    </eAnnotations>
+    <eAnnotations source="positions.180" references="/0/getStereotypeQuery/name">
+      <details key="start" value="2079"/>
+      <details key="end" value="2092"/>
+      <details key="line" value="59"/>
+    </eAnnotations>
+    <eAnnotations source="positions.181" references="/0/getStereotypeQuery/@expression">
+      <details key="start" value="2111"/>
+      <details key="end" value="2204"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.182" references="/0/getStereotypeQuery/@expression/@source">
+      <details key="start" value="2111"/>
+      <details key="end" value="2195"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.183" references="/0/getStereotypeQuery/@expression/@source/select">
+      <details key="start" value="2111"/>
+      <details key="end" value="2179"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.184" references="/0/getStereotypeQuery/@expression/@source/select/@source">
+      <details key="start" value="2111"/>
+      <details key="end" value="2139"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.185" references="/0/getStereotypeQuery/@expression/@source/select/@source/self">
+      <details key="start" value="2111"/>
+      <details key="end" value="2115"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.186" references="/0/getStereotypeQuery/@expression/@source/select/@body">
+      <details key="start" value="2165"/>
+      <details key="end" value="2178"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.187" references="/0/getStereotypeQuery/@expression/@source/select/@body/@source">
+      <details key="start" value="2165"/>
+      <details key="end" value="2171"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.188" references="/0/getStereotypeQuery/@expression/@source/select/@body/@source/e">
+      <details key="start" value="2165"/>
+      <details key="end" value="2166"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.189" references="/0/getStereotypeQuery/@expression/@source/select/@body/name">
+      <details key="start" value="2174"/>
+      <details key="end" value="2178"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.190" references="/0/getStereotypeQuery/@expression/@source/select/e">
+      <details key="start" value="2148"/>
+      <details key="end" value="2162"/>
       <details key="line" value="0"/>
     </eAnnotations>
   </ecore:EAnnotation>

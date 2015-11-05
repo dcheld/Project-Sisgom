@@ -42,7 +42,7 @@ public class Uml2java extends AbstractAcceleoGenerator {
      *
      * @generated
      */
-    public static final String[] TEMPLATE_NAMES = { "mainClass", "mainInteraction", "mainEnumeration", "mainInterface" };
+    public static final String[] TEMPLATE_NAMES = { "mainClass", "mainInteraction", "mainEnumeration", "mainInterface", "mainModelHybernate" };
     
     /**
      * The list of properties files from the launch parameters (Launch configuration).

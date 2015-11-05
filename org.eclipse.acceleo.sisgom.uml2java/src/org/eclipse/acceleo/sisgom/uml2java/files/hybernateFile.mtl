@@ -2,23 +2,60 @@
 [module hybernateFile('http://www.eclipse.org/uml2/4.0.0/UML')]
 
 [import org::eclipse::acceleo::sisgom::uml2java::common::fileUtils /]
-[import org::eclipse::acceleo::sisgom::uml2java::main::uml2services /]
 
 [template public hybernatEntity(aClass : Class) post (trim())]
-[if (aClass.hasStereotype('Entity'))]
+[if (aClass.hasStereotypeQuery('Entity'))]
 @Entity
 [/if]
-[if (aClass.hasStereotype('Table'))]
-@Table([aClass.atributosStereotype('Table')/])
+[if (aClass.hasStereotypeQuery('Table'))]
+@Table([aClass.attributeStereotype('Table')/])
 [/if]
 [/template]
 
-[template public atributosStereotype(aClass : Class, stereotypeName : String) post (trim())]
-
-[let stereotype : Stereotype = aClass.getStereotype(stereotypeName)]
-	[for (prop : Property | stereotype.attribute)separator(', ')? (prop.type.oclIsKindOf(PrimitiveType))]
-		[if (prop.name <> '')][prop.name/]=[/if]"[aClass.getValue(stereotype, prop.name)/]"
-	[/for]	
-[/let]
-
+[template public hybernatProperty(prop : Property) post (trim())]
+[if (hasStereotypeQuery(prop, 'Id'))]
+@Id
+[/if]
+[if (hasStereotypeQuery(prop, 'Column'))]
+@Column([prop.attributeStereotype('Column')/])
+[/if]
+[if (hasStereotypeQuery(prop, 'GeneratedValue'))]
+@GeneratedValue([prop.attributeStereotype('GeneratedValue')/])
+[/if]
+[if (hasStereotypeQuery(prop, 'GeneratedValue'))]
+@GeneratedValue([prop.attributeStereotype('GeneratedValue')/])
+[/if]
 [/template]
+
+[template public generateStereotype(e : Element) post (trim())]
+[for (s : Stereotype | e.getAppliedStereotypes())]
+	[e.attributeStereotype(s) /]
+[/for]
+[/template]
+
+[template public attributeStereotype(e : Element, name : String) post (trim())]
+[let s : Stereotype = e.getStereotypeQuery(name)]
+	[e.attributeStereotype(s) /]
+[/let]
+[/template]
+
+[template public attributeStereotype(e : Element, s : Stereotype) post (trim())]
+[for (prop : Property | s.attribute)separator(', ')? (not prop.type.oclIsTypeOf(Class))]
+[if (prop.name <> '')][prop.name/]=[/if][attributeStereotypeGetValue(prop, e, s)/][/for]	
+[/template]
+
+[template public attributeStereotypeGetValue(prop:Property, e : Element, s : Stereotype) post (trim())]
+[if (prop.type.name = 'String')]"[e.getValue(s, prop.name)/]"
+[elseif (prop.type.name = 'Integer')] [e.getValue(s, prop.name)/]
+[elseif (prop.type.name = 'Boolean')] [e.getValue(s, prop.name).toString().toLowerCase()/]
+[else][prop.type.name/].[e.getValue(s, prop.name).eGet('name')/]
+[/if]
+[/template]
+
+[query public hasStereotypeQuery(elem : Element, name : String) : Boolean = 
+	self.getAppliedStereotypes()->exists(e : Stereotype | e.name = name)
+ /]
+
+[query public getStereotypeQuery(elem : Element, name : String) : Stereotype = 
+	self.getAppliedStereotypes()->select(e : Stereotype | e.name = name)->asOrderedSet()->first()
+ /]

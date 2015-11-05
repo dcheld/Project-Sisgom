@@ -4,6 +4,7 @@
 [import org::eclipse::acceleo::sisgom::uml2java::files::enumJavaFile/]
 [import org::eclipse::acceleo::sisgom::uml2java::files::interfaceJavaFile/]
 [import org::eclipse::acceleo::sisgom::uml2java::common::fileUtils /]
+[import org::eclipse::acceleo::sisgom::uml2java::files::generatePomXml /]
 
 [template public mainClass(aClass : Class)]
 	[comment @main /]
@@ -24,4 +25,9 @@
 [template public mainInterface(aInterface : Interface)]
 	[comment @main /]
 	[aInterface.genInterfaceJavaFile()/]
+[/template]
+
+[template public mainModelHybernate(aModel : Model)]
+	[comment @main /]
+	[aModel.generatePomXml()/]
 [/template]

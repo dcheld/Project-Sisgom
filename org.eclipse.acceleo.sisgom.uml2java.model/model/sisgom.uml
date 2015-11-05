@@ -644,6 +644,11 @@
       <appliedProfile href="perfilUMLEntidade.profile.uml#_xmcH_nz5EeWpDqOQqcCvGQ"/>
     </profileApplication>
   </uml:Model>
-  <Profile:Table xmi:id="_MNHpsIF4EeW827dCzYHMcg" base_Class="_WS4_cEQlEeWHYo_Ly7kndQ" name="Teste"/>
-  <Profile:Entity xmi:id="_kUD0gIF4EeW827dCzYHMcg" base_Class="_WS4_cEQlEeWHYo_Ly7kndQ"/>
+  <Profile:Id xmi:id="_S-MN4IHFEeWkM4spYNe_9Q" base_Property="_FkBjgEQnEeWHYo_Ly7kndQ"/>
+  <Profile:Entity xmi:id="_U8HdsIHGEeWkoay6-1WYhQ" base_Class="_WS4_cEQlEeWHYo_Ly7kndQ"/>
+  <Profile:Table xmi:id="_U8ZxkIHGEeWkoay6-1WYhQ" base_Class="_WS4_cEQlEeWHYo_Ly7kndQ" name="sisgom.Endereco"/>
+  <Profile:GeneratedValue xmi:id="_eDpgUIJ-EeWM77cMzdWRVw" base_Property="_FkBjgEQnEeWHYo_Ly7kndQ"/>
+  <Profile:Column xmi:id="_s3cY4IKLEeW9eYhvgyKPbw" name="Endereco_Id" lenght="15" unique="true" base_Property="_FkBjgEQnEeWHYo_Ly7kndQ"/>
+  <Profile:OneToMany xmi:id="_YlAygIMwEeW9eYhvgyKPbw" base_Association="_GuNc4ERiEeWv2qK-l1aMZQ"/>
+  <Profile:JoinColumn xmi:id="_YlLKkIMwEeW9eYhvgyKPbw" nome="Teste" base_Association="_GuNc4ERiEeWv2qK-l1aMZQ"/>
 </xmi:XMI>

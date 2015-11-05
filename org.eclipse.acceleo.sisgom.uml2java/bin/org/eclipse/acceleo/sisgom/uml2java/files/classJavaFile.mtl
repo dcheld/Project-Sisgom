@@ -6,6 +6,7 @@
 
 [import org::eclipse::acceleo::sisgom::uml2java::common::fileUtils /]
 [import org::eclipse::acceleo::sisgom::uml2java::files::hybernateFile /]
+
 [**
  * The documentation of the template genClassJavaFile.
  * @param aClass
@@ -103,6 +104,7 @@ public [if (anOperation.type.oclIsUndefined())]void[else][anOperation.type.name/
  * 
  * @generated
  */
+[hybernatProperty(aProperty)/]
 public [if (aProperty.upper = -1 or aProperty.upper > 1)]List<[aProperty.type.name/]>[else][aProperty.type.name/][/if] get[aProperty.name.toUpperFirst()/]() {
 	return this.[aProperty.name.toLowerFirst()/];
 }

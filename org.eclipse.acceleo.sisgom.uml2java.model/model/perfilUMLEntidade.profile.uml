@@ -1899,6 +1899,14 @@
     <ownedAttribute xmi:id="_uGyXkHz-EeWpDqOQqcCvGQ" name="base_Property" association="_uGyXkXz-EeWpDqOQqcCvGQ">
       <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Property"/>
     </ownedAttribute>
+    <ownedAttribute xmi:id="_7eTYsINIEeW9eYhvgyKPbw" name="generator" visibility="public">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_7rQPkINIEeW9eYhvgyKPbw" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_7rQPkYNIEeW9eYhvgyKPbw" value="1"/>
+      <defaultValue xmi:type="uml:LiteralString" xmi:id="_7rQPkoNIEeW9eYhvgyKPbw">
+        <value xsi:nil="true"/>
+      </defaultValue>
+    </ownedAttribute>
   </packagedElement>
   <packagedElement xmi:type="uml:Stereotype" xmi:id="_53NOcHz6EeWpDqOQqcCvGQ" name="Id">
     <ownedAttribute xmi:id="_KSAiEHz9EeWpDqOQqcCvGQ" name="base_Property" association="_KSAiEXz9EeWpDqOQqcCvGQ">
@@ -1939,6 +1947,8 @@
   </packagedElement>
   <packagedElement xmi:type="uml:Enumeration" xmi:id="_e6RxIHz-EeWpDqOQqcCvGQ" name="GenerationType">
     <ownedLiteral xmi:id="_oLEnEHz-EeWpDqOQqcCvGQ" name="AUTO"/>
+    <ownedLiteral xmi:id="_tnINgINIEeW9eYhvgyKPbw" name="IDENTITY"/>
+    <ownedLiteral xmi:id="_vWqRcINIEeW9eYhvgyKPbw" name="SEQUENCE"/>
   </packagedElement>
   <packagedElement xmi:type="uml:Extension" xmi:id="_sm7zgH2wEeW1fNGDSrgN_Q" name="EColumnProperty" memberEnd="_sm7zgX2wEeW1fNGDSrgN_Q _smyCgH2wEeW1fNGDSrgN_Q">
     <ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="_sm7zgX2wEeW1fNGDSrgN_Q" name="extension_Column" type="_vICZMHz-EeWpDqOQqcCvGQ" aggregation="composite" association="_sm7zgH2wEeW1fNGDSrgN_Q"/>
@@ -2026,10 +2036,10 @@
   <packagedElement xmi:type="uml:Extension" xmi:id="_L9RfQH3oEeWBZacFdRi6IQ" name="EJoinColumnAssociation" memberEnd="_L9RfQX3oEeWBZacFdRi6IQ _L9Q4MH3oEeWBZacFdRi6IQ">
     <ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="_L9RfQX3oEeWBZacFdRi6IQ" name="extension_JoinColumn" type="_su0KEH3lEeWxQ_iaf4nasg" aggregation="composite" association="_L9RfQH3oEeWBZacFdRi6IQ"/>
   </packagedElement>
-  <packagedElement xmi:type="uml:Extension" xmi:id="_KxfkwYFuEeWpJfjnhrR3hg" name="E_Entity_Class1" memberEnd="_KxfkwoFuEeWpJfjnhrR3hg _KxfkwIFuEeWpJfjnhrR3hg">
+  <packagedElement xmi:type="uml:Extension" xmi:id="_KxfkwYFuEeWpJfjnhrR3hg" name="EEntityClass" memberEnd="_KxfkwoFuEeWpJfjnhrR3hg _KxfkwIFuEeWpJfjnhrR3hg">
     <ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="_KxfkwoFuEeWpJfjnhrR3hg" name="extension_Entity" type="_BiIvQHz6EeWpDqOQqcCvGQ" aggregation="composite" association="_KxfkwYFuEeWpJfjnhrR3hg"/>
   </packagedElement>
   <profileApplication xmi:id="_oM_W8H3gEeW1fNGDSrgN_Q" appliedProfile="_xmcH_nz5EeWpDqOQqcCvGQ">
-    <eAnnotations xmi:id="_oNFdkH3gEeW1fNGDSrgN_Q" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_nT2w0IFUEeWBlYG23RqWbA"/>
+    <eAnnotations xmi:id="_oNFdkH3gEeW1fNGDSrgN_Q" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_bQ_dEIFuEeWpJfjnhrR3hg"/>
   </profileApplication>
 </uml:Profile>
