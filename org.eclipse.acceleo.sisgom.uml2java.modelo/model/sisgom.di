@@ -5,9 +5,6 @@
       <availablePage>
         <emfPageIdentifier href="sisgom.notation#_sLVkUEQjEeWT7PHpy37frQ"/>
       </availablePage>
-      <availablePage>
-        <emfPageIdentifier href="sisgom.notation#_IdZp8FV2EeWRBLfA3UX2Gg"/>
-      </availablePage>
       <availablePage/>
       <availablePage>
         <emfPageIdentifier href="sisgom.notation#_kGzaQGF8EeWeRZrLhu5qxw"/>
@@ -20,9 +17,6 @@
     <sashModel currentSelection="/0/@sashModel/@windows.0/@children.0">
       <windows>
         <children xsi:type="di:TabFolder">
-          <children>
-            <emfPageIdentifier href="sisgom.notation#_IdZp8FV2EeWRBLfA3UX2Gg"/>
-          </children>
           <children>
             <emfPageIdentifier href="sisgom.notation#_sLVkUEQjEeWT7PHpy37frQ"/>
           </children>
