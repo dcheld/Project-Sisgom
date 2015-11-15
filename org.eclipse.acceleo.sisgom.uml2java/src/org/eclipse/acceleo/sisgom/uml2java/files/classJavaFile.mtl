@@ -20,11 +20,6 @@ package [aClass.genPackageValue()/];
 [hybernatEntity(aClass)/]
 public [if (aClass.isAbstract)]abstract[/if] class [aClass.name.toUpperFirst()/][aClass.inheritance()/] {
 	[aClass.fields()/]
-	/**
-	 * The documentation of the constructor.
-	 * 
-	 * @generated
-	 */
 	public [aClass.name.toUpperFirst()/]() {
 		super();
 	}
@@ -34,7 +29,6 @@ public [if (aClass.isAbstract)]abstract[/if] class [aClass.name.toUpperFirst()/]
 [/template]
 
 [template private classBody(aClass : Class)]
-
 [aClass.operations()/]
 [aClass.accessors()/]
 [/template]
@@ -52,19 +46,13 @@ public [if (aClass.isAbstract)]abstract[/if] class [aClass.name.toUpperFirst()/]
 [/template]
 
 [template private fields(aClass : Class)]
-[for (aProperty : Property | aClass.attribute)]
-/**
- * The documentation of the attribute [aProperty.name.toLowerFirst()/].
- * 
- * @generated
- */
+[for (aProperty : Property | aClass.attribute) separator ('\r\n')]
 private [if (aProperty.upper = -1 or aProperty.upper > 1)]List<[aProperty.type.name/]>[else][aProperty.type.name/][/if] [aProperty.name.toLowerFirst()/];
-
 [/for]
 [/template]
 
 [template private operations(aClass : Class)]
-[for (anOperation : Operation | aClass.getOperations()->union(aClass.getImplementedInterfaces().ownedOperation))]
+[for (anOperation : Operation | aClass.getOperations()->union(aClass.getImplementedInterfaces().ownedOperation)) separator ('\r\n')]
 /**
  * The documentation of the method [anOperation.name.toLowerFirst()/].
  * [for (aComment : Comment | anOperation.ownedComment)] [aComment._body/][/for]
@@ -98,22 +86,12 @@ public [if (anOperation.type.oclIsUndefined())]void[else][anOperation.type.name/
 /]
 
 [template private accessors(aClass : Class)]
-[for (aProperty : Property | aClass.attribute)]
-/**
- * The documentation of the getter get[aProperty.name.toUpperFirst()/].
- * 
- * @generated
- */
+[for (aProperty : Property | aClass.attribute) separator ('\r\n')]
 [hybernatProperty(aProperty)/]
 public [if (aProperty.upper = -1 or aProperty.upper > 1)]List<[aProperty.type.name/]>[else][aProperty.type.name/][/if] get[aProperty.name.toUpperFirst()/]() {
 	return this.[aProperty.name.toLowerFirst()/];
 }
 
-/**
- * The documentation of the setter set[aProperty.name.toUpperFirst()/].
- * 
- * @generated
- */
 public void set[aProperty.name.toUpperFirst()/]([if (aProperty.upper = -1 or aProperty.upper > 1)]List<[aProperty.type.name/]>[else][aProperty.type.name/][/if] [aProperty.name.toLowerFirst()/]) {
 	this.[aProperty.name.toLowerFirst()/] = [aProperty.name.toLowerFirst()/];
 }

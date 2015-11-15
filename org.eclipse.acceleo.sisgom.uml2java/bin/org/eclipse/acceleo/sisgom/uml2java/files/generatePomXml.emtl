@@ -85,7 +85,7 @@
             <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
           </argument>
         </body>
-        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&lt;/artifactId>&#xA;      &lt;version>${application.version}&lt;/version>&#xA;    &lt;/dependency>&#xA;  &lt;/dependencies>&#xA;    &lt;build>&#xA;        &lt;plugins>&#xA;            &lt;plugin>&#xA;                &lt;groupId>org.codehaus.mojo&lt;/groupId>&#xA;                &lt;artifactId>build-helper-maven-plugin&lt;/artifactId>&#xA;                &lt;executions>&#xA;                    &lt;execution>&#xA;                        &lt;id>add-source&lt;/id>&#xA;                        &lt;phase>generate-sources&lt;/phase>&#xA;                        &lt;goals>&#xA;                            &lt;goal>add-source&lt;/goal>&#xA;                        &lt;/goals>&#xA;                        &lt;configuration>&#xA;                            &lt;sources>&#xA;                                &lt;source>${basedir}/target/generated-sources/java&lt;/source>&#xA;                            &lt;/sources>&#xA;                        &lt;/configuration>&#xA;                    &lt;/execution>&#xA;                &lt;/executions>&#xA;            &lt;/plugin>&#xA;&#xA;        &lt;/plugins>&#xA;    &lt;/build>&#xA;&lt;/project>&#xA;"/>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&lt;/artifactId>&#xA;      &lt;version>${application.version}&lt;/version>&#xA;    &lt;/dependency>&#xA;&#x9;&lt;dependency>&#xA;&#x9;&#x9;&lt;groupId>mysql&lt;/groupId>&#xA;&#x9;&#x9;&lt;artifactId>mysql-connector-java&lt;/artifactId>&#xA;&#x9;&#x9;&lt;version>5.1.37&lt;/version>&#xA;&#x9;&lt;/dependency>&#xA;&#x9;&lt;dependency>&#xA;&#x9;    &lt;groupId>org.hibernate&lt;/groupId>&#xA;&#x9;    &lt;artifactId>hibernate-search-orm&lt;/artifactId>&#xA;&#x9;    &lt;version>5.5.0.Final&lt;/version>&#xA;&#x9;&lt;/dependency>&#xA;  &lt;/dependencies>&#xA;    &lt;build>&#xA;        &lt;plugins>&#xA;            &lt;plugin>&#xA;                &lt;groupId>org.codehaus.mojo&lt;/groupId>&#xA;                &lt;artifactId>build-helper-maven-plugin&lt;/artifactId>&#xA;                &lt;executions>&#xA;                    &lt;execution>&#xA;                        &lt;id>add-source&lt;/id>&#xA;                        &lt;phase>generate-sources&lt;/phase>&#xA;                        &lt;goals>&#xA;                            &lt;goal>add-source&lt;/goal>&#xA;                        &lt;/goals>&#xA;                        &lt;configuration>&#xA;                            &lt;sources>&#xA;                                &lt;source>${basedir}/target/generated-sources/java&lt;/source>&#xA;                            &lt;/sources>&#xA;                        &lt;/configuration>&#xA;                    &lt;/execution>&#xA;                &lt;/executions>&#xA;            &lt;/plugin>&#xA;&#xA;        &lt;/plugins>&#xA;    &lt;/build>&#xA;&lt;/project>&#xA;"/>
         <fileUrl xsi:type="ocl.ecore:OperationCallExp">
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
           <source xsi:type="mtl:TemplateInvocation">
@@ -202,6 +202,11 @@
         <references href="http://www.eclipse.org/uml2/4.0.0/UML#//Classifier"/>
       </eAnnotations>
     </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Class_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/uml2/4.0.0/UML#//Class"/>
+      </eAnnotations>
+    </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Element_Class">
       <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
         <references href="http://www.eclipse.org/uml2/4.0.0/UML#//Element"/>
@@ -253,12 +258,12 @@
   <ecore:EAnnotation source="positions">
     <eAnnotations source="positions.0" references="/0/generatePomXml">
       <details key="start" value="231"/>
-      <details key="end" value="2223"/>
+      <details key="end" value="2509"/>
       <details key="line" value="6"/>
     </eAnnotations>
     <eAnnotations source="positions.1" references="/0/generatePomXml/@body.0">
       <details key="start" value="281"/>
-      <details key="end" value="2211"/>
+      <details key="end" value="2497"/>
       <details key="line" value="7"/>
     </eAnnotations>
     <eAnnotations source="positions.2" references="/0/generatePomXml/@body.0/@body.0">
@@ -403,7 +408,7 @@
     </eAnnotations>
     <eAnnotations source="positions.30" references="/0/generatePomXml/@body.0/@body.14">
       <details key="start" value="1279"/>
-      <details key="end" value="2203"/>
+      <details key="end" value="2489"/>
       <details key="line" value="24"/>
     </eAnnotations>
     <eAnnotations source="positions.31" references="/0/generatePomXml/@body.0/@fileUrl">

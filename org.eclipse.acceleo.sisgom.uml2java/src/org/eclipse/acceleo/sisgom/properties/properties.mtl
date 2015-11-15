@@ -12,3 +12,7 @@
 [template public getSourceFolder(anOclAny : OclAny)]
 [getProperty('sourcefolder')/]
 [/template]
+
+[template public getJavaxPersistence(aClass : Class)]
+[getProperty('javax.persistence')/]
+[/template]

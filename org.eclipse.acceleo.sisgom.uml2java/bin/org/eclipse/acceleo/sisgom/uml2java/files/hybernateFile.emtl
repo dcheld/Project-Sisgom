@@ -8,8 +8,9 @@
     <ownedModuleElement xsi:type="mtl:Template" name="hybernatEntity" visibility="Public">
       <body xsi:type="mtl:IfBlock">
         <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="@Entity&#xA;"/>
-        <ifExpr xsi:type="mtl:QueryInvocation" definition="/0/hasStereotypeQuery">
+        <ifExpr xsi:type="mtl:QueryInvocation">
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+          <definition href="../common/fileUtils.emtl#/0/hasStereotypeQuery"/>
           <argument xsi:type="ocl.ecore:VariableExp" name="aClass" referredVariable="/0/hybernatEntity/aClass">
             <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Class"/>
           </argument>
@@ -30,8 +31,9 @@
           </argument>
         </body>
         <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=")&#xA;"/>
-        <ifExpr xsi:type="mtl:QueryInvocation" definition="/0/hasStereotypeQuery">
+        <ifExpr xsi:type="mtl:QueryInvocation">
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+          <definition href="../common/fileUtils.emtl#/0/hasStereotypeQuery"/>
           <argument xsi:type="ocl.ecore:VariableExp" name="aClass" referredVariable="/0/hybernatEntity/aClass">
             <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Class"/>
           </argument>
@@ -53,8 +55,9 @@
     <ownedModuleElement xsi:type="mtl:Template" name="hybernatProperty" visibility="Public">
       <body xsi:type="mtl:IfBlock">
         <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="@Id&#xA;"/>
-        <ifExpr xsi:type="mtl:QueryInvocation" definition="/0/hasStereotypeQuery">
+        <ifExpr xsi:type="mtl:QueryInvocation">
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+          <definition href="../common/fileUtils.emtl#/0/hasStereotypeQuery"/>
           <argument xsi:type="ocl.ecore:VariableExp" name="prop" referredVariable="/0/hybernatProperty/prop">
             <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Property"/>
           </argument>
@@ -75,8 +78,9 @@
           </argument>
         </body>
         <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=")&#xA;"/>
-        <ifExpr xsi:type="mtl:QueryInvocation" definition="/0/hasStereotypeQuery">
+        <ifExpr xsi:type="mtl:QueryInvocation">
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+          <definition href="../common/fileUtils.emtl#/0/hasStereotypeQuery"/>
           <argument xsi:type="ocl.ecore:VariableExp" name="prop" referredVariable="/0/hybernatProperty/prop">
             <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Property"/>
           </argument>
@@ -97,8 +101,9 @@
           </argument>
         </body>
         <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=")&#xA;"/>
-        <ifExpr xsi:type="mtl:QueryInvocation" definition="/0/hasStereotypeQuery">
+        <ifExpr xsi:type="mtl:QueryInvocation">
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+          <definition href="../common/fileUtils.emtl#/0/hasStereotypeQuery"/>
           <argument xsi:type="ocl.ecore:VariableExp" name="prop" referredVariable="/0/hybernatProperty/prop">
             <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Property"/>
           </argument>
@@ -119,8 +124,9 @@
           </argument>
         </body>
         <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=")&#xA;"/>
-        <ifExpr xsi:type="mtl:QueryInvocation" definition="/0/hasStereotypeQuery">
+        <ifExpr xsi:type="mtl:QueryInvocation">
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+          <definition href="../common/fileUtils.emtl#/0/hasStereotypeQuery"/>
           <argument xsi:type="ocl.ecore:VariableExp" name="prop" referredVariable="/0/hybernatProperty/prop">
             <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Property"/>
           </argument>
@@ -187,8 +193,9 @@
         <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;"/>
         <letVariable name="s">
           <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Stereotype"/>
-          <initExpression xsi:type="mtl:QueryInvocation" definition="/0/getStereotypeQuery">
+          <initExpression xsi:type="mtl:QueryInvocation">
             <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Stereotype"/>
+            <definition href="../common/fileUtils.emtl#/0/getStereotypeQuery"/>
             <argument xsi:type="ocl.ecore:VariableExp" name="e" referredVariable="/0/attributeStereotype/e">
               <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Element"/>
             </argument>
@@ -470,82 +477,6 @@
         </source>
       </post>
     </ownedModuleElement>
-    <ownedModuleElement xsi:type="mtl:Query" name="hasStereotypeQuery" visibility="Public">
-      <parameter name="elem">
-        <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Element"/>
-      </parameter>
-      <parameter name="name">
-        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-      </parameter>
-      <expression xsi:type="ocl.ecore:IteratorExp" name="exists">
-        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
-        <source xsi:type="ocl.ecore:OperationCallExp" eType="/27/Set(Stereotype)">
-          <source xsi:type="ocl.ecore:VariableExp" name="self" referredVariable="/70">
-            <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Element"/>
-          </source>
-          <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/uml2/4.0.0/UML#//Element/getAppliedStereotypes"/>
-        </source>
-        <body xsi:type="ocl.ecore:OperationCallExp">
-          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
-          <source xsi:type="ocl.ecore:PropertyCallExp">
-            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-            <source xsi:type="ocl.ecore:VariableExp" name="e" referredVariable="/0/hasStereotypeQuery/exists/e">
-              <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Stereotype"/>
-            </source>
-            <referredProperty xsi:type="ecore:EAttribute" href="http://www.eclipse.org/uml2/4.0.0/UML#//NamedElement/name"/>
-          </source>
-          <argument xsi:type="ocl.ecore:VariableExp" name="name" referredVariable="/0/hasStereotypeQuery/name">
-            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-          </argument>
-          <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String_Class/="/>
-        </body>
-        <iterator xsi:type="ocl.ecore:Variable" name="e">
-          <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Stereotype"/>
-        </iterator>
-      </expression>
-      <type xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
-    </ownedModuleElement>
-    <ownedModuleElement xsi:type="mtl:Query" name="getStereotypeQuery" visibility="Public">
-      <parameter name="elem">
-        <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Element"/>
-      </parameter>
-      <parameter name="name">
-        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-      </parameter>
-      <expression xsi:type="ocl.ecore:OperationCallExp">
-        <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Stereotype"/>
-        <source xsi:type="ocl.ecore:OperationCallExp" eType="/27/OrderedSet(Stereotype)">
-          <source xsi:type="ocl.ecore:IteratorExp" name="select" eType="/27/Set(Stereotype)">
-            <source xsi:type="ocl.ecore:OperationCallExp" eType="/27/Set(Stereotype)">
-              <source xsi:type="ocl.ecore:VariableExp" name="self" referredVariable="/73">
-                <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Element"/>
-              </source>
-              <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/uml2/4.0.0/UML#//Element/getAppliedStereotypes"/>
-            </source>
-            <body xsi:type="ocl.ecore:OperationCallExp">
-              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
-              <source xsi:type="ocl.ecore:PropertyCallExp">
-                <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-                <source xsi:type="ocl.ecore:VariableExp" name="e" referredVariable="/0/getStereotypeQuery/@expression/@source/select/e">
-                  <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Stereotype"/>
-                </source>
-                <referredProperty xsi:type="ecore:EAttribute" href="http://www.eclipse.org/uml2/4.0.0/UML#//NamedElement/name"/>
-              </source>
-              <argument xsi:type="ocl.ecore:VariableExp" name="name" referredVariable="/0/getStereotypeQuery/name">
-                <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-              </argument>
-              <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String_Class/="/>
-            </body>
-            <iterator xsi:type="ocl.ecore:Variable" name="e">
-              <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Stereotype"/>
-            </iterator>
-          </source>
-          <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Set(T)_Class/asOrderedSet"/>
-        </source>
-        <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OrderedSet(T)_Class/first"/>
-      </expression>
-      <type xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Stereotype"/>
-    </ownedModuleElement>
   </mtl:Module>
   <ecore:EPackage name="additions">
     <eClassifiers xsi:type="ecore:EClass" name="String_Class">
@@ -654,7 +585,9 @@
         <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
           <contents xsi:type="ocl.ecore:Constraint"/>
         </eAnnotations>
-        <eAnnotations source="MTL" references="/0/hasStereotypeQuery"/>
+        <eAnnotations source="MTL">
+          <references href="../common/fileUtils.emtl#/0/hasStereotypeQuery"/>
+        </eAnnotations>
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
         <eParameters name="elem">
           <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Element"/>
@@ -667,7 +600,9 @@
         <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
           <contents xsi:type="ocl.ecore:Constraint"/>
         </eAnnotations>
-        <eAnnotations source="MTL" references="/0/getStereotypeQuery"/>
+        <eAnnotations source="MTL">
+          <references href="../common/fileUtils.emtl#/0/getStereotypeQuery"/>
+        </eAnnotations>
         <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Stereotype"/>
         <eParameters name="elem">
           <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Element"/>
@@ -814,9 +749,6 @@
     <eClassifiers xsi:type="ocl.ecore:SetType" name="Set(Property)" instanceClassName="java.util.Set">
       <elementType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Property"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ocl.ecore:OrderedSetType" name="OrderedSet(Stereotype)" instanceClassName="java.util.LinkedHashSet">
-      <elementType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Stereotype"/>
-    </eClassifiers>
   </ecore:EPackage>
   <ocl.ecore:Variable name="self">
     <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Element"/>
@@ -939,24 +871,6 @@
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
     <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Property"/>
-  </ocl.ecore:Variable>
-  <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
-  </ocl.ecore:Variable>
-  <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Element"/>
-  </ocl.ecore:Variable>
-  <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Element"/>
-  </ocl.ecore:Variable>
-  <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
-  </ocl.ecore:Variable>
-  <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Element"/>
-  </ocl.ecore:Variable>
-  <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Element"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
     <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
@@ -1795,126 +1709,6 @@
     <eAnnotations source="positions.166" references="/0/attributeStereotypeGetValue/@post/self">
       <details key="start" value="-1"/>
       <details key="end" value="-1"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.167" references="/0/hasStereotypeQuery">
-      <details key="start" value="1878"/>
-      <details key="end" value="2028"/>
-      <details key="line" value="55"/>
-    </eAnnotations>
-    <eAnnotations source="positions.168" references="/0/hasStereotypeQuery/elem">
-      <details key="start" value="1911"/>
-      <details key="end" value="1925"/>
-      <details key="line" value="55"/>
-    </eAnnotations>
-    <eAnnotations source="positions.169" references="/0/hasStereotypeQuery/name">
-      <details key="start" value="1927"/>
-      <details key="end" value="1940"/>
-      <details key="line" value="55"/>
-    </eAnnotations>
-    <eAnnotations source="positions.170" references="/0/hasStereotypeQuery/exists">
-      <details key="start" value="1956"/>
-      <details key="end" value="2024"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.171" references="/0/hasStereotypeQuery/exists/@source">
-      <details key="start" value="1956"/>
-      <details key="end" value="1984"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.172" references="/0/hasStereotypeQuery/exists/@source/self">
-      <details key="start" value="1956"/>
-      <details key="end" value="1960"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.173" references="/0/hasStereotypeQuery/exists/@body">
-      <details key="start" value="2010"/>
-      <details key="end" value="2023"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.174" references="/0/hasStereotypeQuery/exists/@body/@source">
-      <details key="start" value="2010"/>
-      <details key="end" value="2016"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.175" references="/0/hasStereotypeQuery/exists/@body/@source/e">
-      <details key="start" value="2010"/>
-      <details key="end" value="2011"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.176" references="/0/hasStereotypeQuery/exists/@body/name">
-      <details key="start" value="2019"/>
-      <details key="end" value="2023"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.177" references="/0/hasStereotypeQuery/exists/e">
-      <details key="start" value="1993"/>
-      <details key="end" value="2007"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.178" references="/0/getStereotypeQuery">
-      <details key="start" value="2030"/>
-      <details key="end" value="2208"/>
-      <details key="line" value="59"/>
-    </eAnnotations>
-    <eAnnotations source="positions.179" references="/0/getStereotypeQuery/elem">
-      <details key="start" value="2063"/>
-      <details key="end" value="2077"/>
-      <details key="line" value="59"/>
-    </eAnnotations>
-    <eAnnotations source="positions.180" references="/0/getStereotypeQuery/name">
-      <details key="start" value="2079"/>
-      <details key="end" value="2092"/>
-      <details key="line" value="59"/>
-    </eAnnotations>
-    <eAnnotations source="positions.181" references="/0/getStereotypeQuery/@expression">
-      <details key="start" value="2111"/>
-      <details key="end" value="2204"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.182" references="/0/getStereotypeQuery/@expression/@source">
-      <details key="start" value="2111"/>
-      <details key="end" value="2195"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.183" references="/0/getStereotypeQuery/@expression/@source/select">
-      <details key="start" value="2111"/>
-      <details key="end" value="2179"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.184" references="/0/getStereotypeQuery/@expression/@source/select/@source">
-      <details key="start" value="2111"/>
-      <details key="end" value="2139"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.185" references="/0/getStereotypeQuery/@expression/@source/select/@source/self">
-      <details key="start" value="2111"/>
-      <details key="end" value="2115"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.186" references="/0/getStereotypeQuery/@expression/@source/select/@body">
-      <details key="start" value="2165"/>
-      <details key="end" value="2178"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.187" references="/0/getStereotypeQuery/@expression/@source/select/@body/@source">
-      <details key="start" value="2165"/>
-      <details key="end" value="2171"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.188" references="/0/getStereotypeQuery/@expression/@source/select/@body/@source/e">
-      <details key="start" value="2165"/>
-      <details key="end" value="2166"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.189" references="/0/getStereotypeQuery/@expression/@source/select/@body/name">
-      <details key="start" value="2174"/>
-      <details key="end" value="2178"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.190" references="/0/getStereotypeQuery/@expression/@source/select/e">
-      <details key="start" value="2148"/>
-      <details key="end" value="2162"/>
       <details key="line" value="0"/>
     </eAnnotations>
   </ecore:EAnnotation>

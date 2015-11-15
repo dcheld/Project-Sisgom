@@ -52,10 +52,4 @@
 [/if]
 [/template]
 
-[query public hasStereotypeQuery(elem : Element, name : String) : Boolean = 
-	self.getAppliedStereotypes()->exists(e : Stereotype | e.name = name)
- /]
 
-[query public getStereotypeQuery(elem : Element, name : String) : Stereotype = 
-	self.getAppliedStereotypes()->select(e : Stereotype | e.name = name)->asOrderedSet()->first()
- /]

@@ -46,12 +46,15 @@
  * Generates the default import block for the given type.
  * @param aType The type
  */]
-[template public genDefaultImport(aType : Classifier)]
+[template public genDefaultImport(aType : Classifier)post (trim())]
 [if (aType.attribute->exists(property : Property | property.upper = -1 or property.upper > 1))]
 import java.util.List;
 [/if]
 [if (aType.oclIsTypeOf(Class))]
-	[aType.oclAsType(Class).obterTodosOsTipo().genElementsImportGeneric(aType) /]
+	[let aClass : Class = aType.oclAsType(Class)]
+	[aClass.obterTodosOsTipo().genElementsImportGeneric(aType) /]
+	[aClass.importEntityNamespece() /]
+	[/let]
 [elseif (aType.oclIsTypeOf(Interface))]
 	[aType.oclAsType(Interface).obterTodosOsTipo().genElementsImportGeneric(aType) /]
 [/if]
@@ -59,7 +62,7 @@ import java.util.List;
 // [/protected]
 [/template]
 
-[template public genElementsImportGeneric(aType : Type, aPai: Classifier)]
+[template public genElementsImportGeneric(aType : Type, aPai: Classifier)post (trim())]
 [if (aType.oclIsTypeOf(DataType))]
 [if (getProperty(aType.name) <> '')]
 import [getProperty(aType.name)/];
@@ -69,6 +72,11 @@ import [aType.genPackageValue()+ '.' + aType.name  /];
 [/if]
 [/template]
 
+[template public importEntityNamespece(aClass : Class) post (trim())]
+[if (aClass.hasStereotypeQuery('Entity'))]
+import [aClass.getJavaxPersistence() /];
+[/if]
+[/template]
 
 [query private obterTodosOsTipo(aClass : Class) : OrderedSet(Type) = 
 aClass.getAllAttributes()->collect(s : Property | s.type)->union(aClass.getOperations()->union(aClass.getImplementedInterfaces().ownedOperation).ownedParameter
@@ -86,3 +94,11 @@ aInterface.getAllAttributes()->collect(s : Property | s.type)->union(aInterface.
      else 
        null
      endif/]
+
+[query public hasStereotypeQuery(elem : Element, name : String) : Boolean = 
+	self.getAppliedStereotypes()->exists(e : Stereotype | e.name = name)
+ /]
+
+[query public getStereotypeQuery(elem : Element, name : String) : Stereotype = 
+	self.getAppliedStereotypes()->select(e : Stereotype | e.name = name)->asOrderedSet()->first()
+ /]

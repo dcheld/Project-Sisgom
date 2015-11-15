@@ -24,6 +24,16 @@
       <artifactId>[aModel.generateSpecificProjectFolder('-main')/]</artifactId>
       <version>${application.version}</version>
     </dependency>
+	<dependency>
+		<groupId>mysql</groupId>
+		<artifactId>mysql-connector-java</artifactId>
+		<version>5.1.37</version>
+	</dependency>
+	<dependency>
+	    <groupId>org.hibernate</groupId>
+	    <artifactId>hibernate-search-orm</artifactId>
+	    <version>5.5.0.Final</version>
+	</dependency>
   </dependencies>
     <build>
         <plugins>
