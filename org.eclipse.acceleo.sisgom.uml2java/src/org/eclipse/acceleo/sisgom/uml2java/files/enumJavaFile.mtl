@@ -11,8 +11,7 @@
  * @param aEnumeration
  */]
 [template public genEnumJavaFile(anEnumeration : Enumeration)]
-[file (anEnumeration.genFilePath(), false, 'UTF-8')]
-[anEnumeration.genCopyrightHeader()/]
+[file (anEnumeration.packagePath(), false, 'UTF-8')]
 package [anEnumeration.genPackageValue()/];
 
 [anEnumeration.genDefaultImport()/]

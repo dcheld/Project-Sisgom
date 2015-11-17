@@ -9,10 +9,73 @@
  * The documentation of the template generateElement.
  * @param aClass
  */]
-[template public getSourceFolder(anOclAny : OclAny)]
-[getProperty('sourcefolder')/]
-[/template]
-
-[template public getJavaxPersistence(aClass : Class)]
+[template public getJavaxPersistence(anOclAny : OclAny)]
 [getProperty('javax.persistence')/]
 [/template]
+
+
+[template public getSourceFolderClass(anOclAny : OclAny)]
+[getProperty('SourceFolderJava')/]
+[/template]
+
+[template public getSourceFolderTest(anOclAny : OclAny)]
+[getProperty('SourceFolderTest')/]
+[/template]
+
+[template public getSourceFolderResources(anOclAny : OclAny)]
+[getProperty('SourceFolderResources')/]
+[/template]
+
+
+
+[template public getEntityNamespace(anOclAny : OclAny)]
+[getProperty('EntityNamespace')/]
+[/template]
+
+[template public getDaoNamespace(anOclAny : OclAny)]
+[getProperty('DaoNamespace')/]
+[/template]
+
+[template public getUtilsNamespace(anOclAny : OclAny)]
+[getProperty('UtilsNamespace')/]
+[/template]
+[template public getServletsNamespace(anOclAny : OclAny)]
+[getProperty('ServletsNamespace')/]
+[/template]
+
+
+
+
+[template public getEntitySuffix(anOclAny : OclAny)]
+[getProperty('EntitySuffix')/]
+[/template]
+
+[template public getDaoSuffix(anOclAny : OclAny)]
+[getProperty('DaoSuffix')/]
+[/template]
+
+[template public getUtilsSuffix(anOclAny : OclAny)]
+[getProperty('UtilsSuffix')/]
+[/template]
+
+[template public getServletsSuffix(anOclAny : OclAny)]
+[getProperty('ServletsSuffix')/]
+[/template]
+
+
+[template public getGenericDao(anOclAny : OclAny)]
+[getProperty('GenericDao')/]
+[/template]
+
+[template public getBaseBean(anOclAny : OclAny)]
+[getProperty('BaseBean')/]
+[/template]
+
+[template public getFactoryDao(anOclAny : OclAny)]
+[getProperty('FactoryDao')/]
+[/template]
+
+[template public getPersistenceUnit(anOclAny : OclAny)]
+[getProperty('PersistenceUnit')/]
+[/template]
+

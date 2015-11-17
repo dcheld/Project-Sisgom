@@ -8,8 +8,7 @@
  * @param aInterface
  */]
 [template public genInterfaceJavaFile(anInterface : Interface)]
-[file (anInterface.genFilePath(), false, 'UTF-8')]
-[anInterface.genCopyrightHeader()/]
+[file (anInterface.packagePath(), false, 'UTF-8')]
 package [anInterface.genPackageValue()/];
 
 [anInterface.genDefaultImport()/]

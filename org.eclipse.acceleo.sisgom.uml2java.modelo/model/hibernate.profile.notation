@@ -335,7 +335,7 @@
         </eAnnotations>
         <children xmi:type="notation:DecorationNode" xmi:id="_3qtDOIu3EeWXsfFZHs3Y0Q" type="5062"/>
         <element xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Association"/>
-        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_3qtDOYu3EeWXsfFZHs3Y0Q" x="355" y="27"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_3qtDOYu3EeWXsfFZHs3Y0Q" x="394" y="22"/>
       </children>
       <children xmi:type="notation:Shape" xmi:id="_DSlsUIu4EeWXsfFZHs3Y0Q" type="1023" fontName="Segoe UI" lineColor="0">
         <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_DSlsUou4EeWXsfFZHs3Y0Q" source="ShadowFigure">
@@ -545,6 +545,10 @@
             <element xmi:type="uml:Property" href="hibernate.profile.uml#_M-u6IIu7EeWXsfFZHs3Y0Q"/>
             <layoutConstraint xmi:type="notation:Location" xmi:id="_M-xWYYu7EeWXsfFZHs3Y0Q"/>
           </children>
+          <children xmi:type="notation:Shape" xmi:id="_JEZfoIvIEeWrHdG0huMLwQ" type="3002" fontName="Segoe UI" lineColor="0">
+            <element xmi:type="uml:Property" href="hibernate.profile.uml#_JEUAEIvIEeWrHdG0huMLwQ"/>
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_JEZfoYvIEeWrHdG0huMLwQ"/>
+          </children>
           <styles xmi:type="notation:TitleStyle" xmi:id="_FQGaiou7EeWXsfFZHs3Y0Q"/>
           <styles xmi:type="notation:SortingStyle" xmi:id="_FQGai4u7EeWXsfFZHs3Y0Q"/>
           <styles xmi:type="notation:FilteringStyle" xmi:id="_FQGajIu7EeWXsfFZHs3Y0Q"/>
@@ -663,5 +667,10 @@
     <element xmi:type="uml:Extension" href="hibernate.profile.uml#__tNZsYu6EeWXsfFZHs3Y0Q"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="__tREEou6EeWXsfFZHs3Y0Q" points="[-10, -9, 225, 185]$[-185, -198, 50, -4]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="__tVVgIu6EeWXsfFZHs3Y0Q" id="(0.06578947368421052,0.4838709677419355)"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_74VVsIvBEeWrHdG0huMLwQ" type="1013" source="_FQGagIu7EeWXsfFZHs3Y0Q" target="_3qtDMIu3EeWXsfFZHs3Y0Q" lineColor="0">
+    <styles xmi:type="notation:FontStyle" xmi:id="_74VVsYvBEeWrHdG0huMLwQ" fontName="Segoe UI"/>
+    <element xmi:type="uml:Extension" href="hibernate.profile.uml#_74OA8YvBEeWrHdG0huMLwQ"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_74VVsovBEeWrHdG0huMLwQ" points="[-45, -55, 240, 305]$[-335, -364, -50, -4]"/>
   </edges>
 </notation:Diagram>

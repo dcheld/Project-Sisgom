@@ -303,6 +303,9 @@ public class Uml2java extends AbstractAcceleoGenerator {
          * 
          * To learn more about Properties Files, have a look at the Acceleo documentation (Help -> Help Contents).
          */
+    	
+    	propertiesFiles.add("org.eclipse.acceleo.sisgom.properties.default");
+    	
         return propertiesFiles;
     }
     

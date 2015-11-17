@@ -1,0 +1,64 @@
+[comment encoding = UTF-8 /]
+[**
+ * The documentation of the module classJavaFile.
+ */]
+[module classServletsJavaFile('http://www.eclipse.org/uml2/4.0.0/UML')]
+
+[import org::eclipse::acceleo::sisgom::uml2java::common::fileUtils /]
+[import org::eclipse::acceleo::sisgom::properties::properties /]
+
+[**
+ * The documentation of the template genClassJavaFile.
+ * @param aClass
+ */]
+
+[template public genClassJavaGenericDao(aClass : Class)]
+[file (aClass.genFilePathServlets('Delete'), false, 'UTF-8')]
+package [aClass.genPackageValue() + '.' + aClass.getEntityNamespace()/];
+package org.eclipse.acceleo.sisgom.uml2java.servlets;
+
+import java.io.IOException;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.eclipse.acceleo.sisgom.uml2java.daos.ClienteDao;
+import org.eclipse.acceleo.sisgom.uml2java.entities.ClienteEntity;
+import org.eclipse.acceleo.sisgom.uml2java.utils.DaoFactory;
+
+@WebServlet(urlPatterns = "/Clientes/deletar")
+public class ClienteDeleteServlet extends HttpServlet {
+
+	private ClienteDao clienteDao = DaoFactory.clienteInstance();
+	
+	@Override
+	protected void service(HttpServletRequest req, HttpServletResponse resp)
+			throws ServletException, IOException {
+		String id = req.getParameter("id");
+
+		if (id == null) {
+			resp.sendRedirect("/clientes/list.jsp?error=Id não encontrado.");
+			return;
+		}
+
+		try {
+			ClienteEntity entity = this.clienteDao.findById(Integer.parseInt(id));
+
+			if (entity != null) {
+				this.clienteDao.delete(entity);
+				resp.sendRedirect("/Clientes/list.jsp");
+			} else {
+				resp.sendRedirect("/Clientes/list.jsp?error=Cliente não encontrado.");
+			}
+		} catch (Exception ex) {
+			resp.sendRedirect("/Clientes/list.jsp?error=" + ex.getMessage());
+		}
+	}
+}
+
+
+[/file]
+[/template]

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Profile xmi:version="20110701" xmlns:xmi="http://www.omg.org/spec/XMI/20110701" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/4.0.0/UML" xmi:id="_WSavYIvkEeWuGKU7gkaFFg" name="Infra" metaclassReference="_h4CusIvkEeWuGKU7gkaFFg" metamodelReference="_WSavYYvkEeWuGKU7gkaFFg">
+  <eAnnotations xmi:id="_gD-JAIvkEeWuGKU7gkaFFg" source="http://www.eclipse.org/uml2/2.0.0/UML">
+    <contents xmi:type="ecore:EPackage" xmi:id="_wQgpEYvkEeWuGKU7gkaFFg" name="Infra" nsURI="http:///schemas/Infra/_wQgpEIvkEeWuGKU7gkaFFg/2" nsPrefix="Infra">
+      <eAnnotations xmi:id="_wQgpF4vkEeWuGKU7gkaFFg" source="PapyrusVersion">
+        <details xmi:id="_wQgpGIvkEeWuGKU7gkaFFg" key="Version" value="0.0.3"/>
+        <details xmi:id="_wQgpGYvkEeWuGKU7gkaFFg" key="Comment" value=""/>
+        <details xmi:id="_wQgpGovkEeWuGKU7gkaFFg" key="Copyright" value=""/>
+        <details xmi:id="_wQgpG4vkEeWuGKU7gkaFFg" key="Date" value="2015-11-15"/>
+        <details xmi:id="_wQgpHIvkEeWuGKU7gkaFFg" key="Author" value=""/>
+      </eAnnotations>
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_wQgpEovkEeWuGKU7gkaFFg" name="MainPackage">
+        <eAnnotations xmi:id="_wQgpE4vkEeWuGKU7gkaFFg" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_iW7DEIvkEeWuGKU7gkaFFg"/>
+        <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_wQgpFIvkEeWuGKU7gkaFFg" name="base_Package" ordered="false" lowerBound="1">
+          <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Package"/>
+        </eStructuralFeatures>
+      </eClassifiers>
+    </contents>
+    <contents xmi:type="ecore:EPackage" xmi:id="_nGABUIvkEeWuGKU7gkaFFg" name="Profile" nsURI="http:///schemas/Profile/_nF-zMIvkEeWuGKU7gkaFFg/1" nsPrefix="Profile">
+      <eAnnotations xmi:id="_nGAoYYvkEeWuGKU7gkaFFg" source="PapyrusVersion">
+        <details xmi:id="_nGAoYovkEeWuGKU7gkaFFg" key="Version" value="0.0.2"/>
+        <details xmi:id="_nGAoY4vkEeWuGKU7gkaFFg" key="Comment" value=""/>
+        <details xmi:id="_nGAoZIvkEeWuGKU7gkaFFg" key="Copyright" value=""/>
+        <details xmi:id="_nGAoZYvkEeWuGKU7gkaFFg" key="Date" value="2015-11-15"/>
+        <details xmi:id="_nGAoZovkEeWuGKU7gkaFFg" key="Author" value=""/>
+      </eAnnotations>
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_nGABUYvkEeWuGKU7gkaFFg" name="MainPackage">
+        <eAnnotations xmi:id="_nGABUovkEeWuGKU7gkaFFg" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_iW7DEIvkEeWuGKU7gkaFFg"/>
+        <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_nGABU4vkEeWuGKU7gkaFFg" name="base_Package" ordered="false" lowerBound="1">
+          <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Package"/>
+        </eStructuralFeatures>
+      </eClassifiers>
+    </contents>
+    <contents xmi:type="ecore:EPackage" xmi:id="_gD-wEIvkEeWuGKU7gkaFFg" name="Profile" nsURI="http:///schemas/Profile/_gD9h8IvkEeWuGKU7gkaFFg/0" nsPrefix="Profile">
+      <eAnnotations xmi:id="_gD_XIIvkEeWuGKU7gkaFFg" source="PapyrusVersion">
+        <details xmi:id="_gD_XIYvkEeWuGKU7gkaFFg" key="Version" value="0.0.1"/>
+        <details xmi:id="_gD_XIovkEeWuGKU7gkaFFg" key="Comment" value=""/>
+        <details xmi:id="_gD_XI4vkEeWuGKU7gkaFFg" key="Copyright" value=""/>
+        <details xmi:id="_gD_XJIvkEeWuGKU7gkaFFg" key="Date" value="2015-11-15"/>
+        <details xmi:id="_gD_XJYvkEeWuGKU7gkaFFg" key="Author" value=""/>
+      </eAnnotations>
+    </contents>
+  </eAnnotations>
+  <elementImport xmi:id="_h4CusIvkEeWuGKU7gkaFFg" alias="Package">
+    <importedElement xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Package"/>
+  </elementImport>
+  <packageImport xmi:id="_WSavYYvkEeWuGKU7gkaFFg">
+    <importedPackage xmi:type="uml:Model" href="pathmap://UML_METAMODELS/UML.metamodel.uml#_0"/>
+  </packageImport>
+  <packageImport xmi:id="_WSavYovkEeWuGKU7gkaFFg">
+    <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
+  </packageImport>
+  <packagedElement xmi:type="uml:Stereotype" xmi:id="_iW7DEIvkEeWuGKU7gkaFFg" name="MainPackage">
+    <ownedAttribute xmi:id="_mmSmgIvkEeWuGKU7gkaFFg" name="base_Package" association="_mmSmgYvkEeWuGKU7gkaFFg">
+      <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Package"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Extension" xmi:id="_mmSmgYvkEeWuGKU7gkaFFg" name="E_MainPackage_Package1" memberEnd="_mmSmgovkEeWuGKU7gkaFFg _mmSmgIvkEeWuGKU7gkaFFg">
+    <ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="_mmSmgovkEeWuGKU7gkaFFg" name="extension_MainPackage" type="_iW7DEIvkEeWuGKU7gkaFFg" aggregation="composite" association="_mmSmgYvkEeWuGKU7gkaFFg"/>
+  </packagedElement>
+</uml:Profile>
