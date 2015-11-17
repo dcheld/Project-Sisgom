@@ -7,11 +7,15 @@
 [import org::eclipse::acceleo::sisgom::uml2java::common::fileUtils /]
 [import org::eclipse::acceleo::sisgom::uml2java::files::generatePomXml /]
 [import org::eclipse::acceleo::sisgom::uml2java::files::classUtilsJavaFile /]
+[import org::eclipse::acceleo::sisgom::uml2java::files::classServletsJavaFile /]
 
 [template public mainClass(aClass : Class)]
 	[comment @main /]
 	[aClass.genClassJavaEntity()/]
-	[aClass.genClassJavaDao() /]
+	[if (not(aClass.isAbstract))]
+		[aClass.genClassJavaDao() /]
+		[aClass.genClassJavaServletDelete() /]
+	[/if]
 [/template]
 
 

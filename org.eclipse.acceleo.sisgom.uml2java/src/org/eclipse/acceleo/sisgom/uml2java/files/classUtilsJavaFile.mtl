@@ -13,7 +13,7 @@
 
 [template public genClassJavaGenericDao(aPack : Package){packName : String = aPack.getGenericDao(); }]
 [file (aPack.genFilePathUtils(packName), false, 'UTF-8')]
-package [aPack.name + '.utils'/];
+package [aPack.name + aPack.getUtilsSuffix()/];
 
 import java.lang.reflect.ParameterizedType;
 import java.util.List;
@@ -134,7 +134,7 @@ public abstract class GenericDao<T, PK> {
 
 [template public genClassBeanBase(aPack : Package){packName : String = aPack.getBaseBean(); }]]
 [file (aPack.genFilePathUtils(packName), false, 'UTF-8')]
-package [aPack.name + '.utils'/];
+package [aPack.name + aPack.getUtilsSuffix()/];
 
 import java.io.Serializable;
 
@@ -162,7 +162,7 @@ public abstract class BaseBean implements Serializable {
 
 [template public genClassDaoFactory(aPack : Package){packName : String = aPack.getFactoryDao(); }]
 [file (aPack.genFilePathUtils(packName), false, 'UTF-8')]
-package [aPack.name + '.utils'/];
+package [aPack.name + aPack.getUtilsSuffix()/];
 
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;

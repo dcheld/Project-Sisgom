@@ -1,4 +1,4 @@
-[comment encoding = UTF-8 /]
+[comment encoding = ISO-8859-1 /]
 [**
  * The documentation of the module classJavaFile.
  */]
@@ -12,10 +12,9 @@
  * @param aClass
  */]
 
-[template public genClassJavaGenericDao(aClass : Class)]
-[file (aClass.genFilePathServlets('Delete'), false, 'UTF-8')]
-package [aClass.genPackageValue() + '.' + aClass.getEntityNamespace()/];
-package org.eclipse.acceleo.sisgom.uml2java.servlets;
+[template public genClassJavaServletDelete(aClass : Class){tipo:String = 'Deletar';}]
+[file (aClass.genFilePathServlets(tipo), false, 'UTF-8')]
+package [aClass.genPackageValue() + '.' + aClass.getServletsNamespace()/];
 
 import java.io.IOException;
 
@@ -25,14 +24,13 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.eclipse.acceleo.sisgom.uml2java.daos.ClienteDao;
-import org.eclipse.acceleo.sisgom.uml2java.entities.ClienteEntity;
-import org.eclipse.acceleo.sisgom.uml2java.utils.DaoFactory;
+import [aClass.genPackageEntity() + '.' + aClass.name.toUpperFirst() + aClass.getEntitySuffix()/];
+import [aClass.genPackageDao() + '.' + aClass.name.toUpperFirst() + aClass.getDaoSuffix()/];
+import [aClass.genPackageValue() + aClass.getUtilsSuffix()/].DaoFactory;
 
-@WebServlet(urlPatterns = "/Clientes/deletar")
-public class ClienteDeleteServlet extends HttpServlet {
-
-	private ClienteDao clienteDao = DaoFactory.clienteInstance();
+@WebServlet(urlPatterns = "/[aClass.name.toLowerFirst()/]/[tipo/]")
+public class [aClass.name.toUpperFirst() + tipo + aClass.getServletsSuffix() /] extends HttpServlet {
+	private [aClass.name.toUpperFirst() + aClass.getDaoSuffix()/] [aClass.name.toLowerFirst() + aClass.getDaoSuffix()/] = DaoFactory.[aClass.name.toLowerFirst()/]Instance();
 	
 	@Override
 	protected void service(HttpServletRequest req, HttpServletResponse resp)
@@ -40,25 +38,23 @@ public class ClienteDeleteServlet extends HttpServlet {
 		String id = req.getParameter("id");
 
 		if (id == null) {
-			resp.sendRedirect("/clientes/list.jsp?error=Id não encontrado.");
+			resp.sendRedirect("/[aClass.name.toLowerFirst()/]/list.jsp?error=Id não encontrado.");
 			return;
 		}
 
 		try {
-			ClienteEntity entity = this.clienteDao.findById(Integer.parseInt(id));
+			[aClass.name.toUpperFirst() + aClass.getEntitySuffix()/] entity = this.[aClass.name.toLowerFirst() + aClass.getDaoSuffix()/].findById(Integer.parseInt(id));
 
 			if (entity != null) {
-				this.clienteDao.delete(entity);
-				resp.sendRedirect("/Clientes/list.jsp");
+				this.[aClass.name.toLowerFirst() + aClass.getDaoSuffix()/].delete(entity);
+				resp.sendRedirect("/[aClass.name.toLowerFirst()/]/list.jsp");
 			} else {
-				resp.sendRedirect("/Clientes/list.jsp?error=Cliente não encontrado.");
+				resp.sendRedirect("/[aClass.name.toLowerFirst()/]/list.jsp?error=Cliente não encontrado.");
 			}
 		} catch (Exception ex) {
-			resp.sendRedirect("/Clientes/list.jsp?error=" + ex.getMessage());
+			resp.sendRedirect("/[aClass.name.toLowerFirst()/]/list.jsp?error=" + ex.getMessage());
 		}
 	}
 }
-
-
 [/file]
 [/template]

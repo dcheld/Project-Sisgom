@@ -379,6 +379,66 @@
         <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Package"/>
       </parameter>
     </ownedModuleElement>
+    <ownedModuleElement xsi:type="mtl:Template" name="genPackageEntity" visibility="Public">
+      <body xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/String_Class/+">
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <source xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/String_Class/+">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          <source xsi:type="mtl:TemplateInvocation" definition="/0/genPackageValue">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            <argument xsi:type="ocl.ecore:VariableExp" name="aClass" referredVariable="/0/genPackageEntity/aClass">
+              <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Class"/>
+            </argument>
+          </source>
+          <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=".">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          </argument>
+        </source>
+        <argument xsi:type="mtl:TemplateInvocation">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          <definition href="../../properties/properties.emtl#/0/getEntityNamespace"/>
+          <argument xsi:type="ocl.ecore:VariableExp" name="aClass" referredVariable="/0/genPackageEntity/aClass">
+            <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Class"/>
+          </argument>
+        </argument>
+      </body>
+      <documentation xsi:type="mtl:ModuleElementDocumentation">
+        <body startPosition="1427" endPosition="1573" value="&#xD;&#xA;Returns the package value for the given type (ex: a.b.c.d).&#xD;&#xA;@param aType The type (class, interface or enumeration most of the time).&#xD;&#xA;&#xD;&#xA;"/>
+        <parametersDocumentation name="aType">
+          <body value=" The type (class, interface or enumeration most of the time)."/>
+        </parametersDocumentation>
+      </documentation>
+      <parameter name="aClass">
+        <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Class"/>
+      </parameter>
+    </ownedModuleElement>
+    <ownedModuleElement xsi:type="mtl:Template" name="genPackageDao" visibility="Public">
+      <body xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/String_Class/+">
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <source xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/String_Class/+">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          <source xsi:type="mtl:TemplateInvocation" definition="/0/genPackageValue">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            <argument xsi:type="ocl.ecore:VariableExp" name="aClass" referredVariable="/0/genPackageDao/aClass">
+              <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Class"/>
+            </argument>
+          </source>
+          <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=".">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          </argument>
+        </source>
+        <argument xsi:type="mtl:TemplateInvocation">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          <definition href="../../properties/properties.emtl#/0/getDaoNamespace"/>
+          <argument xsi:type="ocl.ecore:VariableExp" name="aClass" referredVariable="/0/genPackageDao/aClass">
+            <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Class"/>
+          </argument>
+        </argument>
+      </body>
+      <parameter name="aClass">
+        <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Class"/>
+      </parameter>
+    </ownedModuleElement>
     <ownedModuleElement xsi:type="mtl:Template" name="genPackageValue" visibility="Public">
       <body xsi:type="ocl.ecore:OperationCallExp" eType="/3/Sequence(OclAny)" referredOperation="/1/Collection(T)_Class/sep">
         <source xsi:type="ocl.ecore:IteratorExp" name="collect" eType="/3/Sequence(String)">
@@ -422,12 +482,6 @@
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         </argument>
       </body>
-      <documentation xsi:type="mtl:ModuleElementDocumentation">
-        <body startPosition="1427" endPosition="1573" value="&#xD;&#xA;Returns the package value for the given type (ex: a.b.c.d).&#xD;&#xA;@param aType The type (class, interface or enumeration most of the time).&#xD;&#xA;&#xD;&#xA;"/>
-        <parametersDocumentation name="aType">
-          <body value=" The type (class, interface or enumeration most of the time)."/>
-        </parametersDocumentation>
-      </documentation>
       <parameter name="aType">
         <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Type"/>
       </parameter>
@@ -657,7 +711,7 @@
         </marker>
       </body>
       <documentation xsi:type="mtl:ModuleElementDocumentation">
-        <body startPosition="1752" endPosition="1841" value="&#xD;&#xA;Generates the default import block for the given type.&#xD;&#xA;@param aType The type&#xD;&#xA;&#xD;&#xA;"/>
+        <body startPosition="2002" endPosition="2091" value="&#xD;&#xA;Generates the default import block for the given type.&#xD;&#xA;@param aType The type&#xD;&#xA;&#xD;&#xA;"/>
         <parametersDocumentation name="aType">
           <body value=" The type"/>
         </parametersDocumentation>
@@ -667,7 +721,7 @@
       </parameter>
       <post xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/String_Class/trim">
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-        <source xsi:type="ocl.ecore:VariableExp" name="self" referredVariable="/42">
+        <source xsi:type="ocl.ecore:VariableExp" name="self" referredVariable="/52">
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         </source>
       </post>
@@ -678,7 +732,7 @@
           <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="import "/>
           <body xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/OclAny_Class/getProperty">
             <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-            <source xsi:type="ocl.ecore:VariableExp" name="self" referredVariable="/62">
+            <source xsi:type="ocl.ecore:VariableExp" name="self" referredVariable="/72">
               <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Type"/>
             </source>
             <argument xsi:type="ocl.ecore:PropertyCallExp">
@@ -694,7 +748,7 @@
             <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
             <source xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/OclAny_Class/getProperty">
               <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-              <source xsi:type="ocl.ecore:VariableExp" name="self" referredVariable="/61">
+              <source xsi:type="ocl.ecore:VariableExp" name="self" referredVariable="/71">
                 <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Type"/>
               </source>
               <argument xsi:type="ocl.ecore:PropertyCallExp">
@@ -789,7 +843,7 @@
       </parameter>
       <post xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/String_Class/trim">
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-        <source xsi:type="ocl.ecore:VariableExp" name="self" referredVariable="/58">
+        <source xsi:type="ocl.ecore:VariableExp" name="self" referredVariable="/68">
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         </source>
       </post>
@@ -820,7 +874,7 @@
       </parameter>
       <post xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/String_Class/trim">
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-        <source xsi:type="ocl.ecore:VariableExp" name="self" referredVariable="/68">
+        <source xsi:type="ocl.ecore:VariableExp" name="self" referredVariable="/78">
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         </source>
       </post>
@@ -833,7 +887,7 @@
         <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Package"/>
         <source xsi:type="ocl.ecore:IteratorExp" name="select" eType="/3/Sequence(Package)">
           <source xsi:type="ocl.ecore:OperationCallExp" eType="/3/Sequence(Package)" referredOperation="/1/EObject_Class/ancestors">
-            <source xsi:type="ocl.ecore:VariableExp" name="self" referredVariable="/74">
+            <source xsi:type="ocl.ecore:VariableExp" name="self" referredVariable="/84">
               <eType xsi:type="ocl.ecore:AnyType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny"/>
             </source>
             <argument xsi:type="ocl.ecore:TypeExp" eType="/27/Package">
@@ -1091,7 +1145,7 @@
       <expression xsi:type="ocl.ecore:IteratorExp" name="exists">
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
         <source xsi:type="ocl.ecore:OperationCallExp" eType="/3/Set(Stereotype)">
-          <source xsi:type="ocl.ecore:VariableExp" name="self" referredVariable="/86">
+          <source xsi:type="ocl.ecore:VariableExp" name="self" referredVariable="/96">
             <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Element"/>
           </source>
           <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/uml2/4.0.0/UML#//Element/getAppliedStereotypes"/>
@@ -1128,7 +1182,7 @@
         <source xsi:type="ocl.ecore:OperationCallExp" eType="/3/OrderedSet(Stereotype)">
           <source xsi:type="ocl.ecore:IteratorExp" name="select" eType="/3/Set(Stereotype)">
             <source xsi:type="ocl.ecore:OperationCallExp" eType="/3/Set(Stereotype)">
-              <source xsi:type="ocl.ecore:VariableExp" name="self" referredVariable="/89">
+              <source xsi:type="ocl.ecore:VariableExp" name="self" referredVariable="/99">
                 <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Element"/>
               </source>
               <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/uml2/4.0.0/UML#//Element/getAppliedStereotypes"/>
@@ -1270,6 +1324,26 @@
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <eParameters name="aPack">
           <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Package"/>
+        </eParameters>
+      </eOperations>
+      <eOperations name="genPackageEntity">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL" references="/0/genPackageEntity"/>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <eParameters name="aClass">
+          <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Class"/>
+        </eParameters>
+      </eOperations>
+      <eOperations name="genPackageDao">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL" references="/0/genPackageDao"/>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <eParameters name="aClass">
+          <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Class"/>
         </eParameters>
       </eOperations>
       <eOperations name="genPackageValue">
@@ -1518,14 +1592,14 @@
         <references href="http://www.eclipse.org/uml2/4.0.0/UML#//Package"/>
       </eAnnotations>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="Classifier_Class">
-      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
-        <references href="http://www.eclipse.org/uml2/4.0.0/UML#//Classifier"/>
-      </eAnnotations>
-    </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Class_Class">
       <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
         <references href="http://www.eclipse.org/uml2/4.0.0/UML#//Class"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Classifier_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/uml2/4.0.0/UML#//Classifier"/>
       </eAnnotations>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Interface_Class">
@@ -1701,6 +1775,36 @@
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
     <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Package"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Class"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Class"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Class"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Class"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Class"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Class"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
     <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
@@ -2499,1349 +2603,1439 @@
       <details key="end" value="1347"/>
       <details key="line" value="31"/>
     </eAnnotations>
-    <eAnnotations source="positions.125" references="/0/genPackageValue">
+    <eAnnotations source="positions.125" references="/0/genPackageEntity">
       <details key="start" value="1576"/>
-      <details key="end" value="1746"/>
+      <details key="end" value="1702"/>
       <details key="line" value="39"/>
     </eAnnotations>
-    <eAnnotations source="positions.126" references="/0/genPackageValue/@body.0">
-      <details key="start" value="1625"/>
-      <details key="end" value="1732"/>
+    <eAnnotations source="positions.126" references="/0/genPackageEntity/@body.0">
+      <details key="start" value="1628"/>
+      <details key="end" value="1688"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.127" references="/0/genPackageValue/@body.0/collect">
-      <details key="start" value="1625"/>
-      <details key="end" value="1722"/>
+    <eAnnotations source="positions.127" references="/0/genPackageEntity/@body.0/@source">
+      <details key="start" value="1628"/>
+      <details key="end" value="1658"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.128" references="/0/genPackageValue/@body.0/collect/@source">
-      <details key="start" value="1625"/>
-      <details key="end" value="1717"/>
+    <eAnnotations source="positions.128" references="/0/genPackageEntity/@body.0/@source/@source">
+      <details key="start" value="1628"/>
+      <details key="end" value="1652"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.129" references="/0/genPackageValue/@body.0/collect/@source/reject">
-      <details key="start" value="1625"/>
-      <details key="end" value="1706"/>
+    <eAnnotations source="positions.129" references="/0/genPackageEntity/@body.0/@source/@source/aClass">
+      <details key="start" value="1628"/>
+      <details key="end" value="1634"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.130" references="/0/genPackageValue/@body.0/collect/@source/reject/@source">
-      <details key="start" value="1625"/>
-      <details key="end" value="1649"/>
+    <eAnnotations source="positions.130" references="/0/genPackageEntity/@body.0/@source/@argument.0">
+      <details key="start" value="1655"/>
+      <details key="end" value="1658"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.131" references="/0/genPackageValue/@body.0/collect/@source/reject/@source/aType">
-      <details key="start" value="1625"/>
-      <details key="end" value="1630"/>
+    <eAnnotations source="positions.131" references="/0/genPackageEntity/@body.0/@argument.0">
+      <details key="start" value="1661"/>
+      <details key="end" value="1688"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.132" references="/0/genPackageValue/@body.0/collect/@source/reject/@source/@argument.0">
-      <details key="start" value="1641"/>
-      <details key="end" value="1648"/>
+    <eAnnotations source="positions.132" references="/0/genPackageEntity/@body.0/@argument.0/aClass">
+      <details key="start" value="1661"/>
+      <details key="end" value="1667"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.133" references="/0/genPackageValue/@body.0/collect/@source/reject/@body">
-      <details key="start" value="1678"/>
-      <details key="end" value="1705"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.134" references="/0/genPackageValue/@body.0/collect/@source/reject/@body/aPackage">
-      <details key="start" value="1678"/>
-      <details key="end" value="1686"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.135" references="/0/genPackageValue/@body.0/collect/@source/reject/@body/@argument.0">
-      <details key="start" value="1699"/>
-      <details key="end" value="1704"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.136" references="/0/genPackageValue/@body.0/collect/@source/reject/aPackage">
-      <details key="start" value="1658"/>
-      <details key="end" value="1675"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.137" references="/0/genPackageValue/@body.0/collect/@body">
-      <details key="start" value="1718"/>
-      <details key="end" value="1722"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.138" references="/0/genPackageValue/@body.0/collect/@body/temp1">
-      <details key="start" value="-1"/>
-      <details key="end" value="-1"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.139" references="/0/genPackageValue/@body.0/collect/temp4">
-      <details key="start" value="-1"/>
-      <details key="end" value="-1"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.140" references="/0/genPackageValue/@body.0/@argument.0">
-      <details key="start" value="1728"/>
-      <details key="end" value="1731"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.141" references="/0/genPackageValue/@documentation">
+    <eAnnotations source="positions.133" references="/0/genPackageEntity/@documentation">
       <details key="start" value="1424"/>
       <details key="end" value="1575"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.142" references="/0/genPackageValue/@documentation/aType">
+    <eAnnotations source="positions.134" references="/0/genPackageEntity/@documentation/aType">
       <details key="start" value="-1"/>
       <details key="end" value="-1"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.143" references="/0/genPackageValue/aType">
-      <details key="start" value="1609"/>
-      <details key="end" value="1621"/>
+    <eAnnotations source="positions.135" references="/0/genPackageEntity/aClass">
+      <details key="start" value="1610"/>
+      <details key="end" value="1624"/>
       <details key="line" value="39"/>
     </eAnnotations>
-    <eAnnotations source="positions.144" references="/0/genDefaultImport">
-      <details key="start" value="1844"/>
-      <details key="end" value="2616"/>
+    <eAnnotations source="positions.136" references="/0/genPackageDao">
+      <details key="start" value="1704"/>
+      <details key="end" value="1824"/>
+      <details key="line" value="43"/>
+    </eAnnotations>
+    <eAnnotations source="positions.137" references="/0/genPackageDao/@body.0">
+      <details key="start" value="1753"/>
+      <details key="end" value="1810"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.138" references="/0/genPackageDao/@body.0/@source">
+      <details key="start" value="1753"/>
+      <details key="end" value="1783"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.139" references="/0/genPackageDao/@body.0/@source/@source">
+      <details key="start" value="1753"/>
+      <details key="end" value="1777"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.140" references="/0/genPackageDao/@body.0/@source/@source/aClass">
+      <details key="start" value="1753"/>
+      <details key="end" value="1759"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.141" references="/0/genPackageDao/@body.0/@source/@argument.0">
+      <details key="start" value="1780"/>
+      <details key="end" value="1783"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.142" references="/0/genPackageDao/@body.0/@argument.0">
+      <details key="start" value="1786"/>
+      <details key="end" value="1810"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.143" references="/0/genPackageDao/@body.0/@argument.0/aClass">
+      <details key="start" value="1786"/>
+      <details key="end" value="1792"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.144" references="/0/genPackageDao/aClass">
+      <details key="start" value="1735"/>
+      <details key="end" value="1749"/>
+      <details key="line" value="43"/>
+    </eAnnotations>
+    <eAnnotations source="positions.145" references="/0/genPackageValue">
+      <details key="start" value="1826"/>
+      <details key="end" value="1996"/>
       <details key="line" value="47"/>
     </eAnnotations>
-    <eAnnotations source="positions.145" references="/0/genDefaultImport/@body.0">
-      <details key="start" value="1912"/>
-      <details key="end" value="2117"/>
-      <details key="line" value="48"/>
-    </eAnnotations>
-    <eAnnotations source="positions.146" references="/0/genDefaultImport/@body.0/@body.0">
-      <details key="start" value="1993"/>
-      <details key="end" value="2110"/>
-      <details key="line" value="49"/>
-    </eAnnotations>
-    <eAnnotations source="positions.147" references="/0/genDefaultImport/@body.0/@body.0/@body.0">
-      <details key="start" value="2039"/>
-      <details key="end" value="2046"/>
-      <details key="line" value="50"/>
-    </eAnnotations>
-    <eAnnotations source="positions.148" references="/0/genDefaultImport/@body.0/@body.0/@body.1">
-      <details key="start" value="2047"/>
-      <details key="end" value="2091"/>
+    <eAnnotations source="positions.146" references="/0/genPackageValue/@body.0">
+      <details key="start" value="1875"/>
+      <details key="end" value="1982"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.149" references="/0/genDefaultImport/@body.0/@body.0/@body.1/@source">
-      <details key="start" value="2047"/>
-      <details key="end" value="2068"/>
+    <eAnnotations source="positions.147" references="/0/genPackageValue/@body.0/collect">
+      <details key="start" value="1875"/>
+      <details key="end" value="1972"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.150" references="/0/genDefaultImport/@body.0/@body.0/@body.1/@source/@source">
-      <details key="start" value="2047"/>
-      <details key="end" value="2056"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.151" references="/0/genDefaultImport/@body.0/@body.0/@body.1/@source/@source/pack">
-      <details key="start" value="2047"/>
-      <details key="end" value="2051"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.152" references="/0/genDefaultImport/@body.0/@body.0/@body.1/@source/@argument.0">
-      <details key="start" value="2059"/>
-      <details key="end" value="2068"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.153" references="/0/genDefaultImport/@body.0/@body.0/@body.1/@argument.0">
-      <details key="start" value="2071"/>
-      <details key="end" value="2091"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.154" references="/0/genDefaultImport/@body.0/@body.0/@body.1/@argument.0/pack">
-      <details key="start" value="2071"/>
-      <details key="end" value="2075"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.155" references="/0/genDefaultImport/@body.0/@body.0/@body.2">
-      <details key="start" value="2093"/>
-      <details key="end" value="2104"/>
-      <details key="line" value="50"/>
-    </eAnnotations>
-    <eAnnotations source="positions.156" references="/0/genDefaultImport/@body.0/@body.0/pack">
-      <details key="start" value="1998"/>
-      <details key="end" value="2037"/>
-      <details key="line" value="49"/>
-    </eAnnotations>
-    <eAnnotations source="positions.157" references="/0/genDefaultImport/@body.0/@body.0/pack/@initExpression">
-      <details key="start" value="2016"/>
-      <details key="end" value="2038"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.158" references="/0/genDefaultImport/@body.0/@body.0/pack/@initExpression/aType">
-      <details key="start" value="2016"/>
-      <details key="end" value="2021"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.159" references="/0/genDefaultImport/@body.0/@body.1">
-      <details key="start" value="2111"/>
-      <details key="end" value="2112"/>
-      <details key="line" value="52"/>
-    </eAnnotations>
-    <eAnnotations source="positions.160" references="/0/genDefaultImport/@body.0/@ifExpr">
-      <details key="start" value="1916"/>
-      <details key="end" value="1991"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.161" references="/0/genDefaultImport/@body.0/@ifExpr/@source">
-      <details key="start" value="1917"/>
-      <details key="end" value="1941"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.162" references="/0/genDefaultImport/@body.0/@ifExpr/@source/aType">
-      <details key="start" value="1917"/>
-      <details key="end" value="1922"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.163" references="/0/genDefaultImport/@body.0/@ifExpr/@source/@argument.0">
-      <details key="start" value="1935"/>
-      <details key="end" value="1940"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.164" references="/0/genDefaultImport/@body.0/@ifExpr/@argument.0">
-      <details key="start" value="1946"/>
-      <details key="end" value="1990"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.165" references="/0/genDefaultImport/@body.0/@ifExpr/@argument.0/@source">
-      <details key="start" value="1946"/>
-      <details key="end" value="1979"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.166" references="/0/genDefaultImport/@body.0/@ifExpr/@argument.0/@source/@source">
-      <details key="start" value="1946"/>
-      <details key="end" value="1968"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.167" references="/0/genDefaultImport/@body.0/@ifExpr/@argument.0/@source/@source/aType">
-      <details key="start" value="1946"/>
-      <details key="end" value="1951"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.168" references="/0/genDefaultImport/@body.0/@ifExpr/@argument.0/@source/@source/@argument.0">
-      <details key="start" value="1962"/>
+    <eAnnotations source="positions.148" references="/0/genPackageValue/@body.0/collect/@source">
+      <details key="start" value="1875"/>
       <details key="end" value="1967"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.169" references="/0/genDefaultImport/@body.1">
-      <details key="start" value="2118"/>
-      <details key="end" value="2242"/>
-      <details key="line" value="54"/>
+    <eAnnotations source="positions.149" references="/0/genPackageValue/@body.0/collect/@source/reject">
+      <details key="start" value="1875"/>
+      <details key="end" value="1956"/>
+      <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.170" references="/0/genDefaultImport/@body.1/@body.0">
-      <details key="start" value="2214"/>
-      <details key="end" value="2237"/>
+    <eAnnotations source="positions.150" references="/0/genPackageValue/@body.0/collect/@source/reject/@source">
+      <details key="start" value="1875"/>
+      <details key="end" value="1899"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.151" references="/0/genPackageValue/@body.0/collect/@source/reject/@source/aType">
+      <details key="start" value="1875"/>
+      <details key="end" value="1880"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.152" references="/0/genPackageValue/@body.0/collect/@source/reject/@source/@argument.0">
+      <details key="start" value="1891"/>
+      <details key="end" value="1898"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.153" references="/0/genPackageValue/@body.0/collect/@source/reject/@body">
+      <details key="start" value="1928"/>
+      <details key="end" value="1955"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.154" references="/0/genPackageValue/@body.0/collect/@source/reject/@body/aPackage">
+      <details key="start" value="1928"/>
+      <details key="end" value="1936"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.155" references="/0/genPackageValue/@body.0/collect/@source/reject/@body/@argument.0">
+      <details key="start" value="1949"/>
+      <details key="end" value="1954"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.156" references="/0/genPackageValue/@body.0/collect/@source/reject/aPackage">
+      <details key="start" value="1908"/>
+      <details key="end" value="1925"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.157" references="/0/genPackageValue/@body.0/collect/@body">
+      <details key="start" value="1968"/>
+      <details key="end" value="1972"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.158" references="/0/genPackageValue/@body.0/collect/@body/temp1">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.159" references="/0/genPackageValue/@body.0/collect/temp4">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.160" references="/0/genPackageValue/@body.0/@argument.0">
+      <details key="start" value="1978"/>
+      <details key="end" value="1981"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.161" references="/0/genPackageValue/aType">
+      <details key="start" value="1859"/>
+      <details key="end" value="1871"/>
+      <details key="line" value="47"/>
+    </eAnnotations>
+    <eAnnotations source="positions.162" references="/0/genDefaultImport">
+      <details key="start" value="2094"/>
+      <details key="end" value="2866"/>
       <details key="line" value="55"/>
     </eAnnotations>
-    <eAnnotations source="positions.171" references="/0/genDefaultImport/@body.1/exists">
-      <details key="start" value="2122"/>
-      <details key="end" value="2212"/>
-      <details key="line" value="0"/>
+    <eAnnotations source="positions.163" references="/0/genDefaultImport/@body.0">
+      <details key="start" value="2162"/>
+      <details key="end" value="2367"/>
+      <details key="line" value="56"/>
     </eAnnotations>
-    <eAnnotations source="positions.172" references="/0/genDefaultImport/@body.1/exists/@source">
-      <details key="start" value="2123"/>
-      <details key="end" value="2138"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.173" references="/0/genDefaultImport/@body.1/exists/@source/aType">
-      <details key="start" value="2123"/>
-      <details key="end" value="2128"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.174" references="/0/genDefaultImport/@body.1/exists/@body">
-      <details key="start" value="2169"/>
-      <details key="end" value="2210"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.175" references="/0/genDefaultImport/@body.1/exists/@body/@source">
-      <details key="start" value="2169"/>
-      <details key="end" value="2188"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.176" references="/0/genDefaultImport/@body.1/exists/@body/@source/@source">
-      <details key="start" value="2169"/>
-      <details key="end" value="2183"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.177" references="/0/genDefaultImport/@body.1/exists/@body/@source/@source/property">
-      <details key="start" value="2169"/>
-      <details key="end" value="2177"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.178" references="/0/genDefaultImport/@body.1/exists/@body/@source/@argument.0">
-      <details key="start" value="2186"/>
-      <details key="end" value="2188"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.179" references="/0/genDefaultImport/@body.1/exists/@body/@source/@argument.0/@source">
-      <details key="start" value="2187"/>
-      <details key="end" value="2188"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.180" references="/0/genDefaultImport/@body.1/exists/@body/@argument.0">
-      <details key="start" value="2192"/>
-      <details key="end" value="2210"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.181" references="/0/genDefaultImport/@body.1/exists/@body/@argument.0/@source">
-      <details key="start" value="2192"/>
-      <details key="end" value="2206"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.182" references="/0/genDefaultImport/@body.1/exists/@body/@argument.0/@source/property">
-      <details key="start" value="2192"/>
-      <details key="end" value="2200"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.183" references="/0/genDefaultImport/@body.1/exists/@body/@argument.0/@argument.0">
-      <details key="start" value="2209"/>
-      <details key="end" value="2210"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.184" references="/0/genDefaultImport/@body.1/exists/property">
-      <details key="start" value="2147"/>
-      <details key="end" value="2166"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.185" references="/0/genDefaultImport/@body.2">
+    <eAnnotations source="positions.164" references="/0/genDefaultImport/@body.0/@body.0">
       <details key="start" value="2243"/>
-      <details key="end" value="2557"/>
+      <details key="end" value="2360"/>
       <details key="line" value="57"/>
     </eAnnotations>
-    <eAnnotations source="positions.186" references="/0/genDefaultImport/@body.2/@body.0">
-      <details key="start" value="2276"/>
-      <details key="end" value="2428"/>
+    <eAnnotations source="positions.165" references="/0/genDefaultImport/@body.0/@body.0/@body.0">
+      <details key="start" value="2289"/>
+      <details key="end" value="2296"/>
       <details key="line" value="58"/>
     </eAnnotations>
-    <eAnnotations source="positions.187" references="/0/genDefaultImport/@body.2/@body.0/@body.0">
-      <details key="start" value="2322"/>
-      <details key="end" value="2323"/>
-      <details key="line" value="59"/>
-    </eAnnotations>
-    <eAnnotations source="positions.188" references="/0/genDefaultImport/@body.2/@body.0/collect">
-      <details key="start" value="2324"/>
-      <details key="end" value="2381"/>
+    <eAnnotations source="positions.166" references="/0/genDefaultImport/@body.0/@body.0/@body.1">
+      <details key="start" value="2297"/>
+      <details key="end" value="2341"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.189" references="/0/genDefaultImport/@body.2/@body.0/collect/@source">
-      <details key="start" value="2324"/>
-      <details key="end" value="2349"/>
+    <eAnnotations source="positions.167" references="/0/genDefaultImport/@body.0/@body.0/@body.1/@source">
+      <details key="start" value="2297"/>
+      <details key="end" value="2318"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.190" references="/0/genDefaultImport/@body.2/@body.0/collect/@source/aClass">
-      <details key="start" value="2324"/>
-      <details key="end" value="2330"/>
+    <eAnnotations source="positions.168" references="/0/genDefaultImport/@body.0/@body.0/@body.1/@source/@source">
+      <details key="start" value="2297"/>
+      <details key="end" value="2306"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.191" references="/0/genDefaultImport/@body.2/@body.0/collect/@body">
-      <details key="start" value="-1"/>
-      <details key="end" value="-1"/>
+    <eAnnotations source="positions.169" references="/0/genDefaultImport/@body.0/@body.0/@body.1/@source/@source/pack">
+      <details key="start" value="2297"/>
+      <details key="end" value="2301"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.192" references="/0/genDefaultImport/@body.2/@body.0/collect/@body/temp1">
-      <details key="start" value="-1"/>
-      <details key="end" value="-1"/>
+    <eAnnotations source="positions.170" references="/0/genDefaultImport/@body.0/@body.0/@body.1/@source/@argument.0">
+      <details key="start" value="2309"/>
+      <details key="end" value="2318"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.193" references="/0/genDefaultImport/@body.2/@body.0/collect/@body/aType">
-      <details key="start" value="2375"/>
-      <details key="end" value="2380"/>
+    <eAnnotations source="positions.171" references="/0/genDefaultImport/@body.0/@body.0/@body.1/@argument.0">
+      <details key="start" value="2321"/>
+      <details key="end" value="2341"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.194" references="/0/genDefaultImport/@body.2/@body.0/collect/temp5">
-      <details key="start" value="-1"/>
-      <details key="end" value="-1"/>
+    <eAnnotations source="positions.172" references="/0/genDefaultImport/@body.0/@body.0/@body.1/@argument.0/pack">
+      <details key="start" value="2321"/>
+      <details key="end" value="2325"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.195" references="/0/genDefaultImport/@body.2/@body.0/@body.2">
-      <details key="start" value="2384"/>
-      <details key="end" value="2386"/>
-      <details key="line" value="60"/>
-    </eAnnotations>
-    <eAnnotations source="positions.196" references="/0/genDefaultImport/@body.2/@body.0/@body.3">
-      <details key="start" value="2387"/>
-      <details key="end" value="2417"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.197" references="/0/genDefaultImport/@body.2/@body.0/@body.3/aClass">
-      <details key="start" value="2387"/>
-      <details key="end" value="2393"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.198" references="/0/genDefaultImport/@body.2/@body.0/@body.4">
-      <details key="start" value="2420"/>
-      <details key="end" value="2421"/>
-      <details key="line" value="61"/>
-    </eAnnotations>
-    <eAnnotations source="positions.199" references="/0/genDefaultImport/@body.2/@body.0/aClass">
-      <details key="start" value="2281"/>
-      <details key="end" value="2320"/>
+    <eAnnotations source="positions.173" references="/0/genDefaultImport/@body.0/@body.0/@body.2">
+      <details key="start" value="2343"/>
+      <details key="end" value="2354"/>
       <details key="line" value="58"/>
     </eAnnotations>
-    <eAnnotations source="positions.200" references="/0/genDefaultImport/@body.2/@body.0/aClass/@initExpression">
-      <details key="start" value="2299"/>
-      <details key="end" value="2321"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.201" references="/0/genDefaultImport/@body.2/@body.0/aClass/@initExpression/aType">
-      <details key="start" value="2299"/>
-      <details key="end" value="2304"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.202" references="/0/genDefaultImport/@body.2/@body.0/aClass/@initExpression/@argument.0">
-      <details key="start" value="2315"/>
-      <details key="end" value="2320"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.203" references="/0/genDefaultImport/@body.2/@ifExpr">
-      <details key="start" value="2247"/>
-      <details key="end" value="2273"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.204" references="/0/genDefaultImport/@body.2/@ifExpr/aType">
+    <eAnnotations source="positions.174" references="/0/genDefaultImport/@body.0/@body.0/pack">
       <details key="start" value="2248"/>
-      <details key="end" value="2253"/>
+      <details key="end" value="2287"/>
+      <details key="line" value="57"/>
+    </eAnnotations>
+    <eAnnotations source="positions.175" references="/0/genDefaultImport/@body.0/@body.0/pack/@initExpression">
+      <details key="start" value="2266"/>
+      <details key="end" value="2288"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.205" references="/0/genDefaultImport/@body.2/@ifExpr/@argument.0">
+    <eAnnotations source="positions.176" references="/0/genDefaultImport/@body.0/@body.0/pack/@initExpression/aType">
       <details key="start" value="2266"/>
       <details key="end" value="2271"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.206" references="/0/genDefaultImport/@body.2/@elseIf.0">
-      <details key="start" value="2429"/>
-      <details key="end" value="2552"/>
+    <eAnnotations source="positions.177" references="/0/genDefaultImport/@body.0/@body.1">
+      <details key="start" value="2361"/>
+      <details key="end" value="2362"/>
+      <details key="line" value="60"/>
+    </eAnnotations>
+    <eAnnotations source="positions.178" references="/0/genDefaultImport/@body.0/@ifExpr">
+      <details key="start" value="2166"/>
+      <details key="end" value="2241"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.179" references="/0/genDefaultImport/@body.0/@ifExpr/@source">
+      <details key="start" value="2167"/>
+      <details key="end" value="2191"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.180" references="/0/genDefaultImport/@body.0/@ifExpr/@source/aType">
+      <details key="start" value="2167"/>
+      <details key="end" value="2172"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.181" references="/0/genDefaultImport/@body.0/@ifExpr/@source/@argument.0">
+      <details key="start" value="2185"/>
+      <details key="end" value="2190"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.182" references="/0/genDefaultImport/@body.0/@ifExpr/@argument.0">
+      <details key="start" value="2196"/>
+      <details key="end" value="2240"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.183" references="/0/genDefaultImport/@body.0/@ifExpr/@argument.0/@source">
+      <details key="start" value="2196"/>
+      <details key="end" value="2229"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.184" references="/0/genDefaultImport/@body.0/@ifExpr/@argument.0/@source/@source">
+      <details key="start" value="2196"/>
+      <details key="end" value="2218"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.185" references="/0/genDefaultImport/@body.0/@ifExpr/@argument.0/@source/@source/aType">
+      <details key="start" value="2196"/>
+      <details key="end" value="2201"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.186" references="/0/genDefaultImport/@body.0/@ifExpr/@argument.0/@source/@source/@argument.0">
+      <details key="start" value="2212"/>
+      <details key="end" value="2217"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.187" references="/0/genDefaultImport/@body.1">
+      <details key="start" value="2368"/>
+      <details key="end" value="2492"/>
       <details key="line" value="62"/>
     </eAnnotations>
-    <eAnnotations source="positions.207" references="/0/genDefaultImport/@body.2/@elseIf.0/@body.0">
-      <details key="start" value="2469"/>
-      <details key="end" value="2470"/>
+    <eAnnotations source="positions.188" references="/0/genDefaultImport/@body.1/@body.0">
+      <details key="start" value="2464"/>
+      <details key="end" value="2487"/>
       <details key="line" value="63"/>
     </eAnnotations>
-    <eAnnotations source="positions.208" references="/0/genDefaultImport/@body.2/@elseIf.0/collect">
-      <details key="start" value="2471"/>
-      <details key="end" value="2548"/>
+    <eAnnotations source="positions.189" references="/0/genDefaultImport/@body.1/exists">
+      <details key="start" value="2372"/>
+      <details key="end" value="2462"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.209" references="/0/genDefaultImport/@body.2/@elseIf.0/collect/@source">
-      <details key="start" value="2471"/>
-      <details key="end" value="2516"/>
+    <eAnnotations source="positions.190" references="/0/genDefaultImport/@body.1/exists/@source">
+      <details key="start" value="2373"/>
+      <details key="end" value="2388"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.210" references="/0/genDefaultImport/@body.2/@elseIf.0/collect/@source/@argument.0">
-      <details key="start" value="2471"/>
-      <details key="end" value="2497"/>
+    <eAnnotations source="positions.191" references="/0/genDefaultImport/@body.1/exists/@source/aType">
+      <details key="start" value="2373"/>
+      <details key="end" value="2378"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.211" references="/0/genDefaultImport/@body.2/@elseIf.0/collect/@source/@argument.0/aType">
-      <details key="start" value="2471"/>
-      <details key="end" value="2476"/>
+    <eAnnotations source="positions.192" references="/0/genDefaultImport/@body.1/exists/@body">
+      <details key="start" value="2419"/>
+      <details key="end" value="2460"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.212" references="/0/genDefaultImport/@body.2/@elseIf.0/collect/@source/@argument.0/@argument.0">
-      <details key="start" value="2487"/>
-      <details key="end" value="2496"/>
+    <eAnnotations source="positions.193" references="/0/genDefaultImport/@body.1/exists/@body/@source">
+      <details key="start" value="2419"/>
+      <details key="end" value="2438"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.213" references="/0/genDefaultImport/@body.2/@elseIf.0/collect/@body">
-      <details key="start" value="-1"/>
-      <details key="end" value="-1"/>
+    <eAnnotations source="positions.194" references="/0/genDefaultImport/@body.1/exists/@body/@source/@source">
+      <details key="start" value="2419"/>
+      <details key="end" value="2433"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.214" references="/0/genDefaultImport/@body.2/@elseIf.0/collect/@body/temp1">
-      <details key="start" value="-1"/>
-      <details key="end" value="-1"/>
+    <eAnnotations source="positions.195" references="/0/genDefaultImport/@body.1/exists/@body/@source/@source/property">
+      <details key="start" value="2419"/>
+      <details key="end" value="2427"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.215" references="/0/genDefaultImport/@body.2/@elseIf.0/collect/@body/aType">
-      <details key="start" value="2542"/>
-      <details key="end" value="2547"/>
+    <eAnnotations source="positions.196" references="/0/genDefaultImport/@body.1/exists/@body/@source/@argument.0">
+      <details key="start" value="2436"/>
+      <details key="end" value="2438"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.216" references="/0/genDefaultImport/@body.2/@elseIf.0/collect/temp6">
-      <details key="start" value="-1"/>
-      <details key="end" value="-1"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.217" references="/0/genDefaultImport/@body.2/@elseIf.0/@body.2">
-      <details key="start" value="2551"/>
-      <details key="end" value="2552"/>
-      <details key="line" value="64"/>
-    </eAnnotations>
-    <eAnnotations source="positions.218" references="/0/genDefaultImport/@body.2/@elseIf.0/@ifExpr">
+    <eAnnotations source="positions.197" references="/0/genDefaultImport/@body.1/exists/@body/@source/@argument.0/@source">
       <details key="start" value="2437"/>
-      <details key="end" value="2467"/>
+      <details key="end" value="2438"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.219" references="/0/genDefaultImport/@body.2/@elseIf.0/@ifExpr/aType">
-      <details key="start" value="2438"/>
-      <details key="end" value="2443"/>
+    <eAnnotations source="positions.198" references="/0/genDefaultImport/@body.1/exists/@body/@argument.0">
+      <details key="start" value="2442"/>
+      <details key="end" value="2460"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.220" references="/0/genDefaultImport/@body.2/@elseIf.0/@ifExpr/@argument.0">
-      <details key="start" value="2456"/>
-      <details key="end" value="2465"/>
+    <eAnnotations source="positions.199" references="/0/genDefaultImport/@body.1/exists/@body/@argument.0/@source">
+      <details key="start" value="2442"/>
+      <details key="end" value="2456"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.221" references="/0/genDefaultImport/@body.3">
-      <details key="start" value="2558"/>
-      <details key="end" value="2561"/>
+    <eAnnotations source="positions.200" references="/0/genDefaultImport/@body.1/exists/@body/@argument.0/@source/property">
+      <details key="start" value="2442"/>
+      <details key="end" value="2450"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.201" references="/0/genDefaultImport/@body.1/exists/@body/@argument.0/@argument.0">
+      <details key="start" value="2459"/>
+      <details key="end" value="2460"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.202" references="/0/genDefaultImport/@body.1/exists/property">
+      <details key="start" value="2397"/>
+      <details key="end" value="2416"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.203" references="/0/genDefaultImport/@body.2">
+      <details key="start" value="2493"/>
+      <details key="end" value="2807"/>
       <details key="line" value="65"/>
     </eAnnotations>
-    <eAnnotations source="positions.222" references="/0/genDefaultImport/@body.4">
-      <details key="start" value="2561"/>
-      <details key="end" value="2604"/>
-      <details key="line" value="65"/>
-    </eAnnotations>
-    <eAnnotations source="positions.223" references="/0/genDefaultImport/@body.4/@body.0">
-      <details key="start" value="2588"/>
-      <details key="end" value="2592"/>
+    <eAnnotations source="positions.204" references="/0/genDefaultImport/@body.2/@body.0">
+      <details key="start" value="2526"/>
+      <details key="end" value="2678"/>
       <details key="line" value="66"/>
     </eAnnotations>
-    <eAnnotations source="positions.224" references="/0/genDefaultImport/@body.4/@marker">
-      <details key="start" value="2573"/>
-      <details key="end" value="2586"/>
+    <eAnnotations source="positions.205" references="/0/genDefaultImport/@body.2/@body.0/@body.0">
+      <details key="start" value="2572"/>
+      <details key="end" value="2573"/>
+      <details key="line" value="67"/>
+    </eAnnotations>
+    <eAnnotations source="positions.206" references="/0/genDefaultImport/@body.2/@body.0/collect">
+      <details key="start" value="2574"/>
+      <details key="end" value="2631"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.225" references="/0/genDefaultImport/@documentation">
-      <details key="start" value="1749"/>
-      <details key="end" value="1843"/>
+    <eAnnotations source="positions.207" references="/0/genDefaultImport/@body.2/@body.0/collect/@source">
+      <details key="start" value="2574"/>
+      <details key="end" value="2599"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.226" references="/0/genDefaultImport/@documentation/aType">
+    <eAnnotations source="positions.208" references="/0/genDefaultImport/@body.2/@body.0/collect/@source/aClass">
+      <details key="start" value="2574"/>
+      <details key="end" value="2580"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.209" references="/0/genDefaultImport/@body.2/@body.0/collect/@body">
       <details key="start" value="-1"/>
       <details key="end" value="-1"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.227" references="/0/genDefaultImport/aType">
-      <details key="start" value="1878"/>
-      <details key="end" value="1896"/>
-      <details key="line" value="47"/>
-    </eAnnotations>
-    <eAnnotations source="positions.228" references="/0/genDefaultImport/@post">
-      <details key="start" value="1903"/>
-      <details key="end" value="1909"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.229" references="/0/genDefaultImport/@post/self">
+    <eAnnotations source="positions.210" references="/0/genDefaultImport/@body.2/@body.0/collect/@body/temp1">
       <details key="start" value="-1"/>
       <details key="end" value="-1"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.230" references="/0/genElementsImportGeneric">
-      <details key="start" value="2618"/>
-      <details key="end" value="2987"/>
+    <eAnnotations source="positions.211" references="/0/genDefaultImport/@body.2/@body.0/collect/@body/aType">
+      <details key="start" value="2625"/>
+      <details key="end" value="2630"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.212" references="/0/genDefaultImport/@body.2/@body.0/collect/temp5">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.213" references="/0/genDefaultImport/@body.2/@body.0/@body.2">
+      <details key="start" value="2634"/>
+      <details key="end" value="2636"/>
+      <details key="line" value="68"/>
+    </eAnnotations>
+    <eAnnotations source="positions.214" references="/0/genDefaultImport/@body.2/@body.0/@body.3">
+      <details key="start" value="2637"/>
+      <details key="end" value="2667"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.215" references="/0/genDefaultImport/@body.2/@body.0/@body.3/aClass">
+      <details key="start" value="2637"/>
+      <details key="end" value="2643"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.216" references="/0/genDefaultImport/@body.2/@body.0/@body.4">
+      <details key="start" value="2670"/>
+      <details key="end" value="2671"/>
       <details key="line" value="69"/>
     </eAnnotations>
-    <eAnnotations source="positions.231" references="/0/genElementsImportGeneric/@body.0">
-      <details key="start" value="2706"/>
-      <details key="end" value="2975"/>
+    <eAnnotations source="positions.217" references="/0/genDefaultImport/@body.2/@body.0/aClass">
+      <details key="start" value="2531"/>
+      <details key="end" value="2570"/>
+      <details key="line" value="66"/>
+    </eAnnotations>
+    <eAnnotations source="positions.218" references="/0/genDefaultImport/@body.2/@body.0/aClass/@initExpression">
+      <details key="start" value="2549"/>
+      <details key="end" value="2571"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.219" references="/0/genDefaultImport/@body.2/@body.0/aClass/@initExpression/aType">
+      <details key="start" value="2549"/>
+      <details key="end" value="2554"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.220" references="/0/genDefaultImport/@body.2/@body.0/aClass/@initExpression/@argument.0">
+      <details key="start" value="2565"/>
+      <details key="end" value="2570"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.221" references="/0/genDefaultImport/@body.2/@ifExpr">
+      <details key="start" value="2497"/>
+      <details key="end" value="2523"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.222" references="/0/genDefaultImport/@body.2/@ifExpr/aType">
+      <details key="start" value="2498"/>
+      <details key="end" value="2503"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.223" references="/0/genDefaultImport/@body.2/@ifExpr/@argument.0">
+      <details key="start" value="2516"/>
+      <details key="end" value="2521"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.224" references="/0/genDefaultImport/@body.2/@elseIf.0">
+      <details key="start" value="2679"/>
+      <details key="end" value="2802"/>
       <details key="line" value="70"/>
     </eAnnotations>
-    <eAnnotations source="positions.232" references="/0/genElementsImportGeneric/@body.0/@body.0">
-      <details key="start" value="2741"/>
-      <details key="end" value="2818"/>
+    <eAnnotations source="positions.225" references="/0/genDefaultImport/@body.2/@elseIf.0/@body.0">
+      <details key="start" value="2719"/>
+      <details key="end" value="2720"/>
       <details key="line" value="71"/>
     </eAnnotations>
-    <eAnnotations source="positions.233" references="/0/genElementsImportGeneric/@body.0/@body.0/@body.0">
-      <details key="start" value="2778"/>
-      <details key="end" value="2785"/>
-      <details key="line" value="72"/>
-    </eAnnotations>
-    <eAnnotations source="positions.234" references="/0/genElementsImportGeneric/@body.0/@body.0/@body.1">
-      <details key="start" value="2786"/>
-      <details key="end" value="2809"/>
+    <eAnnotations source="positions.226" references="/0/genDefaultImport/@body.2/@elseIf.0/collect">
+      <details key="start" value="2721"/>
+      <details key="end" value="2798"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.235" references="/0/genElementsImportGeneric/@body.0/@body.0/@body.1/self">
+    <eAnnotations source="positions.227" references="/0/genDefaultImport/@body.2/@elseIf.0/collect/@source">
+      <details key="start" value="2721"/>
+      <details key="end" value="2766"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.228" references="/0/genDefaultImport/@body.2/@elseIf.0/collect/@source/@argument.0">
+      <details key="start" value="2721"/>
+      <details key="end" value="2747"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.229" references="/0/genDefaultImport/@body.2/@elseIf.0/collect/@source/@argument.0/aType">
+      <details key="start" value="2721"/>
+      <details key="end" value="2726"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.230" references="/0/genDefaultImport/@body.2/@elseIf.0/collect/@source/@argument.0/@argument.0">
+      <details key="start" value="2737"/>
+      <details key="end" value="2746"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.231" references="/0/genDefaultImport/@body.2/@elseIf.0/collect/@body">
       <details key="start" value="-1"/>
       <details key="end" value="-1"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.236" references="/0/genElementsImportGeneric/@body.0/@body.0/@body.1/@argument.0">
-      <details key="start" value="2798"/>
-      <details key="end" value="2808"/>
+    <eAnnotations source="positions.232" references="/0/genDefaultImport/@body.2/@elseIf.0/collect/@body/temp1">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.237" references="/0/genElementsImportGeneric/@body.0/@body.0/@body.1/@argument.0/aType">
-      <details key="start" value="2798"/>
-      <details key="end" value="2803"/>
+    <eAnnotations source="positions.233" references="/0/genDefaultImport/@body.2/@elseIf.0/collect/@body/aType">
+      <details key="start" value="2792"/>
+      <details key="end" value="2797"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.238" references="/0/genElementsImportGeneric/@body.0/@body.0/@body.2">
+    <eAnnotations source="positions.234" references="/0/genDefaultImport/@body.2/@elseIf.0/collect/temp6">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.235" references="/0/genDefaultImport/@body.2/@elseIf.0/@body.2">
+      <details key="start" value="2801"/>
+      <details key="end" value="2802"/>
+      <details key="line" value="72"/>
+    </eAnnotations>
+    <eAnnotations source="positions.236" references="/0/genDefaultImport/@body.2/@elseIf.0/@ifExpr">
+      <details key="start" value="2687"/>
+      <details key="end" value="2717"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.237" references="/0/genDefaultImport/@body.2/@elseIf.0/@ifExpr/aType">
+      <details key="start" value="2688"/>
+      <details key="end" value="2693"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.238" references="/0/genDefaultImport/@body.2/@elseIf.0/@ifExpr/@argument.0">
+      <details key="start" value="2706"/>
+      <details key="end" value="2715"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.239" references="/0/genDefaultImport/@body.3">
+      <details key="start" value="2808"/>
+      <details key="end" value="2811"/>
+      <details key="line" value="73"/>
+    </eAnnotations>
+    <eAnnotations source="positions.240" references="/0/genDefaultImport/@body.4">
       <details key="start" value="2811"/>
-      <details key="end" value="2813"/>
-      <details key="line" value="72"/>
+      <details key="end" value="2854"/>
+      <details key="line" value="73"/>
     </eAnnotations>
-    <eAnnotations source="positions.239" references="/0/genElementsImportGeneric/@body.0/@body.0/@ifExpr">
-      <details key="start" value="2745"/>
-      <details key="end" value="2776"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.240" references="/0/genElementsImportGeneric/@body.0/@body.0/@ifExpr/@source">
-      <details key="start" value="2746"/>
-      <details key="end" value="2769"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.241" references="/0/genElementsImportGeneric/@body.0/@body.0/@ifExpr/@source/self">
-      <details key="start" value="-1"/>
-      <details key="end" value="-1"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.242" references="/0/genElementsImportGeneric/@body.0/@body.0/@ifExpr/@source/@argument.0">
-      <details key="start" value="2758"/>
-      <details key="end" value="2768"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.243" references="/0/genElementsImportGeneric/@body.0/@body.0/@ifExpr/@source/@argument.0/aType">
-      <details key="start" value="2758"/>
-      <details key="end" value="2763"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.244" references="/0/genElementsImportGeneric/@body.0/@body.0/@ifExpr/@argument.0">
-      <details key="start" value="2773"/>
-      <details key="end" value="2775"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.245" references="/0/genElementsImportGeneric/@body.0/@ifExpr">
-      <details key="start" value="2710"/>
-      <details key="end" value="2739"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.246" references="/0/genElementsImportGeneric/@body.0/@ifExpr/aType">
-      <details key="start" value="2711"/>
-      <details key="end" value="2716"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.247" references="/0/genElementsImportGeneric/@body.0/@ifExpr/@argument.0">
-      <details key="start" value="2729"/>
-      <details key="end" value="2737"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.248" references="/0/genElementsImportGeneric/@body.0/@elseIf.0">
-      <details key="start" value="2819"/>
-      <details key="end" value="2970"/>
+    <eAnnotations source="positions.241" references="/0/genDefaultImport/@body.4/@body.0">
+      <details key="start" value="2838"/>
+      <details key="end" value="2842"/>
       <details key="line" value="74"/>
     </eAnnotations>
-    <eAnnotations source="positions.249" references="/0/genElementsImportGeneric/@body.0/@elseIf.0/@body.0">
-      <details key="start" value="2915"/>
-      <details key="end" value="2922"/>
-      <details key="line" value="75"/>
-    </eAnnotations>
-    <eAnnotations source="positions.250" references="/0/genElementsImportGeneric/@body.0/@elseIf.0/@body.1">
-      <details key="start" value="2923"/>
-      <details key="end" value="2964"/>
+    <eAnnotations source="positions.242" references="/0/genDefaultImport/@body.4/@marker">
+      <details key="start" value="2823"/>
+      <details key="end" value="2836"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.251" references="/0/genElementsImportGeneric/@body.0/@elseIf.0/@body.1/@source">
-      <details key="start" value="2923"/>
-      <details key="end" value="2951"/>
+    <eAnnotations source="positions.243" references="/0/genDefaultImport/@documentation">
+      <details key="start" value="1999"/>
+      <details key="end" value="2093"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.252" references="/0/genElementsImportGeneric/@body.0/@elseIf.0/@body.1/@source/@source">
-      <details key="start" value="2923"/>
-      <details key="end" value="2946"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.253" references="/0/genElementsImportGeneric/@body.0/@elseIf.0/@body.1/@source/@source/aType">
-      <details key="start" value="2923"/>
-      <details key="end" value="2928"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.254" references="/0/genElementsImportGeneric/@body.0/@elseIf.0/@body.1/@source/@argument.0">
-      <details key="start" value="2948"/>
-      <details key="end" value="2951"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.255" references="/0/genElementsImportGeneric/@body.0/@elseIf.0/@body.1/@argument.0">
-      <details key="start" value="2954"/>
-      <details key="end" value="2964"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.256" references="/0/genElementsImportGeneric/@body.0/@elseIf.0/@body.1/@argument.0/aType">
-      <details key="start" value="2954"/>
-      <details key="end" value="2959"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.257" references="/0/genElementsImportGeneric/@body.0/@elseIf.0/@body.2">
-      <details key="start" value="2968"/>
-      <details key="end" value="2970"/>
-      <details key="line" value="75"/>
-    </eAnnotations>
-    <eAnnotations source="positions.258" references="/0/genElementsImportGeneric/@body.0/@elseIf.0/@ifExpr">
-      <details key="start" value="2827"/>
-      <details key="end" value="2913"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.259" references="/0/genElementsImportGeneric/@body.0/@elseIf.0/@ifExpr/@source">
-      <details key="start" value="2828"/>
-      <details key="end" value="2878"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.260" references="/0/genElementsImportGeneric/@body.0/@elseIf.0/@ifExpr/@source/@source">
-      <details key="start" value="2828"/>
-      <details key="end" value="2851"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.261" references="/0/genElementsImportGeneric/@body.0/@elseIf.0/@ifExpr/@source/@source/aType">
-      <details key="start" value="2828"/>
-      <details key="end" value="2833"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.262" references="/0/genElementsImportGeneric/@body.0/@elseIf.0/@ifExpr/@source/@argument.0">
-      <details key="start" value="2856"/>
-      <details key="end" value="2878"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.263" references="/0/genElementsImportGeneric/@body.0/@elseIf.0/@ifExpr/@source/@argument.0/aPai">
-      <details key="start" value="2856"/>
-      <details key="end" value="2860"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.264" references="/0/genElementsImportGeneric/@body.0/@elseIf.0/@ifExpr/@argument.0">
-      <details key="start" value="2883"/>
-      <details key="end" value="2912"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.265" references="/0/genElementsImportGeneric/@body.0/@elseIf.0/@ifExpr/@argument.0/@source">
-      <details key="start" value="2883"/>
-      <details key="end" value="2906"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.266" references="/0/genElementsImportGeneric/@body.0/@elseIf.0/@ifExpr/@argument.0/@source/aType">
-      <details key="start" value="2883"/>
-      <details key="end" value="2888"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.267" references="/0/genElementsImportGeneric/@body.0/@elseIf.0/@ifExpr/@argument.0/@argument.0">
-      <details key="start" value="2910"/>
-      <details key="end" value="2912"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.268" references="/0/genElementsImportGeneric/aType">
-      <details key="start" value="2660"/>
-      <details key="end" value="2672"/>
-      <details key="line" value="69"/>
-    </eAnnotations>
-    <eAnnotations source="positions.269" references="/0/genElementsImportGeneric/aPai">
-      <details key="start" value="2674"/>
-      <details key="end" value="2690"/>
-      <details key="line" value="69"/>
-    </eAnnotations>
-    <eAnnotations source="positions.270" references="/0/genElementsImportGeneric/@post">
-      <details key="start" value="2697"/>
-      <details key="end" value="2703"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.271" references="/0/genElementsImportGeneric/@post/self">
+    <eAnnotations source="positions.244" references="/0/genDefaultImport/@documentation/aType">
       <details key="start" value="-1"/>
       <details key="end" value="-1"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.272" references="/0/importEntityNamespece">
-      <details key="start" value="2989"/>
-      <details key="end" value="3160"/>
+    <eAnnotations source="positions.245" references="/0/genDefaultImport/aType">
+      <details key="start" value="2128"/>
+      <details key="end" value="2146"/>
+      <details key="line" value="55"/>
+    </eAnnotations>
+    <eAnnotations source="positions.246" references="/0/genDefaultImport/@post">
+      <details key="start" value="2153"/>
+      <details key="end" value="2159"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.247" references="/0/genDefaultImport/@post/self">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.248" references="/0/genElementsImportGeneric">
+      <details key="start" value="2868"/>
+      <details key="end" value="3237"/>
+      <details key="line" value="77"/>
+    </eAnnotations>
+    <eAnnotations source="positions.249" references="/0/genElementsImportGeneric/@body.0">
+      <details key="start" value="2956"/>
+      <details key="end" value="3225"/>
+      <details key="line" value="78"/>
+    </eAnnotations>
+    <eAnnotations source="positions.250" references="/0/genElementsImportGeneric/@body.0/@body.0">
+      <details key="start" value="2991"/>
+      <details key="end" value="3068"/>
       <details key="line" value="79"/>
     </eAnnotations>
-    <eAnnotations source="positions.273" references="/0/importEntityNamespece/@body.0">
-      <details key="start" value="3059"/>
-      <details key="end" value="3148"/>
+    <eAnnotations source="positions.251" references="/0/genElementsImportGeneric/@body.0/@body.0/@body.0">
+      <details key="start" value="3028"/>
+      <details key="end" value="3035"/>
       <details key="line" value="80"/>
     </eAnnotations>
-    <eAnnotations source="positions.274" references="/0/importEntityNamespece/@body.0/@body.0">
-      <details key="start" value="3102"/>
-      <details key="end" value="3109"/>
-      <details key="line" value="81"/>
+    <eAnnotations source="positions.252" references="/0/genElementsImportGeneric/@body.0/@body.0/@body.1">
+      <details key="start" value="3036"/>
+      <details key="end" value="3059"/>
+      <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.275" references="/0/importEntityNamespece/@body.0/@body.1">
-      <details key="start" value="3110"/>
+    <eAnnotations source="positions.253" references="/0/genElementsImportGeneric/@body.0/@body.0/@body.1/self">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.254" references="/0/genElementsImportGeneric/@body.0/@body.0/@body.1/@argument.0">
+      <details key="start" value="3048"/>
+      <details key="end" value="3058"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.255" references="/0/genElementsImportGeneric/@body.0/@body.0/@body.1/@argument.0/aType">
+      <details key="start" value="3048"/>
+      <details key="end" value="3053"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.256" references="/0/genElementsImportGeneric/@body.0/@body.0/@body.2">
+      <details key="start" value="3061"/>
+      <details key="end" value="3063"/>
+      <details key="line" value="80"/>
+    </eAnnotations>
+    <eAnnotations source="positions.257" references="/0/genElementsImportGeneric/@body.0/@body.0/@ifExpr">
+      <details key="start" value="2995"/>
+      <details key="end" value="3026"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.258" references="/0/genElementsImportGeneric/@body.0/@body.0/@ifExpr/@source">
+      <details key="start" value="2996"/>
+      <details key="end" value="3019"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.259" references="/0/genElementsImportGeneric/@body.0/@body.0/@ifExpr/@source/self">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.260" references="/0/genElementsImportGeneric/@body.0/@body.0/@ifExpr/@source/@argument.0">
+      <details key="start" value="3008"/>
+      <details key="end" value="3018"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.261" references="/0/genElementsImportGeneric/@body.0/@body.0/@ifExpr/@source/@argument.0/aType">
+      <details key="start" value="3008"/>
+      <details key="end" value="3013"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.262" references="/0/genElementsImportGeneric/@body.0/@body.0/@ifExpr/@argument.0">
+      <details key="start" value="3023"/>
+      <details key="end" value="3025"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.263" references="/0/genElementsImportGeneric/@body.0/@ifExpr">
+      <details key="start" value="2960"/>
+      <details key="end" value="2989"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.264" references="/0/genElementsImportGeneric/@body.0/@ifExpr/aType">
+      <details key="start" value="2961"/>
+      <details key="end" value="2966"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.265" references="/0/genElementsImportGeneric/@body.0/@ifExpr/@argument.0">
+      <details key="start" value="2979"/>
+      <details key="end" value="2987"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.266" references="/0/genElementsImportGeneric/@body.0/@elseIf.0">
+      <details key="start" value="3069"/>
+      <details key="end" value="3220"/>
+      <details key="line" value="82"/>
+    </eAnnotations>
+    <eAnnotations source="positions.267" references="/0/genElementsImportGeneric/@body.0/@elseIf.0/@body.0">
+      <details key="start" value="3165"/>
+      <details key="end" value="3172"/>
+      <details key="line" value="83"/>
+    </eAnnotations>
+    <eAnnotations source="positions.268" references="/0/genElementsImportGeneric/@body.0/@elseIf.0/@body.1">
+      <details key="start" value="3173"/>
+      <details key="end" value="3214"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.269" references="/0/genElementsImportGeneric/@body.0/@elseIf.0/@body.1/@source">
+      <details key="start" value="3173"/>
+      <details key="end" value="3201"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.270" references="/0/genElementsImportGeneric/@body.0/@elseIf.0/@body.1/@source/@source">
+      <details key="start" value="3173"/>
+      <details key="end" value="3196"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.271" references="/0/genElementsImportGeneric/@body.0/@elseIf.0/@body.1/@source/@source/aType">
+      <details key="start" value="3173"/>
+      <details key="end" value="3178"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.272" references="/0/genElementsImportGeneric/@body.0/@elseIf.0/@body.1/@source/@argument.0">
+      <details key="start" value="3198"/>
+      <details key="end" value="3201"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.273" references="/0/genElementsImportGeneric/@body.0/@elseIf.0/@body.1/@argument.0">
+      <details key="start" value="3204"/>
+      <details key="end" value="3214"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.274" references="/0/genElementsImportGeneric/@body.0/@elseIf.0/@body.1/@argument.0/aType">
+      <details key="start" value="3204"/>
+      <details key="end" value="3209"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.275" references="/0/genElementsImportGeneric/@body.0/@elseIf.0/@body.2">
+      <details key="start" value="3218"/>
+      <details key="end" value="3220"/>
+      <details key="line" value="83"/>
+    </eAnnotations>
+    <eAnnotations source="positions.276" references="/0/genElementsImportGeneric/@body.0/@elseIf.0/@ifExpr">
+      <details key="start" value="3077"/>
+      <details key="end" value="3163"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.277" references="/0/genElementsImportGeneric/@body.0/@elseIf.0/@ifExpr/@source">
+      <details key="start" value="3078"/>
+      <details key="end" value="3128"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.278" references="/0/genElementsImportGeneric/@body.0/@elseIf.0/@ifExpr/@source/@source">
+      <details key="start" value="3078"/>
+      <details key="end" value="3101"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.279" references="/0/genElementsImportGeneric/@body.0/@elseIf.0/@ifExpr/@source/@source/aType">
+      <details key="start" value="3078"/>
+      <details key="end" value="3083"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.280" references="/0/genElementsImportGeneric/@body.0/@elseIf.0/@ifExpr/@source/@argument.0">
+      <details key="start" value="3106"/>
+      <details key="end" value="3128"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.281" references="/0/genElementsImportGeneric/@body.0/@elseIf.0/@ifExpr/@source/@argument.0/aPai">
+      <details key="start" value="3106"/>
+      <details key="end" value="3110"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.282" references="/0/genElementsImportGeneric/@body.0/@elseIf.0/@ifExpr/@argument.0">
+      <details key="start" value="3133"/>
+      <details key="end" value="3162"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.283" references="/0/genElementsImportGeneric/@body.0/@elseIf.0/@ifExpr/@argument.0/@source">
+      <details key="start" value="3133"/>
+      <details key="end" value="3156"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.284" references="/0/genElementsImportGeneric/@body.0/@elseIf.0/@ifExpr/@argument.0/@source/aType">
+      <details key="start" value="3133"/>
       <details key="end" value="3138"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.276" references="/0/importEntityNamespece/@body.0/@body.1/aClass">
-      <details key="start" value="3110"/>
-      <details key="end" value="3116"/>
+    <eAnnotations source="positions.285" references="/0/genElementsImportGeneric/@body.0/@elseIf.0/@ifExpr/@argument.0/@argument.0">
+      <details key="start" value="3160"/>
+      <details key="end" value="3162"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.277" references="/0/importEntityNamespece/@body.0/@body.2">
-      <details key="start" value="3141"/>
-      <details key="end" value="3143"/>
-      <details key="line" value="81"/>
+    <eAnnotations source="positions.286" references="/0/genElementsImportGeneric/aType">
+      <details key="start" value="2910"/>
+      <details key="end" value="2922"/>
+      <details key="line" value="77"/>
     </eAnnotations>
-    <eAnnotations source="positions.278" references="/0/importEntityNamespece/@body.0/@ifExpr">
-      <details key="start" value="3063"/>
-      <details key="end" value="3100"/>
+    <eAnnotations source="positions.287" references="/0/genElementsImportGeneric/aPai">
+      <details key="start" value="2924"/>
+      <details key="end" value="2940"/>
+      <details key="line" value="77"/>
+    </eAnnotations>
+    <eAnnotations source="positions.288" references="/0/genElementsImportGeneric/@post">
+      <details key="start" value="2947"/>
+      <details key="end" value="2953"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.279" references="/0/importEntityNamespece/@body.0/@ifExpr/aClass">
-      <details key="start" value="3064"/>
-      <details key="end" value="3070"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.280" references="/0/importEntityNamespece/@body.0/@ifExpr/@argument.1">
-      <details key="start" value="3090"/>
-      <details key="end" value="3098"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.281" references="/0/importEntityNamespece/aClass">
-      <details key="start" value="3028"/>
-      <details key="end" value="3042"/>
-      <details key="line" value="79"/>
-    </eAnnotations>
-    <eAnnotations source="positions.282" references="/0/importEntityNamespece/@post">
-      <details key="start" value="3050"/>
-      <details key="end" value="3056"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.283" references="/0/importEntityNamespece/@post/self">
+    <eAnnotations source="positions.289" references="/0/genElementsImportGeneric/@post/self">
       <details key="start" value="-1"/>
       <details key="end" value="-1"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.284" references="/0/getPackageBase">
-      <details key="start" value="3162"/>
-      <details key="end" value="3314"/>
-      <details key="line" value="85"/>
+    <eAnnotations source="positions.290" references="/0/importEntityNamespece">
+      <details key="start" value="3239"/>
+      <details key="end" value="3410"/>
+      <details key="line" value="87"/>
     </eAnnotations>
-    <eAnnotations source="positions.285" references="/0/getPackageBase/model">
-      <details key="start" value="3191"/>
-      <details key="end" value="3205"/>
-      <details key="line" value="85"/>
+    <eAnnotations source="positions.291" references="/0/importEntityNamespece/@body.0">
+      <details key="start" value="3309"/>
+      <details key="end" value="3398"/>
+      <details key="line" value="88"/>
     </eAnnotations>
-    <eAnnotations source="positions.286" references="/0/getPackageBase/@expression">
-      <details key="start" value="3221"/>
-      <details key="end" value="3311"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.287" references="/0/getPackageBase/@expression/select">
-      <details key="start" value="3221"/>
-      <details key="end" value="3302"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.288" references="/0/getPackageBase/@expression/select/@source">
-      <details key="start" value="3221"/>
-      <details key="end" value="3244"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.289" references="/0/getPackageBase/@expression/select/@source/self">
-      <details key="start" value="3221"/>
-      <details key="end" value="3225"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.290" references="/0/getPackageBase/@expression/select/@source/@argument.0">
-      <details key="start" value="3236"/>
-      <details key="end" value="3243"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.291" references="/0/getPackageBase/@expression/select/@body">
-      <details key="start" value="3266"/>
-      <details key="end" value="3301"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.292" references="/0/getPackageBase/@expression/select/@body/f">
-      <details key="start" value="3266"/>
-      <details key="end" value="3267"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.293" references="/0/getPackageBase/@expression/select/@body/@argument.1">
-      <details key="start" value="3287"/>
-      <details key="end" value="3300"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.294" references="/0/getPackageBase/@expression/select/f">
-      <details key="start" value="3253"/>
-      <details key="end" value="3263"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.295" references="/0/obterTodosOsTipo">
-      <details key="start" value="3317"/>
-      <details key="end" value="3658"/>
+    <eAnnotations source="positions.292" references="/0/importEntityNamespece/@body.0/@body.0">
+      <details key="start" value="3352"/>
+      <details key="end" value="3359"/>
       <details key="line" value="89"/>
     </eAnnotations>
-    <eAnnotations source="positions.296" references="/0/obterTodosOsTipo/aClass">
-      <details key="start" value="3349"/>
-      <details key="end" value="3363"/>
-      <details key="line" value="89"/>
-    </eAnnotations>
-    <eAnnotations source="positions.297" references="/0/obterTodosOsTipo/@expression">
-      <details key="start" value="3387"/>
-      <details key="end" value="3655"/>
+    <eAnnotations source="positions.293" references="/0/importEntityNamespece/@body.0/@body.1">
+      <details key="start" value="3360"/>
+      <details key="end" value="3388"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.298" references="/0/obterTodosOsTipo/@expression/reject">
-      <details key="start" value="3387"/>
-      <details key="end" value="3638"/>
+    <eAnnotations source="positions.294" references="/0/importEntityNamespece/@body.0/@body.1/aClass">
+      <details key="start" value="3360"/>
+      <details key="end" value="3366"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.299" references="/0/obterTodosOsTipo/@expression/reject/@source">
-      <details key="start" value="3387"/>
-      <details key="end" value="3583"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.300" references="/0/obterTodosOsTipo/@expression/reject/@source/collect">
-      <details key="start" value="3387"/>
-      <details key="end" value="3444"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.301" references="/0/obterTodosOsTipo/@expression/reject/@source/collect/@source">
-      <details key="start" value="3387"/>
-      <details key="end" value="3412"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.302" references="/0/obterTodosOsTipo/@expression/reject/@source/collect/@source/aClass">
-      <details key="start" value="3387"/>
+    <eAnnotations source="positions.295" references="/0/importEntityNamespece/@body.0/@body.2">
+      <details key="start" value="3391"/>
       <details key="end" value="3393"/>
+      <details key="line" value="89"/>
+    </eAnnotations>
+    <eAnnotations source="positions.296" references="/0/importEntityNamespece/@body.0/@ifExpr">
+      <details key="start" value="3313"/>
+      <details key="end" value="3350"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.303" references="/0/obterTodosOsTipo/@expression/reject/@source/collect/@body">
-      <details key="start" value="3437"/>
-      <details key="end" value="3443"/>
+    <eAnnotations source="positions.297" references="/0/importEntityNamespece/@body.0/@ifExpr/aClass">
+      <details key="start" value="3314"/>
+      <details key="end" value="3320"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.304" references="/0/obterTodosOsTipo/@expression/reject/@source/collect/@body/s">
-      <details key="start" value="3437"/>
-      <details key="end" value="3438"/>
+    <eAnnotations source="positions.298" references="/0/importEntityNamespece/@body.0/@ifExpr/@argument.1">
+      <details key="start" value="3340"/>
+      <details key="end" value="3348"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.305" references="/0/obterTodosOsTipo/@expression/reject/@source/collect/s">
-      <details key="start" value="3422"/>
-      <details key="end" value="3434"/>
+    <eAnnotations source="positions.299" references="/0/importEntityNamespece/aClass">
+      <details key="start" value="3278"/>
+      <details key="end" value="3292"/>
+      <details key="line" value="87"/>
+    </eAnnotations>
+    <eAnnotations source="positions.300" references="/0/importEntityNamespece/@post">
+      <details key="start" value="3300"/>
+      <details key="end" value="3306"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.306" references="/0/obterTodosOsTipo/@expression/reject/@source/collect.1">
-      <details key="start" value="3452"/>
-      <details key="end" value="3582"/>
+    <eAnnotations source="positions.301" references="/0/importEntityNamespece/@post/self">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.307" references="/0/obterTodosOsTipo/@expression/reject/@source/collect.1/collect">
-      <details key="start" value="3452"/>
-      <details key="end" value="3546"/>
+    <eAnnotations source="positions.302" references="/0/getPackageBase">
+      <details key="start" value="3412"/>
+      <details key="end" value="3564"/>
+      <details key="line" value="93"/>
+    </eAnnotations>
+    <eAnnotations source="positions.303" references="/0/getPackageBase/model">
+      <details key="start" value="3441"/>
+      <details key="end" value="3455"/>
+      <details key="line" value="93"/>
+    </eAnnotations>
+    <eAnnotations source="positions.304" references="/0/getPackageBase/@expression">
+      <details key="start" value="3471"/>
+      <details key="end" value="3561"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.308" references="/0/obterTodosOsTipo/@expression/reject/@source/collect.1/collect/@source">
-      <details key="start" value="3452"/>
-      <details key="end" value="3531"/>
+    <eAnnotations source="positions.305" references="/0/getPackageBase/@expression/select">
+      <details key="start" value="3471"/>
+      <details key="end" value="3552"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.309" references="/0/obterTodosOsTipo/@expression/reject/@source/collect.1/collect/@source/@source">
-      <details key="start" value="3452"/>
-      <details key="end" value="3474"/>
+    <eAnnotations source="positions.306" references="/0/getPackageBase/@expression/select/@source">
+      <details key="start" value="3471"/>
+      <details key="end" value="3494"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.310" references="/0/obterTodosOsTipo/@expression/reject/@source/collect.1/collect/@source/@source/aClass">
-      <details key="start" value="3452"/>
-      <details key="end" value="3458"/>
+    <eAnnotations source="positions.307" references="/0/getPackageBase/@expression/select/@source/self">
+      <details key="start" value="3471"/>
+      <details key="end" value="3475"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.311" references="/0/obterTodosOsTipo/@expression/reject/@source/collect.1/collect/@source/collect">
-      <details key="start" value="3482"/>
-      <details key="end" value="3530"/>
+    <eAnnotations source="positions.308" references="/0/getPackageBase/@expression/select/@source/@argument.0">
+      <details key="start" value="3486"/>
+      <details key="end" value="3493"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.312" references="/0/obterTodosOsTipo/@expression/reject/@source/collect.1/collect/@source/collect/@source">
-      <details key="start" value="3482"/>
-      <details key="end" value="3515"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.313" references="/0/obterTodosOsTipo/@expression/reject/@source/collect.1/collect/@source/collect/@source/aClass">
-      <details key="start" value="3482"/>
-      <details key="end" value="3488"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.314" references="/0/obterTodosOsTipo/@expression/reject/@source/collect.1/collect/@source/collect/@body">
+    <eAnnotations source="positions.309" references="/0/getPackageBase/@expression/select/@body">
       <details key="start" value="3516"/>
-      <details key="end" value="3530"/>
+      <details key="end" value="3551"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.315" references="/0/obterTodosOsTipo/@expression/reject/@source/collect.1/collect/@source/collect/@body/temp1">
+    <eAnnotations source="positions.310" references="/0/getPackageBase/@expression/select/@body/f">
+      <details key="start" value="3516"/>
+      <details key="end" value="3517"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.311" references="/0/getPackageBase/@expression/select/@body/@argument.1">
+      <details key="start" value="3537"/>
+      <details key="end" value="3550"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.312" references="/0/getPackageBase/@expression/select/f">
+      <details key="start" value="3503"/>
+      <details key="end" value="3513"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.313" references="/0/obterTodosOsTipo">
+      <details key="start" value="3567"/>
+      <details key="end" value="3908"/>
+      <details key="line" value="97"/>
+    </eAnnotations>
+    <eAnnotations source="positions.314" references="/0/obterTodosOsTipo/aClass">
+      <details key="start" value="3599"/>
+      <details key="end" value="3613"/>
+      <details key="line" value="97"/>
+    </eAnnotations>
+    <eAnnotations source="positions.315" references="/0/obterTodosOsTipo/@expression">
+      <details key="start" value="3637"/>
+      <details key="end" value="3905"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.316" references="/0/obterTodosOsTipo/@expression/reject">
+      <details key="start" value="3637"/>
+      <details key="end" value="3888"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.317" references="/0/obterTodosOsTipo/@expression/reject/@source">
+      <details key="start" value="3637"/>
+      <details key="end" value="3833"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.318" references="/0/obterTodosOsTipo/@expression/reject/@source/collect">
+      <details key="start" value="3637"/>
+      <details key="end" value="3694"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.319" references="/0/obterTodosOsTipo/@expression/reject/@source/collect/@source">
+      <details key="start" value="3637"/>
+      <details key="end" value="3662"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.320" references="/0/obterTodosOsTipo/@expression/reject/@source/collect/@source/aClass">
+      <details key="start" value="3637"/>
+      <details key="end" value="3643"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.321" references="/0/obterTodosOsTipo/@expression/reject/@source/collect/@body">
+      <details key="start" value="3687"/>
+      <details key="end" value="3693"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.322" references="/0/obterTodosOsTipo/@expression/reject/@source/collect/@body/s">
+      <details key="start" value="3687"/>
+      <details key="end" value="3688"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.323" references="/0/obterTodosOsTipo/@expression/reject/@source/collect/s">
+      <details key="start" value="3672"/>
+      <details key="end" value="3684"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.324" references="/0/obterTodosOsTipo/@expression/reject/@source/collect.1">
+      <details key="start" value="3702"/>
+      <details key="end" value="3832"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.325" references="/0/obterTodosOsTipo/@expression/reject/@source/collect.1/collect">
+      <details key="start" value="3702"/>
+      <details key="end" value="3796"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.326" references="/0/obterTodosOsTipo/@expression/reject/@source/collect.1/collect/@source">
+      <details key="start" value="3702"/>
+      <details key="end" value="3781"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.327" references="/0/obterTodosOsTipo/@expression/reject/@source/collect.1/collect/@source/@source">
+      <details key="start" value="3702"/>
+      <details key="end" value="3724"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.328" references="/0/obterTodosOsTipo/@expression/reject/@source/collect.1/collect/@source/@source/aClass">
+      <details key="start" value="3702"/>
+      <details key="end" value="3708"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.329" references="/0/obterTodosOsTipo/@expression/reject/@source/collect.1/collect/@source/collect">
+      <details key="start" value="3732"/>
+      <details key="end" value="3780"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.330" references="/0/obterTodosOsTipo/@expression/reject/@source/collect.1/collect/@source/collect/@source">
+      <details key="start" value="3732"/>
+      <details key="end" value="3765"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.331" references="/0/obterTodosOsTipo/@expression/reject/@source/collect.1/collect/@source/collect/@source/aClass">
+      <details key="start" value="3732"/>
+      <details key="end" value="3738"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.332" references="/0/obterTodosOsTipo/@expression/reject/@source/collect.1/collect/@source/collect/@body">
+      <details key="start" value="3766"/>
+      <details key="end" value="3780"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.333" references="/0/obterTodosOsTipo/@expression/reject/@source/collect.1/collect/@source/collect/@body/temp1">
       <details key="start" value="-1"/>
       <details key="end" value="-1"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.316" references="/0/obterTodosOsTipo/@expression/reject/@source/collect.1/collect/@source/collect/temp7">
+    <eAnnotations source="positions.334" references="/0/obterTodosOsTipo/@expression/reject/@source/collect.1/collect/@source/collect/temp7">
       <details key="start" value="-1"/>
       <details key="end" value="-1"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.317" references="/0/obterTodosOsTipo/@expression/reject/@source/collect.1/collect/@body">
-      <details key="start" value="3532"/>
-      <details key="end" value="3546"/>
+    <eAnnotations source="positions.335" references="/0/obterTodosOsTipo/@expression/reject/@source/collect.1/collect/@body">
+      <details key="start" value="3782"/>
+      <details key="end" value="3796"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.318" references="/0/obterTodosOsTipo/@expression/reject/@source/collect.1/collect/@body/temp2">
+    <eAnnotations source="positions.336" references="/0/obterTodosOsTipo/@expression/reject/@source/collect.1/collect/@body/temp2">
       <details key="start" value="-1"/>
       <details key="end" value="-1"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.319" references="/0/obterTodosOsTipo/@expression/reject/@source/collect.1/collect/temp8">
+    <eAnnotations source="positions.337" references="/0/obterTodosOsTipo/@expression/reject/@source/collect.1/collect/temp8">
       <details key="start" value="-1"/>
       <details key="end" value="-1"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.320" references="/0/obterTodosOsTipo/@expression/reject/@source/collect.1/@body">
-      <details key="start" value="3575"/>
-      <details key="end" value="3581"/>
+    <eAnnotations source="positions.338" references="/0/obterTodosOsTipo/@expression/reject/@source/collect.1/@body">
+      <details key="start" value="3825"/>
+      <details key="end" value="3831"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.321" references="/0/obterTodosOsTipo/@expression/reject/@source/collect.1/@body/c">
-      <details key="start" value="3575"/>
-      <details key="end" value="3576"/>
+    <eAnnotations source="positions.339" references="/0/obterTodosOsTipo/@expression/reject/@source/collect.1/@body/c">
+      <details key="start" value="3825"/>
+      <details key="end" value="3826"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.322" references="/0/obterTodosOsTipo/@expression/reject/@source/collect.1/c">
-      <details key="start" value="3558"/>
-      <details key="end" value="3572"/>
+    <eAnnotations source="positions.340" references="/0/obterTodosOsTipo/@expression/reject/@source/collect.1/c">
+      <details key="start" value="3808"/>
+      <details key="end" value="3822"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.323" references="/0/obterTodosOsTipo/@expression/reject/@body">
-      <details key="start" value="3606"/>
-      <details key="end" value="3637"/>
+    <eAnnotations source="positions.341" references="/0/obterTodosOsTipo/@expression/reject/@body">
+      <details key="start" value="3856"/>
+      <details key="end" value="3887"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.324" references="/0/obterTodosOsTipo/@expression/reject/@body/tipo">
-      <details key="start" value="3606"/>
-      <details key="end" value="3610"/>
+    <eAnnotations source="positions.342" references="/0/obterTodosOsTipo/@expression/reject/@body/tipo">
+      <details key="start" value="3856"/>
+      <details key="end" value="3860"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.325" references="/0/obterTodosOsTipo/@expression/reject/@body/@argument.0">
-      <details key="start" value="3623"/>
-      <details key="end" value="3636"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.326" references="/0/obterTodosOsTipo/@expression/reject/tipo">
-      <details key="start" value="3592"/>
-      <details key="end" value="3603"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.327" references="/0/obterTodosOsTipo.1">
-      <details key="start" value="3661"/>
-      <details key="end" value="3960"/>
-      <details key="line" value="94"/>
-    </eAnnotations>
-    <eAnnotations source="positions.328" references="/0/obterTodosOsTipo.1/aInterface">
-      <details key="start" value="3693"/>
-      <details key="end" value="3715"/>
-      <details key="line" value="94"/>
-    </eAnnotations>
-    <eAnnotations source="positions.329" references="/0/obterTodosOsTipo.1/@expression">
-      <details key="start" value="3739"/>
-      <details key="end" value="3957"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.330" references="/0/obterTodosOsTipo.1/@expression/reject">
-      <details key="start" value="3739"/>
-      <details key="end" value="3941"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.331" references="/0/obterTodosOsTipo.1/@expression/reject/@source">
-      <details key="start" value="3739"/>
+    <eAnnotations source="positions.343" references="/0/obterTodosOsTipo/@expression/reject/@body/@argument.0">
+      <details key="start" value="3873"/>
       <details key="end" value="3886"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.332" references="/0/obterTodosOsTipo.1/@expression/reject/@source/collect">
-      <details key="start" value="3739"/>
-      <details key="end" value="3800"/>
+    <eAnnotations source="positions.344" references="/0/obterTodosOsTipo/@expression/reject/tipo">
+      <details key="start" value="3842"/>
+      <details key="end" value="3853"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.333" references="/0/obterTodosOsTipo.1/@expression/reject/@source/collect/@source">
-      <details key="start" value="3739"/>
-      <details key="end" value="3768"/>
+    <eAnnotations source="positions.345" references="/0/obterTodosOsTipo.1">
+      <details key="start" value="3911"/>
+      <details key="end" value="4210"/>
+      <details key="line" value="102"/>
+    </eAnnotations>
+    <eAnnotations source="positions.346" references="/0/obterTodosOsTipo.1/aInterface">
+      <details key="start" value="3943"/>
+      <details key="end" value="3965"/>
+      <details key="line" value="102"/>
+    </eAnnotations>
+    <eAnnotations source="positions.347" references="/0/obterTodosOsTipo.1/@expression">
+      <details key="start" value="3989"/>
+      <details key="end" value="4207"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.334" references="/0/obterTodosOsTipo.1/@expression/reject/@source/collect/@source/aInterface">
-      <details key="start" value="3739"/>
-      <details key="end" value="3749"/>
+    <eAnnotations source="positions.348" references="/0/obterTodosOsTipo.1/@expression/reject">
+      <details key="start" value="3989"/>
+      <details key="end" value="4191"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.335" references="/0/obterTodosOsTipo.1/@expression/reject/@source/collect/@body">
-      <details key="start" value="3793"/>
-      <details key="end" value="3799"/>
+    <eAnnotations source="positions.349" references="/0/obterTodosOsTipo.1/@expression/reject/@source">
+      <details key="start" value="3989"/>
+      <details key="end" value="4136"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.336" references="/0/obterTodosOsTipo.1/@expression/reject/@source/collect/@body/s">
-      <details key="start" value="3793"/>
-      <details key="end" value="3794"/>
+    <eAnnotations source="positions.350" references="/0/obterTodosOsTipo.1/@expression/reject/@source/collect">
+      <details key="start" value="3989"/>
+      <details key="end" value="4050"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.337" references="/0/obterTodosOsTipo.1/@expression/reject/@source/collect/s">
-      <details key="start" value="3778"/>
-      <details key="end" value="3790"/>
+    <eAnnotations source="positions.351" references="/0/obterTodosOsTipo.1/@expression/reject/@source/collect/@source">
+      <details key="start" value="3989"/>
+      <details key="end" value="4018"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.338" references="/0/obterTodosOsTipo.1/@expression/reject/@source/collect.1">
-      <details key="start" value="3808"/>
-      <details key="end" value="3885"/>
+    <eAnnotations source="positions.352" references="/0/obterTodosOsTipo.1/@expression/reject/@source/collect/@source/aInterface">
+      <details key="start" value="3989"/>
+      <details key="end" value="3999"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.339" references="/0/obterTodosOsTipo.1/@expression/reject/@source/collect.1/collect">
-      <details key="start" value="3808"/>
-      <details key="end" value="3849"/>
+    <eAnnotations source="positions.353" references="/0/obterTodosOsTipo.1/@expression/reject/@source/collect/@body">
+      <details key="start" value="4043"/>
+      <details key="end" value="4049"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.340" references="/0/obterTodosOsTipo.1/@expression/reject/@source/collect.1/collect/@source">
-      <details key="start" value="3808"/>
-      <details key="end" value="3834"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.341" references="/0/obterTodosOsTipo.1/@expression/reject/@source/collect.1/collect/@source/aInterface">
-      <details key="start" value="3808"/>
-      <details key="end" value="3818"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.342" references="/0/obterTodosOsTipo.1/@expression/reject/@source/collect.1/collect/@body">
-      <details key="start" value="3835"/>
-      <details key="end" value="3849"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.343" references="/0/obterTodosOsTipo.1/@expression/reject/@source/collect.1/collect/@body/temp1">
-      <details key="start" value="-1"/>
-      <details key="end" value="-1"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.344" references="/0/obterTodosOsTipo.1/@expression/reject/@source/collect.1/collect/temp9">
-      <details key="start" value="-1"/>
-      <details key="end" value="-1"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.345" references="/0/obterTodosOsTipo.1/@expression/reject/@source/collect.1/@body">
-      <details key="start" value="3878"/>
-      <details key="end" value="3884"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.346" references="/0/obterTodosOsTipo.1/@expression/reject/@source/collect.1/@body/c">
-      <details key="start" value="3878"/>
-      <details key="end" value="3879"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.347" references="/0/obterTodosOsTipo.1/@expression/reject/@source/collect.1/c">
-      <details key="start" value="3861"/>
-      <details key="end" value="3875"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.348" references="/0/obterTodosOsTipo.1/@expression/reject/@body">
-      <details key="start" value="3909"/>
-      <details key="end" value="3940"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.349" references="/0/obterTodosOsTipo.1/@expression/reject/@body/tipo">
-      <details key="start" value="3909"/>
-      <details key="end" value="3913"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.350" references="/0/obterTodosOsTipo.1/@expression/reject/@body/@argument.0">
-      <details key="start" value="3926"/>
-      <details key="end" value="3939"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.351" references="/0/obterTodosOsTipo.1/@expression/reject/tipo">
-      <details key="start" value="3895"/>
-      <details key="end" value="3906"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.352" references="/0/getTaggedValue">
-      <details key="start" value="3962"/>
-      <details key="end" value="4314"/>
-      <details key="line" value="98"/>
-    </eAnnotations>
-    <eAnnotations source="positions.353" references="/0/getTaggedValue/stereotypedElement">
-      <details key="start" value="3991"/>
-      <details key="end" value="4019"/>
-      <details key="line" value="98"/>
-    </eAnnotations>
-    <eAnnotations source="positions.354" references="/0/getTaggedValue/stereotypeName">
-      <details key="start" value="4021"/>
+    <eAnnotations source="positions.354" references="/0/obterTodosOsTipo.1/@expression/reject/@source/collect/@body/s">
+      <details key="start" value="4043"/>
       <details key="end" value="4044"/>
-      <details key="line" value="98"/>
-    </eAnnotations>
-    <eAnnotations source="positions.355" references="/0/getTaggedValue/propertyName">
-      <details key="start" value="4046"/>
-      <details key="end" value="4067"/>
-      <details key="line" value="98"/>
-    </eAnnotations>
-    <eAnnotations source="positions.356" references="/0/getTaggedValue/@expression">
-      <details key="start" value="4084"/>
-      <details key="end" value="4312"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.357" references="/0/getTaggedValue/@expression/@in">
-      <details key="start" value="4178"/>
-      <details key="end" value="4312"/>
+    <eAnnotations source="positions.355" references="/0/obterTodosOsTipo.1/@expression/reject/@source/collect/s">
+      <details key="start" value="4028"/>
+      <details key="end" value="4040"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.358" references="/0/getTaggedValue/@expression/@in/@condition">
-      <details key="start" value="4181"/>
-      <details key="end" value="4212"/>
+    <eAnnotations source="positions.356" references="/0/obterTodosOsTipo.1/@expression/reject/@source/collect.1">
+      <details key="start" value="4058"/>
+      <details key="end" value="4135"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.359" references="/0/getTaggedValue/@expression/@in/@condition/@source">
-      <details key="start" value="4185"/>
-      <details key="end" value="4212"/>
+    <eAnnotations source="positions.357" references="/0/obterTodosOsTipo.1/@expression/reject/@source/collect.1/collect">
+      <details key="start" value="4058"/>
+      <details key="end" value="4099"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.360" references="/0/getTaggedValue/@expression/@in/@condition/@source/stereotype">
-      <details key="start" value="4185"/>
-      <details key="end" value="4195"/>
+    <eAnnotations source="positions.358" references="/0/obterTodosOsTipo.1/@expression/reject/@source/collect.1/collect/@source">
+      <details key="start" value="4058"/>
+      <details key="end" value="4084"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.361" references="/0/getTaggedValue/@expression/@in/@thenExpression">
-      <details key="start" value="4225"/>
-      <details key="end" value="4278"/>
+    <eAnnotations source="positions.359" references="/0/obterTodosOsTipo.1/@expression/reject/@source/collect.1/collect/@source/aInterface">
+      <details key="start" value="4058"/>
+      <details key="end" value="4068"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.362" references="/0/getTaggedValue/@expression/@in/@thenExpression/stereotypedElement">
-      <details key="start" value="4225"/>
-      <details key="end" value="4243"/>
+    <eAnnotations source="positions.360" references="/0/obterTodosOsTipo.1/@expression/reject/@source/collect.1/collect/@body">
+      <details key="start" value="4085"/>
+      <details key="end" value="4099"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.363" references="/0/getTaggedValue/@expression/@in/@thenExpression/stereotype">
-      <details key="start" value="4253"/>
-      <details key="end" value="4263"/>
+    <eAnnotations source="positions.361" references="/0/obterTodosOsTipo.1/@expression/reject/@source/collect.1/collect/@body/temp1">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.364" references="/0/getTaggedValue/@expression/@in/@thenExpression/propertyName">
-      <details key="start" value="4265"/>
-      <details key="end" value="4277"/>
+    <eAnnotations source="positions.362" references="/0/obterTodosOsTipo.1/@expression/reject/@source/collect.1/collect/temp9">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.365" references="/0/getTaggedValue/@expression/@in/@elseExpression">
-      <details key="start" value="4297"/>
-      <details key="end" value="4301"/>
+    <eAnnotations source="positions.363" references="/0/obterTodosOsTipo.1/@expression/reject/@source/collect.1/@body">
+      <details key="start" value="4128"/>
+      <details key="end" value="4134"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.366" references="/0/getTaggedValue/@expression/stereotype">
-      <details key="start" value="4088"/>
-      <details key="end" value="4169"/>
+    <eAnnotations source="positions.364" references="/0/obterTodosOsTipo.1/@expression/reject/@source/collect.1/@body/c">
+      <details key="start" value="4128"/>
+      <details key="end" value="4129"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.367" references="/0/getTaggedValue/@expression/stereotype/@initExpression">
-      <details key="start" value="4114"/>
-      <details key="end" value="4169"/>
+    <eAnnotations source="positions.365" references="/0/obterTodosOsTipo.1/@expression/reject/@source/collect.1/c">
+      <details key="start" value="4111"/>
+      <details key="end" value="4125"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.368" references="/0/getTaggedValue/@expression/stereotype/@initExpression/stereotypedElement">
-      <details key="start" value="4114"/>
-      <details key="end" value="4132"/>
+    <eAnnotations source="positions.366" references="/0/obterTodosOsTipo.1/@expression/reject/@body">
+      <details key="start" value="4159"/>
+      <details key="end" value="4190"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.369" references="/0/getTaggedValue/@expression/stereotype/@initExpression/stereotypeName">
-      <details key="start" value="4154"/>
-      <details key="end" value="4168"/>
+    <eAnnotations source="positions.367" references="/0/obterTodosOsTipo.1/@expression/reject/@body/tipo">
+      <details key="start" value="4159"/>
+      <details key="end" value="4163"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.370" references="/0/hasStereotypeQuery">
-      <details key="start" value="4316"/>
-      <details key="end" value="4466"/>
+    <eAnnotations source="positions.368" references="/0/obterTodosOsTipo.1/@expression/reject/@body/@argument.0">
+      <details key="start" value="4176"/>
+      <details key="end" value="4189"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.369" references="/0/obterTodosOsTipo.1/@expression/reject/tipo">
+      <details key="start" value="4145"/>
+      <details key="end" value="4156"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.370" references="/0/getTaggedValue">
+      <details key="start" value="4212"/>
+      <details key="end" value="4564"/>
       <details key="line" value="106"/>
     </eAnnotations>
-    <eAnnotations source="positions.371" references="/0/hasStereotypeQuery/elem">
-      <details key="start" value="4349"/>
-      <details key="end" value="4363"/>
+    <eAnnotations source="positions.371" references="/0/getTaggedValue/stereotypedElement">
+      <details key="start" value="4241"/>
+      <details key="end" value="4269"/>
       <details key="line" value="106"/>
     </eAnnotations>
-    <eAnnotations source="positions.372" references="/0/hasStereotypeQuery/name">
-      <details key="start" value="4365"/>
-      <details key="end" value="4378"/>
+    <eAnnotations source="positions.372" references="/0/getTaggedValue/stereotypeName">
+      <details key="start" value="4271"/>
+      <details key="end" value="4294"/>
       <details key="line" value="106"/>
     </eAnnotations>
-    <eAnnotations source="positions.373" references="/0/hasStereotypeQuery/exists">
-      <details key="start" value="4394"/>
+    <eAnnotations source="positions.373" references="/0/getTaggedValue/propertyName">
+      <details key="start" value="4296"/>
+      <details key="end" value="4317"/>
+      <details key="line" value="106"/>
+    </eAnnotations>
+    <eAnnotations source="positions.374" references="/0/getTaggedValue/@expression">
+      <details key="start" value="4334"/>
+      <details key="end" value="4562"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.375" references="/0/getTaggedValue/@expression/@in">
+      <details key="start" value="4428"/>
+      <details key="end" value="4562"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.376" references="/0/getTaggedValue/@expression/@in/@condition">
+      <details key="start" value="4431"/>
       <details key="end" value="4462"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.374" references="/0/hasStereotypeQuery/exists/@source">
-      <details key="start" value="4394"/>
-      <details key="end" value="4422"/>
+    <eAnnotations source="positions.377" references="/0/getTaggedValue/@expression/@in/@condition/@source">
+      <details key="start" value="4435"/>
+      <details key="end" value="4462"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.375" references="/0/hasStereotypeQuery/exists/@source/self">
-      <details key="start" value="4394"/>
-      <details key="end" value="4398"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.376" references="/0/hasStereotypeQuery/exists/@body">
-      <details key="start" value="4448"/>
-      <details key="end" value="4461"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.377" references="/0/hasStereotypeQuery/exists/@body/@source">
-      <details key="start" value="4448"/>
-      <details key="end" value="4454"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.378" references="/0/hasStereotypeQuery/exists/@body/@source/e">
-      <details key="start" value="4448"/>
-      <details key="end" value="4449"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.379" references="/0/hasStereotypeQuery/exists/@body/name">
-      <details key="start" value="4457"/>
-      <details key="end" value="4461"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.380" references="/0/hasStereotypeQuery/exists/e">
-      <details key="start" value="4431"/>
+    <eAnnotations source="positions.378" references="/0/getTaggedValue/@expression/@in/@condition/@source/stereotype">
+      <details key="start" value="4435"/>
       <details key="end" value="4445"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.381" references="/0/getStereotypeQuery">
-      <details key="start" value="4468"/>
-      <details key="end" value="4646"/>
-      <details key="line" value="110"/>
-    </eAnnotations>
-    <eAnnotations source="positions.382" references="/0/getStereotypeQuery/elem">
-      <details key="start" value="4501"/>
-      <details key="end" value="4515"/>
-      <details key="line" value="110"/>
-    </eAnnotations>
-    <eAnnotations source="positions.383" references="/0/getStereotypeQuery/name">
-      <details key="start" value="4517"/>
-      <details key="end" value="4530"/>
-      <details key="line" value="110"/>
-    </eAnnotations>
-    <eAnnotations source="positions.384" references="/0/getStereotypeQuery/@expression">
-      <details key="start" value="4549"/>
-      <details key="end" value="4642"/>
+    <eAnnotations source="positions.379" references="/0/getTaggedValue/@expression/@in/@thenExpression">
+      <details key="start" value="4475"/>
+      <details key="end" value="4528"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.385" references="/0/getStereotypeQuery/@expression/@source">
-      <details key="start" value="4549"/>
-      <details key="end" value="4633"/>
+    <eAnnotations source="positions.380" references="/0/getTaggedValue/@expression/@in/@thenExpression/stereotypedElement">
+      <details key="start" value="4475"/>
+      <details key="end" value="4493"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.386" references="/0/getStereotypeQuery/@expression/@source/select">
-      <details key="start" value="4549"/>
-      <details key="end" value="4617"/>
+    <eAnnotations source="positions.381" references="/0/getTaggedValue/@expression/@in/@thenExpression/stereotype">
+      <details key="start" value="4503"/>
+      <details key="end" value="4513"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.387" references="/0/getStereotypeQuery/@expression/@source/select/@source">
-      <details key="start" value="4549"/>
-      <details key="end" value="4577"/>
+    <eAnnotations source="positions.382" references="/0/getTaggedValue/@expression/@in/@thenExpression/propertyName">
+      <details key="start" value="4515"/>
+      <details key="end" value="4527"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.388" references="/0/getStereotypeQuery/@expression/@source/select/@source/self">
-      <details key="start" value="4549"/>
-      <details key="end" value="4553"/>
+    <eAnnotations source="positions.383" references="/0/getTaggedValue/@expression/@in/@elseExpression">
+      <details key="start" value="4547"/>
+      <details key="end" value="4551"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.389" references="/0/getStereotypeQuery/@expression/@source/select/@body">
-      <details key="start" value="4603"/>
-      <details key="end" value="4616"/>
+    <eAnnotations source="positions.384" references="/0/getTaggedValue/@expression/stereotype">
+      <details key="start" value="4338"/>
+      <details key="end" value="4419"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.390" references="/0/getStereotypeQuery/@expression/@source/select/@body/@source">
-      <details key="start" value="4603"/>
-      <details key="end" value="4609"/>
+    <eAnnotations source="positions.385" references="/0/getTaggedValue/@expression/stereotype/@initExpression">
+      <details key="start" value="4364"/>
+      <details key="end" value="4419"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.391" references="/0/getStereotypeQuery/@expression/@source/select/@body/@source/e">
-      <details key="start" value="4603"/>
-      <details key="end" value="4604"/>
+    <eAnnotations source="positions.386" references="/0/getTaggedValue/@expression/stereotype/@initExpression/stereotypedElement">
+      <details key="start" value="4364"/>
+      <details key="end" value="4382"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.392" references="/0/getStereotypeQuery/@expression/@source/select/@body/name">
-      <details key="start" value="4612"/>
-      <details key="end" value="4616"/>
+    <eAnnotations source="positions.387" references="/0/getTaggedValue/@expression/stereotype/@initExpression/stereotypeName">
+      <details key="start" value="4404"/>
+      <details key="end" value="4418"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.393" references="/0/getStereotypeQuery/@expression/@source/select/e">
-      <details key="start" value="4586"/>
-      <details key="end" value="4600"/>
+    <eAnnotations source="positions.388" references="/0/hasStereotypeQuery">
+      <details key="start" value="4566"/>
+      <details key="end" value="4716"/>
+      <details key="line" value="114"/>
+    </eAnnotations>
+    <eAnnotations source="positions.389" references="/0/hasStereotypeQuery/elem">
+      <details key="start" value="4599"/>
+      <details key="end" value="4613"/>
+      <details key="line" value="114"/>
+    </eAnnotations>
+    <eAnnotations source="positions.390" references="/0/hasStereotypeQuery/name">
+      <details key="start" value="4615"/>
+      <details key="end" value="4628"/>
+      <details key="line" value="114"/>
+    </eAnnotations>
+    <eAnnotations source="positions.391" references="/0/hasStereotypeQuery/exists">
+      <details key="start" value="4644"/>
+      <details key="end" value="4712"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.392" references="/0/hasStereotypeQuery/exists/@source">
+      <details key="start" value="4644"/>
+      <details key="end" value="4672"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.393" references="/0/hasStereotypeQuery/exists/@source/self">
+      <details key="start" value="4644"/>
+      <details key="end" value="4648"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.394" references="/0/hasStereotypeQuery/exists/@body">
+      <details key="start" value="4698"/>
+      <details key="end" value="4711"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.395" references="/0/hasStereotypeQuery/exists/@body/@source">
+      <details key="start" value="4698"/>
+      <details key="end" value="4704"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.396" references="/0/hasStereotypeQuery/exists/@body/@source/e">
+      <details key="start" value="4698"/>
+      <details key="end" value="4699"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.397" references="/0/hasStereotypeQuery/exists/@body/name">
+      <details key="start" value="4707"/>
+      <details key="end" value="4711"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.398" references="/0/hasStereotypeQuery/exists/e">
+      <details key="start" value="4681"/>
+      <details key="end" value="4695"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.399" references="/0/getStereotypeQuery">
+      <details key="start" value="4718"/>
+      <details key="end" value="4896"/>
+      <details key="line" value="118"/>
+    </eAnnotations>
+    <eAnnotations source="positions.400" references="/0/getStereotypeQuery/elem">
+      <details key="start" value="4751"/>
+      <details key="end" value="4765"/>
+      <details key="line" value="118"/>
+    </eAnnotations>
+    <eAnnotations source="positions.401" references="/0/getStereotypeQuery/name">
+      <details key="start" value="4767"/>
+      <details key="end" value="4780"/>
+      <details key="line" value="118"/>
+    </eAnnotations>
+    <eAnnotations source="positions.402" references="/0/getStereotypeQuery/@expression">
+      <details key="start" value="4799"/>
+      <details key="end" value="4892"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.403" references="/0/getStereotypeQuery/@expression/@source">
+      <details key="start" value="4799"/>
+      <details key="end" value="4883"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.404" references="/0/getStereotypeQuery/@expression/@source/select">
+      <details key="start" value="4799"/>
+      <details key="end" value="4867"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.405" references="/0/getStereotypeQuery/@expression/@source/select/@source">
+      <details key="start" value="4799"/>
+      <details key="end" value="4827"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.406" references="/0/getStereotypeQuery/@expression/@source/select/@source/self">
+      <details key="start" value="4799"/>
+      <details key="end" value="4803"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.407" references="/0/getStereotypeQuery/@expression/@source/select/@body">
+      <details key="start" value="4853"/>
+      <details key="end" value="4866"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.408" references="/0/getStereotypeQuery/@expression/@source/select/@body/@source">
+      <details key="start" value="4853"/>
+      <details key="end" value="4859"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.409" references="/0/getStereotypeQuery/@expression/@source/select/@body/@source/e">
+      <details key="start" value="4853"/>
+      <details key="end" value="4854"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.410" references="/0/getStereotypeQuery/@expression/@source/select/@body/name">
+      <details key="start" value="4862"/>
+      <details key="end" value="4866"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.411" references="/0/getStereotypeQuery/@expression/@source/select/e">
+      <details key="start" value="4836"/>
+      <details key="end" value="4850"/>
       <details key="line" value="0"/>
     </eAnnotations>
   </ecore:EAnnotation>

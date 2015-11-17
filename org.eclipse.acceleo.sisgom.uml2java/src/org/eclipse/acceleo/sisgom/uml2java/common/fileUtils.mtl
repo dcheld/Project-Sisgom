@@ -36,6 +36,14 @@
  * Returns the package value for the given type (ex: a.b.c.d).
  * @param aType The type (class, interface or enumeration most of the time).
  */]
+[template public genPackageEntity(aClass : Class)]
+[aClass.genPackageValue() + '.' + aClass.getEntityNamespace()/]
+[/template]
+
+[template public genPackageDao(aClass : Class)]
+[aClass.genPackageValue() + '.' + aClass.getDaoNamespace()/]
+[/template]
+
 [template public genPackageValue(aType : Type)]
 [aType.ancestors(Package)->reject(aPackage: Package | aPackage.oclIsTypeOf(Model))->reverse().name->sep('.')/]
 [/template]

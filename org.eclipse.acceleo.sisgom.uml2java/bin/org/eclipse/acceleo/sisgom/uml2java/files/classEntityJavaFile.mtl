@@ -14,11 +14,11 @@
  */]
 [template public genClassJavaEntity(aClass : Class)]
 [file (aClass.genFilePathEntity(), false, 'UTF-8')]
-package [aClass.genPackageValue() + '.' + aClass.getEntityNamespace()/];
+package [aClass.genPackageEntity()/];
 
 [aClass.genDefaultImport()/]
 [aClass.hybernatEntity()/]
-public [if (aClass.isAbstract)]abstract[/if] class [aClass.name.toUpperFirst() + aClass.getEntitySuffix()/][aClass.inheritance()/] {
+public [if (aClass.isAbstract)]abstract[/if] class [aClass.getClassNameEntity()/][aClass.inheritance()/] {
 	[aClass.fields()/]
 	public [aClass.name.toUpperFirst() + aClass.getEntitySuffix()/]() {
 		super();
@@ -51,7 +51,7 @@ public [if (aClass.isAbstract)]abstract[/if] class [aClass.name.toUpperFirst() +
 
 [template private fields(aClass : Class)]
 [for (aProperty : Property | aClass.attribute) separator ('\r\n')]
-private [if (aProperty.upper = -1 or aProperty.upper > 1)]List<[aProperty.type.name/]>[else][aProperty.type.name/][/if] [aProperty.name.toLowerFirst()/];
+private [if (aProperty.upper = -1 or aProperty.upper > 1)]List<[aProperty.type.getClassNameEntity()/]>[else][aProperty.type.getClassNameEntity()/][/if] [aProperty.name.toLowerFirst()/];
 [/for]
 [/template]
 
@@ -92,13 +92,20 @@ public [if (anOperation.type.oclIsUndefined())]void[else][anOperation.type.name/
 [template private accessors(aClass : Class)]
 [for (aProperty : Property | aClass.attribute) separator ('\r\n')]
 [hybernatProperty(aProperty)/]
-public [if (aProperty.upper = -1 or aProperty.upper > 1)]List<[aProperty.type.name/]>[else][aProperty.type.name/][/if] get[aProperty.name.toUpperFirst()/]() {
+public [if (aProperty.upper = -1 or aProperty.upper > 1)]List<[aProperty.type.getClassNameEntity()/]>[else][aProperty.type.getClassNameEntity()/][/if] get[aProperty.name.toUpperFirst()/]() {
 	return this.[aProperty.name.toLowerFirst()/];
 }
 
-public void set[aProperty.name.toUpperFirst()/]([if (aProperty.upper = -1 or aProperty.upper > 1)]List<[aProperty.type.name/]>[else][aProperty.type.name/][/if] [aProperty.name.toLowerFirst()/]) {
+public void set[aProperty.name.toUpperFirst()/]([if (aProperty.upper = -1 or aProperty.upper > 1)]List<[aProperty.type.getClassNameEntity()/]>[else][aProperty.type.getClassNameEntity()/][/if] [aProperty.name.toLowerFirst()/]) {
 	this.[aProperty.name.toLowerFirst()/] = [aProperty.name.toLowerFirst()/];
 }
 [/for]
 [/template]
 
+[template public getClassNameEntity(aClass : Class)post (trim())]
+[aClass.name.toUpperFirst() + aClass.getEntitySuffix()/]
+[/template]
+
+[template public getClassNameEntity(aType : Type)post (trim())]
+[aType.name/]
+[/template]

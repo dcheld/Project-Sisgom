@@ -11,6 +11,7 @@
     <imports href="../common/fileUtils.emtl#/0"/>
     <imports href="../files/generatePomXml.emtl#/0"/>
     <imports href="../files/classUtilsJavaFile.emtl#/0"/>
+    <imports href="../files/classServletsJavaFile.emtl#/0"/>
     <ownedModuleElement xsi:type="mtl:Template" name="mainClass" visibility="Public" main="true">
       <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#x9;"/>
       <body xsi:type="mtl:TemplateInvocation">
@@ -20,13 +21,36 @@
           <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Class"/>
         </argument>
       </body>
-      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;&#x9;"/>
-      <body xsi:type="mtl:TemplateInvocation">
-        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-        <definition href="../files/classDaoJavaFile.emtl#/0/genClassJavaDao"/>
-        <argument xsi:type="ocl.ecore:VariableExp" name="aClass" referredVariable="/0/mainClass/aClass">
-          <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Class"/>
-        </argument>
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;"/>
+      <body xsi:type="mtl:IfBlock">
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#x9;&#x9;"/>
+        <body xsi:type="mtl:TemplateInvocation">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          <definition href="../files/classDaoJavaFile.emtl#/0/genClassJavaDao"/>
+          <argument xsi:type="ocl.ecore:VariableExp" name="aClass" referredVariable="/0/mainClass/aClass">
+            <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Class"/>
+          </argument>
+        </body>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;&#x9;&#x9;"/>
+        <body xsi:type="mtl:TemplateInvocation">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          <definition href="../files/classServletsJavaFile.emtl#/0/genClassJavaServletDelete"/>
+          <argument xsi:type="ocl.ecore:VariableExp" name="aClass" referredVariable="/0/mainClass/aClass">
+            <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Class"/>
+          </argument>
+        </body>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;"/>
+        <ifExpr xsi:type="ocl.ecore:OperationCallExp">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+          <source xsi:type="ocl.ecore:PropertyCallExp">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+            <source xsi:type="ocl.ecore:VariableExp" name="aClass" referredVariable="/0/mainClass/aClass">
+              <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Class"/>
+            </source>
+            <referredProperty xsi:type="ecore:EAttribute" href="http://www.eclipse.org/uml2/4.0.0/UML#//Classifier/isAbstract"/>
+          </source>
+          <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean_Class/not"/>
+        </ifExpr>
       </body>
       <parameter name="aClass">
         <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Class"/>
@@ -295,6 +319,18 @@
           <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Package"/>
         </eParameters>
       </eOperations>
+      <eOperations name="genClassJavaServletDelete">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL">
+          <references href="../files/classServletsJavaFile.emtl#/0/genClassJavaServletDelete"/>
+        </eAnnotations>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <eParameters name="aClass">
+          <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Class"/>
+        </eParameters>
+      </eOperations>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="OclAny_Class">
       <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
@@ -365,6 +401,12 @@
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
     <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Class"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Class"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
     <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Class"/>
@@ -449,199 +491,244 @@
   </ocl.ecore:Variable>
   <ecore:EAnnotation source="positions">
     <eAnnotations source="positions.0" references="/0/mainClass">
-      <details key="start" value="612"/>
-      <details key="end" value="748"/>
-      <details key="line" value="11"/>
+      <details key="start" value="693"/>
+      <details key="end" value="909"/>
+      <details key="line" value="12"/>
     </eAnnotations>
     <eAnnotations source="positions.1" references="/0/mainClass/@body.0">
-      <details key="start" value="675"/>
-      <details key="end" value="676"/>
-      <details key="line" value="13"/>
+      <details key="start" value="756"/>
+      <details key="end" value="757"/>
+      <details key="line" value="14"/>
     </eAnnotations>
     <eAnnotations source="positions.2" references="/0/mainClass/@body.1">
-      <details key="start" value="677"/>
-      <details key="end" value="704"/>
+      <details key="start" value="758"/>
+      <details key="end" value="785"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.3" references="/0/mainClass/@body.1/aClass">
-      <details key="start" value="677"/>
-      <details key="end" value="683"/>
+      <details key="start" value="758"/>
+      <details key="end" value="764"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.4" references="/0/mainClass/@body.2">
-      <details key="start" value="706"/>
-      <details key="end" value="708"/>
-      <details key="line" value="14"/>
+      <details key="start" value="787"/>
+      <details key="end" value="788"/>
+      <details key="line" value="15"/>
     </eAnnotations>
     <eAnnotations source="positions.5" references="/0/mainClass/@body.3">
-      <details key="start" value="709"/>
-      <details key="end" value="733"/>
+      <details key="start" value="789"/>
+      <details key="end" value="897"/>
+      <details key="line" value="15"/>
+    </eAnnotations>
+    <eAnnotations source="positions.6" references="/0/mainClass/@body.3/@body.0">
+      <details key="start" value="819"/>
+      <details key="end" value="821"/>
+      <details key="line" value="16"/>
+    </eAnnotations>
+    <eAnnotations source="positions.7" references="/0/mainClass/@body.3/@body.1">
+      <details key="start" value="822"/>
+      <details key="end" value="846"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.6" references="/0/mainClass/@body.3/aClass">
-      <details key="start" value="709"/>
-      <details key="end" value="715"/>
+    <eAnnotations source="positions.8" references="/0/mainClass/@body.3/@body.1/aClass">
+      <details key="start" value="822"/>
+      <details key="end" value="828"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.7" references="/0/mainClass/aClass">
-      <details key="start" value="639"/>
-      <details key="end" value="653"/>
-      <details key="line" value="11"/>
+    <eAnnotations source="positions.9" references="/0/mainClass/@body.3/@body.2">
+      <details key="start" value="849"/>
+      <details key="end" value="852"/>
+      <details key="line" value="17"/>
     </eAnnotations>
-    <eAnnotations source="positions.8" references="/0/mainInteraction">
-      <details key="start" value="751"/>
-      <details key="end" value="843"/>
+    <eAnnotations source="positions.10" references="/0/mainClass/@body.3/@body.3">
+      <details key="start" value="853"/>
+      <details key="end" value="887"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.11" references="/0/mainClass/@body.3/@body.3/aClass">
+      <details key="start" value="853"/>
+      <details key="end" value="859"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.12" references="/0/mainClass/@body.3/@body.4">
+      <details key="start" value="890"/>
+      <details key="end" value="891"/>
       <details key="line" value="18"/>
     </eAnnotations>
-    <eAnnotations source="positions.9" references="/0/mainInteraction/aInteraction">
-      <details key="start" value="784"/>
-      <details key="end" value="810"/>
-      <details key="line" value="18"/>
-    </eAnnotations>
-    <eAnnotations source="positions.10" references="/0/mainEnumeration">
-      <details key="start" value="845"/>
-      <details key="end" value="972"/>
-      <details key="line" value="22"/>
-    </eAnnotations>
-    <eAnnotations source="positions.11" references="/0/mainEnumeration/@body.0">
-      <details key="start" value="926"/>
-      <details key="end" value="927"/>
-      <details key="line" value="24"/>
-    </eAnnotations>
-    <eAnnotations source="positions.12" references="/0/mainEnumeration/@body.1">
-      <details key="start" value="928"/>
-      <details key="end" value="958"/>
+    <eAnnotations source="positions.13" references="/0/mainClass/@body.3/@ifExpr">
+      <details key="start" value="793"/>
+      <details key="end" value="817"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.13" references="/0/mainEnumeration/@body.1/aEnumeration">
-      <details key="start" value="928"/>
-      <details key="end" value="940"/>
+    <eAnnotations source="positions.14" references="/0/mainClass/@body.3/@ifExpr/@source">
+      <details key="start" value="797"/>
+      <details key="end" value="816"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.14" references="/0/mainEnumeration/aEnumeration">
-      <details key="start" value="878"/>
-      <details key="end" value="904"/>
+    <eAnnotations source="positions.15" references="/0/mainClass/@body.3/@ifExpr/@source/aClass">
+      <details key="start" value="798"/>
+      <details key="end" value="804"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.16" references="/0/mainClass/aClass">
+      <details key="start" value="720"/>
+      <details key="end" value="734"/>
+      <details key="line" value="12"/>
+    </eAnnotations>
+    <eAnnotations source="positions.17" references="/0/mainInteraction">
+      <details key="start" value="912"/>
+      <details key="end" value="1004"/>
       <details key="line" value="22"/>
     </eAnnotations>
-    <eAnnotations source="positions.15" references="/0/mainInterface">
-      <details key="start" value="973"/>
-      <details key="end" value="1097"/>
+    <eAnnotations source="positions.18" references="/0/mainInteraction/aInteraction">
+      <details key="start" value="945"/>
+      <details key="end" value="971"/>
+      <details key="line" value="22"/>
+    </eAnnotations>
+    <eAnnotations source="positions.19" references="/0/mainEnumeration">
+      <details key="start" value="1006"/>
+      <details key="end" value="1133"/>
       <details key="line" value="26"/>
     </eAnnotations>
-    <eAnnotations source="positions.16" references="/0/mainInterface/@body.0">
-      <details key="start" value="1048"/>
-      <details key="end" value="1049"/>
+    <eAnnotations source="positions.20" references="/0/mainEnumeration/@body.0">
+      <details key="start" value="1087"/>
+      <details key="end" value="1088"/>
       <details key="line" value="28"/>
     </eAnnotations>
-    <eAnnotations source="positions.17" references="/0/mainInterface/@body.1">
-      <details key="start" value="1050"/>
-      <details key="end" value="1083"/>
+    <eAnnotations source="positions.21" references="/0/mainEnumeration/@body.1">
+      <details key="start" value="1089"/>
+      <details key="end" value="1119"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.18" references="/0/mainInterface/@body.1/aInterface">
-      <details key="start" value="1050"/>
-      <details key="end" value="1060"/>
+    <eAnnotations source="positions.22" references="/0/mainEnumeration/@body.1/aEnumeration">
+      <details key="start" value="1089"/>
+      <details key="end" value="1101"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.19" references="/0/mainInterface/aInterface">
-      <details key="start" value="1004"/>
-      <details key="end" value="1026"/>
+    <eAnnotations source="positions.23" references="/0/mainEnumeration/aEnumeration">
+      <details key="start" value="1039"/>
+      <details key="end" value="1065"/>
       <details key="line" value="26"/>
     </eAnnotations>
-    <eAnnotations source="positions.20" references="/0/mainModelHybernate">
-      <details key="start" value="1099"/>
-      <details key="end" value="1370"/>
-      <details key="line" value="31"/>
+    <eAnnotations source="positions.24" references="/0/mainInterface">
+      <details key="start" value="1134"/>
+      <details key="end" value="1258"/>
+      <details key="line" value="30"/>
     </eAnnotations>
-    <eAnnotations source="positions.21" references="/0/mainModelHybernate/@body.0">
-      <details key="start" value="1175"/>
-      <details key="end" value="1358"/>
-      <details key="line" value="33"/>
+    <eAnnotations source="positions.25" references="/0/mainInterface/@body.0">
+      <details key="start" value="1209"/>
+      <details key="end" value="1210"/>
+      <details key="line" value="32"/>
     </eAnnotations>
-    <eAnnotations source="positions.22" references="/0/mainModelHybernate/@body.0/@body.0">
-      <details key="start" value="1222"/>
-      <details key="end" value="1224"/>
-      <details key="line" value="34"/>
-    </eAnnotations>
-    <eAnnotations source="positions.23" references="/0/mainModelHybernate/@body.0/@body.1">
-      <details key="start" value="1225"/>
-      <details key="end" value="1248"/>
+    <eAnnotations source="positions.26" references="/0/mainInterface/@body.1">
+      <details key="start" value="1211"/>
+      <details key="end" value="1244"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.24" references="/0/mainModelHybernate/@body.0/@body.1/aModel">
-      <details key="start" value="1225"/>
-      <details key="end" value="1231"/>
+    <eAnnotations source="positions.27" references="/0/mainInterface/@body.1/aInterface">
+      <details key="start" value="1211"/>
+      <details key="end" value="1221"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.25" references="/0/mainModelHybernate/@body.0/@body.2">
-      <details key="start" value="1250"/>
-      <details key="end" value="1253"/>
+    <eAnnotations source="positions.28" references="/0/mainInterface/aInterface">
+      <details key="start" value="1165"/>
+      <details key="end" value="1187"/>
+      <details key="line" value="30"/>
+    </eAnnotations>
+    <eAnnotations source="positions.29" references="/0/mainModelHybernate">
+      <details key="start" value="1260"/>
+      <details key="end" value="1531"/>
       <details key="line" value="35"/>
     </eAnnotations>
-    <eAnnotations source="positions.26" references="/0/mainModelHybernate/@body.0/@body.3">
-      <details key="start" value="1254"/>
-      <details key="end" value="1285"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.27" references="/0/mainModelHybernate/@body.0/@body.3/aModel">
-      <details key="start" value="1254"/>
-      <details key="end" value="1260"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.28" references="/0/mainModelHybernate/@body.0/@body.4">
-      <details key="start" value="1287"/>
-      <details key="end" value="1290"/>
-      <details key="line" value="36"/>
-    </eAnnotations>
-    <eAnnotations source="positions.29" references="/0/mainModelHybernate/@body.0/@body.5">
-      <details key="start" value="1291"/>
-      <details key="end" value="1316"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.30" references="/0/mainModelHybernate/@body.0/@body.5/aModel">
-      <details key="start" value="1291"/>
-      <details key="end" value="1297"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.31" references="/0/mainModelHybernate/@body.0/@body.6">
-      <details key="start" value="1318"/>
-      <details key="end" value="1321"/>
+    <eAnnotations source="positions.30" references="/0/mainModelHybernate/@body.0">
+      <details key="start" value="1336"/>
+      <details key="end" value="1519"/>
       <details key="line" value="37"/>
     </eAnnotations>
-    <eAnnotations source="positions.32" references="/0/mainModelHybernate/@body.0/@body.7">
-      <details key="start" value="1322"/>
-      <details key="end" value="1349"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.33" references="/0/mainModelHybernate/@body.0/@body.7/aModel">
-      <details key="start" value="1322"/>
-      <details key="end" value="1328"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.34" references="/0/mainModelHybernate/@body.0/@body.8">
-      <details key="start" value="1351"/>
-      <details key="end" value="1352"/>
+    <eAnnotations source="positions.31" references="/0/mainModelHybernate/@body.0/@body.0">
+      <details key="start" value="1383"/>
+      <details key="end" value="1385"/>
       <details key="line" value="38"/>
     </eAnnotations>
-    <eAnnotations source="positions.35" references="/0/mainModelHybernate/@body.0/@ifExpr">
-      <details key="start" value="1178"/>
-      <details key="end" value="1220"/>
+    <eAnnotations source="positions.32" references="/0/mainModelHybernate/@body.0/@body.1">
+      <details key="start" value="1386"/>
+      <details key="end" value="1409"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.36" references="/0/mainModelHybernate/@body.0/@ifExpr/aModel">
-      <details key="start" value="1179"/>
-      <details key="end" value="1185"/>
+    <eAnnotations source="positions.33" references="/0/mainModelHybernate/@body.0/@body.1/aModel">
+      <details key="start" value="1386"/>
+      <details key="end" value="1392"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.37" references="/0/mainModelHybernate/@body.0/@ifExpr/@argument.1">
-      <details key="start" value="1205"/>
-      <details key="end" value="1218"/>
+    <eAnnotations source="positions.34" references="/0/mainModelHybernate/@body.0/@body.2">
+      <details key="start" value="1411"/>
+      <details key="end" value="1414"/>
+      <details key="line" value="39"/>
+    </eAnnotations>
+    <eAnnotations source="positions.35" references="/0/mainModelHybernate/@body.0/@body.3">
+      <details key="start" value="1415"/>
+      <details key="end" value="1446"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.38" references="/0/mainModelHybernate/aModel">
-      <details key="start" value="1135"/>
-      <details key="end" value="1151"/>
-      <details key="line" value="31"/>
+    <eAnnotations source="positions.36" references="/0/mainModelHybernate/@body.0/@body.3/aModel">
+      <details key="start" value="1415"/>
+      <details key="end" value="1421"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.37" references="/0/mainModelHybernate/@body.0/@body.4">
+      <details key="start" value="1448"/>
+      <details key="end" value="1451"/>
+      <details key="line" value="40"/>
+    </eAnnotations>
+    <eAnnotations source="positions.38" references="/0/mainModelHybernate/@body.0/@body.5">
+      <details key="start" value="1452"/>
+      <details key="end" value="1477"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.39" references="/0/mainModelHybernate/@body.0/@body.5/aModel">
+      <details key="start" value="1452"/>
+      <details key="end" value="1458"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.40" references="/0/mainModelHybernate/@body.0/@body.6">
+      <details key="start" value="1479"/>
+      <details key="end" value="1482"/>
+      <details key="line" value="41"/>
+    </eAnnotations>
+    <eAnnotations source="positions.41" references="/0/mainModelHybernate/@body.0/@body.7">
+      <details key="start" value="1483"/>
+      <details key="end" value="1510"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.42" references="/0/mainModelHybernate/@body.0/@body.7/aModel">
+      <details key="start" value="1483"/>
+      <details key="end" value="1489"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.43" references="/0/mainModelHybernate/@body.0/@body.8">
+      <details key="start" value="1512"/>
+      <details key="end" value="1513"/>
+      <details key="line" value="42"/>
+    </eAnnotations>
+    <eAnnotations source="positions.44" references="/0/mainModelHybernate/@body.0/@ifExpr">
+      <details key="start" value="1339"/>
+      <details key="end" value="1381"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.45" references="/0/mainModelHybernate/@body.0/@ifExpr/aModel">
+      <details key="start" value="1340"/>
+      <details key="end" value="1346"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.46" references="/0/mainModelHybernate/@body.0/@ifExpr/@argument.1">
+      <details key="start" value="1366"/>
+      <details key="end" value="1379"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.47" references="/0/mainModelHybernate/aModel">
+      <details key="start" value="1296"/>
+      <details key="end" value="1312"/>
+      <details key="line" value="35"/>
     </eAnnotations>
   </ecore:EAnnotation>
 </xmi:XMI>

@@ -13,7 +13,6 @@
  * @param aClass
  */]
 [template public genClassJavaDao(aClass : Class){ className : String = aClass.name.toUpperFirst() + aClass.getEntitySuffix();}]
-[if (not(aClass.isAbstract))]
 [file (aClass.genFilePathDao(), false, 'UTF-8')]
 package [aClass.genPackageValue() + '.' + aClass.getDaoNamespace()/];
 
@@ -22,6 +21,5 @@ public class [aClass.name.toUpperFirst() + aClass.getDaoSuffix()/] extends Gener
 	
 }
 [/file]
-[/if]
 [/template]
 
