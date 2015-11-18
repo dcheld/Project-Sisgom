@@ -153,24 +153,10 @@
         <eType xsi:type="ocl.ecore:AnyType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny"/>
       </parameter>
     </ownedModuleElement>
-    <ownedModuleElement xsi:type="mtl:Template" name="getUtilsSuffix" visibility="Public">
-      <body xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/OclAny_Class/getProperty">
-        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-        <source xsi:type="ocl.ecore:VariableExp" name="self" referredVariable="/56">
-          <eType xsi:type="ocl.ecore:AnyType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny"/>
-        </source>
-        <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="UtilsSuffix">
-          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-        </argument>
-      </body>
-      <parameter name="anOclAny">
-        <eType xsi:type="ocl.ecore:AnyType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny"/>
-      </parameter>
-    </ownedModuleElement>
     <ownedModuleElement xsi:type="mtl:Template" name="getServletsSuffix" visibility="Public">
       <body xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/OclAny_Class/getProperty">
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-        <source xsi:type="ocl.ecore:VariableExp" name="self" referredVariable="/61">
+        <source xsi:type="ocl.ecore:VariableExp" name="self" referredVariable="/56">
           <eType xsi:type="ocl.ecore:AnyType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny"/>
         </source>
         <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="ServletsSuffix">
@@ -184,7 +170,7 @@
     <ownedModuleElement xsi:type="mtl:Template" name="getGenericDao" visibility="Public">
       <body xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/OclAny_Class/getProperty">
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-        <source xsi:type="ocl.ecore:VariableExp" name="self" referredVariable="/66">
+        <source xsi:type="ocl.ecore:VariableExp" name="self" referredVariable="/61">
           <eType xsi:type="ocl.ecore:AnyType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny"/>
         </source>
         <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="GenericDao">
@@ -198,7 +184,7 @@
     <ownedModuleElement xsi:type="mtl:Template" name="getBaseBean" visibility="Public">
       <body xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/OclAny_Class/getProperty">
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-        <source xsi:type="ocl.ecore:VariableExp" name="self" referredVariable="/71">
+        <source xsi:type="ocl.ecore:VariableExp" name="self" referredVariable="/66">
           <eType xsi:type="ocl.ecore:AnyType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny"/>
         </source>
         <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="BaseBean">
@@ -212,7 +198,7 @@
     <ownedModuleElement xsi:type="mtl:Template" name="getFactoryDao" visibility="Public">
       <body xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/OclAny_Class/getProperty">
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-        <source xsi:type="ocl.ecore:VariableExp" name="self" referredVariable="/76">
+        <source xsi:type="ocl.ecore:VariableExp" name="self" referredVariable="/71">
           <eType xsi:type="ocl.ecore:AnyType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny"/>
         </source>
         <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="FactoryDao">
@@ -226,7 +212,7 @@
     <ownedModuleElement xsi:type="mtl:Template" name="getPersistenceUnit" visibility="Public">
       <body xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/OclAny_Class/getProperty">
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-        <source xsi:type="ocl.ecore:VariableExp" name="self" referredVariable="/81">
+        <source xsi:type="ocl.ecore:VariableExp" name="self" referredVariable="/76">
           <eType xsi:type="ocl.ecore:AnyType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny"/>
         </source>
         <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="PersistenceUnit">
@@ -358,16 +344,6 @@
           <eType xsi:type="ocl.ecore:AnyType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny"/>
         </eParameters>
       </eOperations>
-      <eOperations name="getUtilsSuffix">
-        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
-          <contents xsi:type="ocl.ecore:Constraint"/>
-        </eAnnotations>
-        <eAnnotations source="MTL" references="/0/getUtilsSuffix"/>
-        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-        <eParameters name="anOclAny">
-          <eType xsi:type="ocl.ecore:AnyType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny"/>
-        </eParameters>
-      </eOperations>
       <eOperations name="getServletsSuffix">
         <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
           <contents xsi:type="ocl.ecore:Constraint"/>
@@ -447,21 +423,6 @@
       </eAnnotations>
     </eClassifiers>
   </ecore:EPackage>
-  <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
-  </ocl.ecore:Variable>
-  <ocl.ecore:Variable name="self">
-    <eType xsi:type="ocl.ecore:AnyType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny"/>
-  </ocl.ecore:Variable>
-  <ocl.ecore:Variable name="self">
-    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-  </ocl.ecore:Variable>
-  <ocl.ecore:Variable name="self">
-    <eType xsi:type="ocl.ecore:AnyType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny"/>
-  </ocl.ecore:Variable>
-  <ocl.ecore:Variable name="self">
-    <eType xsi:type="ocl.ecore:AnyType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny"/>
-  </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
     <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
   </ocl.ecore:Variable>
@@ -956,155 +917,130 @@
       <details key="end" value="1217"/>
       <details key="line" value="53"/>
     </eAnnotations>
-    <eAnnotations source="positions.53" references="/0/getUtilsSuffix">
-      <details key="start" value="1261"/>
-      <details key="end" value="1354"/>
-      <details key="line" value="57"/>
+    <eAnnotations source="positions.53" references="/0/getServletsSuffix">
+      <details key="start" value="1260"/>
+      <details key="end" value="1359"/>
+      <details key="line" value="56"/>
     </eAnnotations>
-    <eAnnotations source="positions.54" references="/0/getUtilsSuffix/@body.0">
-      <details key="start" value="1314"/>
-      <details key="end" value="1340"/>
+    <eAnnotations source="positions.54" references="/0/getServletsSuffix/@body.0">
+      <details key="start" value="1316"/>
+      <details key="end" value="1345"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.55" references="/0/getUtilsSuffix/@body.0/self">
+    <eAnnotations source="positions.55" references="/0/getServletsSuffix/@body.0/self">
       <details key="start" value="-1"/>
       <details key="end" value="-1"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.56" references="/0/getUtilsSuffix/@body.0/@argument.0">
-      <details key="start" value="1326"/>
-      <details key="end" value="1339"/>
+    <eAnnotations source="positions.56" references="/0/getServletsSuffix/@body.0/@argument.0">
+      <details key="start" value="1328"/>
+      <details key="end" value="1344"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.57" references="/0/getUtilsSuffix/anOclAny">
-      <details key="start" value="1293"/>
-      <details key="end" value="1310"/>
-      <details key="line" value="57"/>
+    <eAnnotations source="positions.57" references="/0/getServletsSuffix/anOclAny">
+      <details key="start" value="1295"/>
+      <details key="end" value="1312"/>
+      <details key="line" value="56"/>
     </eAnnotations>
-    <eAnnotations source="positions.58" references="/0/getServletsSuffix">
-      <details key="start" value="1356"/>
-      <details key="end" value="1455"/>
+    <eAnnotations source="positions.58" references="/0/getGenericDao">
+      <details key="start" value="1362"/>
+      <details key="end" value="1453"/>
       <details key="line" value="61"/>
     </eAnnotations>
-    <eAnnotations source="positions.59" references="/0/getServletsSuffix/@body.0">
-      <details key="start" value="1412"/>
-      <details key="end" value="1441"/>
+    <eAnnotations source="positions.59" references="/0/getGenericDao/@body.0">
+      <details key="start" value="1414"/>
+      <details key="end" value="1439"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.60" references="/0/getServletsSuffix/@body.0/self">
+    <eAnnotations source="positions.60" references="/0/getGenericDao/@body.0/self">
       <details key="start" value="-1"/>
       <details key="end" value="-1"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.61" references="/0/getServletsSuffix/@body.0/@argument.0">
-      <details key="start" value="1424"/>
-      <details key="end" value="1440"/>
+    <eAnnotations source="positions.61" references="/0/getGenericDao/@body.0/@argument.0">
+      <details key="start" value="1426"/>
+      <details key="end" value="1438"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.62" references="/0/getServletsSuffix/anOclAny">
-      <details key="start" value="1391"/>
-      <details key="end" value="1408"/>
+    <eAnnotations source="positions.62" references="/0/getGenericDao/anOclAny">
+      <details key="start" value="1393"/>
+      <details key="end" value="1410"/>
       <details key="line" value="61"/>
     </eAnnotations>
-    <eAnnotations source="positions.63" references="/0/getGenericDao">
-      <details key="start" value="1458"/>
-      <details key="end" value="1549"/>
-      <details key="line" value="66"/>
+    <eAnnotations source="positions.63" references="/0/getBaseBean">
+      <details key="start" value="1455"/>
+      <details key="end" value="1542"/>
+      <details key="line" value="65"/>
     </eAnnotations>
-    <eAnnotations source="positions.64" references="/0/getGenericDao/@body.0">
-      <details key="start" value="1510"/>
-      <details key="end" value="1535"/>
+    <eAnnotations source="positions.64" references="/0/getBaseBean/@body.0">
+      <details key="start" value="1505"/>
+      <details key="end" value="1528"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.65" references="/0/getGenericDao/@body.0/self">
+    <eAnnotations source="positions.65" references="/0/getBaseBean/@body.0/self">
       <details key="start" value="-1"/>
       <details key="end" value="-1"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.66" references="/0/getGenericDao/@body.0/@argument.0">
-      <details key="start" value="1522"/>
-      <details key="end" value="1534"/>
+    <eAnnotations source="positions.66" references="/0/getBaseBean/@body.0/@argument.0">
+      <details key="start" value="1517"/>
+      <details key="end" value="1527"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.67" references="/0/getGenericDao/anOclAny">
-      <details key="start" value="1489"/>
-      <details key="end" value="1506"/>
-      <details key="line" value="66"/>
+    <eAnnotations source="positions.67" references="/0/getBaseBean/anOclAny">
+      <details key="start" value="1484"/>
+      <details key="end" value="1501"/>
+      <details key="line" value="65"/>
     </eAnnotations>
-    <eAnnotations source="positions.68" references="/0/getBaseBean">
-      <details key="start" value="1551"/>
-      <details key="end" value="1638"/>
-      <details key="line" value="70"/>
+    <eAnnotations source="positions.68" references="/0/getFactoryDao">
+      <details key="start" value="1544"/>
+      <details key="end" value="1635"/>
+      <details key="line" value="69"/>
     </eAnnotations>
-    <eAnnotations source="positions.69" references="/0/getBaseBean/@body.0">
-      <details key="start" value="1601"/>
-      <details key="end" value="1624"/>
+    <eAnnotations source="positions.69" references="/0/getFactoryDao/@body.0">
+      <details key="start" value="1596"/>
+      <details key="end" value="1621"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.70" references="/0/getBaseBean/@body.0/self">
+    <eAnnotations source="positions.70" references="/0/getFactoryDao/@body.0/self">
       <details key="start" value="-1"/>
       <details key="end" value="-1"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.71" references="/0/getBaseBean/@body.0/@argument.0">
-      <details key="start" value="1613"/>
-      <details key="end" value="1623"/>
+    <eAnnotations source="positions.71" references="/0/getFactoryDao/@body.0/@argument.0">
+      <details key="start" value="1608"/>
+      <details key="end" value="1620"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.72" references="/0/getBaseBean/anOclAny">
-      <details key="start" value="1580"/>
-      <details key="end" value="1597"/>
-      <details key="line" value="70"/>
+    <eAnnotations source="positions.72" references="/0/getFactoryDao/anOclAny">
+      <details key="start" value="1575"/>
+      <details key="end" value="1592"/>
+      <details key="line" value="69"/>
     </eAnnotations>
-    <eAnnotations source="positions.73" references="/0/getFactoryDao">
-      <details key="start" value="1640"/>
-      <details key="end" value="1731"/>
-      <details key="line" value="74"/>
+    <eAnnotations source="positions.73" references="/0/getPersistenceUnit">
+      <details key="start" value="1637"/>
+      <details key="end" value="1738"/>
+      <details key="line" value="73"/>
     </eAnnotations>
-    <eAnnotations source="positions.74" references="/0/getFactoryDao/@body.0">
-      <details key="start" value="1692"/>
-      <details key="end" value="1717"/>
+    <eAnnotations source="positions.74" references="/0/getPersistenceUnit/@body.0">
+      <details key="start" value="1694"/>
+      <details key="end" value="1724"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.75" references="/0/getFactoryDao/@body.0/self">
+    <eAnnotations source="positions.75" references="/0/getPersistenceUnit/@body.0/self">
       <details key="start" value="-1"/>
       <details key="end" value="-1"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.76" references="/0/getFactoryDao/@body.0/@argument.0">
-      <details key="start" value="1704"/>
-      <details key="end" value="1716"/>
+    <eAnnotations source="positions.76" references="/0/getPersistenceUnit/@body.0/@argument.0">
+      <details key="start" value="1706"/>
+      <details key="end" value="1723"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.77" references="/0/getFactoryDao/anOclAny">
-      <details key="start" value="1671"/>
-      <details key="end" value="1688"/>
-      <details key="line" value="74"/>
-    </eAnnotations>
-    <eAnnotations source="positions.78" references="/0/getPersistenceUnit">
-      <details key="start" value="1733"/>
-      <details key="end" value="1834"/>
-      <details key="line" value="78"/>
-    </eAnnotations>
-    <eAnnotations source="positions.79" references="/0/getPersistenceUnit/@body.0">
-      <details key="start" value="1790"/>
-      <details key="end" value="1820"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.80" references="/0/getPersistenceUnit/@body.0/self">
-      <details key="start" value="-1"/>
-      <details key="end" value="-1"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.81" references="/0/getPersistenceUnit/@body.0/@argument.0">
-      <details key="start" value="1802"/>
-      <details key="end" value="1819"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.82" references="/0/getPersistenceUnit/anOclAny">
-      <details key="start" value="1769"/>
-      <details key="end" value="1786"/>
-      <details key="line" value="78"/>
+    <eAnnotations source="positions.77" references="/0/getPersistenceUnit/anOclAny">
+      <details key="start" value="1673"/>
+      <details key="end" value="1690"/>
+      <details key="line" value="73"/>
     </eAnnotations>
   </ecore:EAnnotation>
 </xmi:XMI>

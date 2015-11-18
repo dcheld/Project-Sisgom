@@ -13,7 +13,7 @@
 
 [template public genClassJavaGenericDao(aPack : Package){packName : String = aPack.getGenericDao(); }]
 [file (aPack.genFilePathUtils(packName), false, 'UTF-8')]
-package [aPack.name + aPack.getUtilsSuffix()/];
+package [aPack.name +'.' + aPack.getUtilsNamespace()/];
 
 import java.lang.reflect.ParameterizedType;
 import java.util.List;
@@ -23,7 +23,7 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Query;
 
 @SuppressWarnings("unchecked")
-public abstract class GenericDao<T, PK> {
+public abstract class [aPack.getGenericDao()/]<T, PK> {
 
 	private final EntityManager entityManager;
 
@@ -132,9 +132,13 @@ public abstract class GenericDao<T, PK> {
 [/file]
 [/template]
 
+[template public genGenericDaoNamespace(aType : Type) post (trim())]
+[aType.packagePath() +'.' + aType.getUtilsNamespace() + '.' + aType.getGenericDao()/]
+[/template]
+
 [template public genClassBeanBase(aPack : Package){packName : String = aPack.getBaseBean(); }]]
 [file (aPack.genFilePathUtils(packName), false, 'UTF-8')]
-package [aPack.name + aPack.getUtilsSuffix()/];
+package [aPack.name + '.' + aPack.getUtilsNamespace()/];
 
 import java.io.Serializable;
 
@@ -142,7 +146,7 @@ import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 
-public abstract class BaseBean implements Serializable {
+public abstract class [aPack.getBaseBean()/] implements Serializable {
 
 	private static final long serialVersionUID = -5377726703339445533L;
 
@@ -160,9 +164,11 @@ public abstract class BaseBean implements Serializable {
 [/file]
 [/template]
 
+
+
 [template public genClassDaoFactory(aPack : Package){packName : String = aPack.getFactoryDao(); }]
 [file (aPack.genFilePathUtils(packName), false, 'UTF-8')]
-package [aPack.name + aPack.getUtilsSuffix()/];
+package [aPack.name +'.' + aPack.getUtilsNamespace()/];
 
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
@@ -171,7 +177,7 @@ import javax.persistence.Persistence;
 import [aClass.genPackageValue() + '.' + aClass.getDaoNamespace()+'.'+ aClass.name.toUpperFirst() + aClass.getDaoSuffix()/];
 [/for]
 
-public final class DaoFactory {
+public final class [aPack.getFactoryDao()/] {
 
 	private DaoFactory() {
 	}

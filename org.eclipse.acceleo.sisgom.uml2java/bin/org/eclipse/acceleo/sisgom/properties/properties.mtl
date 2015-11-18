@@ -53,11 +53,6 @@
 [template public getDaoSuffix(anOclAny : OclAny)]
 [getProperty('DaoSuffix')/]
 [/template]
-
-[template public getUtilsSuffix(anOclAny : OclAny)]
-[getProperty('UtilsSuffix')/]
-[/template]
-
 [template public getServletsSuffix(anOclAny : OclAny)]
 [getProperty('ServletsSuffix')/]
 [/template]

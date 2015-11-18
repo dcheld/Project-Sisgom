@@ -15,6 +15,7 @@
 	[if (not(aClass.isAbstract))]
 		[aClass.genClassJavaDao() /]
 		[aClass.genClassJavaServletDelete() /]
+		[aClass.genClassJavaServletEdit() /]
 	[/if]
 [/template]
 
@@ -36,8 +37,8 @@
 	[comment @main /]	
 	[if(aModel.hasStereotypeQuery('MainPackage'))]
 		[aModel.generatePomXml()/]
-		[aModel.genClassJavaGenericDao()/]
-		[aModel.genClassBeanBase()/]
 		[aModel.genClassDaoFactory()/]
+		[aModel.genClassBeanBase()/]
+		[aModel.genClassJavaGenericDao()/]
 	[/if]
 [/template]

@@ -13,7 +13,7 @@
  */]
 
 [template public genClassJavaServletDelete(aClass : Class){tipo:String = 'Deletar';}]
-[file (aClass.genFilePathServlets(tipo), false, 'UTF-8')]
+[file (aClass.genFilePathServlets(tipo), false, 'ISO-8859-1')]
 package [aClass.genPackageValue() + '.' + aClass.getServletsNamespace()/];
 
 import java.io.IOException;
@@ -26,7 +26,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import [aClass.genPackageEntity() + '.' + aClass.name.toUpperFirst() + aClass.getEntitySuffix()/];
 import [aClass.genPackageDao() + '.' + aClass.name.toUpperFirst() + aClass.getDaoSuffix()/];
-import [aClass.genPackageValue() + aClass.getUtilsSuffix()/].DaoFactory;
+import [aClass.genPackageValue() + '.' + aClass.getUtilsNamespace() + '.' + aClass.getFactoryDao()/];
 
 @WebServlet(urlPatterns = "/[aClass.name.toLowerFirst()/]/[tipo/]")
 public class [aClass.name.toUpperFirst() + tipo + aClass.getServletsSuffix() /] extends HttpServlet {
@@ -54,6 +54,87 @@ public class [aClass.name.toUpperFirst() + tipo + aClass.getServletsSuffix() /] 
 		} catch (Exception ex) {
 			resp.sendRedirect("/[aClass.name.toLowerFirst()/]/list.jsp?error=" + ex.getMessage());
 		}
+	}
+}
+[/file]
+[/template]
+[template public genClassJavaServletEdit(aClass : Class){tipo:String = 'Editar';}]
+[file (aClass.genFilePathServlets(tipo), false, 'UTF-8')]
+package [aClass.genPackageValue() + '.' + aClass.getServletsNamespace()/];
+
+import java.io.IOException;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import [aClass.genPackageEntity() + '.' + aClass.name.toUpperFirst() + aClass.getEntitySuffix()/];
+import [aClass.genPackageDao() + '.' + aClass.name.toUpperFirst() + aClass.getDaoSuffix()/];
+import [aClass.genPackageValue() + '.' + aClass.getUtilsNamespace() + '.' + aClass.getFactoryDao()/];
+
+@WebServlet(urlPatterns = "/[aClass.name.toLowerFirst()/]/[tipo/]")
+public class [aClass.name.toUpperFirst() + tipo + aClass.getServletsSuffix() /] extends HttpServlet {
+
+	private static final long serialVersionUID = 1L;
+	private static final Logger LOGGER = Logger.getLogger([aClass.name.toUpperFirst() + tipo + aClass.getServletsSuffix() /].class);
+	private [aClass.name.toUpperFirst() + aClass.getDaoSuffix()/] [aClass.name.toLowerFirst() + aClass.getDaoSuffix()/] = DaoFactory.[aClass.name.toLowerFirst()/]Instance();
+
+	@Override
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		String id = req.getParameter("id");
+
+		if ((id == null) || id.trim().isEmpty()) {
+			resp.sendRedirect("/[aClass.name.toLowerFirst()/]/addEdit.jsp");
+			return;
+		}
+
+		try {
+			[aClass.name.toUpperFirst() + aClass.getEntitySuffix()/] entity = this.[aClass.name.toLowerFirst() + aClass.getDaoSuffix()/].findById(Integer.parseInt(id));
+
+			if (entity != null) {
+				HttpSession session = req.getSession();
+
+				[protected ('adicionar parametros na sessão')]
+			
+				[/protected];
+
+				resp.sendRedirect("/[aClass.name.toLowerFirst()/]/addEdit.jsp");
+			} else {
+				resp.sendRedirect(String.format("/[aClass.name.toLowerFirst()/]/list.jsp?error=[aClass.name.toUpperFirst()/] ['[%s]'/] não foi encontrado.", id));
+			}
+		} catch (Exception ex) {
+			LOGGER.error(ex.getMessage(), ex);
+			resp.sendRedirect("/Clientes/list.jsp?error=" + ex.getMessage());
+		}
+	}
+
+	@Override
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		try {
+			[aClass.name.toUpperFirst() + aClass.getEntitySuffix()/] entity = this.parseToCliente(req);
+
+			if (entity.getId() != 0) {
+				this.ClienteDao.update(entity);
+			} else {
+				this.ClienteDao.save(entity);
+			}
+
+			resp.sendRedirect("/Clientes/list.jsp");
+		} catch (Exception ex) {
+			LOGGER.error(ex.getMessage(), ex);
+			resp.sendRedirect(String.format("/Clientes/list.jsp?error=%s", ex.getMessage()));
+		}
+	}
+
+	private [aClass.name.toUpperFirst() + aClass.getEntitySuffix()/] parseToCliente(HttpServletRequest req) {
+
+		[aClass.name.toUpperFirst() + aClass.getEntitySuffix()/] entity = new [aClass.name.toUpperFirst() + aClass.getEntitySuffix()/]();
+		[protected ('obter parametros')]
+			
+		[/protected]
+		return entity;
 	}
 }
 [/file]
