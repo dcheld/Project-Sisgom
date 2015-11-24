@@ -9,31 +9,22 @@ import org.br.sisgom.utils.GenericDao.BaseBean;
 @Entity
 public  class EnderecoEntity extends BaseBean
  {
-	private int id;
-	
 	private String estado;
-	
-	private String cEP;
 	
 	private String rua;
 	
-	private String bairro;
+	private int numero;
+	
+	private int id;
 	
 	private String cidade;
 	
-	private int numero;
+	private String cEP;
+	
+	private String bairro;
 	
 	public EnderecoEntity() {
 		super();
-	}
-	
-	
-	public int getId() {
-		return this.id;
-	}
-	
-	public void setId(int id) {
-		this.id = id;
 	}
 	
 	
@@ -46,15 +37,6 @@ public  class EnderecoEntity extends BaseBean
 	}
 	
 	
-	public String getCEP() {
-		return this.cEP;
-	}
-	
-	public void setCEP(String cEP) {
-		this.cEP = cEP;
-	}
-	
-	
 	public String getRua() {
 		return this.rua;
 	}
@@ -64,12 +46,21 @@ public  class EnderecoEntity extends BaseBean
 	}
 	
 	
-	public String getBairro() {
-		return this.bairro;
+	public int getNumero() {
+		return this.numero;
 	}
 	
-	public void setBairro(String bairro) {
-		this.bairro = bairro;
+	public void setNumero(int numero) {
+		this.numero = numero;
+	}
+	
+	
+	public int getId() {
+		return this.id;
+	}
+	
+	public void setId(int id) {
+		this.id = id;
 	}
 	
 	
@@ -82,12 +73,21 @@ public  class EnderecoEntity extends BaseBean
 	}
 	
 	
-	public int getNumero() {
-		return this.numero;
+	public String getCEP() {
+		return this.cEP;
 	}
 	
-	public void setNumero(int numero) {
-		this.numero = numero;
+	public void setCEP(String cEP) {
+		this.cEP = cEP;
+	}
+	
+	
+	public String getBairro() {
+		return this.bairro;
+	}
+	
+	public void setBairro(String bairro) {
+		this.bairro = bairro;
 	}
 	
 }

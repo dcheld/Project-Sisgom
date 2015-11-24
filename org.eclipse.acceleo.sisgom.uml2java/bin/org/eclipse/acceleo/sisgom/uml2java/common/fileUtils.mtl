@@ -23,6 +23,11 @@
 [ aType.getSourceFolderClass() + '/' + aType.packagePath() + '/' + aType.getUtilsNamespace() + '/' + nome/].java
 [/template]
 
+[template public genFilePathTest(aType : Type, nome : String)]
+[ aType.getSourceFolderTest() + '/' + aType.packagePath() + '/' + aType.getUtilsNamespace() + '/' + nome/].java
+[/template]
+
+
 
 [template public packagePath(aType : Type)] 
 [aType.ancestors(Package)->reject(aPackage: Package | aPackage.oclIsTypeOf(Model))->reverse().name.substituteAll('.', '/').concat('/')->sep('/')/]
@@ -89,6 +94,11 @@ import [aType.genPackageValue()+ '.' + aType.name  /];
 import [aClass.getJavaxPersistence() /];
 [/if]
 [/template]
+
+[template public genGenericFactory(arg : Type) post(trim())]
+	[arg.name + arg.getDaoSuffix()/]
+[/template]
+
 
 [query public getPackageBase(model : OclAny) : Package = 
 	self.ancestors(Package)->select(f: Package | f.hasStereotypeQuery('MainPackage'))->first() /]

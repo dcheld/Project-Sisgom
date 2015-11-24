@@ -8,21 +8,12 @@ import java.util.List;
 
 public  class ClienteEntity extends PessoaBase
  {
-	private List<VeiculoEntity> veiculo;
-	
 	private int codigoCliente;
+	
+	private List<VeiculoEntity> veiculo;
 	
 	public ClienteEntity() {
 		super();
-	}
-	
-	
-	public List<VeiculoEntity> getVeiculo() {
-		return this.veiculo;
-	}
-	
-	public void setVeiculo(List<VeiculoEntity> veiculo) {
-		this.veiculo = veiculo;
 	}
 	
 	
@@ -32,6 +23,15 @@ public  class ClienteEntity extends PessoaBase
 	
 	public void setCodigoCliente(int codigoCliente) {
 		this.codigoCliente = codigoCliente;
+	}
+	
+	
+	public List<VeiculoEntity> getVeiculo() {
+		return this.veiculo;
+	}
+	
+	public void setVeiculo(List<VeiculoEntity> veiculo) {
+		this.veiculo = veiculo;
 	}
 	
 }

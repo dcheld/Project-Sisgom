@@ -3,15 +3,15 @@ package org.br.sisgom.utils;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
-import org.br.sisgom.daos.ServicoDao;
+import org.br.sisgom.daos.VeiculoDao;
 import org.br.sisgom.daos.FuncionarioDao;
+import org.br.sisgom.daos.FornecedorDao;
+import org.br.sisgom.daos.MercadoriaDao;
 import org.br.sisgom.daos.ClienteDao;
 import org.br.sisgom.daos.EnderecoDao;
-import org.br.sisgom.daos.VeiculoDao;
-import org.br.sisgom.daos.MercadoriaDao;
-import org.br.sisgom.daos.FornecedorDao;
-import org.br.sisgom.daos.OrdemDeServicoDao;
 import org.br.sisgom.daos.ContatoDao;
+import org.br.sisgom.daos.OrdemDeServicoDao;
+import org.br.sisgom.daos.ServicoDao;
 
 public final class FactoryDao {
 
@@ -31,14 +31,14 @@ public final class FactoryDao {
 		return entityManagerFactoryInstance;
 	}
 
-	private static ServicoDao servicoDaoInstance;
+	private static VeiculoDao veiculoDaoInstance;
 
-	public static ServicoDao servicoInstance() {
+	public static VeiculoDao veiculoInstance() {
 		if (servicoDaoInstance == null) {
-			servicoDao = new ServicoDao();
+			veiculoDao = new VeiculoDao();
 		}
 
-		return servicoDao;
+		return veiculoDao;
 	}
 	private static FuncionarioDao funcionarioDaoInstance;
 
@@ -48,6 +48,24 @@ public final class FactoryDao {
 		}
 
 		return funcionarioDao;
+	}
+	private static FornecedorDao fornecedorDaoInstance;
+
+	public static FornecedorDao fornecedorInstance() {
+		if (servicoDaoInstance == null) {
+			fornecedorDao = new FornecedorDao();
+		}
+
+		return fornecedorDao;
+	}
+	private static MercadoriaDao mercadoriaDaoInstance;
+
+	public static MercadoriaDao mercadoriaInstance() {
+		if (servicoDaoInstance == null) {
+			mercadoriaDao = new MercadoriaDao();
+		}
+
+		return mercadoriaDao;
 	}
 	private static ClienteDao clienteDaoInstance;
 
@@ -67,32 +85,14 @@ public final class FactoryDao {
 
 		return enderecoDao;
 	}
-	private static VeiculoDao veiculoDaoInstance;
+	private static ContatoDao contatoDaoInstance;
 
-	public static VeiculoDao veiculoInstance() {
+	public static ContatoDao contatoInstance() {
 		if (servicoDaoInstance == null) {
-			veiculoDao = new VeiculoDao();
+			contatoDao = new ContatoDao();
 		}
 
-		return veiculoDao;
-	}
-	private static MercadoriaDao mercadoriaDaoInstance;
-
-	public static MercadoriaDao mercadoriaInstance() {
-		if (servicoDaoInstance == null) {
-			mercadoriaDao = new MercadoriaDao();
-		}
-
-		return mercadoriaDao;
-	}
-	private static FornecedorDao fornecedorDaoInstance;
-
-	public static FornecedorDao fornecedorInstance() {
-		if (servicoDaoInstance == null) {
-			fornecedorDao = new FornecedorDao();
-		}
-
-		return fornecedorDao;
+		return contatoDao;
 	}
 	private static OrdemDeServicoDao ordemDeServicoDaoInstance;
 
@@ -103,14 +103,14 @@ public final class FactoryDao {
 
 		return ordemDeServicoDao;
 	}
-	private static ContatoDao contatoDaoInstance;
+	private static ServicoDao servicoDaoInstance;
 
-	public static ContatoDao contatoInstance() {
+	public static ServicoDao servicoInstance() {
 		if (servicoDaoInstance == null) {
-			contatoDao = new ContatoDao();
+			servicoDao = new ServicoDao();
 		}
 
-		return contatoDao;
+		return servicoDao;
 	}
 
 }

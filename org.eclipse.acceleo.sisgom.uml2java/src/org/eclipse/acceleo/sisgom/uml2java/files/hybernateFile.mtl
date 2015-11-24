@@ -53,3 +53,7 @@
 [/template]
 
 
+[query public getPropertyId(aClass : Class) : Property = 
+	self.getAllAttributes()->select(p : Property | p.hasStereotypeQuery('Id'))->asOrderedSet()->first() /]
+
+

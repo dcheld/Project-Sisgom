@@ -11,13 +11,13 @@ public  class VeiculoEntity extends BaseBean
  {
 	private String chassis;
 	
-	private int id;
-	
-	private String cor;
-	
 	private String modelo;
 	
+	private int id;
+	
 	private int ano;
+	
+	private String cor;
 	
 	public VeiculoEntity() {
 		super();
@@ -33,24 +33,6 @@ public  class VeiculoEntity extends BaseBean
 	}
 	
 	
-	public int getId() {
-		return this.id;
-	}
-	
-	public void setId(int id) {
-		this.id = id;
-	}
-	
-	
-	public String getCor() {
-		return this.cor;
-	}
-	
-	public void setCor(String cor) {
-		this.cor = cor;
-	}
-	
-	
 	public String getModelo() {
 		return this.modelo;
 	}
@@ -60,12 +42,30 @@ public  class VeiculoEntity extends BaseBean
 	}
 	
 	
+	public int getId() {
+		return this.id;
+	}
+	
+	public void setId(int id) {
+		this.id = id;
+	}
+	
+	
 	public int getAno() {
 		return this.ano;
 	}
 	
 	public void setAno(int ano) {
 		this.ano = ano;
+	}
+	
+	
+	public String getCor() {
+		return this.cor;
+	}
+	
+	public void setCor(String cor) {
+		this.cor = cor;
 	}
 	
 }

@@ -6,7 +6,7 @@ package org.br.sisgom.entities;
 public  class FornecedorEntity extends PessoaBase
  {
 	private String inscricaoEstadual;
-	
+
 	public FornecedorEntity() {
 		super();
 	}

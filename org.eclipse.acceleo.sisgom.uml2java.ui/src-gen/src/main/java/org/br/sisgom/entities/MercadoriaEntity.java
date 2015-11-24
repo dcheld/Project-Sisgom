@@ -9,34 +9,16 @@ import org.br.sisgom.utils.GenericDao.BaseBean;
 
 public  class MercadoriaEntity extends BaseBean
  {
-	private float valorVenda;
-	
-	private int codigo;
-	
 	private float valorCompra;
 	
 	private String nome;
 	
+	private float valorVenda;
+	
+	private int codigo;
+	
 	public MercadoriaEntity() {
 		super();
-	}
-	
-	
-	public float getValorVenda() {
-		return this.valorVenda;
-	}
-	
-	public void setValorVenda(float valorVenda) {
-		this.valorVenda = valorVenda;
-	}
-	
-	
-	public int getCodigo() {
-		return this.codigo;
-	}
-	
-	public void setCodigo(int codigo) {
-		this.codigo = codigo;
 	}
 	
 	
@@ -55,6 +37,24 @@ public  class MercadoriaEntity extends BaseBean
 	
 	public void setNome(String nome) {
 		this.nome = nome;
+	}
+	
+	
+	public float getValorVenda() {
+		return this.valorVenda;
+	}
+	
+	public void setValorVenda(float valorVenda) {
+		this.valorVenda = valorVenda;
+	}
+	
+	
+	public int getCodigo() {
+		return this.codigo;
+	}
+	
+	public void setCodigo(int codigo) {
+		this.codigo = codigo;
 	}
 	
 }

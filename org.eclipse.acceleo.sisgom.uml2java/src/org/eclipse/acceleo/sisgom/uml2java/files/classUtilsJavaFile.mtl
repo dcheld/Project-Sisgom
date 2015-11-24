@@ -174,7 +174,7 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
 [for (aClass : Class | aPack.getClassOfFactory())]
-import [aClass.genPackageValue() + '.' + aClass.getDaoNamespace()+'.'+ aClass.name.toUpperFirst() + aClass.getDaoSuffix()/];
+import [aClass.genPackageValue() + '.' + aClass.getDaoNamespace()+'.'+ aClass.name + aClass.getDaoSuffix()/];
 [/for]
 
 public final class [aPack.getFactoryDao()/] {
@@ -196,11 +196,11 @@ public final class [aPack.getFactoryDao()/] {
 	}
 
 	[for (aClass : Class | aPack.getClassOfFactory())]
-	private static [aClass.name.toUpperFirst() + aClass.getDaoSuffix()/] [aClass.name.toLowerFirst() + aClass.getDaoSuffix()/]Instance;
+	private static [aClass.name + aClass.getDaoSuffix()/] [aClass.name.toLowerFirst() + aClass.getDaoSuffix()/]Instance;
 
-	public static [aClass.name.toUpperFirst() + aClass.getDaoSuffix()/] [aClass.name.toLowerFirst() /]Instance() {
+	public static [aClass.name + aClass.getDaoSuffix()/] [aClass.name.toLowerFirst() /]Instance() {
 		if (servicoDaoInstance == null) {
-			[aClass.name.toLowerFirst() + aClass.getDaoSuffix()/] = new [aClass.name.toUpperFirst() + aClass.getDaoSuffix()/]();
+			[aClass.name.toLowerFirst() + aClass.getDaoSuffix()/] = new [aClass.name + aClass.getDaoSuffix()/]();
 		}
 
 		return [aClass.name.toLowerFirst() + aClass.getDaoSuffix()/];

@@ -10,29 +10,20 @@ import java.util.List;
 
 public  class OrdemDeServicoEntity extends BaseBean
  {
-	private Date dataEntradaVeiculo;
-	
 	private List<ServicoEntity> servicos;
 	
 	private VeiculoEntity veiculo;
 	
-	private List<MercadoriaEntity> mercadorias;
+	private Date dataFimServico;
 	
 	private int codigo;
 	
-	private Date dataFimServico;
+	private Date dataEntradaVeiculo;
+	
+	private List<MercadoriaEntity> mercadorias;
 	
 	public OrdemDeServicoEntity() {
 		super();
-	}
-	
-	
-	public Date getDataEntradaVeiculo() {
-		return this.dataEntradaVeiculo;
-	}
-	
-	public void setDataEntradaVeiculo(Date dataEntradaVeiculo) {
-		this.dataEntradaVeiculo = dataEntradaVeiculo;
 	}
 	
 	
@@ -54,12 +45,12 @@ public  class OrdemDeServicoEntity extends BaseBean
 	}
 	
 	
-	public List<MercadoriaEntity> getMercadorias() {
-		return this.mercadorias;
+	public Date getDataFimServico() {
+		return this.dataFimServico;
 	}
 	
-	public void setMercadorias(List<MercadoriaEntity> mercadorias) {
-		this.mercadorias = mercadorias;
+	public void setDataFimServico(Date dataFimServico) {
+		this.dataFimServico = dataFimServico;
 	}
 	
 	
@@ -72,12 +63,21 @@ public  class OrdemDeServicoEntity extends BaseBean
 	}
 	
 	
-	public Date getDataFimServico() {
-		return this.dataFimServico;
+	public Date getDataEntradaVeiculo() {
+		return this.dataEntradaVeiculo;
 	}
 	
-	public void setDataFimServico(Date dataFimServico) {
-		this.dataFimServico = dataFimServico;
+	public void setDataEntradaVeiculo(Date dataEntradaVeiculo) {
+		this.dataEntradaVeiculo = dataEntradaVeiculo;
+	}
+	
+	
+	public List<MercadoriaEntity> getMercadorias() {
+		return this.mercadorias;
+	}
+	
+	public void setMercadorias(List<MercadoriaEntity> mercadorias) {
+		this.mercadorias = mercadorias;
 	}
 	
 }

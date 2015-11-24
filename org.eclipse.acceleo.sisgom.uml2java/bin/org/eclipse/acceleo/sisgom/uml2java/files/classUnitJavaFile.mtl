@@ -1,0 +1,80 @@
+[comment encoding = UTF-8 /]
+[**
+ * The documentation of the module classJavaFile.
+ */]
+[module classUnitJavaFile('http://www.eclipse.org/uml2/4.0.0/UML')]
+[import org::eclipse::acceleo::sisgom::uml2java::common::fileUtils /]
+[import org::eclipse::acceleo::sisgom::properties::properties /]
+[import org::eclipse::acceleo::sisgom::uml2java::files::hybernateFile /]
+
+[**
+ * The documentation of the template genClassJavaFile.
+ * @param aClass
+ */]
+
+[template public genClassJavaUnitTest(aClass : Class)]
+[file (aClass.genFilePathTest('/test/' + aClass.getDaoNamespace()), false, 'UTF-8')]
+package [aClass.genPackageValue() + '.' + '.test.' + '.' + aClass.name .getDaoNamespace()/];
+
+import 
+import org.junit.Test;
+
+public class [aClass.name/]RepositoryTest {
+
+	private static final Log gger
+			.getLogger(FornecedorRepositoryTest.class);
+
+	private [aClass.name + aClass.getDaoSuffix()/] [aClass.name.toLowerFirst() + aClass.getDaoSuffix()/] = [aClass.getFactoryDao()/].[aClass.name.toLowerFirst()/]Instance();
+
+	@Test
+	public void testFindAll() {
+		[protected ('Encontrar todos')]
+		List<[aClass.name + aClass.getEntitySuffix()/]> [aClass.name.toLowerFirst()/] = this.[aClass.name.toLowerFirst() + aClass.getDaoSuffix()/].findAll();
+
+		LOGGER.info([aClass.name.toLowerFirst()/]);
+		[/protected]
+	}
+
+	@Test
+	public void testFindById() {
+		[protected ('Encontrar por Id')]
+		Integer id = this.save().get();
+
+		[aClass.name.toUpperFirst().getEntitySuffix()/] [aClass.name.toLowerFirst()/] = this.[aClass.name.toLowerFirst() + aClass.getDaoSuffix() /].findById(id);
+
+		LOGGER.info([aClass.name.toLowerFirst()/]);
+		[/protected]
+	}
+
+	@Test
+	public void testInsert() {
+		this.save();
+	}
+
+	@Test
+	public void testDelete() {
+		[protected ('Deletar')]
+		[aClass.name.toUpperFirst() + aClass.getEntitySuffix()/] [aClass.name.toLowerFirst()/] = this.save();
+
+		this.[aClass.name.toLowerFirst() + aClass.getDaoSuffix()/].delete([aClass.name.toLowerFirst() /]); 
+
+		LOGGER.info("[aClass.name.toUpperFirst()/] deletado(a):" + [aClass.name.toLowerFirst()/]);
+		[/protected]
+	}
+
+	private [aClass.name.toUpperFirst() + aClass.getEntitySuffix()/] save() {
+		[protected ('Salvar')]
+		[aClass.name.toUpperFirst() + aClass.getEntitySuffix()/] [aClass.name.toLowerFirst()/] = new [aClass.name.toUpperFirst() + aClass.getEntitySuffix()/]();
+
+		this.servicoDao.save([aClass.name.toLowerFirst()/]);
+
+		LOGGER.info("[aClass.name /] saved " + [aClass.name.toLowerFirst()/]);
+
+		return servico;
+		[/protected]
+	}
+}
+[/file]
+[/template]
+
+[query public getPropertyId(arg : Type) : OclAny = self /]

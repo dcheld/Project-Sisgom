@@ -17,11 +17,11 @@ package [anEnumeration.genPackageValue()/];
 [anEnumeration.genDefaultImport()/]
 
 /**
- * The documentation of the enumeration [anEnumeration.name.toUpperFirst()/].
+ * The documentation of the enumeration [anEnumeration.name/].
  * 
  * @generated
  */
-public enum [anEnumeration.name.toUpperFirst()/] {
+public enum [anEnumeration.name/] {
 	[for (anEnumerationLiteral : EnumerationLiteral | anEnumeration.ownedLiteral)separator (',')]
 	/**
 	 * The documentation of the enumeration literal [anEnumeration.name.toUpper()/].

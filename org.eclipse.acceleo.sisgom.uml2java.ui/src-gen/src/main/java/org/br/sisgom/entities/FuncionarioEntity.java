@@ -6,7 +6,7 @@ package org.br.sisgom.entities;
 public  class FuncionarioEntity extends PessoaBase
  {
 	private int codigoFuncionario;
-	
+
 	public FuncionarioEntity() {
 		super();
 	}
