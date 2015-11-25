@@ -10,27 +10,18 @@ import java.util.List;
 
 public abstract class PessoaBaseEntity extends BaseBean
  {
-	private String cPFouCNPJ;
-	
 	private int id;
-	
-	private String nome;
 	
 	private List<ContatoEntity> contato;
 	
+	private String cPFouCNPJ;
+	
 	private List<EnderecoEntity> endereco;
+	
+	private String nome;
 	
 	public PessoaBaseEntity() {
 		super();
-	}
-	
-	
-	public String getCPFouCNPJ() {
-		return this.cPFouCNPJ;
-	}
-	
-	public void setCPFouCNPJ(String cPFouCNPJ) {
-		this.cPFouCNPJ = cPFouCNPJ;
 	}
 	
 	
@@ -43,15 +34,6 @@ public abstract class PessoaBaseEntity extends BaseBean
 	}
 	
 	
-	public String getNome() {
-		return this.nome;
-	}
-	
-	public void setNome(String nome) {
-		this.nome = nome;
-	}
-	
-	
 	public List<ContatoEntity> getContato() {
 		return this.contato;
 	}
@@ -61,12 +43,30 @@ public abstract class PessoaBaseEntity extends BaseBean
 	}
 	
 	
+	public String getCPFouCNPJ() {
+		return this.cPFouCNPJ;
+	}
+	
+	public void setCPFouCNPJ(String cPFouCNPJ) {
+		this.cPFouCNPJ = cPFouCNPJ;
+	}
+	
+	
 	public List<EnderecoEntity> getEndereco() {
 		return this.endereco;
 	}
 	
 	public void setEndereco(List<EnderecoEntity> endereco) {
 		this.endereco = endereco;
+	}
+	
+	
+	public String getNome() {
+		return this.nome;
+	}
+	
+	public void setNome(String nome) {
+		this.nome = nome;
 	}
 	
 }

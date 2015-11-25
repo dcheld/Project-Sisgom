@@ -72,14 +72,14 @@
             <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Package"/>
           </argument>
         </body>
-        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&quot; transaction-type=&quot;RESOURCE_LOCAL&quot;>&#xA;&#x9;&#x9;&lt;properties>&#xA;"/>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&quot; transaction-type=&quot;RESOURCE_LOCAL&quot;>&#xA;&#x9;&#x9;&lt;properties>&#xA;&#x9;&#x9;&#x9;&lt;!--"/>
         <body xsi:type="mtl:ProtectedAreaBlock">
-          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;&#x9;&#x9;&#x9;&lt;property name=&quot;hibernate.dialect&quot; value=&quot;org.hibernate.dialect.MySQL5InnoDBDialect&quot; />&#xA;&#x9;&#x9;&#x9;&lt;property name=&quot;javax.persistence.jdbc.driver&quot; value=&quot;com.mysql.jdbc.Driver&quot; />&#xA;&#x9;&#x9;&#x9;&lt;property name=&quot;javax.persistence.jdbc.url&quot; value=&quot;jdbc:mysql://localhost:3306/sisgom&quot; />&#xA;&#x9;&#x9;&#x9;&lt;property name=&quot;javax.persistence.jdbc.user&quot; value=&quot;sisgom_user&quot; />&#xA;&#x9;&#x9;&#x9;&lt;property name=&quot;javax.persistence.jdbc.password&quot; value=&quot;123456&quot; />&#xA;"/>
-          <marker xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="teste">
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;&#x9;&#x9;&#x9;-->&#xA;&#x9;&#x9;&#x9;&lt;property name=&quot;hibernate.dialect&quot; value=&quot;org.hibernate.dialect.MySQL5InnoDBDialect&quot; />&#xA;&#x9;&#x9;&#x9;&lt;property name=&quot;javax.persistence.jdbc.driver&quot; value=&quot;com.mysql.jdbc.Driver&quot; />&#xA;&#x9;&#x9;&#x9;&lt;property name=&quot;javax.persistence.jdbc.url&quot; value=&quot;jdbc:mysql://localhost:3306/sisgom&quot; />&#xA;&#x9;&#x9;&#x9;&lt;property name=&quot;javax.persistence.jdbc.user&quot; value=&quot;sisgom_user&quot; />&#xA;&#x9;&#x9;&#x9;&lt;property name=&quot;javax.persistence.jdbc.password&quot; value=&quot;123456&quot; />&#xA;&#x9;&#x9;&#x9;&#xA;&#x9;&#x9;&#x9;&lt;property name=&quot;hibernate.show_sql&quot; value=&quot;true&quot; />&#xA;&#x9;&#x9;&#x9;&lt;property name=&quot;hibernate.format_sql&quot; value=&quot;false&quot; />&#xA;&#x9;&#x9;&#x9;&lt;property name=&quot;hibernate.hbm2ddl.auto&quot; value=&quot;none&quot; />&#xA;&#x9;&#x9;&#x9;&lt;!--"/>
+          <marker xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="configuracao">
             <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
           </marker>
         </body>
-        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;&#x9;&#x9;&#x9;&lt;property name=&quot;hibernate.show_sql&quot; value=&quot;true&quot; />&#xA;&#x9;&#x9;&#x9;&lt;property name=&quot;hibernate.format_sql&quot; value=&quot;false&quot; />&#xA;&#x9;&#x9;&#x9;&lt;property name=&quot;hibernate.hbm2ddl.auto&quot; value=&quot;none&quot; />&#xA;&#x9;&#x9;&lt;/properties>&#xA;&#x9;&lt;/persistence-unit>&#xA;&lt;/persistence>&#xA;&#xA;"/>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="-->&#xA;&#x9;&#x9;&lt;/properties>&#xA;&#x9;&lt;/persistence-unit>&#xA;&lt;/persistence>&#xA;&#xA;"/>
         <fileUrl xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/String_Class/+">
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
           <source xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/String_Class/+">
@@ -376,12 +376,12 @@
     </eAnnotations>
     <eAnnotations source="positions.22" references="/0/genConfigPersistence">
       <details key="start" value="1696"/>
-      <details key="end" value="2932"/>
+      <details key="end" value="2961"/>
       <details key="line" value="57"/>
     </eAnnotations>
     <eAnnotations source="positions.23" references="/0/genConfigPersistence/@body.0">
       <details key="start" value="1752"/>
-      <details key="end" value="2920"/>
+      <details key="end" value="2949"/>
       <details key="line" value="58"/>
     </eAnnotations>
     <eAnnotations source="positions.24" references="/0/genConfigPersistence/@body.0/@body.0">
@@ -401,28 +401,28 @@
     </eAnnotations>
     <eAnnotations source="positions.27" references="/0/genConfigPersistence/@body.0/@body.2">
       <details key="start" value="2188"/>
-      <details key="end" value="2240"/>
+      <details key="end" value="2247"/>
       <details key="line" value="63"/>
     </eAnnotations>
     <eAnnotations source="positions.28" references="/0/genConfigPersistence/@body.0/@body.3">
-      <details key="start" value="2243"/>
-      <details key="end" value="2687"/>
+      <details key="start" value="2247"/>
+      <details key="end" value="2885"/>
       <details key="line" value="65"/>
     </eAnnotations>
     <eAnnotations source="positions.29" references="/0/genConfigPersistence/@body.0/@body.3/@body.0">
-      <details key="start" value="2263"/>
-      <details key="end" value="2672"/>
+      <details key="start" value="2274"/>
+      <details key="end" value="2873"/>
       <details key="line" value="66"/>
     </eAnnotations>
     <eAnnotations source="positions.30" references="/0/genConfigPersistence/@body.0/@body.3/@marker">
-      <details key="start" value="2254"/>
-      <details key="end" value="2261"/>
+      <details key="start" value="2258"/>
+      <details key="end" value="2272"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.31" references="/0/genConfigPersistence/@body.0/@body.4">
-      <details key="start" value="2687"/>
-      <details key="end" value="2913"/>
-      <details key="line" value="72"/>
+      <details key="start" value="2885"/>
+      <details key="end" value="2942"/>
+      <details key="line" value="76"/>
     </eAnnotations>
     <eAnnotations source="positions.32" references="/0/genConfigPersistence/@body.0/@fileUrl">
       <details key="start" value="1759"/>

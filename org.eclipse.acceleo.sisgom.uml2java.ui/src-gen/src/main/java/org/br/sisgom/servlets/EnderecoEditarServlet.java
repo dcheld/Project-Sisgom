@@ -34,9 +34,9 @@ public class EnderecoEditarServlet extends HttpServlet {
 			if (entity != null) {
 				HttpSession session = req.getSession();
 
-Start of user code adicionar parametros na sessão
+				// Start of user code adicionar parametros na sessao
 			
-End of user code;
+				// End of user code;
 
 				resp.sendRedirect("/endereco/addEdit.jsp");
 			} else {
@@ -68,4 +68,10 @@ End of user code;
 
 	private EnderecoEntity parseToCliente(HttpServletRequest req) {
 
-		EnderecoEntity entity = new 
+		EnderecoEntity entity = new EnderecoEntity();
+		// Start of user code obter parametros
+			
+		// End of user code
+		return entity;
+	}
+}

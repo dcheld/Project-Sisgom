@@ -3,47 +3,65 @@
  * The documentation of the module classJavaFile.
  */]
 [module classUnitJavaFile('http://www.eclipse.org/uml2/4.0.0/UML')]
+
 [import org::eclipse::acceleo::sisgom::uml2java::common::fileUtils /]
 [import org::eclipse::acceleo::sisgom::properties::properties /]
 [import org::eclipse::acceleo::sisgom::uml2java::files::hybernateFile /]
+[import org::eclipse::acceleo::sisgom::uml2java::files::classEntityJavaFile /]
+[import org::eclipse::acceleo::sisgom::uml2java::files::classDaoJavaFile /]
 
 [**
  * The documentation of the template genClassJavaFile.
  * @param aClass
  */]
 
-[template public genClassJavaUnitTest(aClass : Class)]
-[file (aClass.genFilePathTest('/test/' + aClass.getDaoNamespace()), false, 'UTF-8')]
-package [aClass.genPackageValue() + '.' + '.test.' + '.' + aClass.name .getDaoNamespace()/];
+[template public genClassJavaUnitTest(aClass : Class){
+	packageClass : String = aClass.genPackageEntity();}]
+[file (aClass.genFilePathTest(aClass.getTestNamespace() + '/' + aClass.name.toUpperFirst() + aClass.getTestSuffix()), false, 'UTF-8')]
+package [aClass.genPackageValue() + '.' + aClass.getTestNamespace() + '.' + aClass.name .getDaoNamespace()/];
 
-import 
-import org.junit.Test;
+import [aClass.name + aClass.getDaoSuffix()/]
+import java.math.BigInteger;
+import java.security.SecureRandom;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
 
-public class [aClass.name/]RepositoryTest {
+import org.apache.log4j.Logger;
+// [protected ('imports do test')]
+import [packageClass + '.' + aClass.getClassNameEntity()/];
+import [packageClass + '.' + aClass.getDaoClass()/];
+// [/protected]
 
-	private static final Log gger
-			.getLogger(FornecedorRepositoryTest.class);
+public class [aClass.name.toUpperFirst() + aClass.getTestSuffix()/] {
 
+	private static final Logger LOGGER = Logger.getLogger([aClass.name.toUpperFirst() + aClass.getTestSuffix()/].class);
 	private [aClass.name + aClass.getDaoSuffix()/] [aClass.name.toLowerFirst() + aClass.getDaoSuffix()/] = [aClass.getFactoryDao()/].[aClass.name.toLowerFirst()/]Instance();
 
 	@Test
 	public void testFindAll() {
-		[protected ('Encontrar todos')]
+		// [protected ('Encontrar todos')]
 		List<[aClass.name + aClass.getEntitySuffix()/]> [aClass.name.toLowerFirst()/] = this.[aClass.name.toLowerFirst() + aClass.getDaoSuffix()/].findAll();
 
 		LOGGER.info([aClass.name.toLowerFirst()/]);
-		[/protected]
+		// [/protected]
 	}
 
 	@Test
-	public void testFindById() {
-		[protected ('Encontrar por Id')]
-		Integer id = this.save().get();
+	public void testFindById() {		
+		// [protected ('Encontrar por Id')]
+		[aClass.name.toUpperFirst() + aClass.getEntitySuffix()/] [aClass.name.toLowerFirst()/] = this.save();
+		
+ 		[if (aClass.getPropertyId().oclIsUndefined())]
+		Integer id = 0;
+		[else]
+		Integer id = [aClass.name.toLowerFirst()/].get[aClass.getPropertyId().name.toUpperFirst()/]();
+ 		[/if]
 
 		[aClass.name.toUpperFirst().getEntitySuffix()/] [aClass.name.toLowerFirst()/] = this.[aClass.name.toLowerFirst() + aClass.getDaoSuffix() /].findById(id);
 
 		LOGGER.info([aClass.name.toLowerFirst()/]);
-		[/protected]
+		// [/protected]
 	}
 
 	@Test
@@ -53,28 +71,35 @@ public class [aClass.name/]RepositoryTest {
 
 	@Test
 	public void testDelete() {
-		[protected ('Deletar')]
+		// [protected ('Deletar')]
 		[aClass.name.toUpperFirst() + aClass.getEntitySuffix()/] [aClass.name.toLowerFirst()/] = this.save();
 
 		this.[aClass.name.toLowerFirst() + aClass.getDaoSuffix()/].delete([aClass.name.toLowerFirst() /]); 
 
 		LOGGER.info("[aClass.name.toUpperFirst()/] deletado(a):" + [aClass.name.toLowerFirst()/]);
-		[/protected]
+		// [/protected]
 	}
 
 	private [aClass.name.toUpperFirst() + aClass.getEntitySuffix()/] save() {
-		[protected ('Salvar')]
+		// [protected ('Salvar')]
 		[aClass.name.toUpperFirst() + aClass.getEntitySuffix()/] [aClass.name.toLowerFirst()/] = new [aClass.name.toUpperFirst() + aClass.getEntitySuffix()/]();
 
 		this.servicoDao.save([aClass.name.toLowerFirst()/]);
 
 		LOGGER.info("[aClass.name /] saved " + [aClass.name.toLowerFirst()/]);
 
-		return servico;
-		[/protected]
+		return [aClass.name.toLowerFirst()/];
+		// [/protected]
 	}
 }
 [/file]
 [/template]
 
-[query public getPropertyId(arg : Type) : OclAny = self /]
+[query public getPropertyId(aClass : Class) : Property = 
+	let a : Property = aClass.getAllAttributes()->select(aProp : Property | aProp.hasStereotypeQuery('Id'))->asSequence()->first() in
+		if a.oclIsUndefined() then
+			null
+		else
+			a
+		endif/]
+

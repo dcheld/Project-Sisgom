@@ -34,9 +34,9 @@ public class FornecedorEditarServlet extends HttpServlet {
 			if (entity != null) {
 				HttpSession session = req.getSession();
 
-Start of user code adicionar parametros na sessão
+				// Start of user code adicionar parametros na sessao
 			
-End of user code;
+				// End of user code;
 
 				resp.sendRedirect("/fornecedor/addEdit.jsp");
 			} else {
@@ -69,9 +69,9 @@ End of user code;
 	private FornecedorEntity parseToCliente(HttpServletRequest req) {
 
 		FornecedorEntity entity = new FornecedorEntity();
-Start of user code obter parametros
+		// Start of user code obter parametros
 			
-End of user code
+		// End of user code
 		return entity;
 	}
 }

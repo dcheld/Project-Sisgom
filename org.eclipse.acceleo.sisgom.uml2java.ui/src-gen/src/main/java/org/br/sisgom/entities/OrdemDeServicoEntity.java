@@ -10,29 +10,29 @@ import java.util.List;
 
 public  class OrdemDeServicoEntity extends BaseBean
  {
-	private List<ServicoEntity> servicos;
+	private List<MercadoriaEntity> mercadorias;
 	
 	private VeiculoEntity veiculo;
 	
 	private Date dataFimServico;
 	
-	private int codigo;
+	private List<ServicoEntity> servicos;
 	
 	private Date dataEntradaVeiculo;
 	
-	private List<MercadoriaEntity> mercadorias;
+	private int codigo;
 	
 	public OrdemDeServicoEntity() {
 		super();
 	}
 	
 	
-	public List<ServicoEntity> getServicos() {
-		return this.servicos;
+	public List<MercadoriaEntity> getMercadorias() {
+		return this.mercadorias;
 	}
 	
-	public void setServicos(List<ServicoEntity> servicos) {
-		this.servicos = servicos;
+	public void setMercadorias(List<MercadoriaEntity> mercadorias) {
+		this.mercadorias = mercadorias;
 	}
 	
 	
@@ -54,12 +54,12 @@ public  class OrdemDeServicoEntity extends BaseBean
 	}
 	
 	
-	public int getCodigo() {
-		return this.codigo;
+	public List<ServicoEntity> getServicos() {
+		return this.servicos;
 	}
 	
-	public void setCodigo(int codigo) {
-		this.codigo = codigo;
+	public void setServicos(List<ServicoEntity> servicos) {
+		this.servicos = servicos;
 	}
 	
 	
@@ -71,13 +71,13 @@ public  class OrdemDeServicoEntity extends BaseBean
 		this.dataEntradaVeiculo = dataEntradaVeiculo;
 	}
 	
-	
-	public List<MercadoriaEntity> getMercadorias() {
-		return this.mercadorias;
+	@Id
+	public int getCodigo() {
+		return this.codigo;
 	}
 	
-	public void setMercadorias(List<MercadoriaEntity> mercadorias) {
-		this.mercadorias = mercadorias;
+	public void setCodigo(int codigo) {
+		this.codigo = codigo;
 	}
 	
 }

@@ -9,31 +9,22 @@ import org.br.sisgom.utils.GenericDao.BaseBean;
 @Entity
 public  class EnderecoEntity extends BaseBean
  {
-	private String estado;
-	
 	private String rua;
 	
+	private String cEP;
+	
 	private int numero;
+	
+	private String estado;
 	
 	private int id;
 	
 	private String cidade;
 	
-	private String cEP;
-	
 	private String bairro;
 	
 	public EnderecoEntity() {
 		super();
-	}
-	
-	
-	public String getEstado() {
-		return this.estado;
-	}
-	
-	public void setEstado(String estado) {
-		this.estado = estado;
 	}
 	
 	
@@ -46,6 +37,15 @@ public  class EnderecoEntity extends BaseBean
 	}
 	
 	
+	public String getCEP() {
+		return this.cEP;
+	}
+	
+	public void setCEP(String cEP) {
+		this.cEP = cEP;
+	}
+	
+	
 	public int getNumero() {
 		return this.numero;
 	}
@@ -55,6 +55,15 @@ public  class EnderecoEntity extends BaseBean
 	}
 	
 	
+	public String getEstado() {
+		return this.estado;
+	}
+	
+	public void setEstado(String estado) {
+		this.estado = estado;
+	}
+	
+	@Id
 	public int getId() {
 		return this.id;
 	}
@@ -70,15 +79,6 @@ public  class EnderecoEntity extends BaseBean
 	
 	public void setCidade(String cidade) {
 		this.cidade = cidade;
-	}
-	
-	
-	public String getCEP() {
-		return this.cEP;
-	}
-	
-	public void setCEP(String cEP) {
-		this.cEP = cEP;
 	}
 	
 	

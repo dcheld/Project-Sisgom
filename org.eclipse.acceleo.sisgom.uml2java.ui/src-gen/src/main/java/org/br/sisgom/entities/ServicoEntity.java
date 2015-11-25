@@ -9,23 +9,23 @@ import org.br.sisgom.utils.GenericDao.BaseBean;
 
 public  class ServicoEntity extends BaseBean
  {
-	private int codigo;
+	private float valor;
 	
 	private String nome;
 	
-	private float valor;
+	private int codigo;
 	
 	public ServicoEntity() {
 		super();
 	}
 	
 	
-	public int getCodigo() {
-		return this.codigo;
+	public float getValor() {
+		return this.valor;
 	}
 	
-	public void setCodigo(int codigo) {
-		this.codigo = codigo;
+	public void setValor(float valor) {
+		this.valor = valor;
 	}
 	
 	
@@ -38,12 +38,12 @@ public  class ServicoEntity extends BaseBean
 	}
 	
 	
-	public float getValor() {
-		return this.valor;
+	public int getCodigo() {
+		return this.codigo;
 	}
 	
-	public void setValor(float valor) {
-		this.valor = valor;
+	public void setCodigo(int codigo) {
+		this.codigo = codigo;
 	}
 	
 }

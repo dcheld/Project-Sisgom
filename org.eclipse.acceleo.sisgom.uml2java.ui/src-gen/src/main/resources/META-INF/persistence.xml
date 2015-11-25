@@ -4,16 +4,18 @@
 	version="2.0" xmlns="http://java.sun.com/xml/ns/persistence">
 	<persistence-unit name="sisgomPersistenceUnit " transaction-type="RESOURCE_LOCAL">
 		<properties>
-Start of user code teste
+			<!--Start of user code configuracao
+			-->
 			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5InnoDBDialect" />
 			<property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" />
 			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/sisgom" />
 			<property name="javax.persistence.jdbc.user" value="sisgom_user" />
 			<property name="javax.persistence.jdbc.password" value="123456" />
-End of user code
+			
 			<property name="hibernate.show_sql" value="true" />
 			<property name="hibernate.format_sql" value="false" />
 			<property name="hibernate.hbm2ddl.auto" value="none" />
+			<!--End of user code-->
 		</properties>
 	</persistence-unit>
 </persistence>

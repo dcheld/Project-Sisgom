@@ -17,9 +17,12 @@
 package [aClass.genPackageValue() + '.' + aClass.getDaoNamespace()/];
 
 import [aClass.genPackageValue() + '.' + aClass.getEntityNamespace() + '.' + className/];
-public class [aClass.name + aClass.getDaoSuffix()/] extends GenericDao<[className/], Integer> {
+public class [aClass.getDaoClass()/] extends GenericDao<[className/], Integer> {
 	
 }
 [/file]
 [/template]
 
+[template public getDaoClass(aClass : Class) post (trim())]
+[aClass.name + aClass.getDaoSuffix()/]
+[/template]

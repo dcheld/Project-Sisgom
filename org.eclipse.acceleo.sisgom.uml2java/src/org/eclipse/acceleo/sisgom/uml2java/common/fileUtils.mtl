@@ -24,13 +24,13 @@
 [/template]
 
 [template public genFilePathTest(aType : Type, nome : String)]
-[ aType.getSourceFolderTest() + '/' + aType.packagePath() + '/' + aType.getUtilsNamespace() + '/' + nome/].java
+[ aType.getSourceFolderTest() + '/' + aType.packagePath() + '/' + nome/].java
 [/template]
 
 
 
 [template public packagePath(aType : Type)] 
-[aType.ancestors(Package)->reject(aPackage: Package | aPackage.oclIsTypeOf(Model))->reverse().name.substituteAll('.', '/').concat('/')->sep('/')/]
+[aType.ancestors(Package)->reject(aPackage: Package | aPackage.oclIsTypeOf(Model))->reverse().name.substituteAll('.', '/')->sep('/')/]
 [/template]
 
 [template public packagePath(aPack : Package)]

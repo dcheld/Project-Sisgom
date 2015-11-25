@@ -11,9 +11,9 @@ public  class ContatoEntity extends BaseBean
  {
 	private String telefone;
 	
-	private int id;
-	
 	private String email;
+	
+	private int id;
 	
 	public ContatoEntity() {
 		super();
@@ -29,21 +29,21 @@ public  class ContatoEntity extends BaseBean
 	}
 	
 	
-	public int getId() {
-		return this.id;
-	}
-	
-	public void setId(int id) {
-		this.id = id;
-	}
-	
-	
 	public String getEmail() {
 		return this.email;
 	}
 	
 	public void setEmail(String email) {
 		this.email = email;
+	}
+	
+	
+	public int getId() {
+		return this.id;
+	}
+	
+	public void setId(int id) {
+		this.id = id;
 	}
 	
 }

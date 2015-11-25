@@ -34,9 +34,9 @@ public class ContatoEditarServlet extends HttpServlet {
 			if (entity != null) {
 				HttpSession session = req.getSession();
 
-Start of user code adicionar parametros na sessão
+				// Start of user code adicionar parametros na sessao
 			
-End of user code;
+				// End of user code;
 
 				resp.sendRedirect("/contato/addEdit.jsp");
 			} else {
@@ -69,9 +69,9 @@ End of user code;
 	private ContatoEntity parseToCliente(HttpServletRequest req) {
 
 		ContatoEntity entity = new ContatoEntity();
-Start of user code obter parametros
+		// Start of user code obter parametros
 			
-End of user code
+		// End of user code
 		return entity;
 	}
 }

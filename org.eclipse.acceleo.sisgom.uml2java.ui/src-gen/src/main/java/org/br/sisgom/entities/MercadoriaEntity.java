@@ -9,25 +9,25 @@ import org.br.sisgom.utils.GenericDao.BaseBean;
 
 public  class MercadoriaEntity extends BaseBean
  {
-	private float valorCompra;
+	private int codigo;
 	
 	private String nome;
 	
 	private float valorVenda;
 	
-	private int codigo;
+	private float valorCompra;
 	
 	public MercadoriaEntity() {
 		super();
 	}
 	
 	
-	public float getValorCompra() {
-		return this.valorCompra;
+	public int getCodigo() {
+		return this.codigo;
 	}
 	
-	public void setValorCompra(float valorCompra) {
-		this.valorCompra = valorCompra;
+	public void setCodigo(int codigo) {
+		this.codigo = codigo;
 	}
 	
 	
@@ -49,12 +49,12 @@ public  class MercadoriaEntity extends BaseBean
 	}
 	
 	
-	public int getCodigo() {
-		return this.codigo;
+	public float getValorCompra() {
+		return this.valorCompra;
 	}
 	
-	public void setCodigo(int codigo) {
-		this.codigo = codigo;
+	public void setValorCompra(float valorCompra) {
+		this.valorCompra = valorCompra;
 	}
 	
 }

@@ -34,9 +34,9 @@ public class OrdemDeServicoEditarServlet extends HttpServlet {
 			if (entity != null) {
 				HttpSession session = req.getSession();
 
-Start of user code adicionar parametros na sessão
+				// Start of user code adicionar parametros na sessao
 			
-End of user code;
+				// End of user code;
 
 				resp.sendRedirect("/ordemDeServico/addEdit.jsp");
 			} else {
@@ -69,9 +69,9 @@ End of user code;
 	private OrdemDeServicoEntity parseToCliente(HttpServletRequest req) {
 
 		OrdemDeServicoEntity entity = new OrdemDeServicoEntity();
-Start of user code obter parametros
+		// Start of user code obter parametros
 			
-End of user code
+		// End of user code
 		return entity;
 	}
 }

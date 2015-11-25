@@ -96,9 +96,9 @@ public class [aClass.name + tipo + aClass.getServletsSuffix() /] extends HttpSer
 			if (entity != null) {
 				HttpSession session = req.getSession();
 
-				[protected ('adicionar parametros na sessão')]
+				// [protected ('adicionar parametros na sessao')]
 			
-				[/protected];
+				// [/protected];
 
 				resp.sendRedirect("/[aClass.name.toLowerFirst()/]/addEdit.jsp");
 			} else {
@@ -131,9 +131,9 @@ public class [aClass.name + tipo + aClass.getServletsSuffix() /] extends HttpSer
 	private [aClass.name + aClass.getEntitySuffix()/] parseToCliente(HttpServletRequest req) {
 
 		[aClass.name + aClass.getEntitySuffix()/] entity = new [aClass.name + aClass.getEntitySuffix()/]();
-		[protected ('obter parametros')]
+		// [protected ('obter parametros')]
 			
-		[/protected]
+		// [/protected]
 		return entity;
 	}
 }
