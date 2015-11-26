@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xmi:XMI xmi:version="20110701" xmlns:xmi="http://www.omg.org/spec/XMI/20110701" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:HNode="http://Hibernate/schemas/HNode/_DImSwIvMEeWrHdG0huMLwQ/7" xmlns:Infra="http:///schemas/Infra/_wQgpEIvkEeWuGKU7gkaFFg/2" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/4.0.0/UML" xsi:schemaLocation="http://Hibernate/schemas/HNode/_DImSwIvMEeWrHdG0huMLwQ/7 file:/C:/Users/DouglasdeCampos/git_juno/projetotcc/org.eclipse.acceleo.sisgom.uml2java.modelo/model/hibernate.profile.uml#_DImSwYvMEeWrHdG0huMLwQ http:///schemas/Infra/_wQgpEIvkEeWuGKU7gkaFFg/2 file:/C:/Users/DouglasdeCampos/git_juno/projetotcc/org.eclipse.acceleo.sisgom.uml2java.modelo/model/infra.profile.uml#_wQgpEYvkEeWuGKU7gkaFFg">
+<xmi:XMI xmi:version="20110701" xmlns:xmi="http://www.omg.org/spec/XMI/20110701" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:HNode="http://Hibernate/schemas/HNode/_0n42gJSLEeWfioFPAMEoYA/11" xmlns:HRelationship="http://Hibernate/schemas/HRelationship/_0n6EoJSLEeWfioFPAMEoYA/10" xmlns:Infra="http:///schemas/Infra/_wQgpEIvkEeWuGKU7gkaFFg/2" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/4.0.0/UML" xsi:schemaLocation="http://Hibernate/schemas/HNode/_0n42gJSLEeWfioFPAMEoYA/11 hibernate.profile.uml#_0n5dkJSLEeWfioFPAMEoYA http://Hibernate/schemas/HRelationship/_0n6EoJSLEeWfioFPAMEoYA/10 hibernate.profile.uml#_0n6EoZSLEeWfioFPAMEoYA http:///schemas/Infra/_wQgpEIvkEeWuGKU7gkaFFg/2 infra.profile.uml#_wQgpEYvkEeWuGKU7gkaFFg">
   <uml:Model xmi:id="_sKvHYEQjEeWT7PHpy37frQ" name="Model">
     <packageImport xmi:id="_sKvHYUQjEeWT7PHpy37frQ">
       <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
@@ -183,7 +183,7 @@
             <value xsi:nil="true"/>
           </defaultValue>
         </ownedAttribute>
-        <ownedAttribute xmi:id="_AWIXwEQmEeWHYo_Ly7kndQ" name="CPFouCNPJ" visibility="public">
+        <ownedAttribute xmi:id="_AWIXwEQmEeWHYo_Ly7kndQ" name="CpfouCnpj" visibility="public">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_BpuGkEQmEeWHYo_Ly7kndQ" value="1"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_BpuGkUQmEeWHYo_Ly7kndQ" value="1"/>
@@ -351,6 +351,10 @@
             <value xsi:nil="true"/>
           </defaultValue>
         </ownedAttribute>
+        <ownedAttribute xmi:id="_IF5I8UYMEeWVjtLlBmlrKQ" name="Cliente" type="_igzo4EYJEeWVjtLlBmlrKQ" association="_IF5I8EYMEeWVjtLlBmlrKQ">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_IF5I8kYMEeWVjtLlBmlrKQ" value="1"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_IF5I80YMEeWVjtLlBmlrKQ" value="1"/>
+        </ownedAttribute>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="_B_LToH6GEeWwzNwHTIv2iA" name="Fornecedor">
         <generalization xmi:id="_R4VzAERiEeWv2qK-l1aMZQ" general="_MqQRQEQlEeWHYo_Ly7kndQ"/>
@@ -465,12 +469,7 @@
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_GuNc40RiEeWv2qK-l1aMZQ" value="1"/>
         </ownedEnd>
       </packagedElement>
-      <packagedElement xmi:type="uml:Association" xmi:id="_IF5I8EYMEeWVjtLlBmlrKQ" name="ClienteVeiculo" memberEnd="_IF5I8UYMEeWVjtLlBmlrKQ _IF4h4EYMEeWVjtLlBmlrKQ">
-        <ownedEnd xmi:id="_IF5I8UYMEeWVjtLlBmlrKQ" name="Cliente" type="_igzo4EYJEeWVjtLlBmlrKQ" association="_IF5I8EYMEeWVjtLlBmlrKQ">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_IF5I8kYMEeWVjtLlBmlrKQ" value="1"/>
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_IF5I80YMEeWVjtLlBmlrKQ" value="1"/>
-        </ownedEnd>
-      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="_IF5I8EYMEeWVjtLlBmlrKQ" name="ClienteVeiculo" memberEnd="_IF5I8UYMEeWVjtLlBmlrKQ _IF4h4EYMEeWVjtLlBmlrKQ"/>
       <packagedElement xmi:type="uml:DataType" xmi:id="_FaPRIGcgEeWDPYMyKRno4Q" name="Date"/>
       <packagedElement xmi:type="uml:Association" xmi:id="_3lGE836GEeWwzNwHTIv2iA" name="OrdemDeServicoVeiculo" memberEnd="_3lGE9H6GEeWwzNwHTIv2iA _3lGE8H6GEeWwzNwHTIv2iA">
         <ownedEnd xmi:id="_3lGE9H6GEeWwzNwHTIv2iA" name="OrdemDeServico" type="_N3Q78H6GEeWwzNwHTIv2iA" association="_3lGE836GEeWwzNwHTIv2iA">
@@ -491,33 +490,83 @@
         </ownedEnd>
       </packagedElement>
     </packagedElement>
-    <profileApplication xmi:id="_xzQf8Iu9EeWrHdG0huMLwQ">
-      <eAnnotations xmi:id="_xzS8MIu9EeWrHdG0huMLwQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
-        <references xmi:type="ecore:EPackage" href="hibernate.profile.uml#_DIlrsYvMEeWrHdG0huMLwQ"/>
-      </eAnnotations>
-      <appliedProfile href="hibernate.profile.uml#_3TC4gIu0EeWXsfFZHs3Y0Q"/>
-    </profileApplication>
-    <profileApplication xmi:id="_xzTjQIu9EeWrHdG0huMLwQ">
-      <eAnnotations xmi:id="_xzVYcIu9EeWrHdG0huMLwQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
-        <references xmi:type="ecore:EPackage" href="hibernate.profile.uml#_DImSwYvMEeWrHdG0huMLwQ"/>
-      </eAnnotations>
-      <appliedProfile href="hibernate.profile.uml#_7BOacIu0EeWXsfFZHs3Y0Q"/>
-    </profileApplication>
-    <profileApplication xmi:id="_xzV_gIu9EeWrHdG0huMLwQ">
-      <eAnnotations xmi:id="_xzX0sIu9EeWrHdG0huMLwQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
-        <references xmi:type="ecore:EPackage" href="hibernate.profile.uml#_DIng4IvMEeWrHdG0huMLwQ"/>
-      </eAnnotations>
-      <appliedProfile href="hibernate.profile.uml#_tI54YIu3EeWXsfFZHs3Y0Q"/>
-    </profileApplication>
     <profileApplication xmi:id="_18Fr0IvkEeWuGKU7gkaFFg">
       <eAnnotations xmi:id="_18IIEIvkEeWuGKU7gkaFFg" source="http://www.eclipse.org/uml2/2.0.0/UML">
         <references xmi:type="ecore:EPackage" href="infra.profile.uml#_wQgpEYvkEeWuGKU7gkaFFg"/>
       </eAnnotations>
       <appliedProfile href="infra.profile.uml#_WSavYIvkEeWuGKU7gkaFFg"/>
     </profileApplication>
+    <profileApplication xmi:id="_ejggsJSIEeWfioFPAMEoYA">
+      <eAnnotations xmi:id="_ejjkAJSIEeWfioFPAMEoYA" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="hibernate.profile.uml#_0n4PcZSLEeWfioFPAMEoYA"/>
+      </eAnnotations>
+      <appliedProfile href="hibernate.profile.uml#_3TC4gIu0EeWXsfFZHs3Y0Q"/>
+    </profileApplication>
+    <profileApplication xmi:id="_ejkLEJSIEeWfioFPAMEoYA">
+      <eAnnotations xmi:id="_ejmnUJSIEeWfioFPAMEoYA" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="hibernate.profile.uml#_0n5dkJSLEeWfioFPAMEoYA"/>
+      </eAnnotations>
+      <appliedProfile href="hibernate.profile.uml#_7BOacIu0EeWXsfFZHs3Y0Q"/>
+    </profileApplication>
+    <profileApplication xmi:id="_ejmnUZSIEeWfioFPAMEoYA">
+      <eAnnotations xmi:id="_ejpDkJSIEeWfioFPAMEoYA" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="hibernate.profile.uml#_0n6EoZSLEeWfioFPAMEoYA"/>
+      </eAnnotations>
+      <appliedProfile href="hibernate.profile.uml#_tI54YIu3EeWXsfFZHs3Y0Q"/>
+    </profileApplication>
   </uml:Model>
-  <Infra:MainPackage xmi:id="_tm-JsI4CEeWZu7z2uTU4uw" base_Package="_D75aAEQlEeWHYo_Ly7kndQ"/>
-  <HNode:Entity xmi:id="_viqaUI4CEeWZu7z2uTU4uw" base_Class="_WS4_cEQlEeWHYo_Ly7kndQ"/>
-  <HNode:Id xmi:id="_OenqcJMMEeWlTcp7MCbk2g" base_Property="_FkBjgEQnEeWHYo_Ly7kndQ"/>
-  <HNode:Id xmi:id="_rPbKEJMREeWlTcp7MCbk2g" base_Property="_bxcdIEmnEeWv-ekCoJELNw"/>
+  <HNode:Entity xmi:id="_rOJnUJSIEeWfioFPAMEoYA" base_Class="_MqQRQEQlEeWHYo_Ly7kndQ"/>
+  <HNode:Table xmi:id="_rOV0kJSIEeWfioFPAMEoYA" Name="PessoaBase" base_Class="_MqQRQEQlEeWHYo_Ly7kndQ"/>
+  <HNode:Inheritance xmi:id="_rOhawJSIEeWfioFPAMEoYA" base_Class="_MqQRQEQlEeWHYo_Ly7kndQ"/>
+  <HNode:Entity xmi:id="_urfQ4JSIEeWfioFPAMEoYA" base_Class="_WS4_cEQlEeWHYo_Ly7kndQ"/>
+  <HNode:Table xmi:id="_urq3EJSIEeWfioFPAMEoYA" Name="Endereco" base_Class="_WS4_cEQlEeWHYo_Ly7kndQ"/>
+  <HNode:Id xmi:id="_xHMeUJSIEeWfioFPAMEoYA" base_Property="_FkBjgEQnEeWHYo_Ly7kndQ"/>
+  <HNode:Id xmi:id="_2HDqkJSIEeWfioFPAMEoYA" base_Property="_oLCFsEQlEeWHYo_Ly7kndQ"/>
+  <HNode:GeneratedValue xmi:id="_2HPQwJSIEeWfioFPAMEoYA" base_Property="_oLCFsEQlEeWHYo_Ly7kndQ" Strategy="IDENTITY"/>
+  <HNode:GeneratedValue xmi:id="_39IbYJSIEeWfioFPAMEoYA" base_Property="_FkBjgEQnEeWHYo_Ly7kndQ" Strategy="IDENTITY"/>
+  <HNode:Entity xmi:id="_9DPZkJSIEeWfioFPAMEoYA" base_Class="_YQhJwEQlEeWHYo_Ly7kndQ"/>
+  <HNode:Table xmi:id="_9Dbm0JSIEeWfioFPAMEoYA" Name="Contato" base_Class="_YQhJwEQlEeWHYo_Ly7kndQ"/>
+  <HNode:Id xmi:id="__GS2cJSIEeWfioFPAMEoYA" base_Property="_fjPCEEQoEeWHYo_Ly7kndQ"/>
+  <HNode:GeneratedValue xmi:id="__GiHAJSIEeWfioFPAMEoYA" base_Property="_fjPCEEQoEeWHYo_Ly7kndQ" Strategy="IDENTITY"/>
+  <HNode:Entity xmi:id="_MXOhAJSJEeWfioFPAMEoYA" base_Class="_lCb4IEYJEeWVjtLlBmlrKQ"/>
+  <HNode:Table xmi:id="_MXY5EJSJEeWfioFPAMEoYA" Name="Funcionario" base_Class="_lCb4IEYJEeWVjtLlBmlrKQ"/>
+  <HNode:PrimaryKeyJoinColumn xmi:id="_MXjRIJSJEeWfioFPAMEoYA" Name="Id" base_Class="_lCb4IEYJEeWVjtLlBmlrKQ"/>
+  <HNode:Entity xmi:id="_dFtQgJSJEeWfioFPAMEoYA" base_Class="_B_LToH6GEeWwzNwHTIv2iA"/>
+  <HNode:Table xmi:id="_dF2acJSJEeWfioFPAMEoYA" Name="Fornecedor" base_Class="_B_LToH6GEeWwzNwHTIv2iA"/>
+  <HNode:PrimaryKeyJoinColumn xmi:id="_dGAygJSJEeWfioFPAMEoYA" Name="Id" base_Class="_B_LToH6GEeWwzNwHTIv2iA"/>
+  <HNode:Entity xmi:id="_gzLAwJSJEeWfioFPAMEoYA" base_Class="_igzo4EYJEeWVjtLlBmlrKQ"/>
+  <HNode:Table xmi:id="_gzVY0JSJEeWfioFPAMEoYA" Name="Cliente" base_Class="_igzo4EYJEeWVjtLlBmlrKQ"/>
+  <HNode:PrimaryKeyJoinColumn xmi:id="_gzeiwJSJEeWfioFPAMEoYA" Name="Id" base_Class="_igzo4EYJEeWVjtLlBmlrKQ"/>
+  <HNode:Entity xmi:id="_k0IUwJSJEeWfioFPAMEoYA" base_Class="_N3Q78H6GEeWwzNwHTIv2iA"/>
+  <HNode:Table xmi:id="_k0ResJSJEeWfioFPAMEoYA" Name="OrdemDeServico" base_Class="_N3Q78H6GEeWwzNwHTIv2iA"/>
+  <HNode:Id xmi:id="_nz54kJSJEeWfioFPAMEoYA" base_Property="_bxcdIEmnEeWv-ekCoJELNw"/>
+  <HNode:GeneratedValue xmi:id="_n0GF0JSJEeWfioFPAMEoYA" base_Property="_bxcdIEmnEeWv-ekCoJELNw" Strategy="IDENTITY"/>
+  <HNode:Entity xmi:id="_zErpQJSJEeWfioFPAMEoYA" base_Class="_uffL8EYKEeWVjtLlBmlrKQ"/>
+  <HNode:Table xmi:id="_zE3PcJSJEeWfioFPAMEoYA" Name="Veiculo" base_Class="_uffL8EYKEeWVjtLlBmlrKQ"/>
+  <HNode:Id xmi:id="_1rEcsJSJEeWfioFPAMEoYA" base_Property="_PsYEwIu-EeWrHdG0huMLwQ"/>
+  <HNode:GeneratedValue xmi:id="_1rQC4JSJEeWfioFPAMEoYA" base_Property="_PsYEwIu-EeWrHdG0huMLwQ"/>
+  <HNode:Temporal xmi:id="_2th_QJSJEeWfioFPAMEoYA" base_Property="_hJj34Iu_EeWrHdG0huMLwQ" Value="TIMESTAMP"/>
+  <HNode:Temporal xmi:id="_3hjdMJSJEeWfioFPAMEoYA" base_Property="_qGUQ8EmnEeWv-ekCoJELNw" Value="TIMESTAMP"/>
+  <HNode:Entity xmi:id="_7Wl1EJSJEeWfioFPAMEoYA" base_Class="_hdejAH6FEeWwzNwHTIv2iA"/>
+  <HNode:Table xmi:id="_7WypYJSJEeWfioFPAMEoYA" Name="Servico" base_Class="_hdejAH6FEeWwzNwHTIv2iA"/>
+  <HNode:Id xmi:id="_-BG6kJSJEeWfioFPAMEoYA" base_Property="_0toGgEmqEeWv-ekCoJELNw"/>
+  <HNode:GeneratedValue xmi:id="_-BUV8JSJEeWfioFPAMEoYA" base_Property="_0toGgEmqEeWv-ekCoJELNw" Strategy="IDENTITY"/>
+  <HNode:Entity xmi:id="_ASQd0JSKEeWfioFPAMEoYA" base_Class="_DVTHwEYMEeWVjtLlBmlrKQ"/>
+  <HNode:Table xmi:id="_ASegQJSKEeWfioFPAMEoYA" Name="Mercadoria" base_Class="_DVTHwEYMEeWVjtLlBmlrKQ"/>
+  <HNode:Id xmi:id="_CbolIJSKEeWfioFPAMEoYA" base_Property="_9MTTwEYMEeWVjtLlBmlrKQ"/>
+  <HNode:GeneratedValue xmi:id="_Cb1ZcJSKEeWfioFPAMEoYA" base_Property="_9MTTwEYMEeWVjtLlBmlrKQ" Strategy="IDENTITY"/>
+  <HRelationship:OneToMay xmi:id="_J4cU8JSKEeWfioFPAMEoYA" Cascade="ALL" Fetch="EAGER" base_Association="_GuNc4ERiEeWv2qK-l1aMZQ"/>
+  <HRelationship:JoinColumn xmi:id="_J4q-cJSKEeWfioFPAMEoYA" Name="PessoaBase_Id" Updatable="true" Insertable="true" base_Association="_GuNc4ERiEeWv2qK-l1aMZQ"/>
+  <HRelationship:OneToMay xmi:id="_yzJ-8JSKEeWfioFPAMEoYA" Cascade="ALL" Fetch="EAGER" base_Association="_3owgsERhEeWv2qK-l1aMZQ"/>
+  <HRelationship:JoinColumn xmi:id="_yzUXAJSKEeWfioFPAMEoYA" Updatable="true" Insertable="true" base_Association="_3owgsERhEeWv2qK-l1aMZQ"/>
+  <HRelationship:OneToMay xmi:id="_MFHLYJSLEeWfioFPAMEoYA" base_Association="_IF5I8EYMEeWVjtLlBmlrKQ" MappedBy="cliente&#xD;&#xA;"/>
+  <HRelationship:ManyToOne xmi:id="_MFQVUJSLEeWfioFPAMEoYA" Cascade="ALL" Fetch="EAGER" base_Association="_IF5I8EYMEeWVjtLlBmlrKQ"/>
+  <HRelationship:JoinColumn xmi:id="_MFbUcJSLEeWfioFPAMEoYA" Name="Cliente_Id" Updatable="true" Insertable="true" base_Association="_IF5I8EYMEeWVjtLlBmlrKQ"/>
+  <HRelationship:OneToMay xmi:id="_h1_dwJSLEeWfioFPAMEoYA" Cascade="ALL" Fetch="EAGER" base_Association="_3lGE836GEeWwzNwHTIv2iA"/>
+  <HRelationship:JoinColumn xmi:id="_h2J10JSLEeWfioFPAMEoYA" Updatable="true" Insertable="true" base_Association="_3lGE836GEeWwzNwHTIv2iA"/>
+  <HRelationship:ManyToMany xmi:id="_hAgKwJSMEeWfioFPAMEoYA" base_Association="_bzGooIZxEeWUqOq7N59u5g"/>
+  <HRelationship:JoinTable xmi:id="_iZW0EJSMEeWfioFPAMEoYA" Name="ItensDeServico" JoinColumns="OrdemDeServico_Codigo" base_Association="_bzGooIZxEeWUqOq7N59u5g" InverseJoinColumns="Servico_Codigo"/>
+  <HRelationship:ManyToMany xmi:id="_o7VTUJSMEeWfioFPAMEoYA" base_Association="_psR-84ZxEeWUqOq7N59u5g"/>
+  <HRelationship:JoinTable xmi:id="_o7fEUJSMEeWfioFPAMEoYA" Name="ItensDeMercadoria" JoinColumns="OrdemDeServico_Codigo" base_Association="_psR-84ZxEeWUqOq7N59u5g" InverseJoinColumns="Mercadoria_Codigo"/>
+  <Infra:MainPackage xmi:id="_WsuYYJSNEeWfioFPAMEoYA" base_Package="_D75aAEQlEeWHYo_Ly7kndQ"/>
 </xmi:XMI>

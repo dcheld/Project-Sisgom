@@ -223,13 +223,13 @@
         <eType xsi:type="ocl.ecore:AnyType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny"/>
       </parameter>
     </ownedModuleElement>
-    <ownedModuleElement xsi:type="mtl:Template" name="getFactoryDao" visibility="Public">
+    <ownedModuleElement xsi:type="mtl:Template" name="getDaoFactory" visibility="Public">
       <body xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/OclAny_Class/getProperty">
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <source xsi:type="ocl.ecore:VariableExp" name="self" referredVariable="/81">
           <eType xsi:type="ocl.ecore:AnyType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny"/>
         </source>
-        <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="FactoryDao">
+        <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="DaoFactory">
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         </argument>
       </body>
@@ -422,11 +422,11 @@
           <eType xsi:type="ocl.ecore:AnyType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny"/>
         </eParameters>
       </eOperations>
-      <eOperations name="getFactoryDao">
+      <eOperations name="getDaoFactory">
         <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
           <contents xsi:type="ocl.ecore:Constraint"/>
         </eAnnotations>
-        <eAnnotations source="MTL" references="/0/getFactoryDao"/>
+        <eAnnotations source="MTL" references="/0/getDaoFactory"/>
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <eParameters name="anOclAny">
           <eType xsi:type="ocl.ecore:AnyType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny"/>
@@ -1120,27 +1120,27 @@
       <details key="end" value="1692"/>
       <details key="line" value="72"/>
     </eAnnotations>
-    <eAnnotations source="positions.78" references="/0/getFactoryDao">
+    <eAnnotations source="positions.78" references="/0/getDaoFactory">
       <details key="start" value="1735"/>
       <details key="end" value="1826"/>
       <details key="line" value="76"/>
     </eAnnotations>
-    <eAnnotations source="positions.79" references="/0/getFactoryDao/@body.0">
+    <eAnnotations source="positions.79" references="/0/getDaoFactory/@body.0">
       <details key="start" value="1787"/>
       <details key="end" value="1812"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.80" references="/0/getFactoryDao/@body.0/self">
+    <eAnnotations source="positions.80" references="/0/getDaoFactory/@body.0/self">
       <details key="start" value="-1"/>
       <details key="end" value="-1"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.81" references="/0/getFactoryDao/@body.0/@argument.0">
+    <eAnnotations source="positions.81" references="/0/getDaoFactory/@body.0/@argument.0">
       <details key="start" value="1799"/>
       <details key="end" value="1811"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.82" references="/0/getFactoryDao/anOclAny">
+    <eAnnotations source="positions.82" references="/0/getDaoFactory/anOclAny">
       <details key="start" value="1766"/>
       <details key="end" value="1783"/>
       <details key="line" value="76"/>

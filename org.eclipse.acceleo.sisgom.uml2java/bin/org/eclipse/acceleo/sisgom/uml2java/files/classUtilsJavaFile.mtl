@@ -166,7 +166,7 @@ public abstract class [aPack.getBaseBean()/] implements Serializable {
 
 
 
-[template public genClassDaoFactory(aPack : Package){packName : String = aPack.getFactoryDao(); }]
+[template public genClassDaoFactory(aPack : Package){packName : String = aPack.getDaoFactory(); }]
 [file (aPack.genFilePathUtils(packName), false, 'UTF-8')]
 package [aPack.name +'.' + aPack.getUtilsNamespace()/];
 
@@ -177,7 +177,7 @@ import javax.persistence.Persistence;
 import [aClass.genPackageValue() + '.' + aClass.getDaoNamespace()+'.'+ aClass.name + aClass.getDaoSuffix()/];
 [/for]
 
-public final class [aPack.getFactoryDao()/] {
+public final class [aPack.getDaoFactory()/] {
 
 	private DaoFactory() {
 	}

@@ -11,16 +11,13 @@
 [import org::eclipse::acceleo::sisgom::uml2java::files::classDaoJavaFile /]
 
 [**
- * The documentation of the template genClassJavaFile.
+ * The documentation of the template classUnitJavaFile.
  * @param aClass
  */]
-
-[template public genClassJavaUnitTest(aClass : Class){
-	packageClass : String = aClass.genPackageEntity();}]
+[template public genClassJavaUnitTest(aClass : Class)]
 [file (aClass.genFilePathTest(aClass.getTestNamespace() + '/' + aClass.name.toUpperFirst() + aClass.getTestSuffix()), false, 'UTF-8')]
 package [aClass.genPackageValue() + '.' + aClass.getTestNamespace() + '.' + aClass.name .getDaoNamespace()/];
 
-import [aClass.name + aClass.getDaoSuffix()/]
 import java.math.BigInteger;
 import java.security.SecureRandom;
 import java.util.ArrayList;
@@ -28,15 +25,16 @@ import java.util.List;
 import java.util.Random;
 
 import org.apache.log4j.Logger;
+import [aClass.genPackageEntity() + '.' + aClass.getClassNameEntity()/];
+import [aClass.genPackageDao() + '.' + aClass.getDaoClass()/];
 // [protected ('imports do test')]
-import [packageClass + '.' + aClass.getClassNameEntity()/];
-import [packageClass + '.' + aClass.getDaoClass()/];
+import [aClass.genPackageEntity() + '.' + aClass.getUtilsNamespace() + '.' + aClass.getDaoFactory()/];
 // [/protected]
 
 public class [aClass.name.toUpperFirst() + aClass.getTestSuffix()/] {
 
 	private static final Logger LOGGER = Logger.getLogger([aClass.name.toUpperFirst() + aClass.getTestSuffix()/].class);
-	private [aClass.name + aClass.getDaoSuffix()/] [aClass.name.toLowerFirst() + aClass.getDaoSuffix()/] = [aClass.getFactoryDao()/].[aClass.name.toLowerFirst()/]Instance();
+	private [aClass.name + aClass.getDaoSuffix()/] [aClass.name.toLowerFirst() + aClass.getDaoSuffix()/] = [aClass.getDaoFactory()/].[aClass.name.toLowerFirst()/]Instance();
 
 	@Test
 	public void testFindAll() {
@@ -96,10 +94,10 @@ public class [aClass.name.toUpperFirst() + aClass.getTestSuffix()/] {
 [/template]
 
 [query public getPropertyId(aClass : Class) : Property = 
-	let a : Property = aClass.getAllAttributes()->select(aProp : Property | aProp.hasStereotypeQuery('Id'))->asSequence()->first() in
-		if a.oclIsUndefined() then
+	let a : Set(Property) = aClass.getAllAttributes()->select(aProp : Property | aProp.hasStereotypeQuery('Id')) in
+		if a->isEmpty() then
 			null
 		else
-			a
+			a->asSequence()->first()
 		endif/]
 

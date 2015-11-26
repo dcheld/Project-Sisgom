@@ -39,7 +39,7 @@ public [if (aClass.isAbstract)]abstract[/if] class [aClass.getClassNameEntity()/
 
 [template private extendedClasses(aClass : Class)]
 [if(aClass.superClass->notEmpty())]
-[for (aSuperClass : Class | aClass.superClass) before(' extends ') separator(', ')][aSuperClass.name/][/for]
+[for (aSuperClass : Class | aClass.superClass) before(' extends ') separator(', ')][aSuperClass.name + aSuperClass.getEntitySuffix()/][/for]
 [else]
  extends BaseBean
 [/if]

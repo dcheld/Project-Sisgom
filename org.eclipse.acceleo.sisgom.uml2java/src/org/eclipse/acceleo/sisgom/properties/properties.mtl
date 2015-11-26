@@ -73,8 +73,8 @@
 [getProperty('BaseBean')/]
 [/template]
 
-[template public getFactoryDao(anOclAny : OclAny)]
-[getProperty('FactoryDao')/]
+[template public getDaoFactory(anOclAny : OclAny)]
+[getProperty('DaoFactory')/]
 [/template]
 
 [template public getPersistenceUnit(anOclAny : OclAny)]

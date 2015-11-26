@@ -94,7 +94,54 @@
             <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
           </argument>
         </body>
-        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=";&#xA;public class "/>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=";&#xA;import "/>
+        <body xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/String_Class/+">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          <source xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/String_Class/+">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            <source xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/String_Class/+">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+              <source xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/String_Class/+">
+                <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                <source xsi:type="mtl:TemplateInvocation">
+                  <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                  <definition href="../common/fileUtils.emtl#/0/genPackageValue"/>
+                  <argument xsi:type="ocl.ecore:VariableExp" name="aClass" referredVariable="/0/genClassJavaDao/aClass">
+                    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Class"/>
+                  </argument>
+                </source>
+                <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=".">
+                  <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                </argument>
+              </source>
+              <argument xsi:type="mtl:TemplateInvocation">
+                <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                <definition href="../../properties/properties.emtl#/0/getUtilsNamespace"/>
+                <argument xsi:type="ocl.ecore:VariableExp" name="aClass" referredVariable="/0/genClassJavaDao/aClass">
+                  <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Class"/>
+                </argument>
+              </argument>
+            </source>
+            <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=".">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            </argument>
+          </source>
+          <argument xsi:type="mtl:TemplateInvocation">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            <definition href="../../properties/properties.emtl#/0/getGenericDao"/>
+            <argument xsi:type="ocl.ecore:VariableExp" name="aClass" referredVariable="/0/genClassJavaDao/aClass">
+              <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Class"/>
+            </argument>
+          </argument>
+        </body>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=";&#xA;// "/>
+        <body xsi:type="mtl:ProtectedAreaBlock">
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;// "/>
+          <marker xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="imports do Dao">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          </marker>
+        </body>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;public class "/>
         <body xsi:type="mtl:TemplateInvocation" definition="/0/getDaoClass">
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
           <argument xsi:type="ocl.ecore:VariableExp" name="aClass" referredVariable="/0/genClassJavaDao/aClass">
@@ -150,7 +197,7 @@
       </parameter>
       <post xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/String_Class/trim">
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-        <source xsi:type="ocl.ecore:VariableExp" name="self" referredVariable="/16">
+        <source xsi:type="ocl.ecore:VariableExp" name="self" referredVariable="/18">
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         </source>
       </post>
@@ -255,6 +302,18 @@
           <eType xsi:type="ocl.ecore:AnyType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny"/>
         </eParameters>
       </eOperations>
+      <eOperations name="getUtilsNamespace">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL">
+          <references href="../../properties/properties.emtl#/0/getUtilsNamespace"/>
+        </eAnnotations>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <eParameters name="anOclAny">
+          <eType xsi:type="ocl.ecore:AnyType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny"/>
+        </eParameters>
+      </eOperations>
       <eOperations name="getEntitySuffix">
         <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
           <contents xsi:type="ocl.ecore:Constraint"/>
@@ -273,6 +332,18 @@
         </eAnnotations>
         <eAnnotations source="MTL">
           <references href="../../properties/properties.emtl#/0/getDaoSuffix"/>
+        </eAnnotations>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <eParameters name="anOclAny">
+          <eType xsi:type="ocl.ecore:AnyType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny"/>
+        </eParameters>
+      </eOperations>
+      <eOperations name="getGenericDao">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL">
+          <references href="../../properties/properties.emtl#/0/getGenericDao"/>
         </eAnnotations>
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <eParameters name="anOclAny">
@@ -365,6 +436,12 @@
     <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Class"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Class"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Class"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
     <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
@@ -393,7 +470,7 @@
     </eAnnotations>
     <eAnnotations source="positions.1" references="/0/genClassJavaDao">
       <details key="start" value="446"/>
-      <details key="end" value="873"/>
+      <details key="end" value="1025"/>
       <details key="line" value="15"/>
     </eAnnotations>
     <eAnnotations source="positions.2" references="/0/genClassJavaDao/@init">
@@ -433,7 +510,7 @@
     </eAnnotations>
     <eAnnotations source="positions.9" references="/0/genClassJavaDao/@body.0">
       <details key="start" value="559"/>
-      <details key="end" value="861"/>
+      <details key="end" value="1013"/>
       <details key="line" value="16"/>
     </eAnnotations>
     <eAnnotations source="positions.10" references="/0/genClassJavaDao/@body.0/@body.0">
@@ -538,105 +615,190 @@
     </eAnnotations>
     <eAnnotations source="positions.30" references="/0/genClassJavaDao/@body.0/@body.4">
       <details key="start" value="767"/>
-      <details key="end" value="782"/>
+      <details key="end" value="776"/>
       <details key="line" value="19"/>
     </eAnnotations>
     <eAnnotations source="positions.31" references="/0/genClassJavaDao/@body.0/@body.5">
-      <details key="start" value="783"/>
-      <details key="end" value="803"/>
+      <details key="start" value="777"/>
+      <details key="end" value="867"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.32" references="/0/genClassJavaDao/@body.0/@body.5/aClass">
-      <details key="start" value="783"/>
-      <details key="end" value="789"/>
+    <eAnnotations source="positions.32" references="/0/genClassJavaDao/@body.0/@body.5/@source">
+      <details key="start" value="777"/>
+      <details key="end" value="842"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.33" references="/0/genClassJavaDao/@body.0/@body.6">
-      <details key="start" value="805"/>
-      <details key="end" value="825"/>
+    <eAnnotations source="positions.33" references="/0/genClassJavaDao/@body.0/@body.5/@source/@source">
+      <details key="start" value="777"/>
+      <details key="end" value="836"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.34" references="/0/genClassJavaDao/@body.0/@body.5/@source/@source/@source">
+      <details key="start" value="777"/>
+      <details key="end" value="807"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.35" references="/0/genClassJavaDao/@body.0/@body.5/@source/@source/@source/@source">
+      <details key="start" value="777"/>
+      <details key="end" value="801"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.36" references="/0/genClassJavaDao/@body.0/@body.5/@source/@source/@source/@source/aClass">
+      <details key="start" value="777"/>
+      <details key="end" value="783"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.37" references="/0/genClassJavaDao/@body.0/@body.5/@source/@source/@source/@argument.0">
+      <details key="start" value="804"/>
+      <details key="end" value="807"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.38" references="/0/genClassJavaDao/@body.0/@body.5/@source/@source/@argument.0">
+      <details key="start" value="810"/>
+      <details key="end" value="836"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.39" references="/0/genClassJavaDao/@body.0/@body.5/@source/@source/@argument.0/aClass">
+      <details key="start" value="810"/>
+      <details key="end" value="816"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.40" references="/0/genClassJavaDao/@body.0/@body.5/@source/@argument.0">
+      <details key="start" value="839"/>
+      <details key="end" value="842"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.41" references="/0/genClassJavaDao/@body.0/@body.5/@argument.0">
+      <details key="start" value="845"/>
+      <details key="end" value="867"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.42" references="/0/genClassJavaDao/@body.0/@body.5/@argument.0/aClass">
+      <details key="start" value="845"/>
+      <details key="end" value="851"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.43" references="/0/genClassJavaDao/@body.0/@body.6">
+      <details key="start" value="869"/>
+      <details key="end" value="874"/>
       <details key="line" value="20"/>
     </eAnnotations>
-    <eAnnotations source="positions.34" references="/0/genClassJavaDao/@body.0/className">
-      <details key="start" value="826"/>
-      <details key="end" value="835"/>
+    <eAnnotations source="positions.44" references="/0/genClassJavaDao/@body.0/@body.7">
+      <details key="start" value="874"/>
+      <details key="end" value="920"/>
+      <details key="line" value="21"/>
+    </eAnnotations>
+    <eAnnotations source="positions.45" references="/0/genClassJavaDao/@body.0/@body.7/@body.0">
+      <details key="start" value="904"/>
+      <details key="end" value="908"/>
+      <details key="line" value="22"/>
+    </eAnnotations>
+    <eAnnotations source="positions.46" references="/0/genClassJavaDao/@body.0/@body.7/@marker">
+      <details key="start" value="886"/>
+      <details key="end" value="902"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.35" references="/0/genClassJavaDao/@body.0/@body.8">
-      <details key="start" value="837"/>
-      <details key="end" value="854"/>
-      <details key="line" value="20"/>
+    <eAnnotations source="positions.47" references="/0/genClassJavaDao/@body.0/@body.8">
+      <details key="start" value="920"/>
+      <details key="end" value="934"/>
+      <details key="line" value="23"/>
     </eAnnotations>
-    <eAnnotations source="positions.36" references="/0/genClassJavaDao/@body.0/@fileUrl">
+    <eAnnotations source="positions.48" references="/0/genClassJavaDao/@body.0/@body.9">
+      <details key="start" value="935"/>
+      <details key="end" value="955"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.49" references="/0/genClassJavaDao/@body.0/@body.9/aClass">
+      <details key="start" value="935"/>
+      <details key="end" value="941"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.50" references="/0/genClassJavaDao/@body.0/@body.10">
+      <details key="start" value="957"/>
+      <details key="end" value="977"/>
+      <details key="line" value="23"/>
+    </eAnnotations>
+    <eAnnotations source="positions.51" references="/0/genClassJavaDao/@body.0/className">
+      <details key="start" value="978"/>
+      <details key="end" value="987"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.52" references="/0/genClassJavaDao/@body.0/@body.12">
+      <details key="start" value="989"/>
+      <details key="end" value="1006"/>
+      <details key="line" value="23"/>
+    </eAnnotations>
+    <eAnnotations source="positions.53" references="/0/genClassJavaDao/@body.0/@fileUrl">
       <details key="start" value="566"/>
       <details key="end" value="589"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.37" references="/0/genClassJavaDao/@body.0/@fileUrl/aClass">
+    <eAnnotations source="positions.54" references="/0/genClassJavaDao/@body.0/@fileUrl/aClass">
       <details key="start" value="566"/>
       <details key="end" value="572"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.38" references="/0/genClassJavaDao/@body.0/@charset">
+    <eAnnotations source="positions.55" references="/0/genClassJavaDao/@body.0/@charset">
       <details key="start" value="598"/>
       <details key="end" value="605"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.39" references="/0/genClassJavaDao/@documentation">
+    <eAnnotations source="positions.56" references="/0/genClassJavaDao/@documentation">
       <details key="start" value="365"/>
       <details key="end" value="445"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.40" references="/0/genClassJavaDao/@documentation/aClass">
+    <eAnnotations source="positions.57" references="/0/genClassJavaDao/@documentation/aClass">
       <details key="start" value="-1"/>
       <details key="end" value="-1"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.41" references="/0/genClassJavaDao/aClass">
+    <eAnnotations source="positions.58" references="/0/genClassJavaDao/aClass">
       <details key="start" value="479"/>
       <details key="end" value="493"/>
       <details key="line" value="15"/>
     </eAnnotations>
-    <eAnnotations source="positions.42" references="/0/getDaoClass">
-      <details key="start" value="875"/>
-      <details key="end" value="985"/>
-      <details key="line" value="26"/>
+    <eAnnotations source="positions.59" references="/0/getDaoClass">
+      <details key="start" value="1027"/>
+      <details key="end" value="1137"/>
+      <details key="line" value="29"/>
     </eAnnotations>
-    <eAnnotations source="positions.43" references="/0/getDaoClass/@body.0">
-      <details key="start" value="936"/>
-      <details key="end" value="971"/>
+    <eAnnotations source="positions.60" references="/0/getDaoClass/@body.0">
+      <details key="start" value="1088"/>
+      <details key="end" value="1123"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.44" references="/0/getDaoClass/@body.0/@source">
-      <details key="start" value="936"/>
-      <details key="end" value="947"/>
+    <eAnnotations source="positions.61" references="/0/getDaoClass/@body.0/@source">
+      <details key="start" value="1088"/>
+      <details key="end" value="1099"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.45" references="/0/getDaoClass/@body.0/@source/aClass">
-      <details key="start" value="936"/>
-      <details key="end" value="942"/>
+    <eAnnotations source="positions.62" references="/0/getDaoClass/@body.0/@source/aClass">
+      <details key="start" value="1088"/>
+      <details key="end" value="1094"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.46" references="/0/getDaoClass/@body.0/@argument.0">
-      <details key="start" value="950"/>
-      <details key="end" value="971"/>
+    <eAnnotations source="positions.63" references="/0/getDaoClass/@body.0/@argument.0">
+      <details key="start" value="1102"/>
+      <details key="end" value="1123"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.47" references="/0/getDaoClass/@body.0/@argument.0/aClass">
-      <details key="start" value="950"/>
-      <details key="end" value="956"/>
+    <eAnnotations source="positions.64" references="/0/getDaoClass/@body.0/@argument.0/aClass">
+      <details key="start" value="1102"/>
+      <details key="end" value="1108"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.48" references="/0/getDaoClass/aClass">
-      <details key="start" value="904"/>
-      <details key="end" value="918"/>
-      <details key="line" value="26"/>
+    <eAnnotations source="positions.65" references="/0/getDaoClass/aClass">
+      <details key="start" value="1056"/>
+      <details key="end" value="1070"/>
+      <details key="line" value="29"/>
     </eAnnotations>
-    <eAnnotations source="positions.49" references="/0/getDaoClass/@post">
-      <details key="start" value="926"/>
-      <details key="end" value="932"/>
+    <eAnnotations source="positions.66" references="/0/getDaoClass/@post">
+      <details key="start" value="1078"/>
+      <details key="end" value="1084"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.50" references="/0/getDaoClass/@post/self">
+    <eAnnotations source="positions.67" references="/0/getDaoClass/@post/self">
       <details key="start" value="-1"/>
       <details key="end" value="-1"/>
       <details key="line" value="0"/>

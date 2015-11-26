@@ -17,6 +17,9 @@
 package [aClass.genPackageValue() + '.' + aClass.getDaoNamespace()/];
 
 import [aClass.genPackageValue() + '.' + aClass.getEntityNamespace() + '.' + className/];
+import [aClass.genPackageValue() + '.' + aClass.getUtilsNamespace() + '.' + aClass.getGenericDao()/];
+// [protected ('imports do Dao')]
+// [/protected]
 public class [aClass.getDaoClass()/] extends GenericDao<[className/], Integer> {
 	
 }
