@@ -2,6 +2,7 @@ package org.eclipse.acceleo.sisgom.uml2java.servlets;
 
 import java.io.IOException;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -12,7 +13,7 @@ import org.eclipse.acceleo.sisgom.uml2java.daos.ClienteDao;
 import org.eclipse.acceleo.sisgom.uml2java.entities.ClienteEntity;
 import org.eclipse.acceleo.sisgom.uml2java.utils.DaoFactory;
 
-@WebServlet(urlPatterns = "/Clientes/deletar")
+@WebServlet(urlPatterns = "/cliente/deletar")
 public class ClienteDeleteServlet extends HttpServlet {
 
 	/**
@@ -26,9 +27,10 @@ public class ClienteDeleteServlet extends HttpServlet {
 	protected void service(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
 		String id = req.getParameter("id");
+		String destino = "";
 
 		if (id == null) {
-			resp.sendRedirect("/clientes/list.jsp?error=Id não encontrado.");
+			destino = "/cliente/list.jsp?error=Id não encontrado.";
 			return;
 		}
 
@@ -37,12 +39,14 @@ public class ClienteDeleteServlet extends HttpServlet {
 
 			if (entity != null) {
 				this.clienteDao.delete(entity);
-				resp.sendRedirect("/Clientes/list.jsp");
+				destino = "/cliente/list.jsp";
 			} else {
-				resp.sendRedirect("/Clientes/list.jsp?error=Cliente não encontrado.");
+				destino = "/cliente/list.jsp?error=Cliente não encontrado.";
 			}
 		} catch (Exception ex) {
-			resp.sendRedirect("/Clientes/list.jsp?error=" + ex.getMessage());
+			destino = "/cliente/list?error=" + ex.getMessage();
 		}
+		
+		resp.sendRedirect(destino);
 	}
 }

@@ -4,7 +4,7 @@
 	<groupId>org.eclipse.acceleo.sisgom</groupId>
 	<artifactId>eclipse-acceleo-sisgom-uml2java</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	
+
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
@@ -130,6 +130,16 @@
 			<artifactId>jsp-api</artifactId>
 			<version>2.1</version>
 		</dependency>
+		<dependency>
+			<groupId>jstl</groupId>
+			<artifactId>jstl</artifactId>
+			<version>1.2</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-beanutils</groupId>
+			<artifactId>commons-beanutils</artifactId>
+			<version>1.9.2</version>
+		</dependency>
 	</dependencies>
 	<build>
 		<finalName>${project.name}-${project.version}</finalName>
@@ -153,7 +163,7 @@
 					<target>1.7</target>
 				</configuration>
 			</plugin>
-			
+
 			<plugin>
 				<!-- http://www.eclipse.org/jetty/documentation/current/jetty-maven-plugin.html -->
 				<groupId>org.eclipse.jetty</groupId>

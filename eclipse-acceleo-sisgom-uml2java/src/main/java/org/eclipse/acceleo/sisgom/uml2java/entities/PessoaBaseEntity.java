@@ -39,7 +39,7 @@ public abstract class PessoaBaseEntity  extends BaseBean {
 	
 	private String nome;
 	
-	private String cPFouCNPJ;
+	private String cpfouCnpj;
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -50,7 +50,7 @@ public abstract class PessoaBaseEntity  extends BaseBean {
 		this.contatos = contatos;
 		this.enderecos = enderecos; 
 		this.nome = nome;
-		this.cPFouCNPJ = cPFouCNPJ;
+		this.cpfouCnpj = cPFouCNPJ;
 	}
 	
 	public PessoaBaseEntity() {
@@ -82,12 +82,12 @@ public abstract class PessoaBaseEntity  extends BaseBean {
 		this.nome = nome;
 	}
 		
-	public String getCPFouCNPJ() {
-		return this.cPFouCNPJ;
+	public String getCpfouCnpj() {
+		return this.cpfouCnpj;
 	}
 	
-	public void setCPFouCNPJ(String cPFouCNPJ) {
-		this.cPFouCNPJ = cPFouCNPJ;
+	public void setCpfouCnpj(String cpfouCnpj) {
+		this.cpfouCnpj = cpfouCnpj;
 	}
 	
 	public int getId() {
