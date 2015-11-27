@@ -12,14 +12,20 @@
  * The documentation of the template genClassJavaFile.
  * @param aClass
  */]
-[template public genClassJavaDao(aClass : Class){ className : String = aClass.name.toUpperFirst() + aClass.getEntitySuffix();}]
+[template public genClassJavaDao(aClass : Class){ className : String = aClass.name + aClass.getEntitySuffix();}]
 [file (aClass.genFilePathDao(), false, 'UTF-8')]
 package [aClass.genPackageValue() + '.' + aClass.getDaoNamespace()/];
 
 import [aClass.genPackageValue() + '.' + aClass.getEntityNamespace() + '.' + className/];
-public class [aClass.name.toUpperFirst() + aClass.getDaoSuffix()/] extends GenericDao<[className/], Integer> {
+import [aClass.genPackageValue() + '.' + aClass.getUtilsNamespace() + '.' + aClass.getGenericDao()/];
+// [protected ('imports do Dao')]
+// [/protected]
+public class [aClass.getDaoClass()/] extends GenericDao<[className/], Integer> {
 	
 }
 [/file]
 [/template]
 
+[template public getDaoClass(aClass : Class) post (trim())]
+[aClass.name + aClass.getDaoSuffix()/]
+[/template]

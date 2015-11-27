@@ -43,6 +43,9 @@
 [getProperty('ServletsNamespace')/]
 [/template]
 
+[template public getTestNamespace(anOclAny : OclAny)]
+[getProperty('TestNamespace')/]
+[/template]
 
 
 
@@ -56,6 +59,10 @@
 [template public getServletsSuffix(anOclAny : OclAny)]
 [getProperty('ServletsSuffix')/]
 [/template]
+[template public getTestSuffix(anOclAny : OclAny)]
+[getProperty('TestSuffix')/]
+[/template]
+
 
 
 [template public getGenericDao(anOclAny : OclAny)]
@@ -66,8 +73,8 @@
 [getProperty('BaseBean')/]
 [/template]
 
-[template public getFactoryDao(anOclAny : OclAny)]
-[getProperty('FactoryDao')/]
+[template public getDaoFactory(anOclAny : OclAny)]
+[getProperty('DaoFactory')/]
 [/template]
 
 [template public getPersistenceUnit(anOclAny : OclAny)]

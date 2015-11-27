@@ -24,13 +24,13 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import [aClass.genPackageEntity() + '.' + aClass.name.toUpperFirst() + aClass.getEntitySuffix()/];
-import [aClass.genPackageDao() + '.' + aClass.name.toUpperFirst() + aClass.getDaoSuffix()/];
-import [aClass.genPackageValue() + '.' + aClass.getUtilsNamespace() + '.' + aClass.getFactoryDao()/];
+import [aClass.genPackageEntity() + '.' + aClass.name + aClass.getEntitySuffix()/];
+import [aClass.genPackageDao() + '.' + aClass.name + aClass.getDaoSuffix()/];
+import [aClass.genPackageValue() + '.' + aClass.getUtilsNamespace() + '.' + aClass.getDaoFactory()/];
 
 @WebServlet(urlPatterns = "/[aClass.name.toLowerFirst()/]/[tipo/]")
-public class [aClass.name.toUpperFirst() + tipo + aClass.getServletsSuffix() /] extends HttpServlet {
-	private [aClass.name.toUpperFirst() + aClass.getDaoSuffix()/] [aClass.name.toLowerFirst() + aClass.getDaoSuffix()/] = DaoFactory.[aClass.name.toLowerFirst()/]Instance();
+public class [aClass.name + tipo + aClass.getServletsSuffix() /] extends HttpServlet {
+	private [aClass.name + aClass.getDaoSuffix()/] [aClass.name.toLowerFirst() + aClass.getDaoSuffix()/] = DaoFactory.[aClass.name.toLowerFirst()/]Instance();
 	
 	@Override
 	protected void service(HttpServletRequest req, HttpServletResponse resp)
@@ -43,7 +43,7 @@ public class [aClass.name.toUpperFirst() + tipo + aClass.getServletsSuffix() /] 
 		}
 
 		try {
-			[aClass.name.toUpperFirst() + aClass.getEntitySuffix()/] entity = this.[aClass.name.toLowerFirst() + aClass.getDaoSuffix()/].findById(Integer.parseInt(id));
+			[aClass.name + aClass.getEntitySuffix()/] entity = this.[aClass.name.toLowerFirst() + aClass.getDaoSuffix()/].findById(Integer.parseInt(id));
 
 			if (entity != null) {
 				this.[aClass.name.toLowerFirst() + aClass.getDaoSuffix()/].delete(entity);
@@ -69,17 +69,20 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+import org.apache.log4j.Logger;
 
-import [aClass.genPackageEntity() + '.' + aClass.name.toUpperFirst() + aClass.getEntitySuffix()/];
-import [aClass.genPackageDao() + '.' + aClass.name.toUpperFirst() + aClass.getDaoSuffix()/];
-import [aClass.genPackageValue() + '.' + aClass.getUtilsNamespace() + '.' + aClass.getFactoryDao()/];
-
+import [aClass.genPackageDao() + '.' + aClass.name + aClass.getDaoSuffix()/];
+import [aClass.genPackageValue() + '.' + aClass.getUtilsNamespace() + '.' + aClass.getDaoFactory()/];
+// [protected ('imports do Servlet')]
+import [aClass.genPackageEntity() + '.' + aClass.name + aClass.getEntitySuffix()/];
+// [/protected]
 @WebServlet(urlPatterns = "/[aClass.name.toLowerFirst()/]/[tipo/]")
-public class [aClass.name.toUpperFirst() + tipo + aClass.getServletsSuffix() /] extends HttpServlet {
+public class [aClass.name + tipo + aClass.getServletsSuffix() /] extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
-	private static final Logger LOGGER = Logger.getLogger([aClass.name.toUpperFirst() + tipo + aClass.getServletsSuffix() /].class);
-	private [aClass.name.toUpperFirst() + aClass.getDaoSuffix()/] [aClass.name.toLowerFirst() + aClass.getDaoSuffix()/] = DaoFactory.[aClass.name.toLowerFirst()/]Instance();
+	private static final Logger LOGGER = Logger.getLogger([aClass.name + tipo + aClass.getServletsSuffix() /].class);
+	private [aClass.name + aClass.getDaoSuffix()/] [aClass.name.toLowerFirst() + aClass.getDaoSuffix()/] = DaoFactory.[aClass.name.toLowerFirst()/]Instance();
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -91,18 +94,18 @@ public class [aClass.name.toUpperFirst() + tipo + aClass.getServletsSuffix() /] 
 		}
 
 		try {
-			[aClass.name.toUpperFirst() + aClass.getEntitySuffix()/] entity = this.[aClass.name.toLowerFirst() + aClass.getDaoSuffix()/].findById(Integer.parseInt(id));
+			[aClass.name + aClass.getEntitySuffix()/] entity = this.[aClass.name.toLowerFirst() + aClass.getDaoSuffix()/].findById(Integer.parseInt(id));
 
 			if (entity != null) {
 				HttpSession session = req.getSession();
 
-				[protected ('adicionar parametros na sessão')]
+				// [protected ('adicionar parametros na sessao')]
 			
-				[/protected];
+				// [/protected];
 
 				resp.sendRedirect("/[aClass.name.toLowerFirst()/]/addEdit.jsp");
 			} else {
-				resp.sendRedirect(String.format("/[aClass.name.toLowerFirst()/]/list.jsp?error=[aClass.name.toUpperFirst()/] ['[%s]'/] não foi encontrado.", id));
+				resp.sendRedirect(String.format("/[aClass.name.toLowerFirst()/]/list.jsp?error=[aClass.name/] ['[%s]'/] não foi encontrado.", id));
 			}
 		} catch (Exception ex) {
 			LOGGER.error(ex.getMessage(), ex);
@@ -113,7 +116,7 @@ public class [aClass.name.toUpperFirst() + tipo + aClass.getServletsSuffix() /] 
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		try {
-			[aClass.name.toUpperFirst() + aClass.getEntitySuffix()/] entity = this.parseToCliente(req);
+			[aClass.name + aClass.getEntitySuffix()/] entity = this.parseToCliente(req);
 
 			if (entity.getId() != 0) {
 				this.ClienteDao.update(entity);
@@ -128,12 +131,12 @@ public class [aClass.name.toUpperFirst() + tipo + aClass.getServletsSuffix() /] 
 		}
 	}
 
-	private [aClass.name.toUpperFirst() + aClass.getEntitySuffix()/] parseToCliente(HttpServletRequest req) {
+	private [aClass.name + aClass.getEntitySuffix()/] parseToCliente(HttpServletRequest req) {
 
-		[aClass.name.toUpperFirst() + aClass.getEntitySuffix()/] entity = new [aClass.name.toUpperFirst() + aClass.getEntitySuffix()/]();
-		[protected ('obter parametros')]
+		[aClass.name + aClass.getEntitySuffix()/] entity = new [aClass.name + aClass.getEntitySuffix()/]();
+		// [protected ('obter parametros')]
 			
-		[/protected]
+		// [/protected]
 		return entity;
 	}
 }

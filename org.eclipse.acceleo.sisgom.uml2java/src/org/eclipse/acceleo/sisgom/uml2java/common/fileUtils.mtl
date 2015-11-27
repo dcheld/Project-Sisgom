@@ -19,13 +19,18 @@
 [ aType.getSourceFolderClass() + '/' + aType.packagePath() + '/' + aType.getDaoNamespace() + '/' + aType.name/]Dao.java
 [/template]
 
-[template public genFilePathUtils(aType : Package, nome : String)]
+[template public genFilePathUtils(aType : OclAny, nome : String)]
 [ aType.getSourceFolderClass() + '/' + aType.packagePath() + '/' + aType.getUtilsNamespace() + '/' + nome/].java
 [/template]
 
+[template public genFilePathTest(aType : Type, nome : String)]
+[ aType.getSourceFolderTest() + '/' + aType.packagePath() + '/' + nome/].java
+[/template]
 
-[template public packagePath(aType : Type)] 
-[aType.ancestors(Package)->reject(aPackage: Package | aPackage.oclIsTypeOf(Model))->reverse().name.substituteAll('.', '/').concat('/')->sep('/')/]
+
+
+[template public packagePath(aType : OclAny)] 
+[aType.ancestors(Package)->reject(aPackage: Package | aPackage.oclIsTypeOf(Model))->reverse().name.substituteAll('.', '/')->sep('/')/]
 [/template]
 
 [template public packagePath(aPack : Package)]
@@ -55,22 +60,21 @@
 [template public genDefaultImport(aType : Classifier)post (trim())]
 [if (aType.oclIsTypeOf(Class) and aType.oclAsType(Class).superClass->isEmpty())]
 [let pack : Package = aType.getPackageBase()]
-import [pack.name + '.utils.' + pack.getGenericDao()/].BaseBean;
+import [pack.name + '.'+ pack.getUtilsNamespace() + '.' + pack.getBaseBean()/];
 [/let]
-
 [/if]
 [if (aType.attribute->exists(property : Property | property.upper = -1 or property.upper > 1))]
 import java.util.List;
 [/if]
 [if (aType.oclIsTypeOf(Class))]
 	[let aClass : Class = aType.oclAsType(Class)]
-	[aClass.obterTodosOsTipo().genElementsImportGeneric(aType) /]
-	[aClass.importEntityNamespece() /]
+[aClass.obterTodosOsTipo().genElementsImportGeneric(aType) /]
+[aClass.importEntityNamespece() /]
 	[/let]
 [elseif (aType.oclIsTypeOf(Interface))]
 	[aType.oclAsType(Interface).obterTodosOsTipo().genElementsImportGeneric(aType) /]
 [/if]
-// [protected ('for imports')]
+// [protected ('for imports' + aType.name)]
 // [/protected]
 [/template]
 
@@ -80,7 +84,7 @@ import java.util.List;
 import [getProperty(aType.name)/];
 [/if]
 [elseif (aType.genPackageValue() <>  aPai.genPackageValue() and aType.genPackageValue() <> '')]
-import [aType.genPackageValue()+ '.' + aType.name  /];
+import [aType.genPackageValue()+ '.' + aType.name + aType.getEntitySuffix() /];
 [/if]
 [/template]
 
@@ -89,6 +93,11 @@ import [aType.genPackageValue()+ '.' + aType.name  /];
 import [aClass.getJavaxPersistence() /];
 [/if]
 [/template]
+
+[template public genGenericFactory(arg : Type) post(trim())]
+	[arg.name + arg.getDaoSuffix()/]
+[/template]
+
 
 [query public getPackageBase(model : OclAny) : Package = 
 	self.ancestors(Package)->select(f: Package | f.hasStereotypeQuery('MainPackage'))->first() /]

@@ -18,9 +18,9 @@ package [aClass.genPackageEntity()/];
 
 [aClass.genDefaultImport()/]
 [aClass.hybernatEntity()/]
-public [if (aClass.isAbstract)]abstract[/if] class [aClass.getClassNameEntity()/][aClass.inheritance()/] {
+public [if (aClass.isAbstract)]abstract[/if] class [aClass.getClassNameEntity()/] [aClass.inheritance()/]{
 	[aClass.fields()/]
-	public [aClass.name.toUpperFirst() + aClass.getEntitySuffix()/]() {
+	public [aClass.name + aClass.getEntitySuffix()/]() {
 		super();
 	}
 	[aClass.classBody()/]
@@ -33,24 +33,25 @@ public [if (aClass.isAbstract)]abstract[/if] class [aClass.getClassNameEntity()/
 [aClass.accessors()/]
 [/template]
 
-[template private inheritance(aClass : Class)]
+[template private inheritance(aClass : Class) post (trim())]
 [aClass.extendedClasses()/][aClass.implementedInterfaces()/]
 [/template]
 
 [template private extendedClasses(aClass : Class)]
 [if(aClass.superClass->notEmpty())]
-[for (aSuperClass : Class | aClass.superClass) before(' extends ') separator(', ')][aSuperClass.name.toUpperFirst()/][/for]
+[for (aSuperClass : Class | aClass.superClass) before(' extends ') separator(', ')][aSuperClass.name + aSuperClass.getEntitySuffix()/][/for]
 [else]
  extends BaseBean
 [/if]
 [/template]
 
 [template private implementedInterfaces(aClass : Class)]
-[for (anInterface : Interface | aClass.getImplementedInterfaces()) before(' implements ') separator(', ')][anInterface.name.toUpperFirst()/][/for]
+[for (anInterface : Interface | aClass.getImplementedInterfaces()) before(' implements ') separator(', ')][anInterface.name/][/for]
 [/template]
 
 [template private fields(aClass : Class)]
-[for (aProperty : Property | aClass.attribute) separator ('\r\n')]
+[for (aProperty : Property | aClass.attribute) separator ('\n')]
+[aProperty.hybernatProperty()/]
 private [if (aProperty.upper = -1 or aProperty.upper > 1)]List<[aProperty.type.getClassNameEntity()/]>[else][aProperty.type.getClassNameEntity()/][/if] [aProperty.name.toLowerFirst()/];
 [/for]
 [/template]
@@ -82,7 +83,7 @@ public [if (anOperation.type.oclIsUndefined())]void[else][anOperation.type.name/
 [/template]
 
 [template private parameters(anOperation : Operation)]
-[for (aParameter : Parameter | anOperation.ownedParameter->reject(aParameter : Parameter | aParameter.direction = ParameterDirectionKind::return)) separator(', ')][aParameter.type.name.toUpperFirst()/] [aParameter.name.toLowerFirst()/][/for]
+[for (aParameter : Parameter | anOperation.ownedParameter->reject(aParameter : Parameter | aParameter.direction = ParameterDirectionKind::return)) separator(', ')][aParameter.type.name/] [aParameter.name.toLowerFirst()/][/for]
 [/template]
 
 [query private allAbstractOperationsInherited(aClass : Class) : Sequence(Operation) =
@@ -90,20 +91,19 @@ public [if (anOperation.type.oclIsUndefined())]void[else][anOperation.type.name/
 /]
 
 [template private accessors(aClass : Class)]
-[for (aProperty : Property | aClass.attribute) separator ('\r\n')]
-[hybernatProperty(aProperty)/]
-public [if (aProperty.upper = -1 or aProperty.upper > 1)]List<[aProperty.type.getClassNameEntity()/]>[else][aProperty.type.getClassNameEntity()/][/if] get[aProperty.name.toUpperFirst()/]() {
+[for (aProperty : Property | aClass.attribute) separator ('\n')]
+public [if (aProperty.upper = -1 or aProperty.upper > 1)]List<[aProperty.type.getClassNameEntity()/]>[else][aProperty.type.getClassNameEntity()/][/if] get[aProperty.name/]() {
 	return this.[aProperty.name.toLowerFirst()/];
 }
 
-public void set[aProperty.name.toUpperFirst()/]([if (aProperty.upper = -1 or aProperty.upper > 1)]List<[aProperty.type.getClassNameEntity()/]>[else][aProperty.type.getClassNameEntity()/][/if] [aProperty.name.toLowerFirst()/]) {
+public void set[aProperty.name/]([if (aProperty.upper = -1 or aProperty.upper > 1)]List<[aProperty.type.getClassNameEntity()/]>[else][aProperty.type.getClassNameEntity()/][/if] [aProperty.name.toLowerFirst()/]) {
 	this.[aProperty.name.toLowerFirst()/] = [aProperty.name.toLowerFirst()/];
 }
 [/for]
 [/template]
 
 [template public getClassNameEntity(aClass : Class)post (trim())]
-[aClass.name.toUpperFirst() + aClass.getEntitySuffix()/]
+[aClass.name + aClass.getEntitySuffix()/]
 [/template]
 
 [template public getClassNameEntity(aType : Type)post (trim())]

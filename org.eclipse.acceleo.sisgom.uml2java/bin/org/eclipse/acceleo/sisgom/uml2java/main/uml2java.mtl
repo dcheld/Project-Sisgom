@@ -8,6 +8,8 @@
 [import org::eclipse::acceleo::sisgom::uml2java::files::generatePomXml /]
 [import org::eclipse::acceleo::sisgom::uml2java::files::classUtilsJavaFile /]
 [import org::eclipse::acceleo::sisgom::uml2java::files::classServletsJavaFile /]
+[import org::eclipse::acceleo::sisgom::uml2java::files::classResourcesJavaFile /]
+[import org::eclipse::acceleo::sisgom::uml2java::files::classUnitJavaFile /]
 
 [template public mainClass(aClass : Class)]
 	[comment @main /]
@@ -16,6 +18,7 @@
 		[aClass.genClassJavaDao() /]
 		[aClass.genClassJavaServletDelete() /]
 		[aClass.genClassJavaServletEdit() /]
+		[aClass.genClassJavaUnitTest() /]
 	[/if]
 [/template]
 
@@ -40,5 +43,7 @@
 		[aModel.genClassDaoFactory()/]
 		[aModel.genClassBeanBase()/]
 		[aModel.genClassJavaGenericDao()/]
+		[aModel.genConfigLog4Net()/]
+		[aModel.genConfigPersistence()/]
 	[/if]
 [/template]
