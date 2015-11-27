@@ -18,7 +18,7 @@ package [aClass.genPackageEntity()/];
 
 [aClass.genDefaultImport()/]
 [aClass.hybernatEntity()/]
-public [if (aClass.isAbstract)]abstract[/if] class [aClass.getClassNameEntity()/][aClass.inheritance()/] {
+public [if (aClass.isAbstract)]abstract[/if] class [aClass.getClassNameEntity()/] [aClass.inheritance()/]{
 	[aClass.fields()/]
 	public [aClass.name + aClass.getEntitySuffix()/]() {
 		super();
@@ -33,7 +33,7 @@ public [if (aClass.isAbstract)]abstract[/if] class [aClass.getClassNameEntity()/
 [aClass.accessors()/]
 [/template]
 
-[template private inheritance(aClass : Class)]
+[template private inheritance(aClass : Class) post (trim())]
 [aClass.extendedClasses()/][aClass.implementedInterfaces()/]
 [/template]
 
@@ -50,7 +50,8 @@ public [if (aClass.isAbstract)]abstract[/if] class [aClass.getClassNameEntity()/
 [/template]
 
 [template private fields(aClass : Class)]
-[for (aProperty : Property | aClass.attribute) separator ('\r\n')]
+[for (aProperty : Property | aClass.attribute) separator ('\n')]
+[aProperty.hybernatProperty()/]
 private [if (aProperty.upper = -1 or aProperty.upper > 1)]List<[aProperty.type.getClassNameEntity()/]>[else][aProperty.type.getClassNameEntity()/][/if] [aProperty.name.toLowerFirst()/];
 [/for]
 [/template]
@@ -90,8 +91,7 @@ public [if (anOperation.type.oclIsUndefined())]void[else][anOperation.type.name/
 /]
 
 [template private accessors(aClass : Class)]
-[for (aProperty : Property | aClass.attribute) separator ('\r\n')]
-[aProperty.hybernatProperty()/]
+[for (aProperty : Property | aClass.attribute) separator ('\n')]
 public [if (aProperty.upper = -1 or aProperty.upper > 1)]List<[aProperty.type.getClassNameEntity()/]>[else][aProperty.type.getClassNameEntity()/][/if] get[aProperty.name/]() {
 	return this.[aProperty.name.toLowerFirst()/];
 }

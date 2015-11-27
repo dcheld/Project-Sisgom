@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xmi:XMI xmi:version="20110701" xmlns:xmi="http://www.omg.org/spec/XMI/20110701" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:HNode="http://Hibernate/schemas/HNode/_0n42gJSLEeWfioFPAMEoYA/11" xmlns:HRelationship="http://Hibernate/schemas/HRelationship/_0n6EoJSLEeWfioFPAMEoYA/10" xmlns:Infra="http:///schemas/Infra/_wQgpEIvkEeWuGKU7gkaFFg/2" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/4.0.0/UML" xsi:schemaLocation="http://Hibernate/schemas/HNode/_0n42gJSLEeWfioFPAMEoYA/11 hibernate.profile.uml#_0n5dkJSLEeWfioFPAMEoYA http://Hibernate/schemas/HRelationship/_0n6EoJSLEeWfioFPAMEoYA/10 hibernate.profile.uml#_0n6EoZSLEeWfioFPAMEoYA http:///schemas/Infra/_wQgpEIvkEeWuGKU7gkaFFg/2 infra.profile.uml#_wQgpEYvkEeWuGKU7gkaFFg">
+<xmi:XMI xmi:version="20110701" xmlns:xmi="http://www.omg.org/spec/XMI/20110701" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:HNode="http://Hibernate/schemas/HNode/_0n42gJSLEeWfioFPAMEoYA/11" xmlns:HRelationship="http://Hibernate/schemas/HRelationship/_0n6EoJSLEeWfioFPAMEoYA/10" xmlns:Infra="http:///schemas/Infra/_wQgpEIvkEeWuGKU7gkaFFg/2" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/4.0.0/UML" xsi:schemaLocation="http://Hibernate/schemas/HNode/_0n42gJSLEeWfioFPAMEoYA/11 file:/C:/Users/DouglasdeCampos/git_juno/projetotcc/org.eclipse.acceleo.sisgom.uml2java.modelo/model/hibernate.profile.uml#_0n5dkJSLEeWfioFPAMEoYA http://Hibernate/schemas/HRelationship/_0n6EoJSLEeWfioFPAMEoYA/10 file:/C:/Users/DouglasdeCampos/git_juno/projetotcc/org.eclipse.acceleo.sisgom.uml2java.modelo/model/hibernate.profile.uml#_0n6EoZSLEeWfioFPAMEoYA http:///schemas/Infra/_wQgpEIvkEeWuGKU7gkaFFg/2 file:/C:/Users/DouglasdeCampos/git_juno/projetotcc/org.eclipse.acceleo.sisgom.uml2java.modelo/model/infra.profile.uml#_wQgpEYvkEeWuGKU7gkaFFg">
   <uml:Model xmi:id="_sKvHYEQjEeWT7PHpy37frQ" name="Model">
     <packageImport xmi:id="_sKvHYUQjEeWT7PHpy37frQ">
       <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
@@ -498,19 +498,19 @@
     </profileApplication>
     <profileApplication xmi:id="_ejggsJSIEeWfioFPAMEoYA">
       <eAnnotations xmi:id="_ejjkAJSIEeWfioFPAMEoYA" source="http://www.eclipse.org/uml2/2.0.0/UML">
-        <references xmi:type="ecore:EPackage" href="hibernate.profile.uml#_0n4PcZSLEeWfioFPAMEoYA"/>
+        <references xmi:type="ecore:EPackage" href="hibernate.profile.uml#_MOmP0ZSREeWfioFPAMEoYA"/>
       </eAnnotations>
       <appliedProfile href="hibernate.profile.uml#_3TC4gIu0EeWXsfFZHs3Y0Q"/>
     </profileApplication>
     <profileApplication xmi:id="_ejkLEJSIEeWfioFPAMEoYA">
       <eAnnotations xmi:id="_ejmnUJSIEeWfioFPAMEoYA" source="http://www.eclipse.org/uml2/2.0.0/UML">
-        <references xmi:type="ecore:EPackage" href="hibernate.profile.uml#_0n5dkJSLEeWfioFPAMEoYA"/>
+        <references xmi:type="ecore:EPackage" href="hibernate.profile.uml#_MOm24ZSREeWfioFPAMEoYA"/>
       </eAnnotations>
       <appliedProfile href="hibernate.profile.uml#_7BOacIu0EeWXsfFZHs3Y0Q"/>
     </profileApplication>
     <profileApplication xmi:id="_ejmnUZSIEeWfioFPAMEoYA">
       <eAnnotations xmi:id="_ejpDkJSIEeWfioFPAMEoYA" source="http://www.eclipse.org/uml2/2.0.0/UML">
-        <references xmi:type="ecore:EPackage" href="hibernate.profile.uml#_0n6EoZSLEeWfioFPAMEoYA"/>
+        <references xmi:type="ecore:EPackage" href="hibernate.profile.uml#_MOnd8ZSREeWfioFPAMEoYA"/>
       </eAnnotations>
       <appliedProfile href="hibernate.profile.uml#_tI54YIu3EeWXsfFZHs3Y0Q"/>
     </profileApplication>

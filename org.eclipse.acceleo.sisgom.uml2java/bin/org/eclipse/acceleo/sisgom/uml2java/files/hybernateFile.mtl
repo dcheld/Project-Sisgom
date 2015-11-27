@@ -10,22 +10,41 @@
 [if (aClass.hasStereotypeQuery('Table'))]
 @Table([aClass.attributeStereotype('Table')/])
 [/if]
+[if (aClass.hasStereotypeQuery('PrimaryKeyJoinColumn'))]
+@PrimaryKeyJoinColumn([aClass.attributeStereotype('PrimaryKeyJoinColumn')/])
+[/if]
+[if (aClass.hasStereotypeQuery('Inheritance'))]
+@Inheritance([aClass.attributeStereotype('Inheritance')/])
+[/if]
 [/template]
 
 [template public hybernatProperty(prop : Property) post (trim())]
-[if (hasStereotypeQuery(prop, 'Id'))]
+[if (prop.hasStereotypeQuery('Id'))]
 @Id
 [/if]
-[if (hasStereotypeQuery(prop, 'Column'))]
+[if (hasStereotypeQuery('Column'))]
 @Column([prop.attributeStereotype('Column')/])
 [/if]
-[if (hasStereotypeQuery(prop, 'GeneratedValue'))]
+[if (prop.hasStereotypeQuery('GeneratedValue'))]
 @GeneratedValue([prop.attributeStereotype('GeneratedValue')/])
 [/if]
-[if (hasStereotypeQuery(prop, 'GeneratedValue'))]
-@GeneratedValue([prop.attributeStereotype('GeneratedValue')/])
+[if ( not prop.association.oclIsUndefined())]
+[prop.association.hybernatAssociation()/]
 [/if]
 [/template]
+
+[template public hybernatAssociation(asso : Association) post (trim())]
+[if (asso.hasStereotypeQuery('OneToMany'))]
+@OneToMany
+[/if]
+[if (asso.hasStereotypeQuery('ManyToOne'))]
+@ManyToOne
+[/if]
+[if (asso.hasStereotypeQuery('JoinColumn'))]
+@JoinColumn
+[/if]
+[/template]
+
 
 [template public generateStereotype(e : Element) post (trim())]
 [for (s : Stereotype | e.getAppliedStereotypes())]
@@ -41,7 +60,7 @@
 
 [template public attributeStereotype(e : Element, s : Stereotype) post (trim())]
 [for (prop : Property | s.attribute)separator(', ')? (not prop.type.oclIsTypeOf(Class))]
-[if (prop.name <> '')][prop.name/]=[/if][attributeStereotypeGetValue(prop, e, s)/][/for]	
+[if (prop.name <> '')][prop.name.toLowerFirst()/]=[/if][attributeStereotypeGetValue(prop, e, s)/][/for]	
 [/template]
 
 [template public attributeStereotypeGetValue(prop:Property, e : Element, s : Stereotype) post (trim())]

@@ -302,7 +302,7 @@
       <layoutConstraint xmi:type="notation:Bounds" xmi:id="_7BSr64u0EeWXsfFZHs3Y0Q"/>
     </children>
     <element xmi:type="uml:Profile" href="hibernate.profile.uml#_7BOacIu0EeWXsfFZHs3Y0Q"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_7BSr4Yu0EeWXsfFZHs3Y0Q" x="45" y="10" width="836" height="516"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_7BSr4Yu0EeWXsfFZHs3Y0Q" x="40" y="5" width="896" height="516"/>
   </children>
   <children xmi:type="notation:Shape" xmi:id="_tI-J0Iu3EeWXsfFZHs3Y0Q" type="1030" fontName="Segoe UI" lineColor="0">
     <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_tI-J0ou3EeWXsfFZHs3Y0Q" source="ShadowFigure">
