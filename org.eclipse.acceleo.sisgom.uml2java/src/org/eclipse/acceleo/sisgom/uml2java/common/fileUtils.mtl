@@ -23,8 +23,8 @@
 [ aType.getSourceFolderClass() + '/' + aType.packagePath() + '/' + aType.getUtilsNamespace() + '/' + nome/].java
 [/template]
 
-[template public genFilePathTest(aType : Type, nome : String)]
-[ aType.getSourceFolderTest() + '/' + aType.packagePath() + '/' + nome/].java
+[template public genFilePathTest(aClass : Class)]
+[aClass.getSourceFolderTest() + '/' + aClass.packagePath() + '/' + aClass.getTestNamespace() + '/' +  aClass.getDaoNamespace() + '/' + aClass.name.toUpperFirst() + aClass.getTestSuffix()/].java
 [/template]
 
 
@@ -127,3 +127,11 @@ aInterface.getAllAttributes()->collect(s : Property | s.type)->union(aInterface.
 [query public getStereotypeQuery(elem : Element, name : String) : Stereotype = 
 	self.getAppliedStereotypes()->select(e : Stereotype | e.name = name)->asOrderedSet()->first()
  /]
+
+[query public getPropertyId(aClass : Class) : Property = 
+	let a : Set(Property) = aClass.getAllAttributes()->select(aProp : Property | aProp.hasStereotypeQuery('Id')) in
+		if a->isEmpty() then
+			null
+		else
+			a->asSequence()->first()
+		endif/]

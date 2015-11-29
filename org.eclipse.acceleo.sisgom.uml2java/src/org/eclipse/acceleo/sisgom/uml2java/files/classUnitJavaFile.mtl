@@ -15,20 +15,16 @@
  * @param aClass
  */]
 [template public genClassJavaUnitTest(aClass : Class)]
-[file (aClass.genFilePathTest(aClass.getTestNamespace() + '/' + aClass.name.toUpperFirst() + aClass.getTestSuffix()), false, 'UTF-8')]
-package [aClass.genPackageValue() + '.' + aClass.getTestNamespace() + '.' + aClass.name .getDaoNamespace()/];
+[file (aClass.genFilePathTest(), false, 'UTF-8')]
+package [aClass.genPackageValue() + '.' + aClass.getTestNamespace() + '.' + aClass.name.getDaoNamespace()/];
 
-import java.math.BigInteger;
-import java.security.SecureRandom;
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
-
 import org.apache.log4j.Logger;
+import org.junit.Test;
+// [protected ('imports do test')]
 import [aClass.genPackageEntity() + '.' + aClass.getClassNameEntity()/];
 import [aClass.genPackageDao() + '.' + aClass.getDaoClass()/];
-// [protected ('imports do test')]
-import [aClass.genPackageEntity() + '.' + aClass.getUtilsNamespace() + '.' + aClass.getDaoFactory()/];
+import [aClass.genPackageValue() + '.' + aClass.getUtilsNamespace() + '.' + aClass.getDaoFactory()/];
 // [/protected]
 
 public class [aClass.name.toUpperFirst() + aClass.getTestSuffix()/] {
@@ -56,9 +52,9 @@ public class [aClass.name.toUpperFirst() + aClass.getTestSuffix()/] {
 		Integer id = [aClass.name.toLowerFirst()/].get[aClass.getPropertyId().name.toUpperFirst()/]();
  		[/if]
 
-		[aClass.name.toUpperFirst().getEntitySuffix()/] [aClass.name.toLowerFirst()/] = this.[aClass.name.toLowerFirst() + aClass.getDaoSuffix() /].findById(id);
+		[aClass.name.toUpperFirst()+ aClass.getEntitySuffix()/] [aClass.name.toLowerFirst()/]Pesquisa = this.[aClass.name.toLowerFirst() + aClass.getDaoSuffix() /].findById(id);
 
-		LOGGER.info([aClass.name.toLowerFirst()/]);
+		LOGGER.info([aClass.name.toLowerFirst()/]Pesquisa);
 		// [/protected]
 	}
 
@@ -82,7 +78,7 @@ public class [aClass.name.toUpperFirst() + aClass.getTestSuffix()/] {
 		// [protected ('Salvar')]
 		[aClass.name.toUpperFirst() + aClass.getEntitySuffix()/] [aClass.name.toLowerFirst()/] = new [aClass.name.toUpperFirst() + aClass.getEntitySuffix()/]();
 
-		this.servicoDao.save([aClass.name.toLowerFirst()/]);
+		this.[aClass.name.toLowerFirst() + aClass.getDaoSuffix()/].save([aClass.name.toLowerFirst()/]);
 
 		LOGGER.info("[aClass.name /] saved " + [aClass.name.toLowerFirst()/]);
 
@@ -92,12 +88,4 @@ public class [aClass.name.toUpperFirst() + aClass.getTestSuffix()/] {
 }
 [/file]
 [/template]
-
-[query public getPropertyId(aClass : Class) : Property = 
-	let a : Set(Property) = aClass.getAllAttributes()->select(aProp : Property | aProp.hasStereotypeQuery('Id')) in
-		if a->isEmpty() then
-			null
-		else
-			a->asSequence()->first()
-		endif/]
 

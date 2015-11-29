@@ -19,6 +19,7 @@
 		[aClass.genClassJavaServletDelete() /]
 		[aClass.genClassJavaServletEdit() /]
 		[aClass.genClassJavaUnitTest() /]
+		[aClass.genClassJavaServletList() /]
 	[/if]
 [/template]
 
