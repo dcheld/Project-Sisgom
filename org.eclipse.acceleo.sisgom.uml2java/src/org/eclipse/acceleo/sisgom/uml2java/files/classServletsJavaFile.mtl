@@ -30,6 +30,10 @@ import [aClass.genPackageValue() + '.' + aClass.getUtilsNamespace() + '.' + aCla
 
 @WebServlet(urlPatterns = "/[aClass.name.toLowerFirst()/]/[tipo.toLowerCase()/]")
 public class [aClass.name + tipo + aClass.getServletsSuffix() /] extends HttpServlet {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private [aClass.name + aClass.getDaoSuffix()/] [aClass.name.toLowerFirst() + aClass.getDaoSuffix()/] = DaoFactory.[aClass.name.toLowerFirst()/]Instance();
 	
 	@Override
@@ -71,7 +75,6 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 import org.apache.log4j.Logger;
 import org.apache.commons.beanutils.BeanUtils;
 
@@ -82,40 +85,47 @@ import [aClass.genPackageEntity() + '.' + aClass.name + aClass.getEntitySuffix()
 // [/protected]
 @WebServlet(urlPatterns = "/[aClass.name.toLowerCase()/]/[tipo.toLowerCase()/]")
 public class [aClass.name.toUpperFirst() + tipo + aClass.getServletsSuffix() /] extends HttpServlet {
-
+	/**
+	 * 
+	 */
 	private static final long serialVersionUID = 1L;
 	private static final Logger LOGGER = Logger.getLogger([aClass.name + tipo + aClass.getServletsSuffix() /].class);
 	private [aClass.name.toUpperFirst() + aClass.getDaoSuffix()/] [aClass.name.toLowerFirst() + aClass.getDaoSuffix()/] = DaoFactory.[aClass.name.toLowerFirst()/]Instance();
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		String id = req.getParameter("id");
+		String id = req.getParameter("[aClass.getPropertyId().name.toLowerFirst()/]");
 		String destino = "";
 
 		if ((id == null) || id.trim().isEmpty()) {
 			destino = "/WEB-INF/[aClass.name.toLowerCase()/]/addEdit.jsp";
+
+			RequestDispatcher rd = req.getRequestDispatcher(destino);
+			rd.forward(req, resp);
 		} else {
 			try {
-				[aClass.name.toUpperFirst() + aClass.getEntitySuffix()/] entity = this.[aClass.name.toLowerFirst() + aClass.getDaoSuffix()/].findById(Integer.parseInt(id));
+				[aClass.name.toUpperFirst() + aClass.getEntitySuffix()/] [aClass.name.toLowerCase()/] = this.[aClass.name.toLowerFirst() + aClass.getDaoSuffix()/].findById(Integer.parseInt(id));
 	
-				if (entity != null) {
-					HttpSession session = req.getSession();
-	
-					// [protected ('adicionar parametros na sessao')]
-				
+				if ([aClass.name.toLowerCase()/] != null) {
+					// [protected ('Editando ' + aClass.name.toLowerCase())]
+					req.setAttribute("[aClass.name.toLowerCase()/]", [aClass.name.toLowerCase()/]);
+
+					destino = "/WEB-INF/[aClass.name.toLowerCase()/]/addEdit.jsp";
+					RequestDispatcher rd = req.getRequestDispatcher(destino);
+					rd.forward(req, resp);
 					// [/protected];
 	
 					destino = "/WEB-INF/[aClass.name.toLowerFirst()/]/addEdit.jsp";
 				} else {
 					destino = String.format("/WEB-INF/[aClass.name.toLowerFirst()/]/list.jsp?error=[aClass.name/] ['[%s]'/] não foi encontrado.", id);
+					resp.sendRedirect(destino);
 				}
 			} catch (Exception ex) {
 				LOGGER.error(ex.getMessage(), ex);
 				destino = "/WEB-INF/[aClass.name.toLowerCase() /]/list.jsp?error=" + ex.getMessage();
+				resp.sendRedirect(destino);
 			}
 		}
-		RequestDispatcher rd = req.getRequestDispatcher(destino);
-		rd.forward(req, resp);
 	}
 
 	@Override
@@ -154,6 +164,7 @@ public class [aClass.name.toUpperFirst() + tipo + aClass.getServletsSuffix() /] 
 }
 [/file]
 [/template]
+
 [template public genClassJavaServletList(aClass : Class){tipo:String = 'Listar';}]
 [file (aClass.genFilePathServlets(tipo), false, 'UTF-8')]
 package [aClass.genPackageValue() + '.' + aClass.getServletsNamespace()/];
@@ -174,6 +185,9 @@ import [aClass.genPackageEntity() + '.' + aClass.name + aClass.getEntitySuffix()
 // [/protected]
 @WebServlet(urlPatterns = "/[aClass.name.toLowerFirst()/]/[tipo.toLowerCase()/]")
 public class [aClass.name.toUpperFirst() + tipo + aClass.getServletsSuffix() /] extends HttpServlet {
+	/**
+	 * 
+	 */
 	private static final long serialVersionUID = 1L;
 	private static final Logger LOGGER = Logger.getLogger([aClass.name.toUpperFirst() + tipo + aClass.getServletsSuffix() /].class);
 	private [aClass.name.toUpperFirst() + aClass.getDaoSuffix()/] [aClass.name.toLowerFirst() + aClass.getDaoSuffix()/] = DaoFactory.[aClass.name.toLowerFirst()/]Instance();

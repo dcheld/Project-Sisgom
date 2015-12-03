@@ -425,7 +425,7 @@
           <layoutConstraint xmi:type="notation:Bounds" xmi:id="_0av48ou4EeWXsfFZHs3Y0Q"/>
         </children>
         <element xmi:type="uml:Stereotype" href="hibernate.profile.uml#_0auDsIu4EeWXsfFZHs3Y0Q"/>
-        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_0av44Yu4EeWXsfFZHs3Y0Q" x="135" y="377"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_0av44Yu4EeWXsfFZHs3Y0Q" x="95" y="402"/>
       </children>
       <children xmi:type="notation:Shape" xmi:id="_0puwEIu4EeWXsfFZHs3Y0Q" type="1023" fontName="Segoe UI" lineColor="0">
         <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_0puwEou4EeWXsfFZHs3Y0Q" source="ShadowFigure">
@@ -506,10 +506,6 @@
           <children xmi:type="notation:Shape" xmi:id="_rqDNYIu6EeWXsfFZHs3Y0Q" type="3002" fontName="Segoe UI" lineColor="0">
             <element xmi:type="uml:Property" href="hibernate.profile.uml#_rqAxIIu6EeWXsfFZHs3Y0Q"/>
             <layoutConstraint xmi:type="notation:Location" xmi:id="_rqDNYYu6EeWXsfFZHs3Y0Q"/>
-          </children>
-          <children xmi:type="notation:Shape" xmi:id="_8s970Iu6EeWXsfFZHs3Y0Q" type="3002" fontName="Segoe UI" lineColor="0">
-            <element xmi:type="uml:Property" href="hibernate.profile.uml#_8s8GoIu6EeWXsfFZHs3Y0Q"/>
-            <layoutConstraint xmi:type="notation:Location" xmi:id="_8s970Yu6EeWXsfFZHs3Y0Q"/>
           </children>
           <styles xmi:type="notation:TitleStyle" xmi:id="_GvwE2Iu6EeWXsfFZHs3Y0Q"/>
           <styles xmi:type="notation:SortingStyle" xmi:id="_GvwE2Yu6EeWXsfFZHs3Y0Q"/>
