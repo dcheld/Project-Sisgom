@@ -9,7 +9,6 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 import org.apache.commons.beanutils.BeanUtils;
 import org.apache.log4j.Logger;
@@ -32,32 +31,32 @@ public class ClienteEditServlet extends HttpServlet {
 		String id = req.getParameter("id");
 
 		String destino = "";
-
+		
 		if ((id == null) || id.trim().isEmpty()) {
 			destino = "/WEB-INF/cliente/addEdit.jsp";
+			
+			RequestDispatcher rd = req.getRequestDispatcher(destino);
+			rd.forward(req, resp);
 		} else {
 			try {
 				ClienteEntity entity = this.ClienteDao.findById(Integer.parseInt(id));
-
+				
 				if (entity != null) {
-					HttpSession session = req.getSession();
-
-					session.setAttribute("id", entity.getId());
-					session.setAttribute("codigoCliente", entity.getCodigoCliente());
-					session.setAttribute("nome", entity.getNome());
-					session.setAttribute("CPFouCNPJ", entity.getCpfouCnpj());
+					req.setAttribute("cliente", entity);
 
 					destino = "/WEB-INF/cliente/addEdit.jsp";
+					RequestDispatcher rd = req.getRequestDispatcher(destino);
+					rd.forward(req, resp);
 				} else {
-					destino = String.format("/WEB-INF/cliente/list.jsp?error=Cliente entity [%s] not founded.", id);
+					destino = String.format("/cliente/list?error=Cliente entity [%s] not founded.", id);
+					resp.sendRedirect(destino);
 				}
 			} catch (Exception ex) {
 				LOGGER.error(ex.getMessage(), ex);
-				destino = "/WEB-INF/cliente/list.jsp?error=" + ex.getMessage();
+				destino = "/cliente/list?error=" + ex.getMessage();
+				resp.sendRedirect(destino);
 			}
 		}
-		RequestDispatcher rd = req.getRequestDispatcher(destino);
-		rd.forward(req, resp);
 	}
 
 	@Override

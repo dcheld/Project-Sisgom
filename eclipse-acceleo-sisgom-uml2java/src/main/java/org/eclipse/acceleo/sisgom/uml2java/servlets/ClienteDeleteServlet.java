@@ -29,7 +29,7 @@ public class ClienteDeleteServlet extends HttpServlet {
 		String destino = "";
 
 		if (id == null) {
-			destino = "/cliente/list.jsp?error=Id não encontrado.";
+			destino = "/cliente/list?error=Id não encontrado.";
 			return;
 		}
 
@@ -38,9 +38,9 @@ public class ClienteDeleteServlet extends HttpServlet {
 
 			if (entity != null) {
 				this.clienteDao.delete(entity);
-				destino = "/cliente/list.jsp";
+				destino = "/cliente/list";
 			} else {
-				destino = "/cliente/list.jsp?error=Cliente não encontrado.";
+				destino = "/cliente/list?error=Cliente não encontrado.";
 			}
 		} catch (Exception ex) {
 			destino = "/cliente/list?error=" + ex.getMessage();
