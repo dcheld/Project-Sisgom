@@ -8,7 +8,7 @@
 @Entity
 [/if]
 [if (aClass.hasStereotypeQuery('Table'))]
-@Table(name=[aClass.getTableProperName()/])
+@Table(name=[aClass.getTablePropertyName()/])
 [/if]
 [if (aClass.hasStereotypeQuery('PrimaryKeyJoinColumn'))]
 @PrimaryKeyJoinColumn([aClass.attributeStereotype('PrimaryKeyJoinColumn')/])
@@ -33,14 +33,15 @@
 [/if]
 [/template]
 
-[template public getTableProperName(aClass : Class) post(trim()) {
-	strereType : Stereotype = aClass.getStereotypeQuery('Table');} ]
-[let propName : Property = strereType.getStereotypeProperty('Name')]
-	[if (propName.getValue(strereType, 'Name').oclIsUndefined())]
+[template public getTablePropertyName(aClass : Class) post(trim())]
+[let stereoType : Stereotype = aClass.getStereotypeQuery('Table')]
+[let propName : Property = stereoType.getStereotypeProperty('Name')]
+	[if (aClass.getValue(stereoType , propName.name).oclIsUndefined())]
 	"[aClass.name /]"
 	[else]
-	[propName.attributeStereotypeGetValue(aClass, strereType) /]
+	[propName.attributeStereotypeGetValue(aClass, aClass.getStereotypeQuery('Table')) /]
 	[/if]
+[/let]
 [/let]
 [/template]
 
