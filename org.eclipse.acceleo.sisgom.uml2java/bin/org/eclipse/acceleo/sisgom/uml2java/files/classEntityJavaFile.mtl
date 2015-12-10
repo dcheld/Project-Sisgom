@@ -19,6 +19,12 @@ package [aClass.genPackageEntity()/];
 [aClass.genDefaultImport()/]
 [aClass.hybernatEntity()/]
 public [if (aClass.isAbstract)]abstract[/if] class [aClass.getClassNameEntity()/] [aClass.inheritance()/]{
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	
 	[aClass.fields()/]
 	public [aClass.name + aClass.getEntitySuffix()/]() {
 		super();

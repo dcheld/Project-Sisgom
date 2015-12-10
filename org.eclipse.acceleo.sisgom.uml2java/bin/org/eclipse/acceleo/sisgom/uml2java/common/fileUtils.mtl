@@ -112,13 +112,16 @@ aClass.getAllAttributes()->collect(s : Property | s.type)->union(aClass.getOpera
 aInterface.getAllAttributes()->collect(s : Property | s.type)->union(aInterface.getOperations().ownedParameter
 	->collect(c  : Parameter | c.type))->reject(tipo : Type | tipo.oclIsTypeOf(PrimitiveType))->asOrderedSet() /]
 
-[query public getTaggedValue(stereotypedElement : Element, stereotypeName : String, propertyName : String) : OclAny = 
+[query public getStereotypePropertyValue(stereotypedElement : Element, stereotypeName : String, propertyName : String) : OclAny = 
    let stereotype : Stereotype = stereotypedElement.getAppliedStereotype(stereotypeName) in
      if not stereotype.oclIsUndefined() then
        stereotypedElement.getValue(stereotype, propertyName)
      else 
        null
      endif/]
+
+[query public getStereotypeProperty(stereotypedElement : Stereotype, propertyName : String) : Property = 
+   stereotypedElement.attribute->select(a : Property | a.name = propertyName)->asOrderedSet()->first()/]
 
 [query public hasStereotypeQuery(elem : Element, name : String) : Boolean = 
 	self.getAppliedStereotypes()->exists(e : Stereotype | e.name = name)

@@ -1214,7 +1214,7 @@
         <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Bag(T)_Class/asOrderedSet"/>
       </expression>
     </ownedModuleElement>
-    <ownedModuleElement xsi:type="mtl:Query" name="getTaggedValue" visibility="Public">
+    <ownedModuleElement xsi:type="mtl:Query" name="getStereotypePropertyValue" visibility="Public">
       <parameter name="stereotypedElement">
         <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Element"/>
       </parameter>
@@ -1232,7 +1232,7 @@
             <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
             <source xsi:type="ocl.ecore:OperationCallExp">
               <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
-              <source xsi:type="ocl.ecore:VariableExp" name="stereotype" referredVariable="/0/getTaggedValue/@expression/stereotype">
+              <source xsi:type="ocl.ecore:VariableExp" name="stereotype" referredVariable="/0/getStereotypePropertyValue/@expression/stereotype">
                 <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Stereotype"/>
               </source>
               <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny_Class/oclIsUndefined"/>
@@ -1241,13 +1241,13 @@
           </condition>
           <thenExpression xsi:type="ocl.ecore:OperationCallExp">
             <eType xsi:type="ocl.ecore:AnyType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny"/>
-            <source xsi:type="ocl.ecore:VariableExp" name="stereotypedElement" referredVariable="/0/getTaggedValue/stereotypedElement">
+            <source xsi:type="ocl.ecore:VariableExp" name="stereotypedElement" referredVariable="/0/getStereotypePropertyValue/stereotypedElement">
               <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Element"/>
             </source>
-            <argument xsi:type="ocl.ecore:VariableExp" name="stereotype" referredVariable="/0/getTaggedValue/@expression/stereotype">
+            <argument xsi:type="ocl.ecore:VariableExp" name="stereotype" referredVariable="/0/getStereotypePropertyValue/@expression/stereotype">
               <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Stereotype"/>
             </argument>
-            <argument xsi:type="ocl.ecore:VariableExp" name="propertyName" referredVariable="/0/getTaggedValue/propertyName">
+            <argument xsi:type="ocl.ecore:VariableExp" name="propertyName" referredVariable="/0/getStereotypePropertyValue/propertyName">
               <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
             </argument>
             <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/uml2/4.0.0/UML#//Element/getValue"/>
@@ -1260,10 +1260,10 @@
           <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Stereotype"/>
           <initExpression xsi:type="ocl.ecore:OperationCallExp">
             <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Stereotype"/>
-            <source xsi:type="ocl.ecore:VariableExp" name="stereotypedElement" referredVariable="/0/getTaggedValue/stereotypedElement">
+            <source xsi:type="ocl.ecore:VariableExp" name="stereotypedElement" referredVariable="/0/getStereotypePropertyValue/stereotypedElement">
               <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Element"/>
             </source>
-            <argument xsi:type="ocl.ecore:VariableExp" name="stereotypeName" referredVariable="/0/getTaggedValue/stereotypeName">
+            <argument xsi:type="ocl.ecore:VariableExp" name="stereotypeName" referredVariable="/0/getStereotypePropertyValue/stereotypeName">
               <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
             </argument>
             <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/uml2/4.0.0/UML#//Element/getAppliedStereotype"/>
@@ -1271,6 +1271,47 @@
         </variable>
       </expression>
       <type xsi:type="ocl.ecore:AnyType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny"/>
+    </ownedModuleElement>
+    <ownedModuleElement xsi:type="mtl:Query" name="getStereotypeProperty" visibility="Public">
+      <parameter name="stereotypedElement">
+        <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Stereotype"/>
+      </parameter>
+      <parameter name="propertyName">
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+      </parameter>
+      <expression xsi:type="ocl.ecore:OperationCallExp">
+        <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Property"/>
+        <source xsi:type="ocl.ecore:OperationCallExp" eType="/3/OrderedSet(Property)">
+          <source xsi:type="ocl.ecore:IteratorExp" name="select" eType="/3/Set(Property)">
+            <source xsi:type="ocl.ecore:PropertyCallExp" eType="/3/Set(Property)">
+              <source xsi:type="ocl.ecore:VariableExp" name="stereotypedElement" referredVariable="/0/getStereotypeProperty/stereotypedElement">
+                <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Stereotype"/>
+              </source>
+              <referredProperty xsi:type="ecore:EReference" href="http://www.eclipse.org/uml2/4.0.0/UML#//Classifier/attribute"/>
+            </source>
+            <body xsi:type="ocl.ecore:OperationCallExp">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+              <source xsi:type="ocl.ecore:PropertyCallExp">
+                <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                <source xsi:type="ocl.ecore:VariableExp" name="a" referredVariable="/0/getStereotypeProperty/@expression/@source/select/a">
+                  <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Property"/>
+                </source>
+                <referredProperty xsi:type="ecore:EAttribute" href="http://www.eclipse.org/uml2/4.0.0/UML#//NamedElement/name"/>
+              </source>
+              <argument xsi:type="ocl.ecore:VariableExp" name="propertyName" referredVariable="/0/getStereotypeProperty/propertyName">
+                <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+              </argument>
+              <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String_Class/="/>
+            </body>
+            <iterator xsi:type="ocl.ecore:Variable" name="a">
+              <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Property"/>
+            </iterator>
+          </source>
+          <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Set(T)_Class/asOrderedSet"/>
+        </source>
+        <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OrderedSet(T)_Class/first"/>
+      </expression>
+      <type xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Property"/>
     </ownedModuleElement>
     <ownedModuleElement xsi:type="mtl:Query" name="hasStereotypeQuery" visibility="Public">
       <parameter name="elem">
@@ -1282,7 +1323,7 @@
       <expression xsi:type="ocl.ecore:IteratorExp" name="exists">
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
         <source xsi:type="ocl.ecore:OperationCallExp" eType="/3/Set(Stereotype)">
-          <source xsi:type="ocl.ecore:VariableExp" name="self" referredVariable="/107">
+          <source xsi:type="ocl.ecore:VariableExp" name="self" referredVariable="/110">
             <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Element"/>
           </source>
           <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/uml2/4.0.0/UML#//Element/getAppliedStereotypes"/>
@@ -1319,7 +1360,7 @@
         <source xsi:type="ocl.ecore:OperationCallExp" eType="/3/OrderedSet(Stereotype)">
           <source xsi:type="ocl.ecore:IteratorExp" name="select" eType="/3/Set(Stereotype)">
             <source xsi:type="ocl.ecore:OperationCallExp" eType="/3/Set(Stereotype)">
-              <source xsi:type="ocl.ecore:VariableExp" name="self" referredVariable="/110">
+              <source xsi:type="ocl.ecore:VariableExp" name="self" referredVariable="/113">
                 <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Element"/>
               </source>
               <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/uml2/4.0.0/UML#//Element/getAppliedStereotypes"/>
@@ -1628,17 +1669,30 @@
           <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Interface"/>
         </eParameters>
       </eOperations>
-      <eOperations name="getTaggedValue">
+      <eOperations name="getStereotypePropertyValue">
         <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
           <contents xsi:type="ocl.ecore:Constraint"/>
         </eAnnotations>
-        <eAnnotations source="MTL" references="/0/getTaggedValue"/>
+        <eAnnotations source="MTL" references="/0/getStereotypePropertyValue"/>
         <eType xsi:type="ocl.ecore:AnyType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny"/>
         <eParameters name="stereotypedElement">
           <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Element"/>
         </eParameters>
         <eParameters name="stereotypeName">
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        </eParameters>
+        <eParameters name="propertyName">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        </eParameters>
+      </eOperations>
+      <eOperations name="getStereotypeProperty">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL" references="/0/getStereotypeProperty"/>
+        <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Property"/>
+        <eParameters name="stereotypedElement">
+          <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Stereotype"/>
         </eParameters>
         <eParameters name="propertyName">
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
@@ -1893,6 +1947,11 @@
         <references href="http://www.eclipse.org/uml2/4.0.0/UML#//Element"/>
       </eAnnotations>
     </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Stereotype_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/uml2/4.0.0/UML#//Stereotype"/>
+      </eAnnotations>
+    </eClassifiers>
   </ecore:EPackage>
   <ocl.ecore:Variable name="self">
     <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
@@ -1942,6 +2001,9 @@
     </eClassifiers>
     <eClassifiers xsi:type="ocl.ecore:SetType" name="Set(Type)" instanceClassName="java.util.Set">
       <elementType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Type"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ocl.ecore:OrderedSetType" name="OrderedSet(Property)" instanceClassName="java.util.LinkedHashSet">
+      <elementType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Property"/>
     </eClassifiers>
     <eClassifiers xsi:type="ocl.ecore:SetType" name="Set(Stereotype)" instanceClassName="java.util.Set">
       <elementType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Stereotype"/>
@@ -2272,6 +2334,15 @@
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
     <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Element"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Stereotype"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Stereotype"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
     <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
@@ -4369,304 +4440,369 @@
       <details key="end" value="4562"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.413" references="/0/getTaggedValue">
+    <eAnnotations source="positions.413" references="/0/getStereotypePropertyValue">
       <details key="start" value="4618"/>
-      <details key="end" value="4970"/>
+      <details key="end" value="4982"/>
       <details key="line" value="115"/>
     </eAnnotations>
-    <eAnnotations source="positions.414" references="/0/getTaggedValue/stereotypedElement">
-      <details key="start" value="4647"/>
-      <details key="end" value="4675"/>
+    <eAnnotations source="positions.414" references="/0/getStereotypePropertyValue/stereotypedElement">
+      <details key="start" value="4659"/>
+      <details key="end" value="4687"/>
       <details key="line" value="115"/>
     </eAnnotations>
-    <eAnnotations source="positions.415" references="/0/getTaggedValue/stereotypeName">
-      <details key="start" value="4677"/>
-      <details key="end" value="4700"/>
+    <eAnnotations source="positions.415" references="/0/getStereotypePropertyValue/stereotypeName">
+      <details key="start" value="4689"/>
+      <details key="end" value="4712"/>
       <details key="line" value="115"/>
     </eAnnotations>
-    <eAnnotations source="positions.416" references="/0/getTaggedValue/propertyName">
-      <details key="start" value="4702"/>
-      <details key="end" value="4723"/>
+    <eAnnotations source="positions.416" references="/0/getStereotypePropertyValue/propertyName">
+      <details key="start" value="4714"/>
+      <details key="end" value="4735"/>
       <details key="line" value="115"/>
     </eAnnotations>
-    <eAnnotations source="positions.417" references="/0/getTaggedValue/@expression">
-      <details key="start" value="4740"/>
-      <details key="end" value="4968"/>
+    <eAnnotations source="positions.417" references="/0/getStereotypePropertyValue/@expression">
+      <details key="start" value="4752"/>
+      <details key="end" value="4980"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.418" references="/0/getTaggedValue/@expression/@in">
-      <details key="start" value="4834"/>
-      <details key="end" value="4968"/>
+    <eAnnotations source="positions.418" references="/0/getStereotypePropertyValue/@expression/@in">
+      <details key="start" value="4846"/>
+      <details key="end" value="4980"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.419" references="/0/getTaggedValue/@expression/@in/@condition">
-      <details key="start" value="4837"/>
-      <details key="end" value="4868"/>
+    <eAnnotations source="positions.419" references="/0/getStereotypePropertyValue/@expression/@in/@condition">
+      <details key="start" value="4849"/>
+      <details key="end" value="4880"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.420" references="/0/getTaggedValue/@expression/@in/@condition/@source">
-      <details key="start" value="4841"/>
-      <details key="end" value="4868"/>
+    <eAnnotations source="positions.420" references="/0/getStereotypePropertyValue/@expression/@in/@condition/@source">
+      <details key="start" value="4853"/>
+      <details key="end" value="4880"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.421" references="/0/getTaggedValue/@expression/@in/@condition/@source/stereotype">
-      <details key="start" value="4841"/>
-      <details key="end" value="4851"/>
+    <eAnnotations source="positions.421" references="/0/getStereotypePropertyValue/@expression/@in/@condition/@source/stereotype">
+      <details key="start" value="4853"/>
+      <details key="end" value="4863"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.422" references="/0/getTaggedValue/@expression/@in/@thenExpression">
-      <details key="start" value="4881"/>
-      <details key="end" value="4934"/>
+    <eAnnotations source="positions.422" references="/0/getStereotypePropertyValue/@expression/@in/@thenExpression">
+      <details key="start" value="4893"/>
+      <details key="end" value="4946"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.423" references="/0/getTaggedValue/@expression/@in/@thenExpression/stereotypedElement">
-      <details key="start" value="4881"/>
-      <details key="end" value="4899"/>
+    <eAnnotations source="positions.423" references="/0/getStereotypePropertyValue/@expression/@in/@thenExpression/stereotypedElement">
+      <details key="start" value="4893"/>
+      <details key="end" value="4911"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.424" references="/0/getTaggedValue/@expression/@in/@thenExpression/stereotype">
-      <details key="start" value="4909"/>
-      <details key="end" value="4919"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.425" references="/0/getTaggedValue/@expression/@in/@thenExpression/propertyName">
+    <eAnnotations source="positions.424" references="/0/getStereotypePropertyValue/@expression/@in/@thenExpression/stereotype">
       <details key="start" value="4921"/>
-      <details key="end" value="4933"/>
+      <details key="end" value="4931"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.426" references="/0/getTaggedValue/@expression/@in/@elseExpression">
-      <details key="start" value="4953"/>
-      <details key="end" value="4957"/>
+    <eAnnotations source="positions.425" references="/0/getStereotypePropertyValue/@expression/@in/@thenExpression/propertyName">
+      <details key="start" value="4933"/>
+      <details key="end" value="4945"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.427" references="/0/getTaggedValue/@expression/stereotype">
-      <details key="start" value="4744"/>
-      <details key="end" value="4825"/>
+    <eAnnotations source="positions.426" references="/0/getStereotypePropertyValue/@expression/@in/@elseExpression">
+      <details key="start" value="4965"/>
+      <details key="end" value="4969"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.428" references="/0/getTaggedValue/@expression/stereotype/@initExpression">
-      <details key="start" value="4770"/>
-      <details key="end" value="4825"/>
+    <eAnnotations source="positions.427" references="/0/getStereotypePropertyValue/@expression/stereotype">
+      <details key="start" value="4756"/>
+      <details key="end" value="4837"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.429" references="/0/getTaggedValue/@expression/stereotype/@initExpression/stereotypedElement">
-      <details key="start" value="4770"/>
-      <details key="end" value="4788"/>
+    <eAnnotations source="positions.428" references="/0/getStereotypePropertyValue/@expression/stereotype/@initExpression">
+      <details key="start" value="4782"/>
+      <details key="end" value="4837"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.430" references="/0/getTaggedValue/@expression/stereotype/@initExpression/stereotypeName">
-      <details key="start" value="4810"/>
-      <details key="end" value="4824"/>
+    <eAnnotations source="positions.429" references="/0/getStereotypePropertyValue/@expression/stereotype/@initExpression/stereotypedElement">
+      <details key="start" value="4782"/>
+      <details key="end" value="4800"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.431" references="/0/hasStereotypeQuery">
-      <details key="start" value="4972"/>
-      <details key="end" value="5122"/>
+    <eAnnotations source="positions.430" references="/0/getStereotypePropertyValue/@expression/stereotype/@initExpression/stereotypeName">
+      <details key="start" value="4822"/>
+      <details key="end" value="4836"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.431" references="/0/getStereotypeProperty">
+      <details key="start" value="4984"/>
+      <details key="end" value="5194"/>
       <details key="line" value="123"/>
     </eAnnotations>
-    <eAnnotations source="positions.432" references="/0/hasStereotypeQuery/elem">
-      <details key="start" value="5005"/>
-      <details key="end" value="5019"/>
+    <eAnnotations source="positions.432" references="/0/getStereotypeProperty/stereotypedElement">
+      <details key="start" value="5020"/>
+      <details key="end" value="5051"/>
       <details key="line" value="123"/>
     </eAnnotations>
-    <eAnnotations source="positions.433" references="/0/hasStereotypeQuery/name">
-      <details key="start" value="5021"/>
-      <details key="end" value="5034"/>
+    <eAnnotations source="positions.433" references="/0/getStereotypeProperty/propertyName">
+      <details key="start" value="5053"/>
+      <details key="end" value="5074"/>
       <details key="line" value="123"/>
     </eAnnotations>
-    <eAnnotations source="positions.434" references="/0/hasStereotypeQuery/exists">
-      <details key="start" value="5050"/>
-      <details key="end" value="5118"/>
+    <eAnnotations source="positions.434" references="/0/getStereotypeProperty/@expression">
+      <details key="start" value="5093"/>
+      <details key="end" value="5192"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.435" references="/0/hasStereotypeQuery/exists/@source">
-      <details key="start" value="5050"/>
-      <details key="end" value="5078"/>
+    <eAnnotations source="positions.435" references="/0/getStereotypeProperty/@expression/@source">
+      <details key="start" value="5093"/>
+      <details key="end" value="5183"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.436" references="/0/hasStereotypeQuery/exists/@source/self">
-      <details key="start" value="5050"/>
-      <details key="end" value="5054"/>
+    <eAnnotations source="positions.436" references="/0/getStereotypeProperty/@expression/@source/select">
+      <details key="start" value="5093"/>
+      <details key="end" value="5167"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.437" references="/0/hasStereotypeQuery/exists/@body">
-      <details key="start" value="5104"/>
-      <details key="end" value="5117"/>
+    <eAnnotations source="positions.437" references="/0/getStereotypeProperty/@expression/@source/select/@source">
+      <details key="start" value="5093"/>
+      <details key="end" value="5121"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.438" references="/0/hasStereotypeQuery/exists/@body/@source">
-      <details key="start" value="5104"/>
-      <details key="end" value="5110"/>
+    <eAnnotations source="positions.438" references="/0/getStereotypeProperty/@expression/@source/select/@source/stereotypedElement">
+      <details key="start" value="5093"/>
+      <details key="end" value="5111"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.439" references="/0/hasStereotypeQuery/exists/@body/@source/e">
-      <details key="start" value="5104"/>
-      <details key="end" value="5105"/>
+    <eAnnotations source="positions.439" references="/0/getStereotypeProperty/@expression/@source/select/@body">
+      <details key="start" value="5145"/>
+      <details key="end" value="5166"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.440" references="/0/hasStereotypeQuery/exists/@body/name">
-      <details key="start" value="5113"/>
-      <details key="end" value="5117"/>
+    <eAnnotations source="positions.440" references="/0/getStereotypeProperty/@expression/@source/select/@body/@source">
+      <details key="start" value="5145"/>
+      <details key="end" value="5151"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.441" references="/0/hasStereotypeQuery/exists/e">
-      <details key="start" value="5087"/>
-      <details key="end" value="5101"/>
+    <eAnnotations source="positions.441" references="/0/getStereotypeProperty/@expression/@source/select/@body/@source/a">
+      <details key="start" value="5145"/>
+      <details key="end" value="5146"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.442" references="/0/getStereotypeQuery">
-      <details key="start" value="5124"/>
-      <details key="end" value="5302"/>
-      <details key="line" value="127"/>
-    </eAnnotations>
-    <eAnnotations source="positions.443" references="/0/getStereotypeQuery/elem">
-      <details key="start" value="5157"/>
-      <details key="end" value="5171"/>
-      <details key="line" value="127"/>
-    </eAnnotations>
-    <eAnnotations source="positions.444" references="/0/getStereotypeQuery/name">
-      <details key="start" value="5173"/>
-      <details key="end" value="5186"/>
-      <details key="line" value="127"/>
-    </eAnnotations>
-    <eAnnotations source="positions.445" references="/0/getStereotypeQuery/@expression">
-      <details key="start" value="5205"/>
-      <details key="end" value="5298"/>
+    <eAnnotations source="positions.442" references="/0/getStereotypeProperty/@expression/@source/select/@body/propertyName">
+      <details key="start" value="5154"/>
+      <details key="end" value="5166"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.446" references="/0/getStereotypeQuery/@expression/@source">
-      <details key="start" value="5205"/>
-      <details key="end" value="5289"/>
+    <eAnnotations source="positions.443" references="/0/getStereotypeProperty/@expression/@source/select/a">
+      <details key="start" value="5130"/>
+      <details key="end" value="5142"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.447" references="/0/getStereotypeQuery/@expression/@source/select">
-      <details key="start" value="5205"/>
-      <details key="end" value="5273"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.448" references="/0/getStereotypeQuery/@expression/@source/select/@source">
-      <details key="start" value="5205"/>
-      <details key="end" value="5233"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.449" references="/0/getStereotypeQuery/@expression/@source/select/@source/self">
-      <details key="start" value="5205"/>
-      <details key="end" value="5209"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.450" references="/0/getStereotypeQuery/@expression/@source/select/@body">
-      <details key="start" value="5259"/>
-      <details key="end" value="5272"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.451" references="/0/getStereotypeQuery/@expression/@source/select/@body/@source">
-      <details key="start" value="5259"/>
-      <details key="end" value="5265"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.452" references="/0/getStereotypeQuery/@expression/@source/select/@body/@source/e">
-      <details key="start" value="5259"/>
-      <details key="end" value="5260"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.453" references="/0/getStereotypeQuery/@expression/@source/select/@body/name">
-      <details key="start" value="5268"/>
-      <details key="end" value="5272"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.454" references="/0/getStereotypeQuery/@expression/@source/select/e">
-      <details key="start" value="5242"/>
-      <details key="end" value="5256"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.455" references="/0/getPropertyId">
-      <details key="start" value="5304"/>
-      <details key="end" value="5550"/>
-      <details key="line" value="131"/>
-    </eAnnotations>
-    <eAnnotations source="positions.456" references="/0/getPropertyId/aClass">
-      <details key="start" value="5332"/>
+    <eAnnotations source="positions.444" references="/0/hasStereotypeQuery">
+      <details key="start" value="5196"/>
       <details key="end" value="5346"/>
-      <details key="line" value="131"/>
+      <details key="line" value="126"/>
     </eAnnotations>
-    <eAnnotations source="positions.457" references="/0/getPropertyId/@expression">
-      <details key="start" value="5363"/>
-      <details key="end" value="5548"/>
+    <eAnnotations source="positions.445" references="/0/hasStereotypeQuery/elem">
+      <details key="start" value="5229"/>
+      <details key="end" value="5243"/>
+      <details key="line" value="126"/>
+    </eAnnotations>
+    <eAnnotations source="positions.446" references="/0/hasStereotypeQuery/name">
+      <details key="start" value="5245"/>
+      <details key="end" value="5258"/>
+      <details key="line" value="126"/>
+    </eAnnotations>
+    <eAnnotations source="positions.447" references="/0/hasStereotypeQuery/exists">
+      <details key="start" value="5274"/>
+      <details key="end" value="5342"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.458" references="/0/getPropertyId/@expression/@in">
-      <details key="start" value="5477"/>
-      <details key="end" value="5548"/>
+    <eAnnotations source="positions.448" references="/0/hasStereotypeQuery/exists/@source">
+      <details key="start" value="5274"/>
+      <details key="end" value="5302"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.459" references="/0/getPropertyId/@expression/@in/@condition">
-      <details key="start" value="5480"/>
-      <details key="end" value="5492"/>
+    <eAnnotations source="positions.449" references="/0/hasStereotypeQuery/exists/@source/self">
+      <details key="start" value="5274"/>
+      <details key="end" value="5278"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.460" references="/0/getPropertyId/@expression/@in/@condition/a">
-      <details key="start" value="5480"/>
-      <details key="end" value="5481"/>
+    <eAnnotations source="positions.450" references="/0/hasStereotypeQuery/exists/@body">
+      <details key="start" value="5328"/>
+      <details key="end" value="5341"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.461" references="/0/getPropertyId/@expression/@in/@thenExpression">
-      <details key="start" value="5501"/>
-      <details key="end" value="5505"/>
+    <eAnnotations source="positions.451" references="/0/hasStereotypeQuery/exists/@body/@source">
+      <details key="start" value="5328"/>
+      <details key="end" value="5334"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.462" references="/0/getPropertyId/@expression/@in/@elseExpression">
-      <details key="start" value="5516"/>
-      <details key="end" value="5540"/>
+    <eAnnotations source="positions.452" references="/0/hasStereotypeQuery/exists/@body/@source/e">
+      <details key="start" value="5328"/>
+      <details key="end" value="5329"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.463" references="/0/getPropertyId/@expression/@in/@elseExpression/@source">
-      <details key="start" value="5516"/>
-      <details key="end" value="5531"/>
+    <eAnnotations source="positions.453" references="/0/hasStereotypeQuery/exists/@body/name">
+      <details key="start" value="5337"/>
+      <details key="end" value="5341"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.464" references="/0/getPropertyId/@expression/@in/@elseExpression/@source/a">
-      <details key="start" value="5516"/>
-      <details key="end" value="5517"/>
+    <eAnnotations source="positions.454" references="/0/hasStereotypeQuery/exists/e">
+      <details key="start" value="5311"/>
+      <details key="end" value="5325"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.465" references="/0/getPropertyId/@expression/a">
-      <details key="start" value="5367"/>
-      <details key="end" value="5471"/>
+    <eAnnotations source="positions.455" references="/0/getStereotypeQuery">
+      <details key="start" value="5348"/>
+      <details key="end" value="5526"/>
+      <details key="line" value="130"/>
+    </eAnnotations>
+    <eAnnotations source="positions.456" references="/0/getStereotypeQuery/elem">
+      <details key="start" value="5381"/>
+      <details key="end" value="5395"/>
+      <details key="line" value="130"/>
+    </eAnnotations>
+    <eAnnotations source="positions.457" references="/0/getStereotypeQuery/name">
+      <details key="start" value="5397"/>
+      <details key="end" value="5410"/>
+      <details key="line" value="130"/>
+    </eAnnotations>
+    <eAnnotations source="positions.458" references="/0/getStereotypeQuery/@expression">
+      <details key="start" value="5429"/>
+      <details key="end" value="5522"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.466" references="/0/getPropertyId/@expression/a/select">
-      <details key="start" value="5387"/>
-      <details key="end" value="5471"/>
+    <eAnnotations source="positions.459" references="/0/getStereotypeQuery/@expression/@source">
+      <details key="start" value="5429"/>
+      <details key="end" value="5513"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.467" references="/0/getPropertyId/@expression/a/select/@source">
-      <details key="start" value="5387"/>
-      <details key="end" value="5412"/>
+    <eAnnotations source="positions.460" references="/0/getStereotypeQuery/@expression/@source/select">
+      <details key="start" value="5429"/>
+      <details key="end" value="5497"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.468" references="/0/getPropertyId/@expression/a/select/@source/aClass">
-      <details key="start" value="5387"/>
-      <details key="end" value="5393"/>
+    <eAnnotations source="positions.461" references="/0/getStereotypeQuery/@expression/@source/select/@source">
+      <details key="start" value="5429"/>
+      <details key="end" value="5457"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.469" references="/0/getPropertyId/@expression/a/select/@body">
-      <details key="start" value="5440"/>
-      <details key="end" value="5470"/>
+    <eAnnotations source="positions.462" references="/0/getStereotypeQuery/@expression/@source/select/@source/self">
+      <details key="start" value="5429"/>
+      <details key="end" value="5433"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.470" references="/0/getPropertyId/@expression/a/select/@body/aProp">
-      <details key="start" value="5440"/>
-      <details key="end" value="5445"/>
+    <eAnnotations source="positions.463" references="/0/getStereotypeQuery/@expression/@source/select/@body">
+      <details key="start" value="5483"/>
+      <details key="end" value="5496"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.471" references="/0/getPropertyId/@expression/a/select/@body/@argument.1">
-      <details key="start" value="5465"/>
-      <details key="end" value="5469"/>
+    <eAnnotations source="positions.464" references="/0/getStereotypeQuery/@expression/@source/select/@body/@source">
+      <details key="start" value="5483"/>
+      <details key="end" value="5489"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.472" references="/0/getPropertyId/@expression/a/select/aProp">
-      <details key="start" value="5421"/>
-      <details key="end" value="5437"/>
+    <eAnnotations source="positions.465" references="/0/getStereotypeQuery/@expression/@source/select/@body/@source/e">
+      <details key="start" value="5483"/>
+      <details key="end" value="5484"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.466" references="/0/getStereotypeQuery/@expression/@source/select/@body/name">
+      <details key="start" value="5492"/>
+      <details key="end" value="5496"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.467" references="/0/getStereotypeQuery/@expression/@source/select/e">
+      <details key="start" value="5466"/>
+      <details key="end" value="5480"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.468" references="/0/getPropertyId">
+      <details key="start" value="5528"/>
+      <details key="end" value="5774"/>
+      <details key="line" value="134"/>
+    </eAnnotations>
+    <eAnnotations source="positions.469" references="/0/getPropertyId/aClass">
+      <details key="start" value="5556"/>
+      <details key="end" value="5570"/>
+      <details key="line" value="134"/>
+    </eAnnotations>
+    <eAnnotations source="positions.470" references="/0/getPropertyId/@expression">
+      <details key="start" value="5587"/>
+      <details key="end" value="5772"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.471" references="/0/getPropertyId/@expression/@in">
+      <details key="start" value="5701"/>
+      <details key="end" value="5772"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.472" references="/0/getPropertyId/@expression/@in/@condition">
+      <details key="start" value="5704"/>
+      <details key="end" value="5716"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.473" references="/0/getPropertyId/@expression/@in/@condition/a">
+      <details key="start" value="5704"/>
+      <details key="end" value="5705"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.474" references="/0/getPropertyId/@expression/@in/@thenExpression">
+      <details key="start" value="5725"/>
+      <details key="end" value="5729"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.475" references="/0/getPropertyId/@expression/@in/@elseExpression">
+      <details key="start" value="5740"/>
+      <details key="end" value="5764"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.476" references="/0/getPropertyId/@expression/@in/@elseExpression/@source">
+      <details key="start" value="5740"/>
+      <details key="end" value="5755"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.477" references="/0/getPropertyId/@expression/@in/@elseExpression/@source/a">
+      <details key="start" value="5740"/>
+      <details key="end" value="5741"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.478" references="/0/getPropertyId/@expression/a">
+      <details key="start" value="5591"/>
+      <details key="end" value="5695"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.479" references="/0/getPropertyId/@expression/a/select">
+      <details key="start" value="5611"/>
+      <details key="end" value="5695"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.480" references="/0/getPropertyId/@expression/a/select/@source">
+      <details key="start" value="5611"/>
+      <details key="end" value="5636"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.481" references="/0/getPropertyId/@expression/a/select/@source/aClass">
+      <details key="start" value="5611"/>
+      <details key="end" value="5617"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.482" references="/0/getPropertyId/@expression/a/select/@body">
+      <details key="start" value="5664"/>
+      <details key="end" value="5694"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.483" references="/0/getPropertyId/@expression/a/select/@body/aProp">
+      <details key="start" value="5664"/>
+      <details key="end" value="5669"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.484" references="/0/getPropertyId/@expression/a/select/@body/@argument.1">
+      <details key="start" value="5689"/>
+      <details key="end" value="5693"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.485" references="/0/getPropertyId/@expression/a/select/aProp">
+      <details key="start" value="5645"/>
+      <details key="end" value="5661"/>
       <details key="line" value="0"/>
     </eAnnotations>
   </ecore:EAnnotation>

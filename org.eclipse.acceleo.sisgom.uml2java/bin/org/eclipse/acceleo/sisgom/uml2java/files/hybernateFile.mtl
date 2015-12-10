@@ -4,63 +4,68 @@
 [import org::eclipse::acceleo::sisgom::uml2java::common::fileUtils /]
 
 [template public hybernatEntity(aClass : Class) post (trim())]
-[if (aClass.hasStereotypeQuery('Entity'))]
-@Entity
-[/if]
-[if (aClass.hasStereotypeQuery('Table'))]
-@Table([aClass.attributeStereotype('Table')/])
-[/if]
-[if (aClass.hasStereotypeQuery('PrimaryKeyJoinColumn'))]
-@PrimaryKeyJoinColumn([aClass.attributeStereotype('PrimaryKeyJoinColumn')/])
-[/if]
-[if (aClass.hasStereotypeQuery('Inheritance'))]
-@Inheritance([aClass.attributeStereotype('Inheritance')/])
-[/if]
+[aClass.generateStereotype('Entity') /]
+[aClass.getTableStereotype() /]
+[aClass.generateStereotype('PrimaryKeyJoinColumn') /]
+[aClass.generateStereotype('Inheritance') /]
 [/template]
 
 [template public hybernatProperty(prop : Property) post (trim())]
-[if (prop.hasStereotypeQuery('Id'))]
-@Id
-[/if]
-[if (hasStereotypeQuery('Column'))]
-@Column([prop.attributeStereotype('Column')/])
-[/if]
-[if (prop.hasStereotypeQuery('GeneratedValue'))]
-@GeneratedValue([prop.attributeStereotype('GeneratedValue')/])
-[/if]
-[if ( not prop.association.oclIsUndefined())]
-[prop.association.hybernatAssociation()/]
+[prop.generateStereotype('Id') /]
+[prop.generateStereotype('Column') /]
+[prop.generateStereotype('GeneratedValue') /]
+[if (not prop.association.oclIsUndefined())]
+[prop.hybernatPropertyAssociation()/]
 [/if]
 [/template]
 
-[template public hybernatAssociation(asso : Association) post (trim())]
-[if (asso.hasStereotypeQuery('OneToMany'))]
-@OneToMany
-[/if]
-[if (asso.hasStereotypeQuery('ManyToOne'))]
-@ManyToOne
-[/if]
-[if (asso.hasStereotypeQuery('JoinColumn'))]
-@JoinColumn
+[template public getTableStereotype(aClass : Class) post(trim())]
+[let stereoType : Stereotype = aClass.getStereotypeQuery('Table')]
+[let propName : Property = stereoType.getStereotypeProperty('Name')]
+	[if (aClass.getValue(stereoType , propName.name).oclIsUndefined())]
+@[stereoType.name + '(' + propName.name.toLowerFirst() + '="' + aClass.name + '")' /]
+	[else]
+@[stereoType.name + '(' + propName.name.toLowerFirst() + '=' + propName.attributeStereotypeGetValue(aClass, aClass.getStereotypeQuery('Table')) + ')' /]
+	[/if]
+[/let]
+[/let]
+[/template]
+
+[template public hybernatPropertyAssociation(aProperty : Property)post (trim()) 
+	{aAssociation : Association = aProperty.association;}]
+[if (aProperty.upper = -1 or aProperty.upper > 1)]
+[aAssociation.generateStereotype('OneToMany') /]
+	[if (aAssociation.hasStereotypeQuery('ManyToMany'))]
+@ManyToMany
+	[/if]
+[aAssociation.generateStereotype('JoinColumn') /]
+
+	[if (aAssociation.hasStereotypeQuery('JoinTable'))]
+		[let s : Stereotype = aAssociation.getStereotypeQuery('JoinTable')]
+@JoinTable(name=[s.getStereotypeProperty('Name').attributeStereotypeGetValue(aAssociation, s)/], joinColumns={@JoinColumn(name=[s.getStereotypeProperty('JoinColumns').attributeStereotypeGetValue(aAssociation, s)/])}, inverseJoinColumns={@JoinColumn(name=[s.getStereotypeProperty('InverseJoinColumns').attributeStereotypeGetValue(aAssociation, s)/])})
+		[/let]
+	[/if]
+[else]
+[aAssociation.generateStereotype('ManyToOn') /]
 [/if]
 [/template]
 
 
-[template public generateStereotype(e : Element) post (trim())]
-[for (s : Stereotype | e.getAppliedStereotypes())]
-	[e.attributeStereotype(s) /]
-[/for]
+[template public generateStereotype(e : Element, name : String) post (trim())]
+[if (e.hasStereotypeQuery(name))][let aStereotype : Stereotype =  e.getStereotypeQuery(name)]@[aStereotype.name + e.attributeStereotype(aStereotype)/][/let][/if]
 [/template]
 
 [template public attributeStereotype(e : Element, name : String) post (trim())]
-[let s : Stereotype = e.getStereotypeQuery(name)]
+[let s : Stereotype = e.getStereotypeQuery('JoinColumn')]
 	[e.attributeStereotype(s) /]
 [/let]
 [/template]
 
 [template public attributeStereotype(e : Element, s : Stereotype) post (trim())]
-[for (prop : Property | s.attribute)separator(', ')? (not prop.type.oclIsTypeOf(Class))]
-[if (prop.name <> '')][prop.name.toLowerFirst()/]=[/if][attributeStereotypeGetValue(prop, e, s)/][/for]	
+[if ( s.attribute->exists(p : Property | not(e.getValue(s, p.name).oclIsUndefined())))]
+[for (prop : Property | s.attribute)before ('(') separator(', ')after (')') ? (not(prop.type.oclIsTypeOf(Class)))]
+[if (prop.name <> '' and not(e.getValue(s, prop.name).oclIsUndefined()))][prop.name.toLowerFirst()/]=[prop.attributeStereotypeGetValue(e, s)/][/if][/for]	
+[/if]
 [/template]
 
 [template public attributeStereotypeGetValue(prop:Property, e : Element, s : Stereotype) post (trim())]
@@ -70,9 +75,5 @@
 [else][prop.type.name/].[e.getValue(s, prop.name).eGet('name')/]
 [/if]
 [/template]
-
-
-[query public getPropertyId(aClass : Class) : Property = 
-	self.getAllAttributes()->select(p : Property | p.hasStereotypeQuery('Id'))->asOrderedSet()->first() /]
 
 

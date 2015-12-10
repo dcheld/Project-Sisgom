@@ -21,10 +21,10 @@ package [aClass.genPackageValue() + '.' + aClass.getTestNamespace() + '.' + aCla
 import java.util.List;
 import org.apache.log4j.Logger;
 import org.junit.Test;
-// [protected ('imports do test')]
 import [aClass.genPackageEntity() + '.' + aClass.getClassNameEntity()/];
 import [aClass.genPackageDao() + '.' + aClass.getDaoClass()/];
 import [aClass.genPackageValue() + '.' + aClass.getUtilsNamespace() + '.' + aClass.getDaoFactory()/];
+// [protected ('imports do test')]
 // [/protected]
 
 public class [aClass.name.toUpperFirst() + aClass.getTestSuffix()/] {
