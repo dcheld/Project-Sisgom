@@ -1,4 +1,4 @@
-[comment encoding = ISO-8859-1 /]
+[comment encoding = UTF-8 /]
 [**
  * The documentation of the module classJavaFile.
  */]
@@ -13,7 +13,7 @@
  */]
 
 [template public genClassJavaServletDelete(aClass : Class){tipo:String = 'Deletar';}]
-[file (aClass.genFilePathServlets(tipo), false, 'ISO-8859-1')]
+[file (aClass.genFilePathServlets(tipo), false, 'UTF-8')]
 package [aClass.genPackageValue() + '.' + aClass.getServletsNamespace()/];
 
 import java.io.IOException;
@@ -40,24 +40,27 @@ public class [aClass.name + tipo + aClass.getServletsSuffix() /] extends HttpSer
 	protected void service(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
 		String id = req.getParameter("id");
+		String destino = "/[aClass.name.toLowerFirst()/]/list";
 
 		if (id == null) {
-			resp.sendRedirect("/[aClass.name.toLowerFirst()/]/list.jsp?error=Id não encontrado.");
+			destino += "?error=Id não encontrado.";
 			return;
 		}
-
-		try {
-			[aClass.name + aClass.getEntitySuffix()/] entity = this.[aClass.name.toLowerFirst() + aClass.getDaoSuffix()/].findById(Integer.parseInt(id));
-
-			if (entity != null) {
-				this.[aClass.name.toLowerFirst() + aClass.getDaoSuffix()/].delete(entity);
-				resp.sendRedirect("/[aClass.name.toLowerFirst()/]/list.jsp");
-			} else {
-				resp.sendRedirect("/[aClass.name.toLowerFirst()/]/list.jsp?error=Cliente não encontrado.");
+		else {
+			try {
+				[aClass.name + aClass.getEntitySuffix()/] entity = this.[aClass.name.toLowerFirst() + aClass.getDaoSuffix()/].findById(Integer.parseInt(id));
+	
+				if (entity != null) {
+					this.[aClass.name.toLowerFirst() + aClass.getDaoSuffix()/].delete(entity);
+				} else {
+					destino += "?error=Cliente não encontrado.";
+				}
+			} catch (Exception ex) {
+				destino += "?error=" + ex.getMessage();
 			}
-		} catch (Exception ex) {
-			resp.sendRedirect("/[aClass.name.toLowerFirst()/]/list.jsp?error=" + ex.getMessage());
 		}
+
+		resp.sendRedirect(destino);
 	}
 }
 [/file]

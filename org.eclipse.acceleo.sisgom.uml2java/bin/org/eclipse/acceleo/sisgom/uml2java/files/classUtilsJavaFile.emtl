@@ -313,12 +313,15 @@
           </argument>
         </body>
         <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=" {&#xA;&#xA;&#x9;private DaoFactory() {&#xA;&#x9;}&#xA;&#xA;&#x9;private static final String PERSISTENCE_UNIT_NAME = &quot;"/>
-        <body xsi:type="mtl:TemplateInvocation">
+        <body xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/String_Class/trim">
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-          <definition href="../../properties/properties.emtl#/0/getPersistenceUnit"/>
-          <argument xsi:type="ocl.ecore:VariableExp" name="self" referredVariable="/43">
-            <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Package"/>
-          </argument>
+          <source xsi:type="mtl:TemplateInvocation">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            <definition href="../../properties/properties.emtl#/0/getPersistenceUnit"/>
+            <argument xsi:type="ocl.ecore:VariableExp" name="aPack" referredVariable="/0/genClassDaoFactory/aPack">
+              <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Package"/>
+            </argument>
+          </source>
         </body>
         <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&quot;;&#xA;&#xA;&#x9;private static EntityManagerFactory entityManagerFactoryInstance;&#xA;&#xA;&#x9;public static EntityManagerFactory entityManagerFactorInstance() {&#xA;&#x9;&#x9;if (entityManagerFactoryInstance == null) {&#xA;&#x9;&#x9;&#x9;entityManagerFactoryInstance = Persistence&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;.createEntityManagerFactory(PERSISTENCE_UNIT_NAME);&#xA;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;return entityManagerFactoryInstance;&#xA;&#x9;}&#xA;&#xA;"/>
         <body xsi:type="mtl:ForBlock">
@@ -1318,7 +1321,7 @@
     </eAnnotations>
     <eAnnotations source="positions.70" references="/0/genClassDaoFactory">
       <details key="start" value="4257"/>
-      <details key="end" value="5759"/>
+      <details key="end" value="5772"/>
       <details key="line" value="167"/>
     </eAnnotations>
     <eAnnotations source="positions.71" references="/0/genClassDaoFactory/@init">
@@ -1343,7 +1346,7 @@
     </eAnnotations>
     <eAnnotations source="positions.75" references="/0/genClassDaoFactory/@body.0">
       <details key="start" value="4356"/>
-      <details key="end" value="5747"/>
+      <details key="end" value="5760"/>
       <details key="line" value="168"/>
     </eAnnotations>
     <eAnnotations source="positions.76" references="/0/genClassDaoFactory/@body.0/@body.0">
@@ -1518,347 +1521,352 @@
     </eAnnotations>
     <eAnnotations source="positions.110" references="/0/genClassDaoFactory/@body.0/@body.7">
       <details key="start" value="4856"/>
-      <details key="end" value="4876"/>
+      <details key="end" value="4889"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.111" references="/0/genClassDaoFactory/@body.0/@body.7/self">
-      <details key="start" value="-1"/>
-      <details key="end" value="-1"/>
+    <eAnnotations source="positions.111" references="/0/genClassDaoFactory/@body.0/@body.7/@source">
+      <details key="start" value="4856"/>
+      <details key="end" value="4882"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.112" references="/0/genClassDaoFactory/@body.0/@body.8">
-      <details key="start" value="4878"/>
-      <details key="end" value="5215"/>
+    <eAnnotations source="positions.112" references="/0/genClassDaoFactory/@body.0/@body.7/@source/aPack">
+      <details key="start" value="4856"/>
+      <details key="end" value="4861"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.113" references="/0/genClassDaoFactory/@body.0/@body.8">
+      <details key="start" value="4891"/>
+      <details key="end" value="5228"/>
       <details key="line" value="183"/>
     </eAnnotations>
-    <eAnnotations source="positions.113" references="/0/genClassDaoFactory/@body.0/@body.9">
-      <details key="start" value="5216"/>
-      <details key="end" value="5736"/>
+    <eAnnotations source="positions.114" references="/0/genClassDaoFactory/@body.0/@body.9">
+      <details key="start" value="5229"/>
+      <details key="end" value="5749"/>
       <details key="line" value="196"/>
     </eAnnotations>
-    <eAnnotations source="positions.114" references="/0/genClassDaoFactory/@body.0/@body.9/@body.0">
-      <details key="start" value="5284"/>
-      <details key="end" value="5300"/>
+    <eAnnotations source="positions.115" references="/0/genClassDaoFactory/@body.0/@body.9/@body.0">
+      <details key="start" value="5297"/>
+      <details key="end" value="5313"/>
       <details key="line" value="197"/>
     </eAnnotations>
-    <eAnnotations source="positions.115" references="/0/genClassDaoFactory/@body.0/@body.9/@body.1">
-      <details key="start" value="5301"/>
-      <details key="end" value="5336"/>
+    <eAnnotations source="positions.116" references="/0/genClassDaoFactory/@body.0/@body.9/@body.1">
+      <details key="start" value="5314"/>
+      <details key="end" value="5349"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.116" references="/0/genClassDaoFactory/@body.0/@body.9/@body.1/@source">
-      <details key="start" value="5301"/>
-      <details key="end" value="5312"/>
+    <eAnnotations source="positions.117" references="/0/genClassDaoFactory/@body.0/@body.9/@body.1/@source">
+      <details key="start" value="5314"/>
+      <details key="end" value="5325"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.117" references="/0/genClassDaoFactory/@body.0/@body.9/@body.1/@source/aClass">
-      <details key="start" value="5301"/>
-      <details key="end" value="5307"/>
+    <eAnnotations source="positions.118" references="/0/genClassDaoFactory/@body.0/@body.9/@body.1/@source/aClass">
+      <details key="start" value="5314"/>
+      <details key="end" value="5320"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.118" references="/0/genClassDaoFactory/@body.0/@body.9/@body.1/@argument.0">
-      <details key="start" value="5315"/>
-      <details key="end" value="5336"/>
+    <eAnnotations source="positions.119" references="/0/genClassDaoFactory/@body.0/@body.9/@body.1/@argument.0">
+      <details key="start" value="5328"/>
+      <details key="end" value="5349"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.119" references="/0/genClassDaoFactory/@body.0/@body.9/@body.1/@argument.0/aClass">
-      <details key="start" value="5315"/>
-      <details key="end" value="5321"/>
+    <eAnnotations source="positions.120" references="/0/genClassDaoFactory/@body.0/@body.9/@body.1/@argument.0/aClass">
+      <details key="start" value="5328"/>
+      <details key="end" value="5334"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.120" references="/0/genClassDaoFactory/@body.0/@body.9/@body.2">
-      <details key="start" value="5338"/>
-      <details key="end" value="5339"/>
+    <eAnnotations source="positions.121" references="/0/genClassDaoFactory/@body.0/@body.9/@body.2">
+      <details key="start" value="5351"/>
+      <details key="end" value="5352"/>
       <details key="line" value="197"/>
     </eAnnotations>
-    <eAnnotations source="positions.121" references="/0/genClassDaoFactory/@body.0/@body.9/@body.3">
-      <details key="start" value="5340"/>
-      <details key="end" value="5390"/>
+    <eAnnotations source="positions.122" references="/0/genClassDaoFactory/@body.0/@body.9/@body.3">
+      <details key="start" value="5353"/>
+      <details key="end" value="5403"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.122" references="/0/genClassDaoFactory/@body.0/@body.9/@body.3/@source">
-      <details key="start" value="5340"/>
-      <details key="end" value="5366"/>
+    <eAnnotations source="positions.123" references="/0/genClassDaoFactory/@body.0/@body.9/@body.3/@source">
+      <details key="start" value="5353"/>
+      <details key="end" value="5379"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.123" references="/0/genClassDaoFactory/@body.0/@body.9/@body.3/@source/@source">
-      <details key="start" value="5340"/>
-      <details key="end" value="5351"/>
+    <eAnnotations source="positions.124" references="/0/genClassDaoFactory/@body.0/@body.9/@body.3/@source/@source">
+      <details key="start" value="5353"/>
+      <details key="end" value="5364"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.124" references="/0/genClassDaoFactory/@body.0/@body.9/@body.3/@source/@source/aClass">
-      <details key="start" value="5340"/>
-      <details key="end" value="5346"/>
+    <eAnnotations source="positions.125" references="/0/genClassDaoFactory/@body.0/@body.9/@body.3/@source/@source/aClass">
+      <details key="start" value="5353"/>
+      <details key="end" value="5359"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.125" references="/0/genClassDaoFactory/@body.0/@body.9/@body.3/@argument.0">
-      <details key="start" value="5369"/>
-      <details key="end" value="5390"/>
+    <eAnnotations source="positions.126" references="/0/genClassDaoFactory/@body.0/@body.9/@body.3/@argument.0">
+      <details key="start" value="5382"/>
+      <details key="end" value="5403"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.126" references="/0/genClassDaoFactory/@body.0/@body.9/@body.3/@argument.0/aClass">
-      <details key="start" value="5369"/>
-      <details key="end" value="5375"/>
+    <eAnnotations source="positions.127" references="/0/genClassDaoFactory/@body.0/@body.9/@body.3/@argument.0/aClass">
+      <details key="start" value="5382"/>
+      <details key="end" value="5388"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.127" references="/0/genClassDaoFactory/@body.0/@body.9/@body.4">
-      <details key="start" value="5392"/>
-      <details key="end" value="5418"/>
+    <eAnnotations source="positions.128" references="/0/genClassDaoFactory/@body.0/@body.9/@body.4">
+      <details key="start" value="5405"/>
+      <details key="end" value="5431"/>
       <details key="line" value="197"/>
     </eAnnotations>
-    <eAnnotations source="positions.128" references="/0/genClassDaoFactory/@body.0/@body.9/@body.5">
-      <details key="start" value="5419"/>
-      <details key="end" value="5454"/>
+    <eAnnotations source="positions.129" references="/0/genClassDaoFactory/@body.0/@body.9/@body.5">
+      <details key="start" value="5432"/>
+      <details key="end" value="5467"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.129" references="/0/genClassDaoFactory/@body.0/@body.9/@body.5/@source">
-      <details key="start" value="5419"/>
-      <details key="end" value="5430"/>
+    <eAnnotations source="positions.130" references="/0/genClassDaoFactory/@body.0/@body.9/@body.5/@source">
+      <details key="start" value="5432"/>
+      <details key="end" value="5443"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.130" references="/0/genClassDaoFactory/@body.0/@body.9/@body.5/@source/aClass">
-      <details key="start" value="5419"/>
-      <details key="end" value="5425"/>
+    <eAnnotations source="positions.131" references="/0/genClassDaoFactory/@body.0/@body.9/@body.5/@source/aClass">
+      <details key="start" value="5432"/>
+      <details key="end" value="5438"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.131" references="/0/genClassDaoFactory/@body.0/@body.9/@body.5/@argument.0">
-      <details key="start" value="5433"/>
-      <details key="end" value="5454"/>
+    <eAnnotations source="positions.132" references="/0/genClassDaoFactory/@body.0/@body.9/@body.5/@argument.0">
+      <details key="start" value="5446"/>
+      <details key="end" value="5467"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.132" references="/0/genClassDaoFactory/@body.0/@body.9/@body.5/@argument.0/aClass">
-      <details key="start" value="5433"/>
-      <details key="end" value="5439"/>
+    <eAnnotations source="positions.133" references="/0/genClassDaoFactory/@body.0/@body.9/@body.5/@argument.0/aClass">
+      <details key="start" value="5446"/>
+      <details key="end" value="5452"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.133" references="/0/genClassDaoFactory/@body.0/@body.9/@body.6">
-      <details key="start" value="5456"/>
-      <details key="end" value="5457"/>
+    <eAnnotations source="positions.134" references="/0/genClassDaoFactory/@body.0/@body.9/@body.6">
+      <details key="start" value="5469"/>
+      <details key="end" value="5470"/>
       <details key="line" value="199"/>
     </eAnnotations>
-    <eAnnotations source="positions.134" references="/0/genClassDaoFactory/@body.0/@body.9/@body.7">
-      <details key="start" value="5458"/>
-      <details key="end" value="5484"/>
+    <eAnnotations source="positions.135" references="/0/genClassDaoFactory/@body.0/@body.9/@body.7">
+      <details key="start" value="5471"/>
+      <details key="end" value="5497"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.135" references="/0/genClassDaoFactory/@body.0/@body.9/@body.7/@source">
-      <details key="start" value="5458"/>
-      <details key="end" value="5469"/>
+    <eAnnotations source="positions.136" references="/0/genClassDaoFactory/@body.0/@body.9/@body.7/@source">
+      <details key="start" value="5471"/>
+      <details key="end" value="5482"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.136" references="/0/genClassDaoFactory/@body.0/@body.9/@body.7/@source/aClass">
-      <details key="start" value="5458"/>
-      <details key="end" value="5464"/>
+    <eAnnotations source="positions.137" references="/0/genClassDaoFactory/@body.0/@body.9/@body.7/@source/aClass">
+      <details key="start" value="5471"/>
+      <details key="end" value="5477"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.137" references="/0/genClassDaoFactory/@body.0/@body.9/@body.8">
-      <details key="start" value="5487"/>
-      <details key="end" value="5539"/>
+    <eAnnotations source="positions.138" references="/0/genClassDaoFactory/@body.0/@body.9/@body.8">
+      <details key="start" value="5500"/>
+      <details key="end" value="5552"/>
       <details key="line" value="199"/>
     </eAnnotations>
-    <eAnnotations source="positions.138" references="/0/genClassDaoFactory/@body.0/@body.9/@body.9">
-      <details key="start" value="5540"/>
-      <details key="end" value="5590"/>
+    <eAnnotations source="positions.139" references="/0/genClassDaoFactory/@body.0/@body.9/@body.9">
+      <details key="start" value="5553"/>
+      <details key="end" value="5603"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.139" references="/0/genClassDaoFactory/@body.0/@body.9/@body.9/@source">
-      <details key="start" value="5540"/>
-      <details key="end" value="5566"/>
+    <eAnnotations source="positions.140" references="/0/genClassDaoFactory/@body.0/@body.9/@body.9/@source">
+      <details key="start" value="5553"/>
+      <details key="end" value="5579"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.140" references="/0/genClassDaoFactory/@body.0/@body.9/@body.9/@source/@source">
-      <details key="start" value="5540"/>
-      <details key="end" value="5551"/>
+    <eAnnotations source="positions.141" references="/0/genClassDaoFactory/@body.0/@body.9/@body.9/@source/@source">
+      <details key="start" value="5553"/>
+      <details key="end" value="5564"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.141" references="/0/genClassDaoFactory/@body.0/@body.9/@body.9/@source/@source/aClass">
-      <details key="start" value="5540"/>
-      <details key="end" value="5546"/>
+    <eAnnotations source="positions.142" references="/0/genClassDaoFactory/@body.0/@body.9/@body.9/@source/@source/aClass">
+      <details key="start" value="5553"/>
+      <details key="end" value="5559"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.142" references="/0/genClassDaoFactory/@body.0/@body.9/@body.9/@argument.0">
-      <details key="start" value="5569"/>
-      <details key="end" value="5590"/>
+    <eAnnotations source="positions.143" references="/0/genClassDaoFactory/@body.0/@body.9/@body.9/@argument.0">
+      <details key="start" value="5582"/>
+      <details key="end" value="5603"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.143" references="/0/genClassDaoFactory/@body.0/@body.9/@body.9/@argument.0/aClass">
-      <details key="start" value="5569"/>
-      <details key="end" value="5575"/>
+    <eAnnotations source="positions.144" references="/0/genClassDaoFactory/@body.0/@body.9/@body.9/@argument.0/aClass">
+      <details key="start" value="5582"/>
+      <details key="end" value="5588"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.144" references="/0/genClassDaoFactory/@body.0/@body.9/@body.10">
-      <details key="start" value="5592"/>
-      <details key="end" value="5607"/>
+    <eAnnotations source="positions.145" references="/0/genClassDaoFactory/@body.0/@body.9/@body.10">
+      <details key="start" value="5605"/>
+      <details key="end" value="5620"/>
       <details key="line" value="201"/>
     </eAnnotations>
-    <eAnnotations source="positions.145" references="/0/genClassDaoFactory/@body.0/@body.9/@body.11">
-      <details key="start" value="5608"/>
-      <details key="end" value="5643"/>
+    <eAnnotations source="positions.146" references="/0/genClassDaoFactory/@body.0/@body.9/@body.11">
+      <details key="start" value="5621"/>
+      <details key="end" value="5656"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.146" references="/0/genClassDaoFactory/@body.0/@body.9/@body.11/@source">
-      <details key="start" value="5608"/>
-      <details key="end" value="5619"/>
+    <eAnnotations source="positions.147" references="/0/genClassDaoFactory/@body.0/@body.9/@body.11/@source">
+      <details key="start" value="5621"/>
+      <details key="end" value="5632"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.147" references="/0/genClassDaoFactory/@body.0/@body.9/@body.11/@source/aClass">
-      <details key="start" value="5608"/>
-      <details key="end" value="5614"/>
+    <eAnnotations source="positions.148" references="/0/genClassDaoFactory/@body.0/@body.9/@body.11/@source/aClass">
+      <details key="start" value="5621"/>
+      <details key="end" value="5627"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.148" references="/0/genClassDaoFactory/@body.0/@body.9/@body.11/@argument.0">
-      <details key="start" value="5622"/>
-      <details key="end" value="5643"/>
+    <eAnnotations source="positions.149" references="/0/genClassDaoFactory/@body.0/@body.9/@body.11/@argument.0">
+      <details key="start" value="5635"/>
+      <details key="end" value="5656"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.149" references="/0/genClassDaoFactory/@body.0/@body.9/@body.11/@argument.0/aClass">
-      <details key="start" value="5622"/>
-      <details key="end" value="5628"/>
+    <eAnnotations source="positions.150" references="/0/genClassDaoFactory/@body.0/@body.9/@body.11/@argument.0/aClass">
+      <details key="start" value="5635"/>
+      <details key="end" value="5641"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.150" references="/0/genClassDaoFactory/@body.0/@body.9/@body.12">
-      <details key="start" value="5645"/>
-      <details key="end" value="5663"/>
+    <eAnnotations source="positions.151" references="/0/genClassDaoFactory/@body.0/@body.9/@body.12">
+      <details key="start" value="5658"/>
+      <details key="end" value="5676"/>
       <details key="line" value="201"/>
     </eAnnotations>
-    <eAnnotations source="positions.151" references="/0/genClassDaoFactory/@body.0/@body.9/@body.13">
-      <details key="start" value="5664"/>
-      <details key="end" value="5714"/>
+    <eAnnotations source="positions.152" references="/0/genClassDaoFactory/@body.0/@body.9/@body.13">
+      <details key="start" value="5677"/>
+      <details key="end" value="5727"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.152" references="/0/genClassDaoFactory/@body.0/@body.9/@body.13/@source">
-      <details key="start" value="5664"/>
-      <details key="end" value="5690"/>
+    <eAnnotations source="positions.153" references="/0/genClassDaoFactory/@body.0/@body.9/@body.13/@source">
+      <details key="start" value="5677"/>
+      <details key="end" value="5703"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.153" references="/0/genClassDaoFactory/@body.0/@body.9/@body.13/@source/@source">
-      <details key="start" value="5664"/>
-      <details key="end" value="5675"/>
+    <eAnnotations source="positions.154" references="/0/genClassDaoFactory/@body.0/@body.9/@body.13/@source/@source">
+      <details key="start" value="5677"/>
+      <details key="end" value="5688"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.154" references="/0/genClassDaoFactory/@body.0/@body.9/@body.13/@source/@source/aClass">
-      <details key="start" value="5664"/>
-      <details key="end" value="5670"/>
+    <eAnnotations source="positions.155" references="/0/genClassDaoFactory/@body.0/@body.9/@body.13/@source/@source/aClass">
+      <details key="start" value="5677"/>
+      <details key="end" value="5683"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.155" references="/0/genClassDaoFactory/@body.0/@body.9/@body.13/@argument.0">
-      <details key="start" value="5693"/>
-      <details key="end" value="5714"/>
+    <eAnnotations source="positions.156" references="/0/genClassDaoFactory/@body.0/@body.9/@body.13/@argument.0">
+      <details key="start" value="5706"/>
+      <details key="end" value="5727"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.156" references="/0/genClassDaoFactory/@body.0/@body.9/@body.13/@argument.0/aClass">
-      <details key="start" value="5693"/>
-      <details key="end" value="5699"/>
+    <eAnnotations source="positions.157" references="/0/genClassDaoFactory/@body.0/@body.9/@body.13/@argument.0/aClass">
+      <details key="start" value="5706"/>
+      <details key="end" value="5712"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.157" references="/0/genClassDaoFactory/@body.0/@body.9/@body.14">
-      <details key="start" value="5716"/>
-      <details key="end" value="5729"/>
+    <eAnnotations source="positions.158" references="/0/genClassDaoFactory/@body.0/@body.9/@body.14">
+      <details key="start" value="5729"/>
+      <details key="end" value="5742"/>
       <details key="line" value="204"/>
     </eAnnotations>
-    <eAnnotations source="positions.158" references="/0/genClassDaoFactory/@body.0/@body.9/aClass">
-      <details key="start" value="5222"/>
-      <details key="end" value="5236"/>
+    <eAnnotations source="positions.159" references="/0/genClassDaoFactory/@body.0/@body.9/aClass">
+      <details key="start" value="5235"/>
+      <details key="end" value="5249"/>
       <details key="line" value="196"/>
     </eAnnotations>
-    <eAnnotations source="positions.159" references="/0/genClassDaoFactory/@body.0/@body.9/@iterSet">
-      <details key="start" value="5239"/>
-      <details key="end" value="5264"/>
+    <eAnnotations source="positions.160" references="/0/genClassDaoFactory/@body.0/@body.9/@iterSet">
+      <details key="start" value="5252"/>
+      <details key="end" value="5277"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.160" references="/0/genClassDaoFactory/@body.0/@body.9/@iterSet/aPack">
-      <details key="start" value="5239"/>
-      <details key="end" value="5244"/>
+    <eAnnotations source="positions.161" references="/0/genClassDaoFactory/@body.0/@body.9/@iterSet/aPack">
+      <details key="start" value="5252"/>
+      <details key="end" value="5257"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.161" references="/0/genClassDaoFactory/@body.0/@body.9/@each">
-      <details key="start" value="5277"/>
-      <details key="end" value="5281"/>
+    <eAnnotations source="positions.162" references="/0/genClassDaoFactory/@body.0/@body.9/@each">
+      <details key="start" value="5290"/>
+      <details key="end" value="5294"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.162" references="/0/genClassDaoFactory/@body.0/@body.10">
-      <details key="start" value="5737"/>
-      <details key="end" value="5740"/>
+    <eAnnotations source="positions.163" references="/0/genClassDaoFactory/@body.0/@body.10">
+      <details key="start" value="5750"/>
+      <details key="end" value="5753"/>
       <details key="line" value="207"/>
     </eAnnotations>
-    <eAnnotations source="positions.163" references="/0/genClassDaoFactory/@body.0/@fileUrl">
+    <eAnnotations source="positions.164" references="/0/genClassDaoFactory/@body.0/@fileUrl">
       <details key="start" value="4363"/>
       <details key="end" value="4395"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.164" references="/0/genClassDaoFactory/@body.0/@fileUrl/aPack">
+    <eAnnotations source="positions.165" references="/0/genClassDaoFactory/@body.0/@fileUrl/aPack">
       <details key="start" value="4363"/>
       <details key="end" value="4368"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.165" references="/0/genClassDaoFactory/@body.0/@fileUrl/packName">
+    <eAnnotations source="positions.166" references="/0/genClassDaoFactory/@body.0/@fileUrl/packName">
       <details key="start" value="4386"/>
       <details key="end" value="4394"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.166" references="/0/genClassDaoFactory/@body.0/@charset">
+    <eAnnotations source="positions.167" references="/0/genClassDaoFactory/@body.0/@charset">
       <details key="start" value="4404"/>
       <details key="end" value="4411"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.167" references="/0/genClassDaoFactory/aPack">
+    <eAnnotations source="positions.168" references="/0/genClassDaoFactory/aPack">
       <details key="start" value="4293"/>
       <details key="end" value="4308"/>
       <details key="line" value="167"/>
     </eAnnotations>
-    <eAnnotations source="positions.168" references="/0/getClassOfFactory">
-      <details key="start" value="5761"/>
-      <details key="end" value="5899"/>
+    <eAnnotations source="positions.169" references="/0/getClassOfFactory">
+      <details key="start" value="5774"/>
+      <details key="end" value="5912"/>
       <details key="line" value="212"/>
     </eAnnotations>
-    <eAnnotations source="positions.169" references="/0/getClassOfFactory/arg">
-      <details key="start" value="5794"/>
-      <details key="end" value="5807"/>
+    <eAnnotations source="positions.170" references="/0/getClassOfFactory/arg">
+      <details key="start" value="5807"/>
+      <details key="end" value="5820"/>
       <details key="line" value="212"/>
     </eAnnotations>
-    <eAnnotations source="positions.170" references="/0/getClassOfFactory/select">
-      <details key="start" value="5826"/>
-      <details key="end" value="5896"/>
+    <eAnnotations source="positions.171" references="/0/getClassOfFactory/select">
+      <details key="start" value="5839"/>
+      <details key="end" value="5909"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.171" references="/0/getClassOfFactory/select/@source">
-      <details key="start" value="5826"/>
-      <details key="end" value="5858"/>
+    <eAnnotations source="positions.172" references="/0/getClassOfFactory/select/@source">
+      <details key="start" value="5839"/>
+      <details key="end" value="5871"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.172" references="/0/getClassOfFactory/select/@source/@source">
-      <details key="start" value="5826"/>
+    <eAnnotations source="positions.173" references="/0/getClassOfFactory/select/@source/@source">
+      <details key="start" value="5839"/>
+      <details key="end" value="5856"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.174" references="/0/getClassOfFactory/select/@source/@source/self">
+      <details key="start" value="5839"/>
       <details key="end" value="5843"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.173" references="/0/getClassOfFactory/select/@source/@source/self">
-      <details key="start" value="5826"/>
-      <details key="end" value="5830"/>
+    <eAnnotations source="positions.175" references="/0/getClassOfFactory/select/@source/@argument.0">
+      <details key="start" value="5865"/>
+      <details key="end" value="5870"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.174" references="/0/getClassOfFactory/select/@source/@argument.0">
-      <details key="start" value="5852"/>
-      <details key="end" value="5857"/>
+    <eAnnotations source="positions.176" references="/0/getClassOfFactory/select/@body">
+      <details key="start" value="5892"/>
+      <details key="end" value="5908"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.175" references="/0/getClassOfFactory/select/@body">
-      <details key="start" value="5879"/>
-      <details key="end" value="5895"/>
+    <eAnnotations source="positions.177" references="/0/getClassOfFactory/select/@body/@source">
+      <details key="start" value="5896"/>
+      <details key="end" value="5908"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.176" references="/0/getClassOfFactory/select/@body/@source">
-      <details key="start" value="5883"/>
-      <details key="end" value="5895"/>
+    <eAnnotations source="positions.178" references="/0/getClassOfFactory/select/@body/@source/c">
+      <details key="start" value="5896"/>
+      <details key="end" value="5897"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.177" references="/0/getClassOfFactory/select/@body/@source/c">
-      <details key="start" value="5883"/>
-      <details key="end" value="5884"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.178" references="/0/getClassOfFactory/select/c">
-      <details key="start" value="5867"/>
-      <details key="end" value="5876"/>
+    <eAnnotations source="positions.179" references="/0/getClassOfFactory/select/c">
+      <details key="start" value="5880"/>
+      <details key="end" value="5889"/>
       <details key="line" value="0"/>
     </eAnnotations>
   </ecore:EAnnotation>

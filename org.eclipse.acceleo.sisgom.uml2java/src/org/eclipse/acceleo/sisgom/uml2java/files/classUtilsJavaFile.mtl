@@ -180,7 +180,7 @@ public final class [aPack.getDaoFactory()/] {
 	private DaoFactory() {
 	}
 
-	private static final String PERSISTENCE_UNIT_NAME = "[getPersistenceUnit()/]";
+	private static final String PERSISTENCE_UNIT_NAME = "[aPack.getPersistenceUnit().trim()/]";
 
 	private static EntityManagerFactory entityManagerFactoryInstance;
 

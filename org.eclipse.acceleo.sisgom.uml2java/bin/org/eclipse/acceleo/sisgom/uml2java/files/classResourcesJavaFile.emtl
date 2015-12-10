@@ -65,12 +65,15 @@
     <ownedModuleElement xsi:type="mtl:Template" name="genConfigPersistence" visibility="Public">
       <body xsi:type="mtl:FileBlock" openMode="OverWrite">
         <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?>&#xA;&lt;persistence xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;&#xA;&#x9;xsi:schemaLocation=&quot;http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd&quot;&#xA;&#x9;version=&quot;2.0&quot; xmlns=&quot;http://java.sun.com/xml/ns/persistence&quot;>&#xA;&#x9;&lt;persistence-unit name=&quot;"/>
-        <body xsi:type="mtl:TemplateInvocation">
+        <body xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/String_Class/trim">
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-          <definition href="../../properties/properties.emtl#/0/getPersistenceUnit"/>
-          <argument xsi:type="ocl.ecore:VariableExp" name="aPack" referredVariable="/0/genConfigPersistence/aPack">
-            <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Package"/>
-          </argument>
+          <source xsi:type="mtl:TemplateInvocation">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            <definition href="../../properties/properties.emtl#/0/getPersistenceUnit"/>
+            <argument xsi:type="ocl.ecore:VariableExp" name="aPack" referredVariable="/0/genConfigPersistence/aPack">
+              <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Package"/>
+            </argument>
+          </source>
         </body>
         <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&quot; transaction-type=&quot;RESOURCE_LOCAL&quot;>&#xA;&#x9;&#x9;&lt;properties>&#xA;&#x9;&#x9;&#x9;&lt;!--"/>
         <body xsi:type="mtl:ProtectedAreaBlock">
@@ -113,6 +116,10 @@
       <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
         <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
       </eAnnotations>
+      <eOperations name="trim">
+        <eAnnotations source="MTL non-standard"/>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+      </eOperations>
       <eOperations name="+">
         <eAnnotations source="MTL non-standard"/>
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
@@ -376,12 +383,12 @@
     </eAnnotations>
     <eAnnotations source="positions.22" references="/0/genConfigPersistence">
       <details key="start" value="1696"/>
-      <details key="end" value="2967"/>
+      <details key="end" value="2974"/>
       <details key="line" value="57"/>
     </eAnnotations>
     <eAnnotations source="positions.23" references="/0/genConfigPersistence/@body.0">
       <details key="start" value="1752"/>
-      <details key="end" value="2955"/>
+      <details key="end" value="2962"/>
       <details key="line" value="58"/>
     </eAnnotations>
     <eAnnotations source="positions.24" references="/0/genConfigPersistence/@body.0/@body.0">
@@ -391,75 +398,80 @@
     </eAnnotations>
     <eAnnotations source="positions.25" references="/0/genConfigPersistence/@body.0/@body.1">
       <details key="start" value="2166"/>
+      <details key="end" value="2199"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.26" references="/0/genConfigPersistence/@body.0/@body.1/@source">
+      <details key="start" value="2166"/>
       <details key="end" value="2192"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.26" references="/0/genConfigPersistence/@body.0/@body.1/aPack">
+    <eAnnotations source="positions.27" references="/0/genConfigPersistence/@body.0/@body.1/@source/aPack">
       <details key="start" value="2166"/>
       <details key="end" value="2171"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.27" references="/0/genConfigPersistence/@body.0/@body.2">
-      <details key="start" value="2194"/>
-      <details key="end" value="2253"/>
+    <eAnnotations source="positions.28" references="/0/genConfigPersistence/@body.0/@body.2">
+      <details key="start" value="2201"/>
+      <details key="end" value="2260"/>
       <details key="line" value="63"/>
     </eAnnotations>
-    <eAnnotations source="positions.28" references="/0/genConfigPersistence/@body.0/@body.3">
-      <details key="start" value="2253"/>
-      <details key="end" value="2891"/>
+    <eAnnotations source="positions.29" references="/0/genConfigPersistence/@body.0/@body.3">
+      <details key="start" value="2260"/>
+      <details key="end" value="2898"/>
       <details key="line" value="65"/>
     </eAnnotations>
-    <eAnnotations source="positions.29" references="/0/genConfigPersistence/@body.0/@body.3/@body.0">
-      <details key="start" value="2280"/>
-      <details key="end" value="2879"/>
+    <eAnnotations source="positions.30" references="/0/genConfigPersistence/@body.0/@body.3/@body.0">
+      <details key="start" value="2287"/>
+      <details key="end" value="2886"/>
       <details key="line" value="66"/>
     </eAnnotations>
-    <eAnnotations source="positions.30" references="/0/genConfigPersistence/@body.0/@body.3/@marker">
-      <details key="start" value="2264"/>
-      <details key="end" value="2278"/>
+    <eAnnotations source="positions.31" references="/0/genConfigPersistence/@body.0/@body.3/@marker">
+      <details key="start" value="2271"/>
+      <details key="end" value="2285"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.31" references="/0/genConfigPersistence/@body.0/@body.4">
-      <details key="start" value="2891"/>
-      <details key="end" value="2948"/>
+    <eAnnotations source="positions.32" references="/0/genConfigPersistence/@body.0/@body.4">
+      <details key="start" value="2898"/>
+      <details key="end" value="2955"/>
       <details key="line" value="76"/>
     </eAnnotations>
-    <eAnnotations source="positions.32" references="/0/genConfigPersistence/@body.0/@fileUrl">
+    <eAnnotations source="positions.33" references="/0/genConfigPersistence/@body.0/@fileUrl">
       <details key="start" value="1759"/>
       <details key="end" value="1826"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.33" references="/0/genConfigPersistence/@body.0/@fileUrl/@source">
+    <eAnnotations source="positions.34" references="/0/genConfigPersistence/@body.0/@fileUrl/@source">
       <details key="start" value="1759"/>
       <details key="end" value="1806"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.34" references="/0/genConfigPersistence/@body.0/@fileUrl/@source/@source">
+    <eAnnotations source="positions.35" references="/0/genConfigPersistence/@body.0/@fileUrl/@source/@source">
       <details key="start" value="1759"/>
       <details key="end" value="1791"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.35" references="/0/genConfigPersistence/@body.0/@fileUrl/@source/@source/aPack">
+    <eAnnotations source="positions.36" references="/0/genConfigPersistence/@body.0/@fileUrl/@source/@source/aPack">
       <details key="start" value="1759"/>
       <details key="end" value="1764"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.36" references="/0/genConfigPersistence/@body.0/@fileUrl/@source/@argument.0">
+    <eAnnotations source="positions.37" references="/0/genConfigPersistence/@body.0/@fileUrl/@source/@argument.0">
       <details key="start" value="1794"/>
       <details key="end" value="1806"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.37" references="/0/genConfigPersistence/@body.0/@fileUrl/@argument.0">
+    <eAnnotations source="positions.38" references="/0/genConfigPersistence/@body.0/@fileUrl/@argument.0">
       <details key="start" value="1809"/>
       <details key="end" value="1826"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.38" references="/0/genConfigPersistence/@body.0/@charset">
+    <eAnnotations source="positions.39" references="/0/genConfigPersistence/@body.0/@charset">
       <details key="start" value="1835"/>
       <details key="end" value="1847"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.39" references="/0/genConfigPersistence/aPack">
+    <eAnnotations source="positions.40" references="/0/genConfigPersistence/aPack">
       <details key="start" value="1734"/>
       <details key="end" value="1749"/>
       <details key="line" value="57"/>
