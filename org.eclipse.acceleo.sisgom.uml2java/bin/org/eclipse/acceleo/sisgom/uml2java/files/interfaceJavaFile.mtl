@@ -2,11 +2,8 @@
 [module interfaceJavaFile('http://www.eclipse.org/uml2/4.0.0/UML')]
 
 [import org::eclipse::acceleo::sisgom::uml2java::common::fileUtils /]
+[import org::eclipse::acceleo::sisgom::uml2java::common::importResolve /]
 
-[**
- * The documentation of the template genInterfaceJavaFile.
- * @param aInterface
- */]
 [template public genInterfaceJavaFile(anInterface : Interface)]
 [file (anInterface.packagePath(), false, 'UTF-8')]
 package [anInterface.genPackageValue()/];

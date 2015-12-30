@@ -5,6 +5,7 @@
 [module classEntityJavaFile('http://www.eclipse.org/uml2/4.0.0/UML')]
 
 [import org::eclipse::acceleo::sisgom::uml2java::common::fileUtils /]
+[import org::eclipse::acceleo::sisgom::uml2java::common::importResolve /]
 [import org::eclipse::acceleo::sisgom::uml2java::files::hybernateFile /]
 [import org::eclipse::acceleo::sisgom::properties::properties /]
 
@@ -109,9 +110,13 @@ public void set[aProperty.name/]([if (aProperty.upper = -1 or aProperty.upper > 
 [/template]
 
 [template public getClassNameEntity(aClass : Class)post (trim())]
-[aClass.name + aClass.getEntitySuffix()/]
+[aClass.name.toUpperFirst() + aClass.getEntitySuffix()/]
+[/template]
+
+[template public getClassNameEntity(anEnum : Enumeration)post (trim())]
+[anEnum.name.toUpperFirst() + anEnum.getEnumSuffix()/]
 [/template]
 
 [template public getClassNameEntity(aType : Type)post (trim())]
-[aType.name/]
+[aType.name /]
 [/template]

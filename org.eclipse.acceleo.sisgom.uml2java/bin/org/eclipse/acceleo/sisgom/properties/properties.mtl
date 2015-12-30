@@ -32,6 +32,10 @@
 [getProperty('EntityNamespace')/]
 [/template]
 
+[template public getEnumNamespace(anOclAny : OclAny)]
+[getProperty('EnumNamespace')/]
+[/template]
+
 [template public getDaoNamespace(anOclAny : OclAny)]
 [getProperty('DaoNamespace')/]
 [/template]
@@ -62,7 +66,9 @@
 [template public getTestSuffix(anOclAny : OclAny)]
 [getProperty('TestSuffix')/]
 [/template]
-
+[template public getEnumSuffix(anOclAny : OclAny)]
+[getProperty('EnumSuffix')/]
+[/template]
 
 
 [template public getGenericDao(anOclAny : OclAny)]

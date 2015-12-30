@@ -8,12 +8,31 @@
       <takesTypesFrom href="http://www.eclipse.org/uml2/4.0.0/UML#/"/>
     </input>
     <imports href="../common/fileUtils.emtl#/0"/>
+    <imports href="../common/importResolve.emtl#/0"/>
+    <imports href="../../properties/properties.emtl#/0"/>
     <ownedModuleElement xsi:type="mtl:Template" name="genEnumJavaFile" visibility="Public">
+      <body xsi:type="mtl:FileBlock" openMode="OverWrite">
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#x9;"/>
+        <body xsi:type="mtl:TemplateInvocation">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          <definition href="../common/fileUtils.emtl#/0/genFilePathEnum"/>
+          <argument xsi:type="ocl.ecore:VariableExp" name="anEnumeration" referredVariable="/0/genEnumJavaFile/anEnumeration">
+            <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Enumeration"/>
+          </argument>
+        </body>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;"/>
+        <fileUrl xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="teste.txt">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        </fileUrl>
+        <charset xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="Cp1252">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        </charset>
+      </body>
       <body xsi:type="mtl:FileBlock" openMode="OverWrite">
         <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="package "/>
         <body xsi:type="mtl:TemplateInvocation">
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-          <definition href="../common/fileUtils.emtl#/0/genPackageValue"/>
+          <definition href="../common/fileUtils.emtl#/0/genPackageEnum"/>
           <argument xsi:type="ocl.ecore:VariableExp" name="anEnumeration" referredVariable="/0/genEnumJavaFile/anEnumeration">
             <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Enumeration"/>
           </argument>
@@ -21,71 +40,63 @@
         <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=";&#xA;&#xA;"/>
         <body xsi:type="mtl:TemplateInvocation">
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-          <definition href="../common/fileUtils.emtl#/0/genDefaultImport"/>
+          <definition href="../common/importResolve.emtl#/0/genDefaultImport"/>
           <argument xsi:type="ocl.ecore:VariableExp" name="anEnumeration" referredVariable="/0/genEnumJavaFile/anEnumeration">
             <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Enumeration"/>
           </argument>
         </body>
-        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;&#xA;/**&#xA; * The documentation of the enumeration "/>
-        <body xsi:type="ocl.ecore:PropertyCallExp">
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;&#xA;public enum "/>
+        <body xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/String_Class/+">
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-          <source xsi:type="ocl.ecore:VariableExp" name="anEnumeration" referredVariable="/0/genEnumJavaFile/anEnumeration">
-            <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Enumeration"/>
+          <source xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/String_Class/toUpperFirst">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            <source xsi:type="ocl.ecore:PropertyCallExp">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+              <source xsi:type="ocl.ecore:VariableExp" name="anEnumeration" referredVariable="/0/genEnumJavaFile/anEnumeration">
+                <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Enumeration"/>
+              </source>
+              <referredProperty xsi:type="ecore:EAttribute" href="http://www.eclipse.org/uml2/4.0.0/UML#//NamedElement/name"/>
+            </source>
           </source>
-          <referredProperty xsi:type="ecore:EAttribute" href="http://www.eclipse.org/uml2/4.0.0/UML#//NamedElement/name"/>
-        </body>
-        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=".&#xA; * &#xA; * @generated&#xA; */&#xA;public enum "/>
-        <body xsi:type="ocl.ecore:PropertyCallExp">
-          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-          <source xsi:type="ocl.ecore:VariableExp" name="anEnumeration" referredVariable="/0/genEnumJavaFile/anEnumeration">
-            <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Enumeration"/>
-          </source>
-          <referredProperty xsi:type="ecore:EAttribute" href="http://www.eclipse.org/uml2/4.0.0/UML#//NamedElement/name"/>
+          <argument xsi:type="mtl:TemplateInvocation">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            <definition href="../../properties/properties.emtl#/0/getEnumSuffix"/>
+            <argument xsi:type="ocl.ecore:VariableExp" name="anEnumeration" referredVariable="/0/genEnumJavaFile/anEnumeration">
+              <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Enumeration"/>
+            </argument>
+          </argument>
         </body>
         <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=" {&#xA;"/>
         <body xsi:type="mtl:ForBlock">
-          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#x9;/**&#xA;&#x9; * The documentation of the enumeration literal "/>
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#x9;"/>
           <body xsi:type="ocl.ecore:OperationCallExp">
             <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
             <source xsi:type="ocl.ecore:PropertyCallExp">
               <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-              <source xsi:type="ocl.ecore:VariableExp" name="anEnumeration" referredVariable="/0/genEnumJavaFile/anEnumeration">
-                <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Enumeration"/>
+              <source xsi:type="ocl.ecore:VariableExp" name="anEnumerationLiteral" referredVariable="/0/genEnumJavaFile/@body.1/@body.7/anEnumerationLiteral">
+                <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//EnumerationLiteral"/>
               </source>
               <referredProperty xsi:type="ecore:EAttribute" href="http://www.eclipse.org/uml2/4.0.0/UML#//NamedElement/name"/>
             </source>
             <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String_Class/toUpper"/>
           </body>
-          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=".&#xA;&#x9; * &#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;"/>
-          <body xsi:type="ocl.ecore:OperationCallExp">
-            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-            <source xsi:type="ocl.ecore:PropertyCallExp">
-              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-              <source xsi:type="ocl.ecore:VariableExp" name="anEnumeration" referredVariable="/0/genEnumJavaFile/anEnumeration">
-                <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Enumeration"/>
-              </source>
-              <referredProperty xsi:type="ecore:EAttribute" href="http://www.eclipse.org/uml2/4.0.0/UML#//NamedElement/name"/>
-            </source>
-            <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String_Class/toUpper"/>
-          </body>
-          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;&#x9;&#xA;"/>
           <loopVariable name="anEnumerationLiteral">
             <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//EnumerationLiteral"/>
           </loopVariable>
-          <iterSet xsi:type="ocl.ecore:PropertyCallExp" eType="/12/OrderedSet(EnumerationLiteral)">
+          <iterSet xsi:type="ocl.ecore:PropertyCallExp" eType="/14/OrderedSet(EnumerationLiteral)">
             <source xsi:type="ocl.ecore:VariableExp" name="anEnumeration" referredVariable="/0/genEnumJavaFile/anEnumeration">
               <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Enumeration"/>
             </source>
             <referredProperty xsi:type="ecore:EReference" href="http://www.eclipse.org/uml2/4.0.0/UML#//Enumeration/ownedLiteral"/>
           </iterSet>
-          <each xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=",">
+          <each xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=",&#xA;">
             <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
           </each>
         </body>
-        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="}&#xA;"/>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;}&#xA;"/>
         <fileUrl xsi:type="mtl:TemplateInvocation">
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-          <definition href="../common/fileUtils.emtl#/0/packagePath"/>
+          <definition href="../common/fileUtils.emtl#/0/genFilePathEnum"/>
           <argument xsi:type="ocl.ecore:VariableExp" name="anEnumeration" referredVariable="/0/genEnumJavaFile/anEnumeration">
             <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Enumeration"/>
           </argument>
@@ -95,7 +106,7 @@
         </charset>
       </body>
       <documentation xsi:type="mtl:ModuleElementDocumentation">
-        <body startPosition="225" endPosition="305" value="&#xD;&#xA;The documentation of the template genEnumJavaFile.&#xD;&#xA;@param aEnumeration&#xD;&#xA;&#xD;&#xA;"/>
+        <body startPosition="364" endPosition="444" value="&#xD;&#xA;The documentation of the template genEnumJavaFile.&#xD;&#xA;@param aEnumeration&#xD;&#xA;&#xD;&#xA;"/>
         <parametersDocumentation name="aEnumeration">
           <body value=""/>
         </parametersDocumentation>
@@ -110,6 +121,17 @@
       <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
         <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
       </eAnnotations>
+      <eOperations name="toUpperFirst">
+        <eAnnotations source="MTL"/>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+      </eOperations>
+      <eOperations name="+">
+        <eAnnotations source="MTL non-standard"/>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <eParameters name="other">
+          <eType xsi:type="ocl.ecore:AnyType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny"/>
+        </eParameters>
+      </eOperations>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Integer_Class">
       <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
@@ -135,28 +157,28 @@
           <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Enumeration"/>
         </eParameters>
       </eOperations>
-      <eOperations name="packagePath">
+      <eOperations name="genFilePathEnum">
         <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
           <contents xsi:type="ocl.ecore:Constraint"/>
         </eAnnotations>
         <eAnnotations source="MTL">
-          <references href="../common/fileUtils.emtl#/0/packagePath"/>
+          <references href="../common/fileUtils.emtl#/0/genFilePathEnum"/>
         </eAnnotations>
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-        <eParameters name="aType">
-          <eType xsi:type="ocl.ecore:AnyType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny"/>
+        <eParameters name="anEnum">
+          <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Enumeration"/>
         </eParameters>
       </eOperations>
-      <eOperations name="genPackageValue">
+      <eOperations name="genPackageEnum">
         <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
           <contents xsi:type="ocl.ecore:Constraint"/>
         </eAnnotations>
         <eAnnotations source="MTL">
-          <references href="../common/fileUtils.emtl#/0/genPackageValue"/>
+          <references href="../common/fileUtils.emtl#/0/genPackageEnum"/>
         </eAnnotations>
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-        <eParameters name="aType">
-          <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Type"/>
+        <eParameters name="aEnum">
+          <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Enumeration"/>
         </eParameters>
       </eOperations>
       <eOperations name="genDefaultImport">
@@ -164,11 +186,23 @@
           <contents xsi:type="ocl.ecore:Constraint"/>
         </eAnnotations>
         <eAnnotations source="MTL">
-          <references href="../common/fileUtils.emtl#/0/genDefaultImport"/>
+          <references href="../common/importResolve.emtl#/0/genDefaultImport"/>
         </eAnnotations>
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <eParameters name="aType">
           <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Classifier"/>
+        </eParameters>
+      </eOperations>
+      <eOperations name="getEnumSuffix">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL">
+          <references href="../../properties/properties.emtl#/0/getEnumSuffix"/>
+        </eAnnotations>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <eParameters name="anOclAny">
+          <eType xsi:type="ocl.ecore:AnyType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny"/>
         </eParameters>
       </eOperations>
     </eClassifiers>
@@ -217,16 +251,6 @@
         <references href="http://www.eclipse.org/uml2/4.0.0/UML#//Classifier"/>
       </eAnnotations>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="Element_Class">
-      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
-        <references href="http://www.eclipse.org/uml2/4.0.0/UML#//Element"/>
-      </eAnnotations>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="Stereotype_Class">
-      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
-        <references href="http://www.eclipse.org/uml2/4.0.0/UML#//Stereotype"/>
-      </eAnnotations>
-    </eClassifiers>
   </ecore:EPackage>
   <ocl.ecore:Variable name="self">
     <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
@@ -236,6 +260,12 @@
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
     <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Enumeration"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Enumeration"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
     <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Enumeration"/>
@@ -276,9 +306,6 @@
     <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//EnumerationLiteral"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
-    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//EnumerationLiteral"/>
-  </ocl.ecore:Variable>
-  <ocl.ecore:Variable name="self">
     <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Enumeration"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="i">
@@ -294,184 +321,199 @@
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.1" references="/0/genEnumJavaFile">
-      <details key="start" value="308"/>
-      <details key="end" value="902"/>
-      <details key="line" value="13"/>
-    </eAnnotations>
-    <eAnnotations source="positions.2" references="/0/genEnumJavaFile/@body.0">
-      <details key="start" value="371"/>
-      <details key="end" value="890"/>
-      <details key="line" value="14"/>
-    </eAnnotations>
-    <eAnnotations source="positions.3" references="/0/genEnumJavaFile/@body.0/@body.0">
-      <details key="start" value="424"/>
-      <details key="end" value="432"/>
+      <details key="start" value="447"/>
+      <details key="end" value="977"/>
       <details key="line" value="15"/>
     </eAnnotations>
+    <eAnnotations source="positions.2" references="/0/genEnumJavaFile/@body.0">
+      <details key="start" value="510"/>
+      <details key="end" value="591"/>
+      <details key="line" value="16"/>
+    </eAnnotations>
+    <eAnnotations source="positions.3" references="/0/genEnumJavaFile/@body.0/@body.0">
+      <details key="start" value="548"/>
+      <details key="end" value="549"/>
+      <details key="line" value="17"/>
+    </eAnnotations>
     <eAnnotations source="positions.4" references="/0/genEnumJavaFile/@body.0/@body.1">
-      <details key="start" value="433"/>
-      <details key="end" value="464"/>
+      <details key="start" value="550"/>
+      <details key="end" value="581"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.5" references="/0/genEnumJavaFile/@body.0/@body.1/anEnumeration">
-      <details key="start" value="433"/>
-      <details key="end" value="446"/>
+      <details key="start" value="550"/>
+      <details key="end" value="563"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.6" references="/0/genEnumJavaFile/@body.0/@body.2">
-      <details key="start" value="466"/>
-      <details key="end" value="469"/>
-      <details key="line" value="15"/>
-    </eAnnotations>
-    <eAnnotations source="positions.7" references="/0/genEnumJavaFile/@body.0/@body.3">
-      <details key="start" value="470"/>
-      <details key="end" value="502"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.8" references="/0/genEnumJavaFile/@body.0/@body.3/anEnumeration">
-      <details key="start" value="470"/>
-      <details key="end" value="483"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.9" references="/0/genEnumJavaFile/@body.0/@body.4">
-      <details key="start" value="504"/>
-      <details key="end" value="550"/>
+      <details key="start" value="583"/>
+      <details key="end" value="584"/>
       <details key="line" value="18"/>
     </eAnnotations>
-    <eAnnotations source="positions.10" references="/0/genEnumJavaFile/@body.0/@body.5">
-      <details key="start" value="551"/>
-      <details key="end" value="569"/>
+    <eAnnotations source="positions.7" references="/0/genEnumJavaFile/@body.0/@fileUrl">
+      <details key="start" value="517"/>
+      <details key="end" value="528"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.11" references="/0/genEnumJavaFile/@body.0/@body.5/anEnumeration">
-      <details key="start" value="551"/>
-      <details key="end" value="564"/>
+    <eAnnotations source="positions.8" references="/0/genEnumJavaFile/@body.0/@charset">
+      <details key="start" value="537"/>
+      <details key="end" value="545"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.12" references="/0/genEnumJavaFile/@body.0/@body.6">
-      <details key="start" value="571"/>
-      <details key="end" value="607"/>
+    <eAnnotations source="positions.9" references="/0/genEnumJavaFile/@body.1">
+      <details key="start" value="592"/>
+      <details key="end" value="965"/>
+      <details key="line" value="19"/>
+    </eAnnotations>
+    <eAnnotations source="positions.10" references="/0/genEnumJavaFile/@body.1/@body.0">
+      <details key="start" value="649"/>
+      <details key="end" value="657"/>
       <details key="line" value="20"/>
     </eAnnotations>
-    <eAnnotations source="positions.13" references="/0/genEnumJavaFile/@body.0/@body.7">
-      <details key="start" value="608"/>
-      <details key="end" value="626"/>
+    <eAnnotations source="positions.11" references="/0/genEnumJavaFile/@body.1/@body.1">
+      <details key="start" value="658"/>
+      <details key="end" value="688"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.14" references="/0/genEnumJavaFile/@body.0/@body.7/anEnumeration">
-      <details key="start" value="608"/>
-      <details key="end" value="621"/>
+    <eAnnotations source="positions.12" references="/0/genEnumJavaFile/@body.1/@body.1/anEnumeration">
+      <details key="start" value="658"/>
+      <details key="end" value="671"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.15" references="/0/genEnumJavaFile/@body.0/@body.8">
-      <details key="start" value="628"/>
-      <details key="end" value="631"/>
+    <eAnnotations source="positions.13" references="/0/genEnumJavaFile/@body.1/@body.2">
+      <details key="start" value="690"/>
+      <details key="end" value="693"/>
+      <details key="line" value="20"/>
+    </eAnnotations>
+    <eAnnotations source="positions.14" references="/0/genEnumJavaFile/@body.1/@body.3">
+      <details key="start" value="694"/>
+      <details key="end" value="726"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.15" references="/0/genEnumJavaFile/@body.1/@body.3/anEnumeration">
+      <details key="start" value="694"/>
+      <details key="end" value="707"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.16" references="/0/genEnumJavaFile/@body.1/@body.4">
+      <details key="start" value="728"/>
+      <details key="end" value="742"/>
+      <details key="line" value="23"/>
+    </eAnnotations>
+    <eAnnotations source="positions.17" references="/0/genEnumJavaFile/@body.1/@body.5">
+      <details key="start" value="743"/>
+      <details key="end" value="808"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.18" references="/0/genEnumJavaFile/@body.1/@body.5/@source">
+      <details key="start" value="743"/>
+      <details key="end" value="776"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.19" references="/0/genEnumJavaFile/@body.1/@body.5/@source/@source">
+      <details key="start" value="743"/>
+      <details key="end" value="761"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.20" references="/0/genEnumJavaFile/@body.1/@body.5/@source/@source/anEnumeration">
+      <details key="start" value="743"/>
+      <details key="end" value="756"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.21" references="/0/genEnumJavaFile/@body.1/@body.5/@argument.0">
+      <details key="start" value="779"/>
+      <details key="end" value="808"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.22" references="/0/genEnumJavaFile/@body.1/@body.5/@argument.0/anEnumeration">
+      <details key="start" value="779"/>
+      <details key="end" value="792"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.23" references="/0/genEnumJavaFile/@body.1/@body.6">
+      <details key="start" value="810"/>
+      <details key="end" value="813"/>
       <details key="line" value="24"/>
     </eAnnotations>
-    <eAnnotations source="positions.16" references="/0/genEnumJavaFile/@body.0/@body.9">
-      <details key="start" value="632"/>
-      <details key="end" value="880"/>
+    <eAnnotations source="positions.24" references="/0/genEnumJavaFile/@body.1/@body.7">
+      <details key="start" value="813"/>
+      <details key="end" value="954"/>
       <details key="line" value="25"/>
     </eAnnotations>
-    <eAnnotations source="positions.17" references="/0/genEnumJavaFile/@body.0/@body.9/@body.0">
-      <details key="start" value="726"/>
-      <details key="end" value="780"/>
+    <eAnnotations source="positions.25" references="/0/genEnumJavaFile/@body.1/@body.7/@body.0">
+      <details key="start" value="909"/>
+      <details key="end" value="910"/>
       <details key="line" value="26"/>
     </eAnnotations>
-    <eAnnotations source="positions.18" references="/0/genEnumJavaFile/@body.0/@body.9/@body.1">
-      <details key="start" value="781"/>
-      <details key="end" value="809"/>
+    <eAnnotations source="positions.26" references="/0/genEnumJavaFile/@body.1/@body.7/@body.1">
+      <details key="start" value="911"/>
+      <details key="end" value="946"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.19" references="/0/genEnumJavaFile/@body.0/@body.9/@body.1/@source">
-      <details key="start" value="781"/>
-      <details key="end" value="799"/>
+    <eAnnotations source="positions.27" references="/0/genEnumJavaFile/@body.1/@body.7/@body.1/@source">
+      <details key="start" value="911"/>
+      <details key="end" value="936"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.20" references="/0/genEnumJavaFile/@body.0/@body.9/@body.1/@source/anEnumeration">
-      <details key="start" value="781"/>
-      <details key="end" value="794"/>
+    <eAnnotations source="positions.28" references="/0/genEnumJavaFile/@body.1/@body.7/@body.1/@source/anEnumerationLiteral">
+      <details key="start" value="911"/>
+      <details key="end" value="931"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.21" references="/0/genEnumJavaFile/@body.0/@body.9/@body.2">
-      <details key="start" value="811"/>
-      <details key="end" value="839"/>
-      <details key="line" value="27"/>
-    </eAnnotations>
-    <eAnnotations source="positions.22" references="/0/genEnumJavaFile/@body.0/@body.9/@body.3">
-      <details key="start" value="840"/>
-      <details key="end" value="868"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.23" references="/0/genEnumJavaFile/@body.0/@body.9/@body.3/@source">
-      <details key="start" value="840"/>
-      <details key="end" value="858"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.24" references="/0/genEnumJavaFile/@body.0/@body.9/@body.3/@source/anEnumeration">
-      <details key="start" value="840"/>
-      <details key="end" value="853"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.25" references="/0/genEnumJavaFile/@body.0/@body.9/@body.4">
-      <details key="start" value="870"/>
-      <details key="end" value="873"/>
-      <details key="line" value="32"/>
-    </eAnnotations>
-    <eAnnotations source="positions.26" references="/0/genEnumJavaFile/@body.0/@body.9/anEnumerationLiteral">
-      <details key="start" value="638"/>
-      <details key="end" value="679"/>
+    <eAnnotations source="positions.29" references="/0/genEnumJavaFile/@body.1/@body.7/anEnumerationLiteral">
+      <details key="start" value="819"/>
+      <details key="end" value="860"/>
       <details key="line" value="25"/>
     </eAnnotations>
-    <eAnnotations source="positions.27" references="/0/genEnumJavaFile/@body.0/@body.9/@iterSet">
-      <details key="start" value="682"/>
-      <details key="end" value="708"/>
+    <eAnnotations source="positions.30" references="/0/genEnumJavaFile/@body.1/@body.7/@iterSet">
+      <details key="start" value="863"/>
+      <details key="end" value="889"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.28" references="/0/genEnumJavaFile/@body.0/@body.9/@iterSet/anEnumeration">
-      <details key="start" value="682"/>
-      <details key="end" value="695"/>
+    <eAnnotations source="positions.31" references="/0/genEnumJavaFile/@body.1/@body.7/@iterSet/anEnumeration">
+      <details key="start" value="863"/>
+      <details key="end" value="876"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.29" references="/0/genEnumJavaFile/@body.0/@body.9/@each">
-      <details key="start" value="720"/>
-      <details key="end" value="723"/>
+    <eAnnotations source="positions.32" references="/0/genEnumJavaFile/@body.1/@body.7/@each">
+      <details key="start" value="901"/>
+      <details key="end" value="906"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.30" references="/0/genEnumJavaFile/@body.0/@body.10">
-      <details key="start" value="881"/>
-      <details key="end" value="883"/>
-      <details key="line" value="34"/>
+    <eAnnotations source="positions.33" references="/0/genEnumJavaFile/@body.1/@body.8">
+      <details key="start" value="955"/>
+      <details key="end" value="958"/>
+      <details key="line" value="27"/>
     </eAnnotations>
-    <eAnnotations source="positions.31" references="/0/genEnumJavaFile/@body.0/@fileUrl">
-      <details key="start" value="378"/>
-      <details key="end" value="405"/>
+    <eAnnotations source="positions.34" references="/0/genEnumJavaFile/@body.1/@fileUrl">
+      <details key="start" value="599"/>
+      <details key="end" value="630"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.32" references="/0/genEnumJavaFile/@body.0/@fileUrl/anEnumeration">
-      <details key="start" value="378"/>
-      <details key="end" value="391"/>
+    <eAnnotations source="positions.35" references="/0/genEnumJavaFile/@body.1/@fileUrl/anEnumeration">
+      <details key="start" value="599"/>
+      <details key="end" value="612"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.33" references="/0/genEnumJavaFile/@body.0/@charset">
-      <details key="start" value="414"/>
-      <details key="end" value="421"/>
+    <eAnnotations source="positions.36" references="/0/genEnumJavaFile/@body.1/@charset">
+      <details key="start" value="639"/>
+      <details key="end" value="646"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.34" references="/0/genEnumJavaFile/@documentation">
-      <details key="start" value="222"/>
-      <details key="end" value="307"/>
+    <eAnnotations source="positions.37" references="/0/genEnumJavaFile/@documentation">
+      <details key="start" value="361"/>
+      <details key="end" value="446"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.35" references="/0/genEnumJavaFile/@documentation/aEnumeration">
+    <eAnnotations source="positions.38" references="/0/genEnumJavaFile/@documentation/aEnumeration">
       <details key="start" value="-1"/>
       <details key="end" value="-1"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.36" references="/0/genEnumJavaFile/anEnumeration">
-      <details key="start" value="341"/>
-      <details key="end" value="368"/>
-      <details key="line" value="13"/>
+    <eAnnotations source="positions.39" references="/0/genEnumJavaFile/anEnumeration">
+      <details key="start" value="480"/>
+      <details key="end" value="507"/>
+      <details key="line" value="15"/>
     </eAnnotations>
   </ecore:EAnnotation>
 </xmi:XMI>

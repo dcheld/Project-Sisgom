@@ -2,6 +2,7 @@
 [module hybernateFile('http://www.eclipse.org/uml2/4.0.0/UML')]
 
 [import org::eclipse::acceleo::sisgom::uml2java::common::fileUtils /]
+[import org::eclipse::acceleo::sisgom::uml2java::common::stereotypeUtils /]
 
 [template public hybernatEntity(aClass : Class) post (trim())]
 [aClass.generateStereotype(Sequence{'Entity'}) /]
@@ -22,7 +23,7 @@
 	[if (aClass.getValue(stereoType , propName.name).oclIsUndefined())]
 @[stereoType.name + '(' + propName.name.toLowerFirst() + '="' + aClass.name + '")' /]
 	[else]
-@[stereoType.name + '(' + propName.name.toLowerFirst() + '=' + propName.attributeStereotypeGetValue(aClass, aClass.getStereotypeQuery('Table')) + ')' /]
+@[stereoType.name + '(' + propName.name.toLowerFirst() + '=' + propName.attributeStereotypeGetValue(aClass, aClass.getStereotypeQuery('Table')).trim() + ')' /]
 	[/if]
 [/let]
 [/let]
@@ -40,7 +41,7 @@
 [/if]
 	[if (aAssociation.hasStereotypeQuery('JoinTable'))]
 		[let s : Stereotype = aAssociation.getStereotypeQuery('JoinTable')]
-@JoinTable(name=[s.getStereotypeProperty('Name').attributeStereotypeGetValue(aAssociation, s)/], joinColumns={@JoinColumn(name=[s.getStereotypeProperty('JoinColumns').attributeStereotypeGetValue(aAssociation, s)/])}, inverseJoinColumns={@JoinColumn(name=[s.getStereotypeProperty('InverseJoinColumns').attributeStereotypeGetValue(aAssociation, s)/])})
+@JoinTable(name=[s.getStereotypeProperty('Name').attributeStereotypeGetValue(aAssociation, s).trim()/], joinColumns={@JoinColumn(name=[s.getStereotypeProperty('JoinColumns').attributeStereotypeGetValue(aAssociation, s).trim()/])}, inverseJoinColumns={@JoinColumn(name=[s.getStereotypeProperty('InverseJoinColumns').attributeStereotypeGetValue(aAssociation, s).trim()/])})
 		[/let]
 	[/if]
 [else]

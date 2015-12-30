@@ -4,6 +4,7 @@
  */]
 [module classUtilsJavaFile('http://www.eclipse.org/uml2/4.0.0/UML')]
 [import org::eclipse::acceleo::sisgom::uml2java::common::fileUtils /]
+[import org::eclipse::acceleo::sisgom::uml2java::common::stereotypeUtils /]
 [import org::eclipse::acceleo::sisgom::properties::properties /]
 
 [**
@@ -171,7 +172,7 @@ package [aPack.name +'.' + aPack.getUtilsNamespace()/];
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
-[for (aClass : Class | aPack.getClassOfFactory())]
+[for (aClass : Class | aPack.getClassOfFactory()) ? (aClass.hasStereotypeQuery('Service'))]
 import [aClass.genPackageValue() + '.' + aClass.getDaoNamespace()+'.'+ aClass.name + aClass.getDaoSuffix()/];
 [/for]
 
@@ -193,7 +194,7 @@ public final class [aPack.getDaoFactory()/] {
 		return entityManagerFactoryInstance;
 	}
 
-	[for (aClass : Class | aPack.getClassOfFactory()) separator ('\n')]
+	[for (aClass : Class | aPack.getClassOfFactory()) separator ('\n') ? (aClass.hasStereotypeQuery('Service'))]
 	private static [aClass.name + aClass.getDaoSuffix()/] [aClass.name.toLowerFirst() + aClass.getDaoSuffix()/]Instance;
 
 	public static [aClass.name + aClass.getDaoSuffix()/] [aClass.name.toLowerFirst() /]Instance() {
