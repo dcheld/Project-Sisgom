@@ -21,31 +21,28 @@ public class ClienteDeleteServlet extends HttpServlet {
 	private static final long serialVersionUID = 7676902163332167539L;
 
 	private ClienteDao clienteDao = DaoFactory.clienteInstance();
-	
+
 	@Override
-	protected void service(HttpServletRequest req, HttpServletResponse resp)
-			throws ServletException, IOException {
+	protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		String id = req.getParameter("id");
 		String destino = "";
 
 		if (id == null) {
-			destino = "/cliente/list.jsp?error=Id não encontrado.";
-			return;
-		}
+			destino = "/cliente/list?error=Id não encontrado.";
+		} else {
+			try {
+				ClienteEntity entity = this.clienteDao.findById(Integer.parseInt(id));
 
-		try {
-			ClienteEntity entity = this.clienteDao.findById(Integer.parseInt(id));
-
-			if (entity != null) {
-				this.clienteDao.delete(entity);
-				destino = "/cliente/list.jsp";
-			} else {
-				destino = "/cliente/list.jsp?error=Cliente não encontrado.";
+				if (entity != null) {
+					this.clienteDao.delete(entity);
+					destino = "/cliente/list";
+				} else {
+					destino = "/cliente/list?error=Cliente não encontrado.";
+				}
+			} catch (Exception ex) {
+				destino = "/cliente/list?error=" + ex.getMessage();
 			}
-		} catch (Exception ex) {
-			destino = "/cliente/list?error=" + ex.getMessage();
 		}
-		
 		resp.sendRedirect(destino);
 	}
 }
