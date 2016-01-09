@@ -1,6 +1,150 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <uml:Profile xmi:version="20110701" xmlns:xmi="http://www.omg.org/spec/XMI/20110701" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/4.0.0/UML" xmi:id="_WSavYIvkEeWuGKU7gkaFFg" name="Infra" metaclassReference="_h4CusIvkEeWuGKU7gkaFFg _VP4sEK2pEeWNifw7iYKXyQ" metamodelReference="_WSavYYvkEeWuGKU7gkaFFg">
   <eAnnotations xmi:id="_gD-JAIvkEeWuGKU7gkaFFg" source="http://www.eclipse.org/uml2/2.0.0/UML">
+    <contents xmi:type="ecore:EPackage" xmi:id="_uVgIQbcCEeW2Mqv0nQe8Cg" name="Infra" nsURI="http:///schemas/Infra/_uVgIQLcCEeW2Mqv0nQe8Cg/7" nsPrefix="Infra">
+      <eAnnotations xmi:id="_uVgvUrcCEeW2Mqv0nQe8Cg" source="PapyrusVersion">
+        <details xmi:id="_uVgvU7cCEeW2Mqv0nQe8Cg" key="Version" value="0.0.8"/>
+        <details xmi:id="_uVgvVLcCEeW2Mqv0nQe8Cg" key="Comment" value=""/>
+        <details xmi:id="_uVgvVbcCEeW2Mqv0nQe8Cg" key="Copyright" value="Douglas Held"/>
+        <details xmi:id="_uVgvVrcCEeW2Mqv0nQe8Cg" key="Date" value="2016-01-09"/>
+        <details xmi:id="_uVgvV7cCEeW2Mqv0nQe8Cg" key="Author" value=""/>
+      </eAnnotations>
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_uVgIQrcCEeW2Mqv0nQe8Cg" name="MainPackage">
+        <eAnnotations xmi:id="_uVgIQ7cCEeW2Mqv0nQe8Cg" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_iW7DEIvkEeWuGKU7gkaFFg"/>
+        <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_uVgIRLcCEeW2Mqv0nQe8Cg" name="base_Package" ordered="false" lowerBound="1">
+          <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Package"/>
+        </eStructuralFeatures>
+      </eClassifiers>
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_uVgIRrcCEeW2Mqv0nQe8Cg" name="Service">
+        <eAnnotations xmi:id="_uVgIR7cCEeW2Mqv0nQe8Cg" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_XH9A8K2pEeWNifw7iYKXyQ"/>
+        <eAnnotations xmi:id="_uVgISLcCEeW2Mqv0nQe8Cg" source="duplicates">
+          <contents xmi:type="ecore:EReference" xmi:id="_uVgISbcCEeW2Mqv0nQe8Cg" name="base_Class" ordered="false" lowerBound="1">
+            <eAnnotations xmi:id="_uVgISrcCEeW2Mqv0nQe8Cg" source="redefines" references="_uVgITLcCEeW2Mqv0nQe8Cg"/>
+            <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Class"/>
+          </contents>
+        </eAnnotations>
+        <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_uVgITLcCEeW2Mqv0nQe8Cg" name="base_Class" ordered="false" lowerBound="1">
+          <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Class"/>
+        </eStructuralFeatures>
+      </eClassifiers>
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_uVgITrcCEeW2Mqv0nQe8Cg" name="Entity">
+        <eAnnotations xmi:id="_uVgIT7cCEeW2Mqv0nQe8Cg" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_ECToYLcCEeW2Mqv0nQe8Cg"/>
+        <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_uVgIULcCEeW2Mqv0nQe8Cg" name="base_Class" ordered="false" lowerBound="1">
+          <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Class"/>
+        </eStructuralFeatures>
+      </eClassifiers>
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_uVgIUrcCEeW2Mqv0nQe8Cg" name="Servlets">
+        <eAnnotations xmi:id="_uVgIU7cCEeW2Mqv0nQe8Cg" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_LOvZ4LcCEeW2Mqv0nQe8Cg"/>
+        <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_uVgIVLcCEeW2Mqv0nQe8Cg" name="base_Class" ordered="false" lowerBound="1">
+          <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Class"/>
+        </eStructuralFeatures>
+      </eClassifiers>
+    </contents>
+    <contents xmi:type="ecore:EPackage" xmi:id="_oDuBIbcCEeW2Mqv0nQe8Cg" name="Infra" nsURI="http:///schemas/Infra/_oDuBILcCEeW2Mqv0nQe8Cg/6" nsPrefix="Infra">
+      <eAnnotations xmi:id="_oDuoP7cCEeW2Mqv0nQe8Cg" source="PapyrusVersion">
+        <details xmi:id="_oDuoQLcCEeW2Mqv0nQe8Cg" key="Version" value="0.0.7"/>
+        <details xmi:id="_oDuoQbcCEeW2Mqv0nQe8Cg" key="Comment" value=""/>
+        <details xmi:id="_oDuoQrcCEeW2Mqv0nQe8Cg" key="Copyright" value="Douglas Held"/>
+        <details xmi:id="_oDuoQ7cCEeW2Mqv0nQe8Cg" key="Date" value="2016-01-09"/>
+        <details xmi:id="_oDuoRLcCEeW2Mqv0nQe8Cg" key="Author" value=""/>
+      </eAnnotations>
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_oDuBIrcCEeW2Mqv0nQe8Cg" name="MainPackage">
+        <eAnnotations xmi:id="_oDuBI7cCEeW2Mqv0nQe8Cg" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_iW7DEIvkEeWuGKU7gkaFFg"/>
+        <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_oDuBJLcCEeW2Mqv0nQe8Cg" name="base_Package" ordered="false" lowerBound="1">
+          <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Package"/>
+        </eStructuralFeatures>
+      </eClassifiers>
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_oDuBJrcCEeW2Mqv0nQe8Cg" name="Service">
+        <eAnnotations xmi:id="_oDuoMLcCEeW2Mqv0nQe8Cg" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_XH9A8K2pEeWNifw7iYKXyQ"/>
+        <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_oDuoMbcCEeW2Mqv0nQe8Cg" name="base_Class" ordered="false" lowerBound="1">
+          <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Class"/>
+        </eStructuralFeatures>
+      </eClassifiers>
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_oDuoM7cCEeW2Mqv0nQe8Cg" name="Entity">
+        <eAnnotations xmi:id="_oDuoNLcCEeW2Mqv0nQe8Cg" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_ECToYLcCEeW2Mqv0nQe8Cg"/>
+        <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_oDuoNbcCEeW2Mqv0nQe8Cg" name="base_Class" ordered="false" lowerBound="1">
+          <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Class"/>
+        </eStructuralFeatures>
+      </eClassifiers>
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_oDuoN7cCEeW2Mqv0nQe8Cg" name="Servlets">
+        <eAnnotations xmi:id="_oDuoOLcCEeW2Mqv0nQe8Cg" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_LOvZ4LcCEeW2Mqv0nQe8Cg"/>
+        <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_oDuoObcCEeW2Mqv0nQe8Cg" name="base_Class" ordered="false" lowerBound="1">
+          <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Class"/>
+        </eStructuralFeatures>
+      </eClassifiers>
+    </contents>
+    <contents xmi:type="ecore:EPackage" xmi:id="_ZgV3QbcCEeW2Mqv0nQe8Cg" name="Infra" nsURI="http:///schemas/Infra/_ZgV3QLcCEeW2Mqv0nQe8Cg/5" nsPrefix="Infra">
+      <eAnnotations xmi:id="_ZgXFYbcCEeW2Mqv0nQe8Cg" source="PapyrusVersion">
+        <details xmi:id="_ZgXFYrcCEeW2Mqv0nQe8Cg" key="Version" value="0.0.6"/>
+        <details xmi:id="_ZgXFY7cCEeW2Mqv0nQe8Cg" key="Comment" value=""/>
+        <details xmi:id="_ZgXFZLcCEeW2Mqv0nQe8Cg" key="Copyright" value="Douglas Held"/>
+        <details xmi:id="_ZgXFZbcCEeW2Mqv0nQe8Cg" key="Date" value="2016-01-09"/>
+        <details xmi:id="_ZgXFZrcCEeW2Mqv0nQe8Cg" key="Author" value=""/>
+      </eAnnotations>
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_ZgV3QrcCEeW2Mqv0nQe8Cg" name="MainPackage">
+        <eAnnotations xmi:id="_ZgV3Q7cCEeW2Mqv0nQe8Cg" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_iW7DEIvkEeWuGKU7gkaFFg"/>
+        <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_ZgV3RLcCEeW2Mqv0nQe8Cg" name="base_Package" ordered="false" lowerBound="1">
+          <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Package"/>
+        </eStructuralFeatures>
+      </eClassifiers>
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_ZgV3RrcCEeW2Mqv0nQe8Cg" name="Service">
+        <eAnnotations xmi:id="_ZgV3R7cCEeW2Mqv0nQe8Cg" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_XH9A8K2pEeWNifw7iYKXyQ"/>
+        <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_ZgV3SLcCEeW2Mqv0nQe8Cg" name="base_Class" ordered="false" lowerBound="1">
+          <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Class"/>
+        </eStructuralFeatures>
+      </eClassifiers>
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_ZgV3SrcCEeW2Mqv0nQe8Cg" name="Entity">
+        <eAnnotations xmi:id="_ZgV3S7cCEeW2Mqv0nQe8Cg" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_ECToYLcCEeW2Mqv0nQe8Cg"/>
+        <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_ZgV3TLcCEeW2Mqv0nQe8Cg" name="base_Class" ordered="false" lowerBound="1">
+          <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Class"/>
+        </eStructuralFeatures>
+      </eClassifiers>
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_ZgV3TrcCEeW2Mqv0nQe8Cg" name="Servlets">
+        <eAnnotations xmi:id="_ZgV3T7cCEeW2Mqv0nQe8Cg" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_LOvZ4LcCEeW2Mqv0nQe8Cg"/>
+        <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_ZgV3ULcCEeW2Mqv0nQe8Cg" name="base_Class" ordered="false" lowerBound="1">
+          <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Class"/>
+        </eStructuralFeatures>
+      </eClassifiers>
+    </contents>
+    <contents xmi:type="ecore:EPackage" xmi:id="_QdLNoLcCEeW2Mqv0nQe8Cg" name="Infra" nsURI="http:///schemas/Infra/_QdKmkLcCEeW2Mqv0nQe8Cg/4" nsPrefix="Infra">
+      <eAnnotations xmi:id="_QdL0srcCEeW2Mqv0nQe8Cg" source="PapyrusVersion">
+        <details xmi:id="_QdL0s7cCEeW2Mqv0nQe8Cg" key="Version" value="0.0.5"/>
+        <details xmi:id="_QdL0tLcCEeW2Mqv0nQe8Cg" key="Comment" value=""/>
+        <details xmi:id="_QdL0tbcCEeW2Mqv0nQe8Cg" key="Copyright" value="Douglas Held"/>
+        <details xmi:id="_QdL0trcCEeW2Mqv0nQe8Cg" key="Date" value="2016-01-09"/>
+        <details xmi:id="_QdL0t7cCEeW2Mqv0nQe8Cg" key="Author" value=""/>
+      </eAnnotations>
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_QdLNobcCEeW2Mqv0nQe8Cg" name="MainPackage">
+        <eAnnotations xmi:id="_QdLNorcCEeW2Mqv0nQe8Cg" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_iW7DEIvkEeWuGKU7gkaFFg"/>
+        <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_QdLNo7cCEeW2Mqv0nQe8Cg" name="base_Package" ordered="false" lowerBound="1">
+          <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Package"/>
+        </eStructuralFeatures>
+      </eClassifiers>
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_QdLNpbcCEeW2Mqv0nQe8Cg" name="Service">
+        <eAnnotations xmi:id="_QdLNprcCEeW2Mqv0nQe8Cg" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_XH9A8K2pEeWNifw7iYKXyQ"/>
+        <eAnnotations xmi:id="_QdLNp7cCEeW2Mqv0nQe8Cg" source="duplicates">
+          <contents xmi:type="ecore:EReference" xmi:id="_QdLNqLcCEeW2Mqv0nQe8Cg" name="base_Class" ordered="false" lowerBound="1">
+            <eAnnotations xmi:id="_QdLNqbcCEeW2Mqv0nQe8Cg" source="redefines" references="_QdLNq7cCEeW2Mqv0nQe8Cg"/>
+            <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Class"/>
+          </contents>
+        </eAnnotations>
+        <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_QdLNq7cCEeW2Mqv0nQe8Cg" name="base_Class" ordered="false" lowerBound="1">
+          <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Class"/>
+        </eStructuralFeatures>
+      </eClassifiers>
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_QdLNrbcCEeW2Mqv0nQe8Cg" name="Entity">
+        <eAnnotations xmi:id="_QdLNrrcCEeW2Mqv0nQe8Cg" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_ECToYLcCEeW2Mqv0nQe8Cg"/>
+        <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_QdLNr7cCEeW2Mqv0nQe8Cg" name="base_Class" ordered="false" lowerBound="1">
+          <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Class"/>
+        </eStructuralFeatures>
+      </eClassifiers>
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_QdLNsbcCEeW2Mqv0nQe8Cg" name="Servlets">
+        <eAnnotations xmi:id="_QdLNsrcCEeW2Mqv0nQe8Cg" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_LOvZ4LcCEeW2Mqv0nQe8Cg"/>
+        <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_QdLNs7cCEeW2Mqv0nQe8Cg" name="base_Class" ordered="false" lowerBound="1">
+          <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Class"/>
+        </eStructuralFeatures>
+      </eClassifiers>
+    </contents>
     <contents xmi:type="ecore:EPackage" xmi:id="_jozSYK2pEeWNifw7iYKXyQ" name="Infra" nsURI="http:///schemas/Infra/_joxdMK2pEeWNifw7iYKXyQ/3" nsPrefix="Infra">
       <eAnnotations xmi:id="_jo0ggq2pEeWNifw7iYKXyQ" source="PapyrusVersion">
         <details xmi:id="_jo0gg62pEeWNifw7iYKXyQ" key="Version" value="0.0.4"/>
@@ -83,11 +227,30 @@
     <ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="_mmSmgovkEeWuGKU7gkaFFg" name="extension_MainPackage" type="_iW7DEIvkEeWuGKU7gkaFFg" aggregation="composite" association="_mmSmgYvkEeWuGKU7gkaFFg"/>
   </packagedElement>
   <packagedElement xmi:type="uml:Stereotype" xmi:id="_XH9A8K2pEeWNifw7iYKXyQ" name="Service">
-    <ownedAttribute xmi:id="_gmAPwK2pEeWNifw7iYKXyQ" name="base_Class" association="_gmAPwa2pEeWNifw7iYKXyQ">
+    <ownedAttribute xmi:id="_WFs8YLcCEeW2Mqv0nQe8Cg" name="base_Class">
+      <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Class"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_tmJu8LcCEeW2Mqv0nQe8Cg" name="base_Class" association="_tmJu8bcCEeW2Mqv0nQe8Cg">
       <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Class"/>
     </ownedAttribute>
   </packagedElement>
-  <packagedElement xmi:type="uml:Extension" xmi:id="_gmAPwa2pEeWNifw7iYKXyQ" name="E_Service_Class1" memberEnd="_gmAPwq2pEeWNifw7iYKXyQ _gmAPwK2pEeWNifw7iYKXyQ">
-    <ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="_gmAPwq2pEeWNifw7iYKXyQ" name="extension_Service" type="_XH9A8K2pEeWNifw7iYKXyQ" aggregation="composite" association="_gmAPwa2pEeWNifw7iYKXyQ"/>
+  <packagedElement xmi:type="uml:Stereotype" xmi:id="_ECToYLcCEeW2Mqv0nQe8Cg" name="Entity">
+    <ownedAttribute xmi:id="_M8y3ILcCEeW2Mqv0nQe8Cg" name="base_Class" association="_M8zeMLcCEeW2Mqv0nQe8Cg">
+      <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Class"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Stereotype" xmi:id="_LOvZ4LcCEeW2Mqv0nQe8Cg" name="Servlets">
+    <ownedAttribute xmi:id="_NT8y4LcCEeW2Mqv0nQe8Cg" name="base_Class" association="_NT9Z8LcCEeW2Mqv0nQe8Cg">
+      <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Class"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Extension" xmi:id="_M8zeMLcCEeW2Mqv0nQe8Cg" name="E_Entity_Class1" memberEnd="_M8zeMbcCEeW2Mqv0nQe8Cg _M8y3ILcCEeW2Mqv0nQe8Cg">
+    <ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="_M8zeMbcCEeW2Mqv0nQe8Cg" name="extension_Entity" type="_ECToYLcCEeW2Mqv0nQe8Cg" aggregation="composite" association="_M8zeMLcCEeW2Mqv0nQe8Cg"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Extension" xmi:id="_NT9Z8LcCEeW2Mqv0nQe8Cg" name="E_Servlets_Class1" memberEnd="_NT9Z8bcCEeW2Mqv0nQe8Cg _NT8y4LcCEeW2Mqv0nQe8Cg">
+    <ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="_NT9Z8bcCEeW2Mqv0nQe8Cg" name="extension_Servlets" type="_LOvZ4LcCEeW2Mqv0nQe8Cg" aggregation="composite" association="_NT9Z8LcCEeW2Mqv0nQe8Cg"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Extension" xmi:id="_tmJu8bcCEeW2Mqv0nQe8Cg" name="E_Service_Class1" memberEnd="_tmJu8rcCEeW2Mqv0nQe8Cg _tmJu8LcCEeW2Mqv0nQe8Cg">
+    <ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="_tmJu8rcCEeW2Mqv0nQe8Cg" name="extension_Service" type="_XH9A8K2pEeWNifw7iYKXyQ" aggregation="composite" association="_tmJu8bcCEeW2Mqv0nQe8Cg"/>
   </packagedElement>
 </uml:Profile>

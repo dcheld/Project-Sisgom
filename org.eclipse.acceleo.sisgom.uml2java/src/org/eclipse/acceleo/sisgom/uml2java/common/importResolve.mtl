@@ -11,7 +11,7 @@
 import [pack.name + '.'+ pack.getUtilsNamespace() + '.' + pack.getBaseBean()/];
 [/let]
 [/if]
-[if (aType.attribute->exists(property : Property | property.upper = -1 or property.upper > 1))]
+[if (aType.getAllAttributes()->exists(property : Property | property.upper = -1 or property.upper > 1))]
 import java.util.List;
 [/if]
 [if (aType.oclIsTypeOf(Class))]

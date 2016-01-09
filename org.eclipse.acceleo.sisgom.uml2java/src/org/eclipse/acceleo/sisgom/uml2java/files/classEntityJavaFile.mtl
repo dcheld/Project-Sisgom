@@ -30,6 +30,7 @@ public [if (aClass.isAbstract)]abstract[/if] class [aClass.getClassNameEntity()/
 	public [aClass.name + aClass.getEntitySuffix()/]() {
 		super();
 	}
+	[aClass.constructor()/]
 	[aClass.classBody()/]
 }
 [/file]
@@ -99,11 +100,11 @@ public [if (anOperation.type.oclIsUndefined())]void[else][anOperation.type.name/
 
 [template private accessors(aClass : Class)]
 [for (aProperty : Property | aClass.attribute) separator ('\n')]
-public [if (aProperty.upper = -1 or aProperty.upper > 1)]List<[aProperty.type.getClassNameEntity()/]>[else][aProperty.type.getClassNameEntity()/][/if] get[aProperty.name/]() {
+public [aProperty.fieldsType()/] get[aProperty.name.toUpperFirst()/]() {
 	return this.[aProperty.name.toLowerFirst()/];
 }
 
-public void set[aProperty.name/]([if (aProperty.upper = -1 or aProperty.upper > 1)]List<[aProperty.type.getClassNameEntity()/]>[else][aProperty.type.getClassNameEntity()/][/if] [aProperty.name.toLowerFirst()/]) {
+public void set[aProperty.name/]([aProperty.fieldsType()/] [aProperty.name.toLowerFirst()/]) {
 	this.[aProperty.name.toLowerFirst()/] = [aProperty.name.toLowerFirst()/];
 }
 [/for]
@@ -119,4 +120,17 @@ public void set[aProperty.name/]([if (aProperty.upper = -1 or aProperty.upper > 
 
 [template public getClassNameEntity(aType : Type)post (trim())]
 [aType.name /]
+[/template]
+
+[template private fieldsType(aProperty : Property) post (trim())]
+[let typeName : String = aProperty.type.getClassNameEntity()][if (aProperty.upper = -1 or aProperty.upper > 1)]List<[typeName/]>[else][typeName/][/if][/let] 
+[/template]
+
+[template public constructor(aClass : Class)]
+public [aClass.name + aClass.getEntitySuffix()/]([for (aProp : Property | aClass.getAllAttributes()->sortedBy(a : Property | a.name))separator(', ')][aProp.fieldsType() + ' ' + aProp.name.toLowerFirst()/][/for]) {
+	super([for (aProp : Property | aClass.superClass.getAllAttributes()->sortedBy(a : Property | a.name))separator(', ')][aProp.name.toLowerFirst()/][/for]);
+[for (aProp : Property | aClass.attribute->sortedBy(a : Property | a.name))]
+	this.[aProp.name.toLowerFirst()/] = [aProp.name.toLowerFirst()/]; 
+[/for]
+}
 [/template]
