@@ -1,6 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <uml:Profile xmi:version="20110701" xmlns:xmi="http://www.omg.org/spec/XMI/20110701" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/4.0.0/UML" xmi:id="_WSavYIvkEeWuGKU7gkaFFg" name="Infra" metaclassReference="_h4CusIvkEeWuGKU7gkaFFg _VP4sEK2pEeWNifw7iYKXyQ" metamodelReference="_WSavYYvkEeWuGKU7gkaFFg">
   <eAnnotations xmi:id="_gD-JAIvkEeWuGKU7gkaFFg" source="http://www.eclipse.org/uml2/2.0.0/UML">
+    <contents xmi:type="ecore:EPackage" xmi:id="_YQ4MUbd3EeW9XvKsC0AKCw" name="Infra" nsURI="http:///schemas/Infra/_YQ4MULd3EeW9XvKsC0AKCw/8" nsPrefix="Infra">
+      <eAnnotations xmi:id="_YQ5acbd3EeW9XvKsC0AKCw" source="PapyrusVersion">
+        <details xmi:id="_YQ5acrd3EeW9XvKsC0AKCw" key="Version" value="0.0.9"/>
+        <details xmi:id="_YQ5ac7d3EeW9XvKsC0AKCw" key="Comment" value=""/>
+        <details xmi:id="_YQ5adLd3EeW9XvKsC0AKCw" key="Copyright" value="Douglas Held"/>
+        <details xmi:id="_YQ5adbd3EeW9XvKsC0AKCw" key="Date" value="2016-01-10"/>
+        <details xmi:id="_YQ5adrd3EeW9XvKsC0AKCw" key="Author" value=""/>
+      </eAnnotations>
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_YQ4MUrd3EeW9XvKsC0AKCw" name="MainPackage">
+        <eAnnotations xmi:id="_YQ4MU7d3EeW9XvKsC0AKCw" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_iW7DEIvkEeWuGKU7gkaFFg"/>
+        <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_YQ4MVLd3EeW9XvKsC0AKCw" name="base_Package" ordered="false" lowerBound="1">
+          <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Package"/>
+        </eStructuralFeatures>
+      </eClassifiers>
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_YQ4MVrd3EeW9XvKsC0AKCw" name="Service">
+        <eAnnotations xmi:id="_YQ4MV7d3EeW9XvKsC0AKCw" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_XH9A8K2pEeWNifw7iYKXyQ"/>
+        <eAnnotations xmi:id="_YQ4MWLd3EeW9XvKsC0AKCw" source="duplicates">
+          <contents xmi:type="ecore:EReference" xmi:id="_YQ4MWbd3EeW9XvKsC0AKCw" name="base_Class" ordered="false" lowerBound="1">
+            <eAnnotations xmi:id="_YQ4MWrd3EeW9XvKsC0AKCw" source="redefines" references="_YQ4MXLd3EeW9XvKsC0AKCw"/>
+            <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Class"/>
+          </contents>
+        </eAnnotations>
+        <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_YQ4MXLd3EeW9XvKsC0AKCw" name="base_Class" ordered="false" lowerBound="1">
+          <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Class"/>
+        </eStructuralFeatures>
+      </eClassifiers>
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_YQ4MXrd3EeW9XvKsC0AKCw" name="Entity">
+        <eAnnotations xmi:id="_YQ4MX7d3EeW9XvKsC0AKCw" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_ECToYLcCEeW2Mqv0nQe8Cg"/>
+        <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_YQ4MYLd3EeW9XvKsC0AKCw" name="base_Class" ordered="false" lowerBound="1">
+          <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Class"/>
+        </eStructuralFeatures>
+      </eClassifiers>
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_YQ4MYrd3EeW9XvKsC0AKCw" name="Presentation">
+        <eAnnotations xmi:id="_YQ4MY7d3EeW9XvKsC0AKCw" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_LOvZ4LcCEeW2Mqv0nQe8Cg"/>
+        <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_YQ4MZLd3EeW9XvKsC0AKCw" name="base_Class" ordered="false" lowerBound="1">
+          <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Class"/>
+        </eStructuralFeatures>
+      </eClassifiers>
+    </contents>
     <contents xmi:type="ecore:EPackage" xmi:id="_uVgIQbcCEeW2Mqv0nQe8Cg" name="Infra" nsURI="http:///schemas/Infra/_uVgIQLcCEeW2Mqv0nQe8Cg/7" nsPrefix="Infra">
       <eAnnotations xmi:id="_uVgvUrcCEeW2Mqv0nQe8Cg" source="PapyrusVersion">
         <details xmi:id="_uVgvU7cCEeW2Mqv0nQe8Cg" key="Version" value="0.0.8"/>
@@ -239,7 +278,7 @@
       <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Class"/>
     </ownedAttribute>
   </packagedElement>
-  <packagedElement xmi:type="uml:Stereotype" xmi:id="_LOvZ4LcCEeW2Mqv0nQe8Cg" name="Servlets">
+  <packagedElement xmi:type="uml:Stereotype" xmi:id="_LOvZ4LcCEeW2Mqv0nQe8Cg" name="Presentation">
     <ownedAttribute xmi:id="_NT8y4LcCEeW2Mqv0nQe8Cg" name="base_Class" association="_NT9Z8LcCEeW2Mqv0nQe8Cg">
       <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Class"/>
     </ownedAttribute>
@@ -247,8 +286,8 @@
   <packagedElement xmi:type="uml:Extension" xmi:id="_M8zeMLcCEeW2Mqv0nQe8Cg" name="E_Entity_Class1" memberEnd="_M8zeMbcCEeW2Mqv0nQe8Cg _M8y3ILcCEeW2Mqv0nQe8Cg">
     <ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="_M8zeMbcCEeW2Mqv0nQe8Cg" name="extension_Entity" type="_ECToYLcCEeW2Mqv0nQe8Cg" aggregation="composite" association="_M8zeMLcCEeW2Mqv0nQe8Cg"/>
   </packagedElement>
-  <packagedElement xmi:type="uml:Extension" xmi:id="_NT9Z8LcCEeW2Mqv0nQe8Cg" name="E_Servlets_Class1" memberEnd="_NT9Z8bcCEeW2Mqv0nQe8Cg _NT8y4LcCEeW2Mqv0nQe8Cg">
-    <ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="_NT9Z8bcCEeW2Mqv0nQe8Cg" name="extension_Servlets" type="_LOvZ4LcCEeW2Mqv0nQe8Cg" aggregation="composite" association="_NT9Z8LcCEeW2Mqv0nQe8Cg"/>
+  <packagedElement xmi:type="uml:Extension" xmi:id="_NT9Z8LcCEeW2Mqv0nQe8Cg" name="E_Presentation_Class1" memberEnd="_NT9Z8bcCEeW2Mqv0nQe8Cg _NT8y4LcCEeW2Mqv0nQe8Cg">
+    <ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="_NT9Z8bcCEeW2Mqv0nQe8Cg" name="extension_Presentation" type="_LOvZ4LcCEeW2Mqv0nQe8Cg" aggregation="composite" association="_NT9Z8LcCEeW2Mqv0nQe8Cg"/>
   </packagedElement>
   <packagedElement xmi:type="uml:Extension" xmi:id="_tmJu8bcCEeW2Mqv0nQe8Cg" name="E_Service_Class1" memberEnd="_tmJu8rcCEeW2Mqv0nQe8Cg _tmJu8LcCEeW2Mqv0nQe8Cg">
     <ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="_tmJu8rcCEeW2Mqv0nQe8Cg" name="extension_Service" type="_XH9A8K2pEeWNifw7iYKXyQ" aggregation="composite" association="_tmJu8bcCEeW2Mqv0nQe8Cg"/>

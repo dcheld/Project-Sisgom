@@ -8,7 +8,7 @@
       <takesTypesFrom href="http://www.eclipse.org/uml2/4.0.0/UML#/"/>
     </input>
     <imports href="../common/fileUtils.emtl#/0"/>
-    <imports href="hybernateFile.emtl#/0"/>
+    <imports href="hibernateFile.emtl#/0"/>
     <imports href="../../properties/properties.emtl#/0"/>
     <ownedModuleElement xsi:type="mtl:Template" name="genClassJavaDao" visibility="Public">
       <body xsi:type="mtl:FileBlock" openMode="OverWrite">

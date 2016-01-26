@@ -9,7 +9,7 @@
     </input>
     <imports href="../common/fileUtils.emtl#/0"/>
     <imports href="../common/importResolve.emtl#/0"/>
-    <imports href="hybernateFile.emtl#/0"/>
+    <imports href="hibernateFile.emtl#/0"/>
     <imports href="../../properties/properties.emtl#/0"/>
     <ownedModuleElement xsi:type="mtl:Template" name="genClassJavaEntity" visibility="Public">
       <body xsi:type="mtl:FileBlock" openMode="OverWrite">
@@ -32,7 +32,7 @@
         <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;"/>
         <body xsi:type="mtl:TemplateInvocation">
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-          <definition href="hybernateFile.emtl#/0/hybernatEntity"/>
+          <definition href="hibernateFile.emtl#/0/hibernatEntity"/>
           <argument xsi:type="ocl.ecore:VariableExp" name="aClass" referredVariable="/0/genClassJavaEntity/aClass">
             <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Class"/>
           </argument>
@@ -252,7 +252,7 @@
       <body xsi:type="mtl:ForBlock">
         <body xsi:type="mtl:TemplateInvocation">
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
-          <definition href="hybernateFile.emtl#/0/hybernatProperty"/>
+          <definition href="hibernateFile.emtl#/0/hybernatProperty"/>
           <argument xsi:type="ocl.ecore:VariableExp" name="aProperty" referredVariable="/0/fields/@body.0/aProperty">
             <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Property"/>
           </argument>
@@ -1302,12 +1302,12 @@
           <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Classifier"/>
         </eParameters>
       </eOperations>
-      <eOperations name="hybernatEntity">
+      <eOperations name="hibernatEntity">
         <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
           <contents xsi:type="ocl.ecore:Constraint"/>
         </eAnnotations>
         <eAnnotations source="MTL">
-          <references href="hybernateFile.emtl#/0/hybernatEntity"/>
+          <references href="hibernateFile.emtl#/0/hibernatEntity"/>
         </eAnnotations>
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <eParameters name="aClass">
@@ -1319,7 +1319,7 @@
           <contents xsi:type="ocl.ecore:Constraint"/>
         </eAnnotations>
         <eAnnotations source="MTL">
-          <references href="hybernateFile.emtl#/0/hybernatProperty"/>
+          <references href="hibernateFile.emtl#/0/hybernatProperty"/>
         </eAnnotations>
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <eParameters name="prop">

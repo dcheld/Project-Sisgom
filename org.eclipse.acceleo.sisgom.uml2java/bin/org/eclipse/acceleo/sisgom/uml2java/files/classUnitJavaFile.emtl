@@ -10,7 +10,7 @@
     <imports href="../common/fileUtils.emtl#/0"/>
     <imports href="../common/stereotypeUtils.emtl#/0"/>
     <imports href="../../properties/properties.emtl#/0"/>
-    <imports href="hybernateFile.emtl#/0"/>
+    <imports href="hibernateFile.emtl#/0"/>
     <imports href="classEntityJavaFile.emtl#/0"/>
     <imports href="classDaoJavaFile.emtl#/0"/>
     <ownedModuleElement xsi:type="mtl:Template" name="genClassJavaUnitTest" visibility="Public">

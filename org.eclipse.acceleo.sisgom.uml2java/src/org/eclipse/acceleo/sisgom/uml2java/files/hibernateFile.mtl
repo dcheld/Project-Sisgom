@@ -1,10 +1,10 @@
 [comment encoding = UTF-8 /]
-[module hybernateFile('http://www.eclipse.org/uml2/4.0.0/UML')]
+[module hibernateFile('http://www.eclipse.org/uml2/4.0.0/UML')]
 
 [import org::eclipse::acceleo::sisgom::uml2java::common::fileUtils /]
 [import org::eclipse::acceleo::sisgom::uml2java::common::stereotypeUtils /]
 
-[template public hybernatEntity(aClass : Class) post (trim())]
+[template public hibernatEntity(aClass : Class) post (trim())]
 [aClass.generateStereotype(Sequence{'Entity'}) /]
 [aClass.getTableStereotype() /]
 [aClass.generateStereotype(Sequence{'PrimaryKeyJoinColumn', 'Inheritance'}) /]
@@ -77,5 +77,3 @@
 [else][prop.type.name/].[e.getValue(s, prop.name).eGet('name')/]
 [/if]
 [/template]
-
-

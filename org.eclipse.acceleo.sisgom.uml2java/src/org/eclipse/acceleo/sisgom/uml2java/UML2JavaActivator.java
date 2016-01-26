@@ -21,7 +21,7 @@ public class UML2JavaActivator extends Plugin {
     /**
      * The plug-in ID.
      */
-    public static final String PLUGIN_ID = "org.eclipse.acceleo.examples.uml2java";
+    public static final String PLUGIN_ID = "org.eclipse.acceleo.sisgom.uml2java";
 
     /**
      * The shared instance.
