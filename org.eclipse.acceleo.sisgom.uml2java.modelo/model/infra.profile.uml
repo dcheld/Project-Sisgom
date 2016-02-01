@@ -1,6 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <uml:Profile xmi:version="20110701" xmlns:xmi="http://www.omg.org/spec/XMI/20110701" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/4.0.0/UML" xmi:id="_WSavYIvkEeWuGKU7gkaFFg" name="Infra" metaclassReference="_h4CusIvkEeWuGKU7gkaFFg _VP4sEK2pEeWNifw7iYKXyQ" metamodelReference="_WSavYYvkEeWuGKU7gkaFFg">
   <eAnnotations xmi:id="_gD-JAIvkEeWuGKU7gkaFFg" source="http://www.eclipse.org/uml2/2.0.0/UML">
+    <contents xmi:type="ecore:EPackage" xmi:id="_hzuCEMhuEeWAy4505M3HZA" name="Infra" nsURI="http:///schemas/Infra/_hzsM4MhuEeWAy4505M3HZA/9" nsPrefix="Infra">
+      <eAnnotations xmi:id="_hzweUMhuEeWAy4505M3HZA" source="PapyrusVersion">
+        <details xmi:id="_hzweUchuEeWAy4505M3HZA" key="Version" value="0.0.10"/>
+        <details xmi:id="_hzweUshuEeWAy4505M3HZA" key="Comment" value=""/>
+        <details xmi:id="_hzweU8huEeWAy4505M3HZA" key="Copyright" value="Douglas Held"/>
+        <details xmi:id="_hzweVMhuEeWAy4505M3HZA" key="Date" value="2016-01-31"/>
+        <details xmi:id="_hzweVchuEeWAy4505M3HZA" key="Author" value=""/>
+      </eAnnotations>
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_hzuCEchuEeWAy4505M3HZA" name="MainPackage">
+        <eAnnotations xmi:id="_hzuCEshuEeWAy4505M3HZA" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_iW7DEIvkEeWuGKU7gkaFFg"/>
+        <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_hzuCE8huEeWAy4505M3HZA" name="base_Package" ordered="false" lowerBound="1">
+          <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Package"/>
+        </eStructuralFeatures>
+      </eClassifiers>
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_hzuCFchuEeWAy4505M3HZA" name="Service">
+        <eAnnotations xmi:id="_hzuCFshuEeWAy4505M3HZA" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_XH9A8K2pEeWNifw7iYKXyQ"/>
+        <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_hzuCF8huEeWAy4505M3HZA" name="base_Class" ordered="false" lowerBound="1">
+          <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Class"/>
+        </eStructuralFeatures>
+      </eClassifiers>
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_hzuCGchuEeWAy4505M3HZA" name="Entity">
+        <eAnnotations xmi:id="_hzuCGshuEeWAy4505M3HZA" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_ECToYLcCEeW2Mqv0nQe8Cg"/>
+        <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_hzuCG8huEeWAy4505M3HZA" name="base_Class" ordered="false" lowerBound="1">
+          <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Class"/>
+        </eStructuralFeatures>
+      </eClassifiers>
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_hzuCHchuEeWAy4505M3HZA" name="Presentation">
+        <eAnnotations xmi:id="_hzuCHshuEeWAy4505M3HZA" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_LOvZ4LcCEeW2Mqv0nQe8Cg"/>
+        <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_hzuCH8huEeWAy4505M3HZA" name="base_Class" ordered="false" lowerBound="1">
+          <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Class"/>
+        </eStructuralFeatures>
+      </eClassifiers>
+    </contents>
     <contents xmi:type="ecore:EPackage" xmi:id="_YQ4MUbd3EeW9XvKsC0AKCw" name="Infra" nsURI="http:///schemas/Infra/_YQ4MULd3EeW9XvKsC0AKCw/8" nsPrefix="Infra">
       <eAnnotations xmi:id="_YQ5acbd3EeW9XvKsC0AKCw" source="PapyrusVersion">
         <details xmi:id="_YQ5acrd3EeW9XvKsC0AKCw" key="Version" value="0.0.9"/>
@@ -266,10 +299,7 @@
     <ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="_mmSmgovkEeWuGKU7gkaFFg" name="extension_MainPackage" type="_iW7DEIvkEeWuGKU7gkaFFg" aggregation="composite" association="_mmSmgYvkEeWuGKU7gkaFFg"/>
   </packagedElement>
   <packagedElement xmi:type="uml:Stereotype" xmi:id="_XH9A8K2pEeWNifw7iYKXyQ" name="Service">
-    <ownedAttribute xmi:id="_WFs8YLcCEeW2Mqv0nQe8Cg" name="base_Class">
-      <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Class"/>
-    </ownedAttribute>
-    <ownedAttribute xmi:id="_tmJu8LcCEeW2Mqv0nQe8Cg" name="base_Class" association="_tmJu8bcCEeW2Mqv0nQe8Cg">
+    <ownedAttribute xmi:id="_g-cm8MhuEeWAy4505M3HZA" name="base_Class" association="_g-dOAMhuEeWAy4505M3HZA">
       <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Class"/>
     </ownedAttribute>
   </packagedElement>
@@ -289,7 +319,7 @@
   <packagedElement xmi:type="uml:Extension" xmi:id="_NT9Z8LcCEeW2Mqv0nQe8Cg" name="E_Presentation_Class1" memberEnd="_NT9Z8bcCEeW2Mqv0nQe8Cg _NT8y4LcCEeW2Mqv0nQe8Cg">
     <ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="_NT9Z8bcCEeW2Mqv0nQe8Cg" name="extension_Presentation" type="_LOvZ4LcCEeW2Mqv0nQe8Cg" aggregation="composite" association="_NT9Z8LcCEeW2Mqv0nQe8Cg"/>
   </packagedElement>
-  <packagedElement xmi:type="uml:Extension" xmi:id="_tmJu8bcCEeW2Mqv0nQe8Cg" name="E_Service_Class1" memberEnd="_tmJu8rcCEeW2Mqv0nQe8Cg _tmJu8LcCEeW2Mqv0nQe8Cg">
-    <ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="_tmJu8rcCEeW2Mqv0nQe8Cg" name="extension_Service" type="_XH9A8K2pEeWNifw7iYKXyQ" aggregation="composite" association="_tmJu8bcCEeW2Mqv0nQe8Cg"/>
+  <packagedElement xmi:type="uml:Extension" xmi:id="_g-dOAMhuEeWAy4505M3HZA" name="E_Service_Class1" memberEnd="_g-dOAchuEeWAy4505M3HZA _g-cm8MhuEeWAy4505M3HZA">
+    <ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="_g-dOAchuEeWAy4505M3HZA" name="extension_Service" type="_XH9A8K2pEeWNifw7iYKXyQ" aggregation="composite" association="_g-dOAMhuEeWAy4505M3HZA"/>
   </packagedElement>
 </uml:Profile>
