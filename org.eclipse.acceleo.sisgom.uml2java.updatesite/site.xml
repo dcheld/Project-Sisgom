@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <feature url="features/org.eclipse.acceleo.sisgom.uml2java.feature_1.0.0.201602030016.jar" id="org.eclipse.acceleo.sisgom.uml2java.feature" version="1.0.0.201602030016"/>
+</site>
