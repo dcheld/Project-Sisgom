@@ -13,9 +13,6 @@
  * @param aEnumeration
  */]
 [template public genEnumJavaFile(anEnumeration : Enumeration)]
-[file ('teste.txt', false, 'Cp1252')]
-	[anEnumeration.genFilePathEnum()/]
-[/file]
 [file (anEnumeration.genFilePathEnum(), false, 'UTF-8')]
 package [anEnumeration.genPackageEnum()/];
 
